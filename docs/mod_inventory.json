@@ -1,0 +1,1563 @@
+[
+ {
+  "file": "[Neoforge]ctov-3.6.3.jar",
+  "size_mb": 6.81,
+  "loader": "neoforge",
+  "modid": "ctov",
+  "name": "ChoiceTheorem's Overhauled Village",
+  "version": "3.6.3"
+ },
+ {
+  "file": "accessories-neoforge-1.1.0-beta.42+1.21.1.jar",
+  "size_mb": 1.01,
+  "loader": "neoforge",
+  "modid": "accessories",
+  "name": "Accessories",
+  "version": "1.1.0-beta.42+1.21.1"
+ },
+ {
+  "file": "aether-1.21.1-1.5.10-neoforge.jar",
+  "size_mb": 38.36,
+  "loader": "neoforge",
+  "modid": "aether",
+  "name": "The Aether",
+  "version": "1.5.10"
+ },
+ {
+  "file": "AmbientSounds_NEOFORGE_v6.3.8_mc1.21.1.jar",
+  "size_mb": 80.88,
+  "loader": "neoforge",
+  "modid": "ambientsounds",
+  "name": "AmbientSounds",
+  "version": "6.3.8"
+ },
+ {
+  "file": "amendments-neoforge-1.21-2.1.7.jar",
+  "size_mb": 1.1,
+  "loader": "neoforge",
+  "modid": "amendments",
+  "name": "Amendments",
+  "version": "1.21-2.1.7"
+ },
+ {
+  "file": "Apotheosis-1.21.1-8.7.0.jar",
+  "size_mb": 6.81,
+  "loader": "neoforge",
+  "modid": "apotheosis",
+  "name": "Apotheosis",
+  "version": "8.7.0"
+ },
+ {
+  "file": "ApothicAttributes-1.21.1-2.10.1.jar",
+  "size_mb": 0.31,
+  "loader": "neoforge",
+  "modid": "apothic_attributes",
+  "name": "Apothic Attributes",
+  "version": "2.10.1"
+ },
+ {
+  "file": "ApothicEnchanting-1.21.1-1.6.0.jar",
+  "size_mb": 5.17,
+  "loader": "neoforge",
+  "modid": "apothic_enchanting",
+  "name": "Apothic Enchanting",
+  "version": "1.6.0"
+ },
+ {
+  "file": "ApothicSpawners-1.21.1-1.4.0.jar",
+  "size_mb": 0.12,
+  "loader": "neoforge",
+  "modid": "apothic_spawners",
+  "name": "Apothic Spawners",
+  "version": "1.4.0"
+ },
+ {
+  "file": "appleskin-neoforge-mc1.21-3.0.9.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "appleskin",
+  "name": "AppleSkin",
+  "version": "3.0.9+mc1.21"
+ },
+ {
+  "file": "architectury-13.0.8-neoforge.jar",
+  "size_mb": 0.56,
+  "loader": "neoforge",
+  "modid": "architectury",
+  "name": "Architectury",
+  "version": "13.0.8"
+ },
+ {
+  "file": "ars_nouveau-1.21.1-5.13.0.jar",
+  "size_mb": 18.99,
+  "loader": "neoforge",
+  "modid": "ars_nouveau",
+  "name": "Ars Nouveau",
+  "version": "5.13.0"
+ },
+ {
+  "file": "artifacts-neoforge-13.2.1.jar",
+  "size_mb": 0.98,
+  "loader": "neoforge",
+  "modid": "artifacts",
+  "name": "Artifacts",
+  "version": "13.2.1"
+ },
+ {
+  "file": "atlas-core-1.21.1-1.1.3.release.jar",
+  "size_mb": 0.22,
+  "loader": "fabric (via Connector)",
+  "modid": "atlas-core",
+  "name": "Atlas Core",
+  "version": "1.1.3",
+  "environment": "*"
+ },
+ {
+  "file": "autohud-8.4+1.21.1-neoforge.jar",
+  "size_mb": 0.36,
+  "loader": "neoforge",
+  "modid": "autohud",
+  "name": "Auto HUD",
+  "version": "8.4"
+ },
+ {
+  "file": "balm-neoforge-1.21.1-21.0.64.jar",
+  "size_mb": 0.75,
+  "loader": "neoforge",
+  "modid": "balm",
+  "name": "Balm",
+  "version": "21.0.64"
+ },
+ {
+  "file": "bestylewither-neoforge-mc1.21.1-1.8.0.jar",
+  "size_mb": 0.12,
+  "loader": "neoforge",
+  "modid": "bestylewither",
+  "name": "BE Style Wither",
+  "version": "1.8.0"
+ },
+ {
+  "file": "BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar",
+  "size_mb": 0.09,
+  "loader": "neoforge",
+  "modid": "betteradvancements",
+  "name": "Better Advancements",
+  "version": "0.4.3.21"
+ },
+ {
+  "file": "bettercombat-neoforge-2.4.0+1.21.1.jar",
+  "size_mb": 1.0,
+  "loader": "neoforge",
+  "modid": "bettercombat",
+  "name": "Better Combat",
+  "version": "2.4.0+1.21.1"
+ },
+ {
+  "file": "bibliocraft-1.21.1-1.6.5.jar",
+  "size_mb": 5.22,
+  "loader": "neoforge",
+  "modid": "bibliocraft",
+  "name": "Bibliocraft Legacy",
+  "version": "1.6.5"
+ },
+ {
+  "file": "BiomeParticleWeather-5.3.1.jar",
+  "size_mb": 0.27,
+  "loader": "fabric (via Connector)",
+  "modid": "biomeparticleweather",
+  "name": "BiomeParticleWeather",
+  "version": "5.3.1",
+  "environment": "client"
+ },
+ {
+  "file": "BiomesOPlenty-neoforge-1.21.1-21.1.0.14.jar",
+  "size_mb": 21.3,
+  "loader": "neoforge",
+  "modid": "biomesoplenty",
+  "name": "Biomes O' Plenty",
+  "version": "21.1.0.14"
+ },
+ {
+  "file": "born_in_chaos_Neoforge_1.21.1_1.7.6.jar",
+  "size_mb": 11.29,
+  "loader": "neoforge",
+  "modid": "born_in_chaos_v1",
+  "name": "Born in Chaos ",
+  "version": "1.7.6"
+ },
+ {
+  "file": "brasilcoisas-2.1.0-neoforge-1.21.1.jar",
+  "size_mb": 3.12,
+  "loader": "neoforge",
+  "modid": "brasilcoisas",
+  "name": "Brasil e Coisas",
+  "version": "2.1.0"
+ },
+ {
+  "file": "brazil_legends-1.7.0-neoforge-1.21.1.jar",
+  "size_mb": 5.38,
+  "loader": "neoforge",
+  "modid": "brazil_legends",
+  "name": "Brazil Legends",
+  "version": "1.7.0"
+ },
+ {
+  "file": "CameraOverhaul-v2.0.4-neoforge+mc[1.21.0-1.21.1].jar",
+  "size_mb": 0.13,
+  "loader": "neoforge",
+  "modid": "cameraoverhaul",
+  "name": "CameraOverhaul",
+  "version": "2.0.4-neoforge+mc.1.21.0-1.21.1"
+ },
+ {
+  "file": "capes-1.5.4+1.21-fabric.jar",
+  "size_mb": 0.07,
+  "loader": "fabric (via Connector)",
+  "modid": "capes",
+  "name": "Capes",
+  "version": "1.5.4+1.21",
+  "environment": "client"
+ },
+ {
+  "file": "CarbonConfig-Neoforge-1.21.1-2.0.2.1.jar",
+  "size_mb": 1.21,
+  "loader": "neoforge",
+  "modid": "carbonconfig",
+  "name": "Carbon Config Library",
+  "version": "?"
+ },
+ {
+  "file": "carryon-neoforge-1.21.1-2.2.4.4.jar",
+  "size_mb": 0.34,
+  "loader": "neoforge",
+  "modid": "carryon",
+  "name": "Carry On",
+  "version": "2.2.4"
+ },
+ {
+  "file": "CerbonsAPI-NeoForge-1.21-1.3.0.jar",
+  "size_mb": 0.24,
+  "loader": "neoforge",
+  "modid": "cerbons_api",
+  "name": "Cerbons API",
+  "version": "1.3.0"
+ },
+ {
+  "file": "Chunk-Pregenerator-Neoforge-1.21-4.5.3.jar",
+  "size_mb": 1.56,
+  "loader": "neoforge",
+  "modid": "chunkpregen",
+  "name": "Chunk Pregenerator",
+  "version": "1.21-4.5.3"
+ },
+ {
+  "file": "cloth-config-15.0.140-neoforge.jar",
+  "size_mb": 1.11,
+  "loader": "neoforge",
+  "modid": "cloth_config",
+  "name": "Cloth Config v15 API",
+  "version": "15.0.140"
+ },
+ {
+  "file": "Clumps-neoforge-1.21.1-19.0.0.1.jar",
+  "size_mb": 0.02,
+  "loader": "neoforge",
+  "modid": "clumps",
+  "name": "Clumps",
+  "version": "19.0.0.1"
+ },
+ {
+  "file": "CodeChickenLib-1.21.1-4.6.1.526.jar",
+  "size_mb": 1.47,
+  "loader": "neoforge",
+  "modid": "codechickenlib",
+  "name": "CodeChicken Lib",
+  "version": "4.6.1.526"
+ },
+ {
+  "file": "configuration-neoforge-1.21.1-3.1.0.jar",
+  "size_mb": 0.4,
+  "loader": "neoforge",
+  "modid": "configuration",
+  "name": "Configuration",
+  "version": "3.1.0"
+ },
+ {
+  "file": "connector-2.0.0-beta.16+1.21.1-full.jar",
+  "size_mb": 4.32,
+  "loader": "?",
+  "modid": "?",
+  "name": "connector-2.0.0-beta.16+1.21.1-full",
+  "version": "?"
+ },
+ {
+  "file": "ConnectorExtras-1.12.1+1.21.1.jar",
+  "size_mb": 0.08,
+  "loader": "neoforge",
+  "modid": "connectorextras",
+  "name": "Connector Extras",
+  "version": "1.12.1+1.21.1"
+ },
+ {
+  "file": "continuity-3.0.0+1.21.neoforge.jar",
+  "size_mb": 0.97,
+  "loader": "neoforge",
+  "modid": "continuity",
+  "name": "Continuity",
+  "version": "3.0.0+1.21.neoforge"
+ },
+ {
+  "file": "Controlling-neoforge-1.21.1-19.0.5.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "controlling",
+  "name": "Controlling",
+  "version": "19.0.5"
+ },
+ {
+  "file": "corn_delight-1.2.10-1.21.1.jar",
+  "size_mb": 0.16,
+  "loader": "neoforge",
+  "modid": "corn_delight",
+  "name": "Corn Delight",
+  "version": "1.2.10-1.21.1"
+ },
+ {
+  "file": "cosy-critters-0.0.1.jar",
+  "size_mb": 0.04,
+  "loader": "fabric (via Connector)",
+  "modid": "cosycritters",
+  "name": "Cosy Critters & Creepy Crawlies",
+  "version": "0.0.1",
+  "environment": "client"
+ },
+ {
+  "file": "craftedcore-5.8.2.jar",
+  "size_mb": 0.74,
+  "loader": "neoforge",
+  "modid": "craftedcore",
+  "name": "CraftedCore",
+  "version": "5.8.2"
+ },
+ {
+  "file": "CrashAssistant-neoforge-1.21.1-1.7.28.jar",
+  "size_mb": 5.5,
+  "loader": "neoforge",
+  "modid": "crash_assistant",
+  "name": "Crash Assistant",
+  "version": "1.7.28"
+ },
+ {
+  "file": "CreativeCore_NEOFORGE_v2.13.43_mc1.21.1.jar",
+  "size_mb": 1.17,
+  "loader": "neoforge",
+  "modid": "creativecore",
+  "name": "CreativeCore",
+  "version": "2.13.43"
+ },
+ {
+  "file": "cristellib-neoforge-1.21.1-3.1.7.jar",
+  "size_mb": 0.56,
+  "loader": "neoforge",
+  "modid": "cristellib",
+  "name": "Cristel Lib",
+  "version": "3.1.7"
+ },
+ {
+  "file": "crumbling-hearts-1.2-1.21.jar",
+  "size_mb": 0.06,
+  "loader": "fabric (via Connector)",
+  "modid": "crumbling_hearts",
+  "name": "Crumbling Hearts",
+  "version": "1.2",
+  "environment": "client"
+ },
+ {
+  "file": "culturaldelights-0.17.8.jar",
+  "size_mb": 0.25,
+  "loader": "neoforge",
+  "modid": "culturaldelights",
+  "name": "Cultural Delights",
+  "version": "0.17.8"
+ },
+ {
+  "file": "curios-neoforge-9.5.1+1.21.1.jar",
+  "size_mb": 0.39,
+  "loader": "neoforge",
+  "modid": "curios",
+  "name": "Curios API",
+  "version": "9.5.1+1.21.1"
+ },
+ {
+  "file": "CustomNPCs-Unofficial-NeoForge-1.21.1.20241226.jar",
+  "size_mb": 10.28,
+  "loader": "neoforge",
+  "modid": "customnpcs",
+  "name": "Custom NPCs",
+  "version": "1.21.1.20241226"
+ },
+ {
+  "file": "decocraft-3.0.11-1.21.1-neoforge.jar",
+  "size_mb": 88.85,
+  "loader": "neoforge",
+  "modid": "decocraft",
+  "name": "Decocraft",
+  "version": "3.0.11"
+ },
+ {
+  "file": "distantlandsmc-1.5.jar",
+  "size_mb": 2.77,
+  "loader": "neoforge",
+  "modid": "distantlandsmc",
+  "name": "Distant Lands",
+  "version": "1.5"
+ },
+ {
+  "file": "DoggyTalentsNext-1.21.1-1.19.0.jar",
+  "size_mb": 10.73,
+  "loader": "neoforge",
+  "modid": "doggytalents",
+  "name": "Doggy Talents Next",
+  "version": "1.19.0"
+ },
+ {
+  "file": "draggable_lists-mc1.20.6-1.0.8-build.44.jar",
+  "size_mb": 0.09,
+  "loader": "neoforge",
+  "modid": "draggable_lists",
+  "name": "Draggable Lists",
+  "version": "1.0.8"
+ },
+ {
+  "file": "dungeons-and-taverns-v4.4.4.jar",
+  "size_mb": 23.71,
+  "loader": "?",
+  "modid": "?",
+  "name": "dungeons-and-taverns-v4.4.4",
+  "version": "?"
+ },
+ {
+  "file": "DungeonsArise-1.21.1-2.1.68-release.jar",
+  "size_mb": 11.29,
+  "loader": "neoforge",
+  "modid": "dungeons_arise",
+  "name": "When Dungeons Arise",
+  "version": "2.1.68"
+ },
+ {
+  "file": "DungeonsAriseSevenSeas-1.21.x-1.0.4-neoforge.jar",
+  "size_mb": 0.23,
+  "loader": "neoforge",
+  "modid": "dungeons_arise_seven_seas",
+  "name": "When Dungeons Arise: Seven Seas",
+  "version": "1.0.4"
+ },
+ {
+  "file": "eg_particle_interactions-0.4.1-neoforge-mc1.21.1.jar",
+  "size_mb": 0.31,
+  "loader": "neoforge",
+  "modid": "eg_particle_interactions",
+  "name": "Particle Interactions",
+  "version": "0.4.1"
+ },
+ {
+  "file": "enchanted-neoforge-1.21.1-4.2.7.jar",
+  "size_mb": 2.98,
+  "loader": "neoforge",
+  "modid": "enchanted",
+  "name": "Enchanted",
+  "version": "4.2.7"
+ },
+ {
+  "file": "endrem-neoforge-1.21.1-6.3.0.jar",
+  "size_mb": 0.89,
+  "loader": "neoforge",
+  "modid": "endrem",
+  "name": "End Remastered",
+  "version": "6.3.0"
+ },
+ {
+  "file": "ends_delight-2.6+neoforge.1.21.1.jar",
+  "size_mb": 0.25,
+  "loader": "neoforge",
+  "modid": "ends_delight",
+  "name": "End's Delight",
+  "version": "2.6+neoforge.1.21.1"
+ },
+ {
+  "file": "entity_pin_cushions-neoforge-1.21-1.0.jar",
+  "size_mb": 0.03,
+  "loader": "neoforge",
+  "modid": "entity_pin_cushions",
+  "name": "Entity Pin Cushions",
+  "version": "1.0"
+ },
+ {
+  "file": "entityculling-neoforge-1.10.5-mc1.21.1.jar",
+  "size_mb": 1.51,
+  "loader": "neoforge",
+  "modid": "entityculling",
+  "name": "EntityCulling",
+  "version": "1.10.5"
+ },
+ {
+  "file": "explosive-enhancement-1.3.2-1.21-1.21.1.jar",
+  "size_mb": 0.11,
+  "loader": "fabric (via Connector)",
+  "modid": "explosiveenhancement",
+  "name": "Explosive Enhancement",
+  "version": "1.3.2-1.21-1.21.1",
+  "environment": "client"
+ },
+ {
+  "file": "fabric-language-kotlin-1.13.1+kotlin.2.1.10.jar",
+  "size_mb": 6.78,
+  "loader": "fabric (via Connector)",
+  "modid": "fabric-language-kotlin",
+  "name": "Fabric Language Kotlin",
+  "version": "1.13.1+kotlin.2.1.10",
+  "environment": "*"
+ },
+ {
+  "file": "fancymenu_neoforge_3.9.7_MC_1.21.1.jar",
+  "size_mb": 24.31,
+  "loader": "neoforge",
+  "modid": "fancymenu",
+  "name": "FancyMenu",
+  "version": "3.9.7"
+ },
+ {
+  "file": "fancytoasts-neoforge-1.21.1-1.4.7.jar",
+  "size_mb": 0.36,
+  "loader": "neoforge",
+  "modid": "fancytoasts",
+  "name": "FancyToasts",
+  "version": "1.4.7"
+ },
+ {
+  "file": "FarmersDelight-1.21.1-1.3.2.jar",
+  "size_mb": 3.02,
+  "loader": "neoforge",
+  "modid": "farmersdelight",
+  "name": "Farmer's Delight",
+  "version": "1.3.2"
+ },
+ {
+  "file": "farmersrespite-1.21.1-3.0.0-menufix.jar",
+  "size_mb": 0.64,
+  "loader": "neoforge",
+  "modid": "farmersrespite",
+  "name": "Farmer's Respite",
+  "version": "3.0.0"
+ },
+ {
+  "file": "ferritecore-7.0.3-neoforge.jar",
+  "size_mb": 0.12,
+  "loader": "neoforge",
+  "modid": "ferritecore",
+  "name": "Ferrite Core",
+  "version": "7.0.3"
+ },
+ {
+  "file": "Fog-neoforge-1.8.0-1.21.1.jar",
+  "size_mb": 0.28,
+  "loader": "neoforge",
+  "modid": "fog",
+  "name": "Fog",
+  "version": "1.8.0-1.21.1"
+ },
+ {
+  "file": "ForgeConfigAPIPort-v21.1.3-1.21.1-NeoForge.jar",
+  "size_mb": 0.1,
+  "loader": "neoforge",
+  "modid": "forgeconfigapiport",
+  "name": "Forge Config API Port",
+  "version": "21.1.3"
+ },
+ {
+  "file": "forgified-fabric-api-0.116.15+2.3.1+1.21.1.jar",
+  "size_mb": 5.33,
+  "loader": "neoforge",
+  "modid": "fabric_api",
+  "name": "Forgified Fabric API",
+  "version": "0.116.15+2.3.1+1.21.1"
+ },
+ {
+  "file": "FramedBlocks-10.6.0.jar",
+  "size_mb": 4.11,
+  "loader": "neoforge",
+  "modid": "framedblocks",
+  "name": "FramedBlocks",
+  "version": "10.6.0"
+ },
+ {
+  "file": "framework-neoforge-1.21.1-0.13.11.jar",
+  "size_mb": 0.37,
+  "loader": "neoforge",
+  "modid": "framework",
+  "name": "Framework",
+  "version": "0.13.11"
+ },
+ {
+  "file": "friendsandfoes-neoforge-4.0.27+mc1.21.1.jar",
+  "size_mb": 4.86,
+  "loader": "neoforge",
+  "modid": "friendsandfoes",
+  "name": "Friends&Foes",
+  "version": "4.0.27"
+ },
+ {
+  "file": "fusion-1.3.7-neoforge-mc1.21.1.jar",
+  "size_mb": 0.87,
+  "loader": "neoforge",
+  "modid": "fusion",
+  "name": "Fusion",
+  "version": "1.3.7"
+ },
+ {
+  "file": "fzzy_config-0.6.9+1.21+neoforge.jar",
+  "size_mb": 2.04,
+  "loader": "neoforge",
+  "modid": "fzzy_config",
+  "name": "Fzzy Config",
+  "version": "0.6.9+1.21+neoforge"
+ },
+ {
+  "file": "geckolib-neoforge-1.21.1-4.9.2.jar",
+  "size_mb": 0.6,
+  "loader": "neoforge",
+  "modid": "geckolib",
+  "name": "GeckoLib 4",
+  "version": "4.9.2"
+ },
+ {
+  "file": "GlitchCore-neoforge-1.21.1-2.1.0.2.jar",
+  "size_mb": 0.09,
+  "loader": "neoforge",
+  "modid": "glitchcore",
+  "name": "GlitchCore",
+  "version": "2.1.0.2"
+ },
+ {
+  "file": "golem_spawn_animation-1.0.1-neoforge-1.21.1.jar",
+  "size_mb": 0.47,
+  "loader": "neoforge",
+  "modid": "golem_spawn_animation",
+  "name": "Golem Spawn Animation",
+  "version": "1.0.1"
+ },
+ {
+  "file": "GravityGunRevival-1.21.1-1.1.0.jar",
+  "size_mb": 1.6,
+  "loader": "neoforge",
+  "modid": "gravitygun",
+  "name": "Gravity Gun Revival",
+  "version": "1.1.0"
+ },
+ {
+  "file": "guardvillagers-2.4.10-1.21.1.jar",
+  "size_mb": 0.27,
+  "loader": "neoforge",
+  "modid": "guardvillagers",
+  "name": "Guard Villagers",
+  "version": "2.4.10"
+ },
+ {
+  "file": "HatsRenewed-21.1.1-mc1.21.1-neoforge.jar",
+  "size_mb": 1.75,
+  "loader": "neoforge",
+  "modid": "hats",
+  "name": "HatsRenewed",
+  "version": "21.1.1-mc1.21.1"
+ },
+ {
+  "file": "hbmsntm-198A.jar",
+  "size_mb": 12.23,
+  "loader": "neoforge",
+  "modid": "hbmsntm",
+  "name": "Hbm's Nuclear Tech: Neo Edition",
+  "version": "198A"
+ },
+ {
+  "file": "HMI 4.3 - 1.21.(1).jar",
+  "size_mb": 0.1,
+  "loader": "fabric (via Connector)",
+  "modid": "hold-my-items",
+  "name": "Hold My Items",
+  "version": "4.3",
+  "environment": "*"
+ },
+ {
+  "file": "iChunUtil-1.21-NeoForge-1.0.3.jar",
+  "size_mb": 0.66,
+  "loader": "neoforge",
+  "modid": "ichunutil",
+  "name": "iChunUtil",
+  "version": "1.0.3"
+ },
+ {
+  "file": "immersive_portals-6.0.7-all.jar",
+  "size_mb": 1.78,
+  "loader": "neoforge",
+  "modid": "immersive_portals_core",
+  "name": "Immersive Portals",
+  "version": "6.0.7"
+ },
+ {
+  "file": "immersivelanterns-neoforge-1.0.6-1.21.1.jar",
+  "size_mb": 0.2,
+  "loader": "neoforge",
+  "modid": "immersivelanterns",
+  "name": "Immersive Lanterns",
+  "version": "1.0.6"
+ },
+ {
+  "file": "Incendium_1.21.x_v5.4.4.jar",
+  "size_mb": 4.07,
+  "loader": "neoforge",
+  "modid": "incendium",
+  "name": "Incendium",
+  "version": "5.4.3"
+ },
+ {
+  "file": "inventorypets-2.2.8.jar",
+  "size_mb": 7.41,
+  "loader": "neoforge",
+  "modid": "inventorypets",
+  "name": "Inventory Pets",
+  "version": "2.2.8"
+ },
+ {
+  "file": "invtweaks-1.21.1-1.2.0.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "invtweaks",
+  "name": "Inventory Tweaks Refoxed",
+  "version": "1.21.1-1.2.0"
+ },
+ {
+  "file": "iris-neoforge-1.8.8+mc1.21.1.jar",
+  "size_mb": 2.32,
+  "loader": "neoforge",
+  "modid": "iris",
+  "name": "Iris",
+  "version": "1.8.8+mc1.21.1"
+ },
+ {
+  "file": "ironchest-1.21-neoforge-16.0.7.jar",
+  "size_mb": 0.29,
+  "loader": "neoforge",
+  "modid": "ironchest",
+  "name": "Iron Chests",
+  "version": "1.21-neoforge-16.0.7"
+ },
+ {
+  "file": "irons_lib-1.21.1-2.1.0.jar",
+  "size_mb": 0.39,
+  "loader": "neoforge",
+  "modid": "irons_lib",
+  "name": "Iron's Lib",
+  "version": "1.21.1-2.1.0"
+ },
+ {
+  "file": "irons_spellbooks-1.21.1-3.16.2.jar",
+  "size_mb": 13.23,
+  "loader": "neoforge",
+  "modid": "irons_spellbooks",
+  "name": "Iron's Spells 'n Spellbooks",
+  "version": "1.21.1-3.16.2"
+ },
+ {
+  "file": "Jade-1.21.1-NeoForge-15.10.6.jar",
+  "size_mb": 0.69,
+  "loader": "neoforge",
+  "modid": "jade",
+  "name": "Jade",
+  "version": "15.10.6+neoforge"
+ },
+ {
+  "file": "jei-1.21.1-neoforge-19.44.0.399.jar",
+  "size_mb": 1.62,
+  "loader": "neoforge",
+  "modid": "jei",
+  "name": "Just Enough Items",
+  "version": "19.44.0.399"
+ },
+ {
+  "file": "jei-1.21.1-neoforge-19.44.0.403.jar",
+  "size_mb": 1.62,
+  "loader": "neoforge",
+  "modid": "jei",
+  "name": "Just Enough Items",
+  "version": "19.44.0.403"
+ },
+ {
+  "file": "journeymap-neoforge-1.21.1-6.0.4.jar",
+  "size_mb": 3.97,
+  "loader": "neoforge",
+  "modid": "journeymap",
+  "name": "Journeymap",
+  "version": "1.21.1-6.0.4"
+ },
+ {
+  "file": "JustEnoughAdvancements-21.1.1.jar",
+  "size_mb": 0.04,
+  "loader": "neoforge",
+  "modid": "jea",
+  "name": "Just Enough Advancements",
+  "version": "21.1.1"
+ },
+ {
+  "file": "JustEnoughBeacons-NeoForge-1.21-1.3.0.jar",
+  "size_mb": 0.24,
+  "loader": "neoforge",
+  "modid": "just_enough_beacons",
+  "name": "Just Enough Beacons",
+  "version": "1.3.0"
+ },
+ {
+  "file": "JustEnoughResources-NeoForge-1.21.1-1.6.0.17.jar",
+  "size_mb": 0.28,
+  "loader": "neoforge",
+  "modid": "jeresources",
+  "name": "Just Enough Resources",
+  "version": "1.6.0.17"
+ },
+ {
+  "file": "konkrete_neoforge_1.9.9_MC_1.21.jar",
+  "size_mb": 0.59,
+  "loader": "neoforge",
+  "modid": "konkrete",
+  "name": "Konkrete",
+  "version": "1.9.9"
+ },
+ {
+  "file": "kotlinforforge-5.8.0-all.jar",
+  "size_mb": 6.15,
+  "loader": "?",
+  "modid": "?",
+  "name": "kotlinforforge-5.8.0-all",
+  "version": "?"
+ },
+ {
+  "file": "L_Enders_Cataclysm-1.21.1-3.32.jar",
+  "size_mb": 69.96,
+  "loader": "neoforge",
+  "modid": "cataclysm",
+  "name": "L_Ender's Cataclysm 1.21.1",
+  "version": "3.32"
+ },
+ {
+  "file": "LibX-1.21.1-6.0.14.jar",
+  "size_mb": 1.2,
+  "loader": "neoforge",
+  "modid": "libx",
+  "name": "LibX",
+  "version": "1.21.1-6.0.14"
+ },
+ {
+  "file": "lionfishapi-3.1.jar",
+  "size_mb": 0.09,
+  "loader": "neoforge",
+  "modid": "lionfishapi",
+  "name": "lionfishapi",
+  "version": "3.1"
+ },
+ {
+  "file": "lithium-neoforge-0.15.0+mc1.21.1.jar",
+  "size_mb": 0.71,
+  "loader": "neoforge",
+  "modid": "lithium",
+  "name": "Lithium",
+  "version": "0.15.0+mc1.21.1"
+ },
+ {
+  "file": "lithostitched-1.7.13-neoforge-21.1.jar",
+  "size_mb": 0.81,
+  "loader": "neoforge",
+  "modid": "lithostitched",
+  "name": "Lithostitched",
+  "version": "1.7.13"
+ },
+ {
+  "file": "lootr-neoforge-1.21.1-1.11.38.123.jar",
+  "size_mb": 0.95,
+  "loader": "neoforge",
+  "modid": "lootr",
+  "name": "Lootr",
+  "version": "1.21.1-1.11.38.123"
+ },
+ {
+  "file": "ly-lucky-blocks-v1.3.3.jar",
+  "size_mb": 0.43,
+  "loader": "fabric (via Connector)",
+  "modid": "mr_ly_luckyblocks",
+  "name": "Lucky Blocks",
+  "version": "1-v1.3.3",
+  "environment": "*"
+ },
+ {
+  "file": "malisisdoorsreborn-neoforge-1.21.1-1.0.5.jar",
+  "size_mb": 2.46,
+  "loader": "neoforge",
+  "modid": "malisisdoorsreborn",
+  "name": "Malisis Doors (Reborn)",
+  "version": "1.0.5"
+ },
+ {
+  "file": "marvel-2.1.0-pre6-1.21.1-neoforge.jar",
+  "size_mb": 4.08,
+  "loader": "neoforge",
+  "modid": "marvel",
+  "name": "Marvel Superheroes",
+  "version": "2.1.0-pre6"
+ },
+ {
+  "file": "MCHeli-1.21.1-1.3.0.jar",
+  "size_mb": 70.81,
+  "loader": "neoforge",
+  "modid": "mcheli",
+  "name": "MCHeli",
+  "version": "1.0.0"
+ },
+ {
+  "file": "melody_neoforge_1.0.10_MC_1.21.jar",
+  "size_mb": 0.03,
+  "loader": "neoforge",
+  "modid": "melody",
+  "name": "Melody",
+  "version": "1.0.10"
+ },
+ {
+  "file": "mob_mutator-1.0.0.jar",
+  "size_mb": 0.13,
+  "loader": "neoforge",
+  "modid": "mob_mutator",
+  "name": "Mob Mutator",
+  "version": "1.0.0"
+ },
+ {
+  "file": "modernfix-neoforge-5.27.20+mc1.21.1.jar",
+  "size_mb": 0.57,
+  "loader": "neoforge",
+  "modid": "modernfix",
+  "name": "ModernFix",
+  "version": "5.27.20+mc1.21.1"
+ },
+ {
+  "file": "modopedia-neoforge-1.21.1-1.1.11.jar",
+  "size_mb": 0.81,
+  "loader": "neoforge",
+  "modid": "modopedia",
+  "name": "Modopedia",
+  "version": "1.1.11"
+ },
+ {
+  "file": "moonlight-1.21.1-3.3.3-neoforge.jar",
+  "size_mb": 2.05,
+  "loader": "neoforge",
+  "modid": "moonlight",
+  "name": "Moonlight Lib",
+  "version": "1.21.1-3.3.3"
+ },
+ {
+  "file": "MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "mousetweaks",
+  "name": "Mouse Tweaks",
+  "version": "2.26.1"
+ },
+ {
+  "file": "mowziesmobs-1.21.1-1.8.2.jar",
+  "size_mb": 34.37,
+  "loader": "neoforge",
+  "modid": "mowziesmobs",
+  "name": "Mowzie's Mobs",
+  "version": "1.8.2"
+ },
+ {
+  "file": "mru-1.0.17+1.21.1+neoforge.jar",
+  "size_mb": 0.23,
+  "loader": "neoforge",
+  "modid": "mru",
+  "name": "M.R.U",
+  "version": "1.0.17+1.21.1+neoforge"
+ },
+ {
+  "file": "MutantMonsters-v21.1.1-1.21.1-NeoForge.jar",
+  "size_mb": 1.28,
+  "loader": "neoforge",
+  "modid": "mutantmonsters",
+  "name": "Mutant Monsters",
+  "version": "21.1.1"
+ },
+ {
+  "file": "MyNethersDelight-1.21.1-1.10.4.jar",
+  "size_mb": 0.86,
+  "loader": "neoforge",
+  "modid": "mynethersdelight",
+  "name": "My Nether's Delight",
+  "version": "1.10.4"
+ },
+ {
+  "file": "mysterious_mountain_lib-1.2.15-1.21.1.jar",
+  "size_mb": 0.28,
+  "loader": "neoforge",
+  "modid": "mysterious_mountain_lib",
+  "name": "Mysterious Mountain Lib",
+  "version": "1.2.15-1.21.1"
+ },
+ {
+  "file": "naturalist-2.0.3-neoforge-1.21.1.jar",
+  "size_mb": 10.79,
+  "loader": "neoforge",
+  "modid": "naturalist",
+  "name": "Naturalist",
+  "version": "2.0.3"
+ },
+ {
+  "file": "Neat-1.21-47-NEOFORGE.jar",
+  "size_mb": 0.11,
+  "loader": "neoforge",
+  "modid": "neat",
+  "name": "Neat",
+  "version": "1.21-47-NEOFORGE"
+ },
+ {
+  "file": "NEOFORGE_1.21.1_simpleluckyblock_1.0.0.jar",
+  "size_mb": 0.03,
+  "loader": "neoforge",
+  "modid": "simpleluckyblock",
+  "name": "Simple Lucky Block",
+  "version": "1.0.0"
+ },
+ {
+  "file": "notenoughanimations-neoforge-1.9.3-mc1.21.jar",
+  "size_mb": 0.43,
+  "loader": "neoforge",
+  "modid": "notenoughanimations",
+  "name": "NotEnoughAnimations",
+  "version": "1.9.3"
+ },
+ {
+  "file": "Nullscape_1.21.x_v1.2.14.jar",
+  "size_mb": 0.34,
+  "loader": "neoforge",
+  "modid": "nullscape",
+  "name": "Nullscape",
+  "version": "1.2.14"
+ },
+ {
+  "file": "oceansdelight-neoforge-1.0.4-1.21.1.jar",
+  "size_mb": 0.11,
+  "loader": "neoforge",
+  "modid": "oceansdelight",
+  "name": "Ocean's Delight",
+  "version": "1.0.4"
+ },
+ {
+  "file": "OctoLib-NEOFORGE-0.5.0.1.jar",
+  "size_mb": 0.4,
+  "loader": "neoforge",
+  "modid": "octolib",
+  "name": "OctoLib",
+  "version": "0.5.0.1"
+ },
+ {
+  "file": "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.3.2.jar",
+  "size_mb": 0.16,
+  "loader": "neoforge",
+  "modid": "ohthetreesyoullgrow",
+  "name": "Oh The Trees You'll Grow",
+  "version": "5.3.2"
+ },
+ {
+  "file": "orespawn-1.21.1-2.0.0-beta.3.jar",
+  "size_mb": 20.02,
+  "loader": "neoforge",
+  "modid": "orespawn",
+  "name": "OreSpawn",
+  "version": "1.21.1-2.0.0-beta.3"
+ },
+ {
+  "file": "orespawn_delight-0.1.0.jar",
+  "size_mb": 0.25,
+  "loader": "neoforge",
+  "modid": "orespawn_delight",
+  "name": "OreSpawn Delight",
+  "version": "0.1.0"
+ },
+ {
+  "file": "orespawn_integrations-0.4.3.jar",
+  "size_mb": 0.77,
+  "loader": "neoforge",
+  "modid": "orespawn_integrations",
+  "name": "OreSpawn Integrations",
+  "version": "0.4.3"
+ },
+ {
+  "file": "owo-lib-neoforge-0.12.15.1-beta.3+1.21.jar",
+  "size_mb": 4.58,
+  "loader": "neoforge",
+  "modid": "owo",
+  "name": "oωo",
+  "version": "0.12.15.1-beta.3+1.21"
+ },
+ {
+  "file": "pandorasbox-1.21.1-Fabric-2.6.3-H1.release.jar",
+  "size_mb": 0.91,
+  "loader": "fabric (via Connector)",
+  "modid": "pandorasbox",
+  "name": "Pandora's Box",
+  "version": "2.6.3",
+  "environment": "*"
+ },
+ {
+  "file": "particular-1.21.1-NeoForge-1.1.0.jar",
+  "size_mb": 0.21,
+  "loader": "neoforge",
+  "modid": "particular",
+  "name": "Particular",
+  "version": "1.1.0"
+ },
+ {
+  "file": "Patchouli-1.21.1-93-NEOFORGE.jar",
+  "size_mb": 0.62,
+  "loader": "neoforge",
+  "modid": "patchouli",
+  "name": "Patchouli",
+  "version": "1.21.1-93-NEOFORGE"
+ },
+ {
+  "file": "Perception-NEOFORGE-0.1.4+1.21.1.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "perception",
+  "name": "Perception",
+  "version": "0.1.4"
+ },
+ {
+  "file": "Placebo-1.21.1-9.9.2.jar",
+  "size_mb": 0.31,
+  "loader": "neoforge",
+  "modid": "placebo",
+  "name": "Placebo",
+  "version": "9.9.2"
+ },
+ {
+  "file": "placeholder-api-2.4.2+1.21.jar",
+  "size_mb": 0.22,
+  "loader": "fabric (via Connector)",
+  "modid": "placeholder-api",
+  "name": "Placeholder API",
+  "version": "2.4.2+1.21",
+  "environment": "*"
+ },
+ {
+  "file": "player-animation-lib-forge-2.0.4+1.21.1.jar",
+  "size_mb": 0.19,
+  "loader": "neoforge",
+  "modid": "playeranimator",
+  "name": "Player Animator",
+  "version": "2.0.4+1.21.1"
+ },
+ {
+  "file": "portalgun-6.1.3+1.21.1.jar",
+  "size_mb": 0.74,
+  "loader": "neoforge",
+  "modid": "portalgun",
+  "name": "Portal Gun Mod",
+  "version": "6.1.3+1.21.1"
+ },
+ {
+  "file": "Pretty Rain-1.21.1-NeoForge-1.1.4.jar",
+  "size_mb": 0.56,
+  "loader": "neoforge",
+  "modid": "particlerain",
+  "name": "Pretty Rain",
+  "version": "1.1.4"
+ },
+ {
+  "file": "ProjectE-1.21.1-PE1.1.0.jar",
+  "size_mb": 2.31,
+  "loader": "neoforge",
+  "modid": "projecte",
+  "name": "ProjectE",
+  "version": "1.1.0"
+ },
+ {
+  "file": "PuzzlesLib-v21.1.51-1.21.1-NeoForge.jar",
+  "size_mb": 1.36,
+  "loader": "neoforge",
+  "modid": "puzzleslib",
+  "name": "Puzzles Lib",
+  "version": "21.1.51"
+ },
+ {
+  "file": "railcraft-reborn-1.21.1-1.2.10.jar",
+  "size_mb": 5.05,
+  "loader": "neoforge",
+  "modid": "railcraft",
+  "name": "Railcraft Reborn",
+  "version": "1.2.10"
+ },
+ {
+  "file": "randomizer-complete-edition-v0.6.jar",
+  "size_mb": 17.05,
+  "loader": "fabric (via Connector)",
+  "modid": "mr_randomizer_completeedition",
+  "name": "Randomizer: Complete Edition",
+  "version": "1-v0.6",
+  "environment": "*"
+ },
+ {
+  "file": "rechiseled-1.2.5-neoforge-mc1.21.jar",
+  "size_mb": 10.97,
+  "loader": "neoforge",
+  "modid": "rechiseled",
+  "name": "Rechiseled",
+  "version": "1.2.5"
+ },
+ {
+  "file": "refurbished_furniture-neoforge-1.21.1-1.0.19.jar",
+  "size_mb": 6.8,
+  "loader": "neoforge",
+  "modid": "refurbished_furniture",
+  "name": "MrCrayfish's Furniture Mod: Refurbished",
+  "version": "1.0.19"
+ },
+ {
+  "file": "resourcefullib-neoforge-1.21-3.0.12.jar",
+  "size_mb": 0.46,
+  "loader": "neoforge",
+  "modid": "resourcefullib",
+  "name": "Resourceful Lib",
+  "version": "3.0.12"
+ },
+ {
+  "file": "Searchables-neoforge-1.21.1-1.0.2.jar",
+  "size_mb": 0.07,
+  "loader": "neoforge",
+  "modid": "searchables",
+  "name": "Searchables",
+  "version": "1.0.2"
+ },
+ {
+  "file": "SecretRooms-1.21.1-Unofficial-20260702-beta-fixedrecipes.jar",
+  "size_mb": 0.39,
+  "loader": "neoforge",
+  "modid": "secretroomsmod",
+  "name": "Secret Rooms: Reborn (1.21.1)",
+  "version": "1.21-1.0.0"
+ },
+ {
+  "file": "SecurityCraft-1.21.1-v1.10.1.jar",
+  "size_mb": 4.72,
+  "loader": "neoforge",
+  "modid": "securitycraft",
+  "name": "SecurityCraft",
+  "version": "1.10.1"
+ },
+ {
+  "file": "SereneSeasons-neoforge-1.21.1-10.1.0.3.jar",
+  "size_mb": 0.15,
+  "loader": "neoforge",
+  "modid": "sereneseasons",
+  "name": "Serene Seasons",
+  "version": "10.1.0.3"
+ },
+ {
+  "file": "seriousplayeranimations-1.2.0.jar",
+  "size_mb": 0.15,
+  "loader": "fabric (via Connector)",
+  "modid": "seriousplayeranimations",
+  "name": "Serious Player Animations",
+  "version": "1.2.0",
+  "environment": "*"
+ },
+ {
+  "file": "ShoulderSurfing-NeoForge-1.21.1-4.11.0.jar",
+  "size_mb": 0.2,
+  "loader": "neoforge",
+  "modid": "shouldersurfing",
+  "name": "Shoulder Surfing Reloaded",
+  "version": "1.21.1-4.11.0"
+ },
+ {
+  "file": "sittingplus-1.0.1-fabric-1.21.1.jar",
+  "size_mb": 0.7,
+  "loader": "fabric (via Connector)",
+  "modid": "sittingplus",
+  "name": "sittingplus",
+  "version": "1.0.0",
+  "environment": "*"
+ },
+ {
+  "file": "sodium-neoforge-0.6.13+mc1.21.1.jar",
+  "size_mb": 1.11,
+  "loader": "neoforge",
+  "modid": "sodium",
+  "name": "Sodium",
+  "version": "0.6.13+mc1.21.1"
+ },
+ {
+  "file": "sodiumdynamiclights-neoforge-1.0.10-1.21.1.jar",
+  "size_mb": 0.29,
+  "loader": "neoforge",
+  "modid": "sodiumdynamiclights",
+  "name": "Sodium Dynamic Lights",
+  "version": "1.0.9"
+ },
+ {
+  "file": "SoulShardsDespawn-1.3.0.jar",
+  "size_mb": 0.31,
+  "loader": "fabric (via Connector)",
+  "modid": "soulshards",
+  "name": "Soul Shards Despawn",
+  "version": "1.3.0",
+  "environment": "*"
+ },
+ {
+  "file": "stateobserver-neoforge-1.21.1-1.6.4.jar",
+  "size_mb": 0.01,
+  "loader": "neoforge",
+  "modid": "stateobserver",
+  "name": "StateObserver",
+  "version": "1.6.4"
+ },
+ {
+  "file": "Statues-1.21.1-0.4.18.jar",
+  "size_mb": 2.13,
+  "loader": "neoforge",
+  "modid": "statues",
+  "name": "Statues Mod",
+  "version": "0.4.18"
+ },
+ {
+  "file": "StorageDrawers-neoforge-1.21.1-13.11.4.jar",
+  "size_mb": 1.08,
+  "loader": "neoforge",
+  "modid": "storagedrawers",
+  "name": "Storage Drawers",
+  "version": "13.11.4"
+ },
+ {
+  "file": "Structory_26.2_v1.3.7.jar",
+  "size_mb": 1.2,
+  "loader": "neoforge",
+  "modid": "structory",
+  "name": "Structory",
+  "version": "1.3.17"
+ },
+ {
+  "file": "Structory_Towers_26.2_v1.0.17.jar",
+  "size_mb": 0.47,
+  "loader": "neoforge",
+  "modid": "structory_towers",
+  "name": "Structory: Towers",
+  "version": "1.0.17"
+ },
+ {
+  "file": "SubtleEffects-neoforge-1.21.1-1.9.4-hotfix.1.jar",
+  "size_mb": 1.59,
+  "loader": "neoforge",
+  "modid": "subtle_effects",
+  "name": "Subtle Effects",
+  "version": "1.9.4-hotfix.1"
+ },
+ {
+  "file": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+  "size_mb": 0.2,
+  "loader": "neoforge",
+  "modid": "supermartijn642configlib",
+  "name": "SuperMartijn642's Config Library",
+  "version": "1.1.8"
+ },
+ {
+  "file": "supermartijn642corelib-1.1.21-neoforge-mc1.21.jar",
+  "size_mb": 0.53,
+  "loader": "neoforge",
+  "modid": "supermartijn642corelib",
+  "name": "SuperMartijn642's Core Lib",
+  "version": "1.1.21"
+ },
+ {
+  "file": "t_and_t-fabric-neoforge-1.13.11.jar",
+  "size_mb": 3.39,
+  "loader": "neoforge",
+  "modid": "t_and_t",
+  "name": "Towns and Towers",
+  "version": "1.13.11"
+ },
+ {
+  "file": "TerraBlender-neoforge-1.21.1-4.1.0.8.jar",
+  "size_mb": 0.11,
+  "loader": "neoforge",
+  "modid": "terrablender",
+  "name": "TerraBlender",
+  "version": "4.1.0.8"
+ },
+ {
+  "file": "the_bumblezone-7.15.3+1.21.1-neoforge.jar",
+  "size_mb": 66.44,
+  "loader": "neoforge",
+  "modid": "the_bumblezone",
+  "name": "The Bumblezone",
+  "version": "7.15.3+1.21.1-neoforge"
+ },
+ {
+  "file": "timevortex-1.0.10-neoforge-1.21.1.jar",
+  "size_mb": 2.23,
+  "loader": "neoforge",
+  "modid": "vortexmod",
+  "name": "Time Vortex Mod",
+  "version": "1.0.10"
+ },
+ {
+  "file": "travelersbackpack-neoforge-1.21.1-10.1.38.jar",
+  "size_mb": 1.36,
+  "loader": "neoforge",
+  "modid": "travelersbackpack",
+  "name": "Traveler's Backpack",
+  "version": "10.1.38"
+ },
+ {
+  "file": "twilightforest-1.21.1-4.8.3345-universal.jar",
+  "size_mb": 25.9,
+  "loader": "neoforge",
+  "modid": "twilightforest",
+  "name": "The Twilight Forest",
+  "version": "4.8.3345"
+ },
+ {
+  "file": "txnilib-neoforge-1.0.24-1.21.1.jar",
+  "size_mb": 5.99,
+  "loader": "neoforge",
+  "modid": "txnilib",
+  "name": "TxniLib",
+  "version": "1.0.24"
+ },
+ {
+  "file": "visuality-0.7.7+1.21.jar",
+  "size_mb": 0.08,
+  "loader": "fabric (via Connector)",
+  "modid": "visuality",
+  "name": "Visuality",
+  "version": "0.7.7+1.21",
+  "environment": "client"
+ },
+ {
+  "file": "wakes-0.4.1+1.21.1.jar",
+  "size_mb": 0.26,
+  "loader": "fabric (via Connector)",
+  "modid": "wakes",
+  "name": "Wakes",
+  "version": "0.4.1+1.21.1",
+  "environment": "client"
+ },
+ {
+  "file": "walkers-5.8.12.jar",
+  "size_mb": 1.1,
+  "loader": "neoforge",
+  "modid": "walkers",
+  "name": "Walkers",
+  "version": "5.8.12"
+ },
+ {
+  "file": "waveycapes-neoforge-1.5.2-mc1.21.jar",
+  "size_mb": 0.35,
+  "loader": "neoforge",
+  "modid": "waveycapes",
+  "name": "WaveyCapes",
+  "version": "1.5.2"
+ },
+ {
+  "file": "waystones-neoforge-1.21.1-21.1.40.jar",
+  "size_mb": 1.15,
+  "loader": "neoforge",
+  "modid": "waystones",
+  "name": "Waystones",
+  "version": "21.1.40"
+ },
+ {
+  "file": "weeping_angels-mc1.21-v1.0.4-neoforge.jar",
+  "size_mb": 3.03,
+  "loader": "neoforge",
+  "modid": "weeping_angels",
+  "name": "Weeping Angels",
+  "version": "1"
+ },
+ {
+  "file": "yet_another_config_lib_v3-3.6.6+1.21.1-neoforge.jar",
+  "size_mb": 1.05,
+  "loader": "neoforge",
+  "modid": "yet_another_config_lib_v3",
+  "name": "YetAnotherConfigLib",
+  "version": "3.6.6+1.21.1-neoforge"
+ },
+ {
+  "file": "YungsApi-1.21.1-NeoForge-5.1.7.jar",
+  "size_mb": 0.37,
+  "loader": "neoforge",
+  "modid": "yungsapi",
+  "name": "YUNG's API",
+  "version": "1.21.1-NeoForge-5.1.7"
+ },
+ {
+  "file": "YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar",
+  "size_mb": 0.86,
+  "loader": "neoforge",
+  "modid": "betterdeserttemples",
+  "name": "YUNG's Better Desert Temples",
+  "version": "1.21.1-NeoForge-4.1.5"
+ },
+ {
+  "file": "YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar",
+  "size_mb": 0.75,
+  "loader": "neoforge",
+  "modid": "betterdungeons",
+  "name": "YUNG's Better Dungeons",
+  "version": "1.21.1-NeoForge-5.1.4"
+ },
+ {
+  "file": "YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar",
+  "size_mb": 0.47,
+  "loader": "neoforge",
+  "modid": "bettermineshafts",
+  "name": "YUNG's Better Mineshafts",
+  "version": "1.21.1-NeoForge-5.1.1"
+ },
+ {
+  "file": "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar",
+  "size_mb": 0.58,
+  "loader": "neoforge",
+  "modid": "betterfortresses",
+  "name": "YUNG's Better Nether Fortresses",
+  "version": "1.21.1-NeoForge-3.1.5"
+ },
+ {
+  "file": "YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar",
+  "size_mb": 0.98,
+  "loader": "neoforge",
+  "modid": "betteroceanmonuments",
+  "name": "YUNG's Better Ocean Monuments",
+  "version": "1.21.1-NeoForge-4.1.2"
+ },
+ {
+  "file": "YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar",
+  "size_mb": 0.44,
+  "loader": "neoforge",
+  "modid": "betterstrongholds",
+  "name": "YUNG's Better Strongholds",
+  "version": "1.21.1-NeoForge-5.1.3"
+ },
+ {
+  "file": "YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar",
+  "size_mb": 0.17,
+  "loader": "neoforge",
+  "modid": "betterwitchhuts",
+  "name": "YUNG's Better Witch Huts",
+  "version": "1.21.1-NeoForge-4.1.1"
+ }
+]

@@ -1,0 +1,4 @@
+build/
+server/neoforge-*-installer.jar
+__pycache__/
+*.log
