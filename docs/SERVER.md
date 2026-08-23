@@ -9,7 +9,7 @@ CrazyCraft5-Server/
 ├── start.bat / start.sh       ← run this
 ├── neoforge-21.1.248-installer.jar
 ├── server.properties           (sane defaults, see below)
-├── mods/                       (162 jars)
+├── mods/                       (159 jars)
 ├── config/                     (identical to client)
 ├── defaultconfigs/
 ├── mcheli/                     (MCHeli data)
@@ -38,7 +38,7 @@ Clients connect with the normal client pack — the server accepts them because 
 | Setting | Value | Why |
 |---|---|---|
 | `allow-flight` | `true` | Several mods grant flight; prevents false "kicked for flying" |
-| `view-distance` / `simulation-distance` | `8` | Sensible for a 156-mod server; raise if your hardware allows |
+| `view-distance` / `simulation-distance` | `8` | Sensible for a 159-mod server; raise if your hardware allows |
 | `max-tick-time` | `-1` | Disables the watchdog — heavy modded worldgen can exceed the vanilla 60s limit and would otherwise kill the server spuriously |
 | `spawn-protection` | `0` | Modpack players expect to build at spawn |
 | `enable-command-block` | `true` | Used by some structures |

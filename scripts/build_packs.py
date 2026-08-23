@@ -37,6 +37,8 @@ SERVER_EXCLUDE = [
     "Perception-NEOFORGE", "hold-my-items", "HMI ",
     # client-side helpers
     "eating-animation",
+    # held-item and entity rendering (client only)
+    "punchy-", "entity_model_features", "entity_texture_features",
     # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.
 ]
 
@@ -44,7 +46,7 @@ CLIENT_DIRS = ["mods", "config", "defaultconfigs", "resourcepacks", "mcheli",
                "moonlight-global-datapacks", "patchouli_books"]
 CLIENT_FILES = ["emi.json", "patchouli_data.json", "icon.png"]
 
-OPTIONS_TXT = 'version:3955\nlang:pt_br\nresourcePacks:["vanilla","fabric","mod_resources","moonlight:merged_pack","file/CrazyCraft5-ptBR.zip"]\n'
+OPTIONS_TXT = "version:3955\nlang:pt_br\nresourcePacks:[\"mod/punchy:resourcepacks/punchy\",\"vanilla\",\"fabric\",\"mod_resources\",\"moonlight:merged_pack\",\"file/Fast Better Grass.zip\",\"file/Better Leaves.zip\",\"file/Low On Fire.zip\",\"file/CrazyCraft5-ptBR.zip\",\"file/Drigo 3D Lanterns x Punchy.zip\",\"file/Traben\\u0027s 3D Armor - 1.0.1.zip\",\"file/Untitled Punchy.zip\",\"file/Sun and Moon Circular.zip\",\"file/trabens-3d-arrows-1.1.zip\",\"file/Hyper Punchy.zip\",\"file/Fresh Food.zip\",\"file/Even Better Enchants.zip\",\"file/Enhanced Boss Bars.zip\",\"file/Dramatic Skys.zip\",\"file/Blockier Goat Horn v1.1 f9-34.zip\",\"file/Actually 3D Stuff.zip\",\"file/FreshAnimations_v1.9.2.zip\",\"file/FA+Emissive-v1.2.zip\",\"file/Alittle_Axolotl.zip\"]\n"
 
 INSTANCE_CFG = """[General]
 ConfigVersion=1.2
