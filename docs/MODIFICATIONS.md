@@ -1,6 +1,6 @@
 # Everything that was modified
 
-Beyond the three custom mods, several published mods and configs were modified to make the pack stable and coherent. This page is the complete record.
+Beyond the four in-house mods, several published mods and configs were modified to make the pack stable and coherent. This page is the complete record.
 
 ## Patched jars
 
@@ -33,16 +33,19 @@ All shipped in `config/` — the notable ones:
 |---|---|---|
 | `bettercombat/fallback_compatibility.json` | Portal Gun items added to `blacklist_item_id_regex` | Better Combat was capturing left-click on the Portal Gun as a melee swing, eating the portal shot. |
 | `modernfix-mixins.properties` | `mixin.perf.worldgen_allocation=false` | This optimization reuses worldgen objects in a way that exposed the YUNG's API null-field crash (see pins above). Disabled for stability; everything else in ModernFix stays on. |
+| `punchy/punchy_config.json` | OreSpawn's eight custom-rendered weapons added to `itemBlacklist` | Punchy re-renders held items on a visible-hands rig, which mangles the giant weapons (Big Bertha, the Royal Guardian Sword, the chainsaw...) that draw themselves. Blacklisting keeps their custom rendering. |
 | `fancymenu/…` | Full custom title screen | OreSpawn-themed key art, custom logo, trimmed button stack — the pack's identity screen. Works together with the FancyMenu one-byte patch above. |
 
 ## Brazilian Portuguese resource pack
 
 `resourcepacks/CrazyCraft5-ptBR.zip` — a complete pt-BR localization of the pack, enabled by default in the shipped `options.txt`.
 
-- Covers **every mod** that ships English text and lacked an official pt-BR translation (the vast majority of the pack, including all three custom mods, Twilight Forest, the Aether, Mowzie's Mobs, DoggyTalents, ProjectE, SecurityCraft, the delight-family food mods, and dozens more).
+- Covers **every mod** that ships English text and lacked an official pt-BR translation (the vast majority of the pack, including the three OreSpawn-family mods, Twilight Forest, the Aether, Mowzie's Mobs, DoggyTalents, ProjectE, SecurityCraft, the delight-family food mods, and dozens more).
 - Native localization, not literal translation: jokes, puns, and pop-culture references are adapted for a Brazilian audience, while official Minecraft pt-BR terminology is kept for vanilla concepts.
 - All Minecraft formatting codes (`§a`, `%s`, Patchouli `$(...)` macros) are preserved and machine-verified.
 - Three mods (Mowzie's Mobs, Serene Seasons, FancyToasts) ship *malformed* language JSONs inside their jars that Minecraft refuses to parse; their translations are rerouted through a `crazycraft_ptbr` namespace inside the pack so they work anyway.
+
+Domestication Innovation is the exception: it ships its own pt-BR translation inside the jar, so it reads correctly with or without the pack.
 
 To play in English: just disable the resource pack (Options → Resource Packs).
 

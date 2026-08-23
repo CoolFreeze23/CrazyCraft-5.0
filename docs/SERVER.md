@@ -9,7 +9,7 @@ CrazyCraft5-Server/
 ├── start.bat / start.sh       ← run this
 ├── neoforge-21.1.248-installer.jar
 ├── server.properties           (sane defaults, see below)
-├── mods/                       (157 jars)
+├── mods/                       (162 jars)
 ├── config/                     (identical to client)
 ├── defaultconfigs/
 ├── mcheli/                     (MCHeli data)

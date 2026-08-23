@@ -31,7 +31,7 @@ Releases are cumulative — to update, import the new client zip as a new instan
 
 | Symptom | Fix |
 |---|---|
-| Crash on startup with < 8 GB | Allocate more RAM — 193 mods genuinely need it |
+| Crash on startup with < 8 GB | Allocate more RAM — 197 mods genuinely need it |
 | "Out of memory" during world gen | Raise allocation to 10–12 GB |
 | Missing textures / English text everywhere | Resource packs got disabled — re-enable `CrazyCraft5-ptBR` (or ignore if you want English) |
 | Fabric mod errors mentioning "Connector" | Delete the `.connector` folder inside the instance and relaunch (clears the remap cache) |

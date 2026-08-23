@@ -1,6 +1,6 @@
 # Full mod list
 
-193 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
+197 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -54,12 +54,15 @@
 | Decocraft (`decocraft`) | 3.0.11 | NeoForge |  |
 | Distant Lands (`distantlandsmc`) | 1.5 | NeoForge |  |
 | Doggy Talents Next (`doggytalents`) | 1.19.0 | NeoForge |  |
+| Domestication Innovation (`domesticationinnovation`) | 2.0.0-1.21.1 | NeoForge | **Custom** — our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
 | Draggable Lists (`draggable_lists`) | 1.0.8 | NeoForge |  |
 | Dungeons and Taverns (`dungeons_and_taverns`) | 4.4.4 | datapack mod |  |
 | Enchanted (`enchanted`) | 4.2.7 | NeoForge |  |
 | End Remastered (`endrem`) | 6.3.0 | NeoForge |  |
 | End's Delight (`ends_delight`) | 2.6+neoforge.1.21.1 | NeoForge |  |
+| Entity Model Features (`entity_model_features`) | 3.2.4 | NeoForge |  |
 | Entity Pin Cushions (`entity_pin_cushions`) | 1.0 | NeoForge |  |
+| Entity Texture Features (`entity_texture_features`) | 7.1 | NeoForge |  |
 | EntityCulling (`entityculling`) | 1.10.5 | NeoForge |  |
 | Explosive Enhancement (`explosiveenhancement`) | 1.3.2-1.21-1.21.1 | Fabric (Connector) |  |
 | Fabric Language Kotlin (`fabric-language-kotlin`) | 1.13.1+kotlin.2.1.10 | Fabric (Connector) |  |
@@ -83,7 +86,6 @@
 | Guard Villagers (`guardvillagers`) | 2.4.10 | NeoForge |  |
 | HatsRenewed (`hats`) | 21.1.1-mc1.21.1 | NeoForge |  |
 | Hbm's Nuclear Tech: Neo Edition (`hbmsntm`) | 198A | NeoForge | Unofficial 1.21.1 build of HBM's Nuclear Tech |
-| Hold My Items (`hold-my-items`) | 4.3 | Fabric (Connector) |  |
 | iChunUtil (`ichunutil`) | 1.0.3 | NeoForge |  |
 | Immersive Lanterns (`immersivelanterns`) | 1.0.6 | NeoForge |  |
 | Immersive Portals (`immersive_portals_core`) | 6.0.7 | NeoForge |  |
@@ -132,10 +134,11 @@
 | Ocean's Delight (`oceansdelight`) | 1.0.4 | NeoForge |  |
 | OctoLib (`octolib`) | 0.5.0.1 | NeoForge |  |
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
-| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.3 | NeoForge | **Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
+| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.4 | NeoForge | **Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
 | OreSpawn Integrations (`orespawn_integrations`) | 0.4.3 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | oωo (`owo`) | 0.12.15.1-beta.3+1.21 | NeoForge |  |
+| Packed Packs (`packed_packs`) | 2.2.3+1.21.1 | NeoForge |  |
 | Pandora's Box (`pandorasbox`) | 2.6.3 | Fabric (Connector) |  |
 | Particle Interactions (`eg_particle_interactions`) | 0.4.1 | NeoForge |  |
 | Particular (`particular`) | 1.1.0 | NeoForge |  |
@@ -147,6 +150,7 @@
 | Portal Gun Mod (`portalgun`) | 6.1.3+1.21.1 | NeoForge |  |
 | Pretty Rain (`particlerain`) | 1.1.4 | NeoForge |  |
 | ProjectE (`projecte`) | 1.1.0 | NeoForge |  |
+| Punchy (`punchy`) | 2.7d | NeoForge |  |
 | Puzzles Lib (`puzzleslib`) | 21.1.51 | NeoForge |  |
 | Railcraft Reborn (`railcraft`) | 1.2.10 | NeoForge |  |
 | Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | Fabric (Connector) | **Patched** — crafting table recipe syntax fixed |

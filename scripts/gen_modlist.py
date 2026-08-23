@@ -9,6 +9,7 @@ NOTES = {
     "orespawn": "**Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn))",
     "orespawn_delight": "**Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight))",
     "orespawn_integrations": "**Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations))",
+    "domesticationinnovation": "**Custom** — our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1))",
     "securitycraft": "**Patched** — camera ChunkMap mixin removed (Immersive Portals conflict)",
     "ars_nouveau": "**Patched** — embedded lambdynamiclights-api stripped",
     "farmersrespite": "**Patched** — duplicate kettle menu registration removed (fixes a crash present in the published jar)",

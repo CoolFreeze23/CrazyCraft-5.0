@@ -1,6 +1,6 @@
 # The custom mods
 
-Three mods in this pack were built specifically for it. All three are open source under the same GitHub account, and each ships as a normal jar in `mods/`.
+Four mods in this pack are maintained in-house: three built specifically for it, plus a rebuilt Domestication Innovation. All four are open source under the same GitHub account, and each ships as a normal jar in `mods/`.
 
 ---
 
@@ -53,3 +53,17 @@ It also carries the pack's compatibility mixins:
 **Jar:** `orespawn_delight-0.1.0.jar` · **Source:** [CoolFreeze23/orespawn-delight](https://github.com/CoolFreeze23/orespawn-delight)
 
 A [Farmer's Delight](https://modrinth.com/mod/farmers-delight) kitchen expansion for OreSpawn: the pack's creatures become ingredients. Meats, cutting-board drops, skillet dishes, and cooking-pot feasts sourced from CrazyCraft fauna, in Farmer's Delight's visual and progression style.
+
+## Domestication Innovation — the port
+
+**Jar:** `domesticationinnovation-2.0.0-1.21.1.jar` · **Source:** [CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1) · **Releases:** [here](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases)
+
+alex_the_668's pet-overhaul mod never left Forge 1.20.1, so it was ported to NeoForge 1.21.1 and then taken further. Pets get a wander/stay/follow command system, enchantable collar tags, pet beds that resurrect them, and a Wayward Lantern that fetches strays; axolotls, foxes, rabbits and frogs become tameable.
+
+What this pack's build adds on top of the original:
+
+- **Nine new collar enchantments** — Sonic Boom, Violent, Chaos (which leaves attackers Drunk and swinging at each other), Paralysis, Share, Tough, Insight, XP Transfer and Night Vision.
+- **Datapack-driven taming** — any mob can be made tameable, or convertible into another mob, with a single JSON file. Ocelots ship tameable by default; the pack can extend this to OreSpawn's own creatures without code.
+- **Animal Tamers sell the pet enchantment books** at every trade tier, and librarians no longer clutter their pools with them.
+- **Jade integration**, collars that drop when a pet dies for good, injured pets that retreat instead of dying, bed-anchored roaming, and an in-game config screen — all fully translated to pt-BR.
+- A long list of parity and crash fixes against the 1.20.1 original, including one that stopped the mod from running on dedicated servers at all. The full record is in the repo's `CHANGELOG.md`, and a 19-test headless GameTest suite guards it.
