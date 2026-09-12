@@ -125,7 +125,12 @@ def build_server_dir():
             shutil.copytree(src, sv / d)
 
     if (MC / "icon.png").is_file():
-        shutil.copy2(MC / "icon.png", sv / "server-icon.png")
+        # Minecraft only accepts a 64x64 server-icon.png; the instance icon is 192x192.
+        try:
+            from PIL import Image
+            Image.open(MC / "icon.png").convert("RGBA").resize((64, 64), Image.LANCZOS).save(sv / "server-icon.png")
+        except ImportError:
+            print("  (Pillow missing: server-icon.png skipped, it must be 64x64)")
 
     for f in (ROOT / "server").iterdir():
         shutil.copy2(f, sv / f.name)
