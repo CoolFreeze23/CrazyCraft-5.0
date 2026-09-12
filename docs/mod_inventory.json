@@ -202,6 +202,14 @@
   "version": "1.7.0"
  },
  {
+  "file": "braziliandelight-neoforge-3.0.1-neoforge.1.jar",
+  "size_mb": 2.5,
+  "loader": "neoforge",
+  "modid": "braziliandelight",
+  "name": "Brazilian Delight",
+  "version": "3.0.1-neoforge.1"
+ },
+ {
   "file": "CameraOverhaul-v2.0.4-neoforge+mc[1.21.0-1.21.1].jar",
   "size_mb": 0.13,
   "loader": "neoforge",
@@ -346,6 +354,14 @@
   "modid": "crash_assistant",
   "name": "Crash Assistant",
   "version": "1.7.28"
+ },
+ {
+  "file": "CraterLib-Neoforge-1.21-3.1.2.jar",
+  "size_mb": 1.41,
+  "loader": "neoforge",
+  "modid": "craterlib",
+  "name": "CraterLib",
+  "version": "3.1.2"
  },
  {
   "file": "CreativeCore_NEOFORGE_v2.13.43_mc1.21.1.jar",
@@ -1089,7 +1105,7 @@
  },
  {
   "file": "orespawn-1.21.1-2.0.0-beta.4.jar",
-  "size_mb": 20.02,
+  "size_mb": 20.14,
   "loader": "neoforge",
   "modid": "orespawn",
   "name": "OreSpawn",
@@ -1104,12 +1120,12 @@
   "version": "0.1.0"
  },
  {
-  "file": "orespawn_integrations-0.4.3.jar",
-  "size_mb": 0.77,
+  "file": "orespawn_integrations-0.5.1.jar",
+  "size_mb": 0.78,
   "loader": "neoforge",
   "modid": "orespawn_integrations",
   "name": "OreSpawn Integrations",
-  "version": "0.4.3"
+  "version": "0.5.1"
  },
  {
   "file": "owo-lib-neoforge-0.12.15.1-beta.3+1.21.jar",
@@ -1314,6 +1330,14 @@
   "modid": "shouldersurfing",
   "name": "Shoulder Surfing Reloaded",
   "version": "1.21.1-4.11.0"
+ },
+ {
+  "file": "SimpleRPC-4.1.4.jar",
+  "size_mb": 0.68,
+  "loader": "neoforge",
+  "modid": "simplerpc",
+  "name": "Simple RPC",
+  "version": "4.1.3+release.0"
  },
  {
   "file": "sittingplus-1.0.1-fabric-1.21.1.jar",

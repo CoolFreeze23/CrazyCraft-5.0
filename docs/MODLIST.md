@@ -1,6 +1,6 @@
 # Full mod list
 
-197 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
+200 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -27,6 +27,7 @@
 | Born in Chaos  (`born_in_chaos_v1`) | 1.7.6 | NeoForge |  |
 | Brasil e Coisas (`brasilcoisas`) | 2.1.0 | NeoForge |  |
 | Brazil Legends (`brazil_legends`) | 1.7.0 | NeoForge |  |
+| Brazilian Delight (`braziliandelight`) | 3.0.1-neoforge.1 | NeoForge |  |
 | CameraOverhaul (`cameraoverhaul`) | 2.0.4-neoforge+mc.1.21.0-1.21.1 | NeoForge |  |
 | Capes (`capes`) | 1.5.4+1.21 | Fabric (Connector) |  |
 | Carbon Config Library (`carbonconfig`) | ? | NeoForge |  |
@@ -45,6 +46,7 @@
 | Cosy Critters & Creepy Crawlies (`cosycritters`) | 0.0.1 | Fabric (Connector) |  |
 | CraftedCore (`craftedcore`) | 5.8.2 | NeoForge |  |
 | Crash Assistant (`crash_assistant`) | 1.7.28 | NeoForge |  |
+| CraterLib (`craterlib`) | 3.1.2 | NeoForge |  |
 | CreativeCore (`creativecore`) | 2.13.43 | NeoForge |  |
 | Cristel Lib (`cristellib`) | 3.1.7 | NeoForge |  |
 | Crumbling Hearts (`crumbling_hearts`) | 1.2 | Fabric (Connector) |  |
@@ -136,7 +138,7 @@
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
 | OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.4 | NeoForge | **Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
-| OreSpawn Integrations (`orespawn_integrations`) | 0.4.3 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
+| OreSpawn Integrations (`orespawn_integrations`) | 0.5.1 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | oωo (`owo`) | 0.12.15.1-beta.3+1.21 | NeoForge |  |
 | Packed Packs (`packed_packs`) | 2.2.3+1.21.1 | NeoForge |  |
 | Pandora's Box (`pandorasbox`) | 2.6.3 | Fabric (Connector) |  |
@@ -163,6 +165,7 @@
 | Serious Player Animations (`seriousplayeranimations`) | 1.2.0 | Fabric (Connector) |  |
 | Shoulder Surfing Reloaded (`shouldersurfing`) | 1.21.1-4.11.0 | NeoForge |  |
 | Simple Lucky Block (`simpleluckyblock`) | 1.0.0 | NeoForge |  |
+| Simple RPC (`simplerpc`) | 4.1.3+release.0 | NeoForge |  |
 | Sinytra Connector (`connector`) | 2.0.0-beta.16 | loader tech | Runs Fabric mods on NeoForge — pinned as a matched pair with Forgified Fabric API |
 | sittingplus (`sittingplus`) | 1.0.0 | Fabric (Connector) |  |
 | Sodium (`sodium`) | 0.6.13+mc1.21.1 | NeoForge |  |
