@@ -1,6 +1,6 @@
 # Full mod list
 
-200 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
+201 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -131,6 +131,7 @@
 | Mysterious Mountain Lib (`mysterious_mountain_lib`) | 1.2.15-1.21.1 | NeoForge |  |
 | Naturalist (`naturalist`) | 2.0.3 | NeoForge |  |
 | Neat (`neat`) | 1.21-47-NEOFORGE | NeoForge |  |
+| NeoOrigins (`neoorigins`) | 2.2.27 | NeoForge |  |
 | NotEnoughAnimations (`notenoughanimations`) | 1.9.3 | NeoForge |  |
 | Nullscape (`nullscape`) | 1.2.14 | NeoForge |  |
 | Ocean's Delight (`oceansdelight`) | 1.0.4 | NeoForge |  |

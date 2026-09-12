@@ -1064,6 +1064,14 @@
   "version": "1.0.0"
  },
  {
+  "file": "neoorigins-2.2.27+1.21.1.jar",
+  "size_mb": 11.67,
+  "loader": "neoforge",
+  "modid": "neoorigins",
+  "name": "NeoOrigins",
+  "version": "2.2.27"
+ },
+ {
   "file": "notenoughanimations-neoforge-1.9.3-mc1.21.jar",
   "size_mb": 0.43,
   "loader": "neoforge",
