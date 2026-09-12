@@ -139,7 +139,7 @@
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
 | OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.4 | NeoForge | **Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
-| OreSpawn Integrations (`orespawn_integrations`) | 0.5.1 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
+| OreSpawn Integrations (`orespawn_integrations`) | 0.6.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | oωo (`owo`) | 0.12.15.1-beta.3+1.21 | NeoForge |  |
 | Packed Packs (`packed_packs`) | 2.2.3+1.21.1 | NeoForge |  |
 | Pandora's Box (`pandorasbox`) | 2.6.3 | Fabric (Connector) |  |

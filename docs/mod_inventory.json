@@ -1128,12 +1128,12 @@
   "version": "0.1.0"
  },
  {
-  "file": "orespawn_integrations-0.5.1.jar",
-  "size_mb": 0.78,
+  "file": "orespawn_integrations-0.6.0.jar",
+  "size_mb": 0.91,
   "loader": "neoforge",
   "modid": "orespawn_integrations",
   "name": "OreSpawn Integrations",
-  "version": "0.5.1"
+  "version": "0.6.0"
  },
  {
   "file": "owo-lib-neoforge-0.12.15.1-beta.3+1.21.jar",
