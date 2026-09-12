@@ -39,6 +39,8 @@ SERVER_EXCLUDE = [
     "eating-animation",
     # held-item and entity rendering (client only)
     "punchy-", "entity_model_features", "entity_texture_features",
+    # discord rich presence (client only; CraterLib is only here for Simple RPC)
+    "SimpleRPC", "CraterLib",
     # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.
 ]
 
