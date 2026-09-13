@@ -43,6 +43,7 @@ All shipped in `config/` — the notable ones:
 - Covers **every mod** that ships English text and lacked an official pt-BR translation (the vast majority of the pack, including the three OreSpawn-family mods, Twilight Forest, the Aether, Mowzie's Mobs, DoggyTalents, ProjectE, SecurityCraft, the delight-family food mods, and dozens more).
 - Native localization, not literal translation: jokes, puns, and pop-culture references are adapted for a Brazilian audience, while official Minecraft pt-BR terminology is kept for vanilla concepts.
 - All Minecraft formatting codes (`§a`, `%s`, Patchouli `$(...)` macros) are preserved and machine-verified.
+- Neo Origins ships no pt-BR at all, so the pack carries a full translation of its 2,296 strings: every built-in origin and class, all powers and evolution tiers, the picker and HUD editor screens, keybinds, config labels and command feedback. Its HUD resource-bar labels ("Energy", "Essence", "Stamina", ...) are raw strings the mod never translates; OreSpawn Integrations 0.6.1 swaps those in client-side.
 - Three mods (Mowzie's Mobs, Serene Seasons, FancyToasts) ship *malformed* language JSONs inside their jars that Minecraft refuses to parse; their translations are rerouted through a `crazycraft_ptbr` namespace inside the pack so they work anyway.
 
 Domestication Innovation is the exception: it ships its own pt-BR translation inside the jar, so it reads correctly with or without the pack.
