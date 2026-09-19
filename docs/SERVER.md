@@ -29,7 +29,7 @@ Nothing is hidden — the script is ~50 lines, readable, and editable.
 
 ## Removed client-only mods
 
-36 mods are client-side only (rendering, HUD, menus, audio, cosmetics) and are excluded from the server: the Sodium/Iris graphics stack, FancyMenu and its libraries, animation and particle mods, AmbientSounds, camera/HUD tools, and the Fabric cosmetic mods. The full exact list ships in the pack as `REMOVED_CLIENT_MODS.txt`.
+39 mods are client-side only (rendering, HUD, menus, audio, cosmetics) and are excluded from the server: the Sodium/Iris graphics stack, FancyMenu and its libraries, animation and particle mods, AmbientSounds, camera/HUD tools, and the Fabric cosmetic mods. The full exact list ships in the pack as `REMOVED_CLIENT_MODS.txt`.
 
 Clients connect with the normal client pack — the server accepts them because every gameplay mod is identical on both sides.
 

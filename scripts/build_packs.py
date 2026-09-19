@@ -28,7 +28,9 @@ SERVER_EXCLUDE = [
     # HUD / UI / menu
     "fancymenu", "melody_neoforge", "draggable_lists", "fancytoasts",
     "autohud", "BetterAdvancements", "Controlling-", "MouseTweaks",
-    "invtweaks", "Neat-", "shouldersurfing", "ShoulderSurfing",
+    # invtweaks (Inventory Tweaks Refoxed) is NOT client-only: its channels packet_sort_inv / packet_update_config are
+    # required by the client, so the server must carry it (v1.2.0 join failure, 2026-09-20)
+    "Neat-", "shouldersurfing", "ShoulderSurfing",
     # audio / camera / cosmetics
     "AmbientSounds", "CameraOverhaul", "Fog-neoforge", "waveycapes",
     "notenoughanimations", "seriousplayeranimations", "golem_spawn_animation",
