@@ -1,6 +1,6 @@
 # Full mod list
 
-202 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
+201 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -108,7 +108,6 @@
 | Konkrete (`konkrete`) | 1.9.9 | NeoForge |  |
 | Kotlin for Forge (`kotlinforforge`) | 5.8.0 | neoforge |  |
 | L_Ender's Cataclysm 1.21.1 (`cataclysm`) | 3.32 | NeoForge |  |
-| Language Reload (`languagereload`) | 1.7.6+1.21.1 | Fabric (Connector) |  |
 | LibX (`libx`) | 1.21.1-6.0.14 | NeoForge |  |
 | lionfishapi (`lionfishapi`) | 3.1 | NeoForge |  |
 | Lithium (`lithium`) | 0.15.0+mc1.21.1 | NeoForge |  |

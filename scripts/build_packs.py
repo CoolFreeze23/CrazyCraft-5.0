@@ -43,8 +43,6 @@ SERVER_EXCLUDE = [
     "punchy-", "entity_model_features", "entity_texture_features",
     # discord rich presence (client only; CraterLib is only here for Simple RPC)
     "SimpleRPC", "CraterLib",
-    # language switching without a full resource reload (fabric, client only)
-    "language-reload",
     # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.
 ]
 

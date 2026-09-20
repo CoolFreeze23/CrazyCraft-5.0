@@ -879,15 +879,6 @@
   "version": "3.32"
  },
  {
-  "file": "language-reload-1.7.6+1.21.1.jar",
-  "size_mb": 0.07,
-  "loader": "fabric (via Connector)",
-  "modid": "languagereload",
-  "name": "Language Reload",
-  "version": "1.7.6+1.21.1",
-  "environment": "client"
- },
- {
   "file": "LibX-1.21.1-6.0.14.jar",
   "size_mb": 1.2,
   "loader": "neoforge",

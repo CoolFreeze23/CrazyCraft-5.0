@@ -1,6 +1,6 @@
 # CrazyCraft 5.0
 
-A modern revival of the classic CrazyCraft experience on **Minecraft 1.21.1 + NeoForge 21.1.248** — 202 mods, anchored by a from-scratch, line-by-line faithful port of the legendary 1.7.10 **OreSpawn** mod, plus two companion mods built specifically for this pack and a rebuilt **Domestication Innovation**.
+A modern revival of the classic CrazyCraft experience on **Minecraft 1.21.1 + NeoForge 21.1.248** — 201 mods, anchored by a from-scratch, line-by-line faithful port of the legendary 1.7.10 **OreSpawn** mod, plus two companion mods built specifically for this pack and a rebuilt **Domestication Innovation**.
 
 Girlfriends, Mobzilla, the King, ant dimensions, uranium everywhere, helicopters, superheroes, lucky blocks, and a world that fights back. Fully playable in English and **Brazilian Portuguese** (complete pt-BR resource pack included).
 
@@ -19,7 +19,7 @@ Grab the latest files from the [**Releases**](../../releases) page:
 2. Download `CrazyCraft5-Client.zip` — do **not** unzip it.
 3. In Prism: **Add Instance → Import → Browse**, pick the zip, click OK.
 4. Edit the instance → **Settings → Java** and allocate **8–12 GB** of RAM (8 GB minimum).
-5. Launch. First start takes a few minutes — it's loading 202 mods.
+5. Launch. First start takes a few minutes — it's loading 201 mods.
 
 Any launcher that imports MultiMC-format instances works the same way. For a manual install, see [docs/INSTALLING.md](docs/INSTALLING.md).
 
