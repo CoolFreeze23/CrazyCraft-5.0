@@ -78,6 +78,9 @@ def iter_client_files():
                 continue
             if rel.startswith("resourcepacks/CrazyCraft-PTBR/"):
                 continue
+            # NeoForge's copies of replaced config files (name-N.toml.bak); nothing reads them
+            if p.name.endswith(".toml.bak"):
+                continue
             yield p, rel
     for f in CLIENT_FILES:
         p = MC / f
@@ -124,7 +127,7 @@ def build_server_dir():
     for d in ["config", "defaultconfigs", "mcheli", "moonlight-global-datapacks"]:
         src = MC / d
         if src.is_dir():
-            shutil.copytree(src, sv / d)
+            shutil.copytree(src, sv / d, ignore=shutil.ignore_patterns("*.toml.bak"))
 
     if (MC / "icon.png").is_file():
         # Minecraft only accepts a 64x64 server-icon.png; the instance icon is 192x192.
