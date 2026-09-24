@@ -10,11 +10,11 @@ Four mods in this pack are maintained in-house: three built specifically for it,
 
 The centerpiece of the pack. The original OreSpawn only ever existed for Minecraft 1.7.10, so it was ported to NeoForge 1.21.1 **from the original source code**, with the explicit goal of *faithful parity* — no reinvented content, no "modernized" balance, no invented behavior.
 
-How it was done (all of this is documented inside the repo itself):
+How it was done (the repo's changelog has the details):
 
 - The original 1.7.10 source lives in the repo under `reference_1_7_10_source/` and every ported system cites the original file and line it came from.
-- A full audit of the original produced **605 tracked findings** (`AUDIT_FINDINGS.md`), each with a stable ID, worked through in phases (`IMPLEMENTATION_PLAN.md`, phase reports in `phase_d_reports/`).
-- Every fix and decision is logged in `FIX_LOG.md`; deliberate deviations (there are very few) are recorded and signed off in `PARITY_NOTES`.
+- A full audit of the original produced **605 tracked findings**, each with a stable ID, worked through in phases.
+- Every fix is summarized in the changelog; the few deliberate deviations from the original are called out there too.
 - The ~25 hardcoded 1.7.10 structures were mapped to modern worldgen mechanisms following a documented conversion pattern, and the ~105-type SpawnOres block pool and 116 water-bucket egg recipes were reproduced exactly.
 
 What you get in game: the Crystal, Mining, Village, and Ant dimensions, the full boss ladder (Mobzilla, the King, the Queen, the Kraken, the Emperor Scorpion, the Basilisc...), Girlfriends and Boyfriends, Big Bertha and the Royal Guardian set, uranium/titanium ore progression, ant nests, dungeons — the whole 1.7.10 experience.
