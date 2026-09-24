@@ -1112,12 +1112,12 @@
   "version": "5.3.2"
  },
  {
-  "file": "orespawn-1.21.1-2.0.0-beta.10.jar",
-  "size_mb": 21.33,
+  "file": "orespawn-1.21.1-2.0.0-beta.11.jar",
+  "size_mb": 21.32,
   "loader": "neoforge",
   "modid": "orespawn",
   "name": "OreSpawn",
-  "version": "1.21.1-2.0.0-beta.10"
+  "version": "1.21.1-2.0.0-beta.11"
  },
  {
   "file": "orespawn_delight-0.1.0.jar",
