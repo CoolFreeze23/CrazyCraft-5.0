@@ -6,24 +6,25 @@ ROOT = Path(__file__).resolve().parent.parent
 inv = json.loads((ROOT / "docs" / "mod_inventory.json").read_text(encoding="utf-8"))
 
 NOTES = {
-    "orespawn": "**Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn))",
-    "orespawn_delight": "**Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight))",
-    "orespawn_integrations": "**Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations))",
-    "domesticationinnovation": "**Custom** — our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1))",
-    "securitycraft": "**Patched** — camera ChunkMap mixin removed (Immersive Portals conflict)",
-    "ars_nouveau": "**Patched** — embedded lambdynamiclights-api stripped",
-    "farmersrespite": "**Patched** — duplicate kettle menu registration removed (fixes a crash present in the published jar)",
-    "mr_randomizer_completeedition": "**Patched** — crafting table recipe syntax fixed",
-    "mob_mutator": "**Patched** — title-screen button mixin removed",
-    "fancymenu": "**Patched** — allows the custom title screen to hide the copyright line",
+    "orespawn": "Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn))",
+    "orespawn_delight": "Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight))",
+    "orespawn_integrations": "Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations))",
+    "domesticationinnovation": "Custom: our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1))",
+    "monster_hunter_villager": "Custom: our NeoForge port of Yoshi's mod ([repo](https://github.com/CoolFreeze23/monster-hunter-villager-neoforge))",
+    "securitycraft": "Patched: camera ChunkMap mixin removed (Immersive Portals conflict)",
+    "ars_nouveau": "Patched: embedded lambdynamiclights-api stripped",
+    "farmersrespite": "Patched: duplicate kettle menu registration removed (the published jar crashes without this)",
+    "mr_randomizer_completeedition": "Patched: crafting table recipe syntax fixed",
+    "mob_mutator": "Patched: title screen button mixin removed",
+    "fancymenu": "Patched: lets the custom title screen hide the copyright line",
     "yungsapi": "Updated to 5.1.7 for a worldgen NPE fix",
-    "fabric_api": "Forgified Fabric API — pinned as a matched pair with Connector",
+    "fabric_api": "Forgified Fabric API, pinned as a matched pair with Connector",
     "hbmsntm": "Unofficial 1.21.1 build of HBM's Nuclear Tech",
     "mcheli": "Unofficial 1.21.1 port of MC Helicopter",
 }
 
 FIXED = {
-    "connector-2.0.0-beta.16+1.21.1-full.jar": ("connector", "Sinytra Connector", "2.0.0-beta.16", "loader tech", "Runs Fabric mods on NeoForge — pinned as a matched pair with Forgified Fabric API"),
+    "connector-2.0.0-beta.16+1.21.1-full.jar": ("connector", "Sinytra Connector", "2.0.0-beta.16", "loader tech", "Runs Fabric mods on NeoForge. Pinned as a matched pair with Forgified Fabric API"),
     "dungeons-and-taverns-v4.4.4.jar": ("dungeons_and_taverns", "Dungeons and Taverns", "4.4.4", "datapack mod", ""),
     "kotlinforforge-5.8.0-all.jar": ("kotlinforforge", "Kotlin for Forge", "5.8.0", "neoforge", ""),
 }

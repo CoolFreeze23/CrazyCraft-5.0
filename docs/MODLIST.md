@@ -1,6 +1,6 @@
 # Full mod list
 
-201 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
+202 mods. Minecraft 1.21.1 / NeoForge 21.1.248. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | Apothic Spawners (`apothic_spawners`) | 1.4.0 | NeoForge |  |
 | AppleSkin (`appleskin`) | 3.0.9+mc1.21 | NeoForge |  |
 | Architectury (`architectury`) | 13.0.8 | NeoForge |  |
-| Ars Nouveau (`ars_nouveau`) | 5.13.0 | NeoForge | **Patched** — embedded lambdynamiclights-api stripped |
+| Ars Nouveau (`ars_nouveau`) | 5.13.0 | NeoForge | Patched: embedded lambdynamiclights-api stripped |
 | Artifacts (`artifacts`) | 13.2.1 | NeoForge |  |
 | Atlas Core (`atlas-core`) | 1.1.3 | Fabric (Connector) |  |
 | Auto HUD (`autohud`) | 8.4 | NeoForge |  |
@@ -56,7 +56,7 @@
 | Decocraft (`decocraft`) | 3.0.11 | NeoForge |  |
 | Distant Lands (`distantlandsmc`) | 1.5 | NeoForge |  |
 | Doggy Talents Next (`doggytalents`) | 1.19.0 | NeoForge |  |
-| Domestication Innovation (`domesticationinnovation`) | 2.0.0-1.21.1 | NeoForge | **Custom** — our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
+| Domestication Innovation (`domesticationinnovation`) | 2.0.0-1.21.1 | NeoForge | Custom: our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
 | Draggable Lists (`draggable_lists`) | 1.0.8 | NeoForge |  |
 | Dungeons and Taverns (`dungeons_and_taverns`) | 4.4.4 | datapack mod |  |
 | Enchanted (`enchanted`) | 4.2.7 | NeoForge |  |
@@ -68,14 +68,14 @@
 | EntityCulling (`entityculling`) | 1.10.5 | NeoForge |  |
 | Explosive Enhancement (`explosiveenhancement`) | 1.3.2-1.21-1.21.1 | Fabric (Connector) |  |
 | Fabric Language Kotlin (`fabric-language-kotlin`) | 1.13.1+kotlin.2.1.10 | Fabric (Connector) |  |
-| FancyMenu (`fancymenu`) | 3.9.7 | NeoForge | **Patched** — allows the custom title screen to hide the copyright line |
+| FancyMenu (`fancymenu`) | 3.9.7 | NeoForge | Patched: lets the custom title screen hide the copyright line |
 | FancyToasts (`fancytoasts`) | 1.4.7 | NeoForge |  |
 | Farmer's Delight (`farmersdelight`) | 1.3.2 | NeoForge |  |
-| Farmer's Respite (`farmersrespite`) | 3.0.0 | NeoForge | **Patched** — duplicate kettle menu registration removed (fixes a crash present in the published jar) |
+| Farmer's Respite (`farmersrespite`) | 3.0.0 | NeoForge | Patched: duplicate kettle menu registration removed (the published jar crashes without this) |
 | Ferrite Core (`ferritecore`) | 7.0.3 | NeoForge |  |
 | Fog (`fog`) | 1.8.0-1.21.1 | NeoForge |  |
 | Forge Config API Port (`forgeconfigapiport`) | 21.1.3 | NeoForge |  |
-| Forgified Fabric API (`fabric_api`) | 0.116.15+2.3.1+1.21.1 | NeoForge | Forgified Fabric API — pinned as a matched pair with Connector |
+| Forgified Fabric API (`fabric_api`) | 0.116.15+2.3.1+1.21.1 | NeoForge | Forgified Fabric API, pinned as a matched pair with Connector |
 | FramedBlocks (`framedblocks`) | 10.6.0 | NeoForge |  |
 | Framework (`framework`) | 0.13.11 | NeoForge |  |
 | Friends&Foes (`friendsandfoes`) | 4.0.27 | NeoForge |  |
@@ -119,9 +119,10 @@
 | Marvel Superheroes (`marvel`) | 2.1.0-pre6 | NeoForge |  |
 | MCHeli (`mcheli`) | 1.0.0 | NeoForge | Unofficial 1.21.1 port of MC Helicopter |
 | Melody (`melody`) | 1.0.10 | NeoForge |  |
-| Mob Mutator (`mob_mutator`) | 1.0.0 | NeoForge | **Patched** — title-screen button mixin removed |
+| Mob Mutator (`mob_mutator`) | 1.0.0 | NeoForge | Patched: title screen button mixin removed |
 | ModernFix (`modernfix`) | 5.27.20+mc1.21.1 | NeoForge |  |
 | Modopedia (`modopedia`) | 1.1.11 | NeoForge |  |
+| Monster Hunter Villager (`monster_hunter_villager`) | 1.3.1 | NeoForge | Custom: our NeoForge port of Yoshi's mod ([repo](https://github.com/CoolFreeze23/monster-hunter-villager-neoforge)) |
 | Moonlight Lib (`moonlight`) | 1.21.1-3.3.3 | NeoForge |  |
 | Mouse Tweaks (`mousetweaks`) | 2.26.1 | NeoForge |  |
 | Mowzie's Mobs (`mowziesmobs`) | 1.8.2 | NeoForge |  |
@@ -137,9 +138,9 @@
 | Ocean's Delight (`oceansdelight`) | 1.0.4 | NeoForge |  |
 | OctoLib (`octolib`) | 0.5.0.1 | NeoForge |  |
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
-| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.11 | NeoForge | **Custom** — our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
-| OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
-| OreSpawn Integrations (`orespawn_integrations`) | 0.8.0 | NeoForge | **Custom** — made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
+| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.11 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
+| OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
+| OreSpawn Integrations (`orespawn_integrations`) | 0.9.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | oωo (`owo`) | 0.12.15.1-beta.3+1.21 | NeoForge |  |
 | Packed Packs (`packed_packs`) | 2.2.3+1.21.1 | NeoForge |  |
 | Pandora's Box (`pandorasbox`) | 2.6.3 | Fabric (Connector) |  |
@@ -156,18 +157,18 @@
 | Punchy (`punchy`) | 2.7d | NeoForge |  |
 | Puzzles Lib (`puzzleslib`) | 21.1.51 | NeoForge |  |
 | Railcraft Reborn (`railcraft`) | 1.2.10 | NeoForge |  |
-| Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | Fabric (Connector) | **Patched** — crafting table recipe syntax fixed |
+| Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | Fabric (Connector) | Patched: crafting table recipe syntax fixed |
 | Rechiseled (`rechiseled`) | 1.2.5 | NeoForge |  |
 | Resourceful Lib (`resourcefullib`) | 3.0.12 | NeoForge |  |
 | Searchables (`searchables`) | 1.0.2 | NeoForge |  |
 | Secret Rooms: Reborn (1.21.1) (`secretroomsmod`) | 1.21-1.0.0 | NeoForge |  |
-| SecurityCraft (`securitycraft`) | 1.10.1 | NeoForge | **Patched** — camera ChunkMap mixin removed (Immersive Portals conflict) |
+| SecurityCraft (`securitycraft`) | 1.10.1 | NeoForge | Patched: camera ChunkMap mixin removed (Immersive Portals conflict) |
 | Serene Seasons (`sereneseasons`) | 10.1.0.3 | NeoForge |  |
 | Serious Player Animations (`seriousplayeranimations`) | 1.2.0 | Fabric (Connector) |  |
 | Shoulder Surfing Reloaded (`shouldersurfing`) | 1.21.1-4.11.0 | NeoForge |  |
 | Simple Lucky Block (`simpleluckyblock`) | 1.0.0 | NeoForge |  |
 | Simple RPC (`simplerpc`) | 4.1.3+release.0 | NeoForge |  |
-| Sinytra Connector (`connector`) | 2.0.0-beta.16 | loader tech | Runs Fabric mods on NeoForge — pinned as a matched pair with Forgified Fabric API |
+| Sinytra Connector (`connector`) | 2.0.0-beta.16 | loader tech | Runs Fabric mods on NeoForge. Pinned as a matched pair with Forgified Fabric API |
 | sittingplus (`sittingplus`) | 1.0.0 | Fabric (Connector) |  |
 | Sodium (`sodium`) | 0.6.13+mc1.21.1 | NeoForge |  |
 | Sodium Dynamic Lights (`sodiumdynamiclights`) | 1.0.9 | NeoForge |  |
