@@ -1,0 +1,92 @@
+{
+  "pack": {
+    "name": "CrazyCraft 5.0",
+    "repo": "CoolFreeze23/CrazyCraft-5.0"
+  },
+  "github": [
+    {
+      "pattern": "^orespawn-(1\\.21\\.1-.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/Orespawn/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/Orespawn",
+      "license": "See repository"
+    },
+    {
+      "pattern": "^orespawn_integrations-(.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/orespawn-integrations",
+      "license": "See repository"
+    },
+    {
+      "pattern": "^orespawn_delight-(.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/orespawn-delight/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/orespawn-delight",
+      "license": "See repository"
+    },
+    {
+      "pattern": "^monster_hunter_villager-neoforge-1\\.21\\.1-(.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/monster-hunter-villager-neoforge/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/monster-hunter-villager-neoforge",
+      "license": "See repository"
+    },
+    {
+      "pattern": "^domesticationinnovation-(.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1",
+      "license": "See repository"
+    },
+    {
+      "pattern": "^braziliandelight-neoforge-(.+)\\.jar$",
+      "url": "https://github.com/CoolFreeze23/braziliandelight-neoforge/releases/download/v{1}/{file}",
+      "page": "https://github.com/CoolFreeze23/braziliandelight-neoforge",
+      "license": "MIT"
+    }
+  ],
+  "patched": {
+    "SecurityCraft-1.21.1-v1.10.1.jar": {
+      "modrinthVersion": "5yIP4ezg",
+      "originalFile": "[1.21.1] SecurityCraft v1.10.1.jar",
+      "why": "Removes its camera ChunkMap mixin, which crashes on world load next to Immersive Portals (needed by the Portal Gun)."
+    },
+    "farmersrespite-1.21.1-3.0.0-menufix.jar": {
+      "modrinthVersion": "wgh8Q9vs",
+      "originalFile": "farmersrespite-1.21.1-3.0.0.jar",
+      "why": "Skips the second registration of its kettle menu, which crashes the game, and fixes its red dye recipe for 1.21.1."
+    },
+    "ars_nouveau-1.21.1-5.13.0.jar": {
+      "modrinthVersion": "ugLa4qlw",
+      "originalFile": "ars_nouveau-1.21.1-5.13.0.jar",
+      "why": "Leaves out its bundled LambDynamicLights API, which conflicts with the pack's mods."
+    },
+    "randomizer-complete-edition-v0.6.jar": {
+      "modrinthVersion": "bnw3kV8i",
+      "originalFile": "randomizer-complete-edition-v0.6.jar",
+      "why": "Fixes its crafting table recipe, which uses recipe syntax 1.21.1 can't read."
+    },
+    "mob_mutator-1.0.0.jar": {
+      "modrinthVersion": "D9nnCi3h",
+      "originalFile": "mob_mutator-1.0.0.jar",
+      "why": "Removes its title screen mixin, which forces an editor button onto the pack's title screen."
+    },
+    "fancymenu_neoforge_3.9.7_MC_1.21.1.jar": {
+      "modrinthVersion": "AawWP7d6",
+      "originalFile": "fancymenu_neoforge_3.9.7_MC_1.21.1.jar",
+      "why": "One-byte change that lets the pack's title screen lay out every button itself."
+    },
+    "Structory_Towers_26.2_v1.0.17.jar": {
+      "modrinthVersion": "ziO4YIv1",
+      "originalFile": "Structory_Towers_26.2_v1.0.17.jar",
+      "why": "Declares it a data-only mod (lowcodefml), which NeoForge 1.21.1 needs to load it."
+    }
+  },
+  "extract": [
+    {
+      "from": "MCHeli-1.21.1-1.3.0.jar",
+      "entry": "assets/mcheli/models/planes/a-10.mqo",
+      "to": "mcheli/orespawn_uranium/models/planes/a-10_du.mqo",
+      "why": "The uranium A-10 uses MCHeli's own A-10 model, copied from the MCHeli jar on install."
+    }
+  ],
+  "manualNotes": {
+    "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."
+  }
+}

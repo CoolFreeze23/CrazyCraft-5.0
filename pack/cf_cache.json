@@ -1,0 +1,65 @@
+{
+ "371dd7079b174091363327df70ed64c84e8e36fcab49b4c33bbcbe39650f6bccc12d3e14818cdfbbaa519a999f64a0a92c03ec981f55a315b044dc7cb5c27ef4": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/7797/302/twilightforest-1.21.1-4.8.3345-universal.jar",
+  "file": 7797302,
+  "fileName": "twilightforest-1.21.1-4.8.3345-universal.jar",
+  "name": "The Twilight Forest",
+  "project": 227639,
+  "slug": "the-twilight-forest"
+ },
+ "4aba98b9f7ee48e5501e4d279abe676ad677ebb9842eb8526c4e42a5aebc98127e23bd18ddcf13cca8ad6bd399df4fac13fe83c430fc23464a4fd0bc13c04175": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/8606/793/GravityGunRevival-1.21.1-1.1.0.jar.jar",
+  "file": 8606793,
+  "fileName": "GravityGunRevival-1.21.1-1.1.0.jar.jar",
+  "name": "iChun Gravity Gun Mod Revival",
+  "project": 1452616,
+  "slug": "ichun-gravity-gun-mod-revival"
+ },
+ "5036d244c5fcf19fdf4ca14342ebc76ab9c4488cb767372a1d26fc9963ae9116839873b95d4823096c3e312e6fe219079acdba2952aedaec6bb091bc752fa1ab": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/8312/0/Chunk-Pregenerator-Neoforge-1.21-4.5.3.jar",
+  "file": 8312000,
+  "fileName": "Chunk-Pregenerator-Neoforge-1.21-4.5.3.jar",
+  "name": "Chunk-Pregenerator",
+  "project": 267193,
+  "slug": "chunkpregenerator"
+ },
+ "76599d3abed095bf0aa8b2ce971931f80a2a809ae92e3a58561759a53e80cc8350ce1e6bdfb39563349c08dd5e4a2c4ba5f9cfb78b62582dd543270240f11463": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/7099/904/refurbished_furniture-neoforge-1.21.1-1.0.19.jar",
+  "file": 7099904,
+  "fileName": "refurbished_furniture-neoforge-1.21.1-1.0.19.jar",
+  "name": "MrCrayfish's Furniture Mod: Refurbished",
+  "project": 897116,
+  "slug": "refurbished-furniture"
+ },
+ "91ad50bc7a55207c6126933de14b2f9aeb39a85a99f07ec6d80d4bd89380880f0bbf149729af22fd0a3fa45922d2bf0055a315b3fc42e351dea063297343e578": {
+  "allowModDistribution": false,
+  "downloadUrl": "https://edge.forgecdn.net/files/8549/714/MCHeli-1.21.1-1.3.0.jar",
+  "file": 8549714,
+  "fileName": "MCHeli-1.21.1-1.3.0.jar",
+  "name": "MCHeli [MODERN PORT]",
+  "project": 1612895,
+  "slug": "mcheli-modern-port"
+ },
+ "bcc662c5588d0bd898f0878913b6d94d13e8fe7d58b54ae4fa15cf584a6ed5a4d202533f71f7ca40affcbd221da3d29d8b3af06329ae84faf75c68da99f27551": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/7530/361/framework-neoforge-1.21.1-0.13.11.jar",
+  "file": 7530361,
+  "fileName": "framework-neoforge-1.21.1-0.13.11.jar",
+  "name": "Framework",
+  "project": 549225,
+  "slug": "framework"
+ },
+ "d8bd0e707c66df4e8dc40fbdd8454b41e78b6354302dcd52a277091e004ef8432fffa9a33f5da40c09ec80d8b4bb3f15ddc594cf891a026d6ba775677864fb58": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/6611/984/ProjectE-1.21.1-PE1.1.0.jar",
+  "file": 6611984,
+  "fileName": "ProjectE-1.21.1-PE1.1.0.jar",
+  "name": "ProjectE",
+  "project": 226410,
+  "slug": "projecte"
+ }
+}

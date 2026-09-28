@@ -11,7 +11,7 @@ Get the latest files from the [Releases](../../releases) page:
 | File | What it is |
 |---|---|
 | `CrazyCraft5-Client.zip` | Full client pack, importable into Prism Launcher or MultiMC |
-| `CrazyCraft5-Server.zip` | Ready-to-run dedicated server. Unzip, double-click, play. |
+| `CrazyCraft5-Server.zip` | Dedicated server files. The setup downloads every mod from its official page. |
 
 ### Client (Prism Launcher or MultiMC, recommended)
 
@@ -27,11 +27,12 @@ Any launcher that imports MultiMC-format instances works the same way. For a man
 
 1. Install Java 21 ([Adoptium Temurin 21](https://adoptium.net/temurin/releases/?version=21)).
 2. Unzip `CrazyCraft5-Server.zip` into an empty folder.
-3. Run `start.bat` (Windows) or `./start.sh` (Linux/macOS).
-4. The first run installs NeoForge automatically and asks you to accept the [Minecraft EULA](https://aka.ms/MinecraftEULA). Type `yes`.
-5. That's it. The server starts on port `25565`. Give it 6 to 8 GB of RAM. The start script uses 6 GB by default; edit the first lines of the script to change it.
+3. Windows: double-click `CrazyCraft Server Setup.bat`. Linux/macOS or a server without a screen: `./startserver.sh`.
+4. Setup installs NeoForge and downloads all 163 server mods from their official pages (Modrinth, CurseForge and our own GitHub releases), checking every file. It asks how much memory the server gets and about the [Minecraft EULA](https://aka.ms/MinecraftEULA).
+5. One mod, MCHeli, can only be downloaded from CurseForge itself. Setup shows you the page and picks up the file from your Downloads folder.
+6. That's it. Start the server with `startserver.bat` / `./startserver.sh`; it checks the mods first and restarts the server if it stops. The server runs on port `25565` with 6 to 8 GB of RAM.
 
-Full server details (what was left out of the server pack, tuning, troubleshooting) are in [docs/SERVER.md](docs/SERVER.md).
+How setup works, updating, tuning and troubleshooting are in [docs/SERVER.md](docs/SERVER.md).
 
 ## What makes this pack different
 
@@ -42,7 +43,7 @@ Besides the mod list itself, a lot of custom work went into the pack:
 - [OreSpawn Delight](docs/CUSTOM_MODS.md#orespawn-delight), a Farmer's Delight add-on with meats, dishes and feasts cooked from OreSpawn creatures. [Source repo](https://github.com/CoolFreeze23/orespawn-delight).
 - [Domestication Innovation](docs/CUSTOM_MODS.md#domestication-innovation-port), alex_the_668's pet overhaul, ported from Forge 1.20.1 to NeoForge 1.21.1, with new collar enchantments and datapack taming added. [Source repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1).
 - [Monster Hunter Villager](docs/CUSTOM_MODS.md#monster-hunter-villager-port), our NeoForge 1.21.1 port of Yoshi's Forge 1.20.1 mod. It adds a villager that hunts monsters with thrown traps and a knife. The original ran its hunter and trap code on every mob in the world every tick; the port only runs it for Monster Hunters and placed traps. [Source repo](https://github.com/CoolFreeze23/monster-hunter-villager-neoforge).
-- [Patched jars](docs/MODIFICATIONS.md#patched-jars) for mods with no fixed release. The crash fixes and compatibility patches go straight into the published jars (SecurityCraft with Immersive Portals, Farmer's Respite's broken menu registration, and more).
+- [Patched jars](docs/MODIFICATIONS.md#patched-jars) for mods with no fixed release. The server setup downloads the published jars and applies the crash fixes and compatibility patches on install (SecurityCraft with Immersive Portals, Farmer's Respite's broken menu registration, and more).
 - [A full pt-BR translation](docs/MODIFICATIONS.md#brazilian-portuguese-resource-pack) of every mod in the pack, shipped as the `CrazyCraft5-ptBR` resource pack and turned on by default.
 - [Config changes](docs/MODIFICATIONS.md#config-changes) to combat, performance and menus so everything works together, plus a custom OreSpawn title screen.
 
@@ -54,7 +55,7 @@ Besides the mod list itself, a lot of custom work went into the pack:
 | [docs/MODIFICATIONS.md](docs/MODIFICATIONS.md) | Every patched jar, config change, and the pt-BR pack |
 | [docs/MODLIST.md](docs/MODLIST.md) | The full mod list with versions and notes |
 | [docs/INSTALLING.md](docs/INSTALLING.md) | Manual and other install methods |
-| [docs/SERVER.md](docs/SERVER.md) | Server pack internals, tuning, troubleshooting |
+| [docs/SERVER.md](docs/SERVER.md) | Server setup, updating, tuning, troubleshooting |
 
 ## Requirements
 
@@ -66,4 +67,4 @@ Besides the mod list itself, a lot of custom work went into the pack:
 
 ## Credits & legal
 
-All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668 and Monster Hunter Villager is by Yoshi; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.
+All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. The server files don't include anyone's mods: the setup downloads each one from its official page, and `pack/manifest.json` shows exactly where every file comes from. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668 and Monster Hunter Villager is by Yoshi; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.

@@ -1,7 +1,8 @@
 """Build CrazyCraft5-Client.zip and the server pack directory.
 
 Client zip = MultiMC/Prism importable instance.
-Server dir = mods (minus client-only) + configs + start scripts; zipped after boot testing.
+Server files = the loader, its manifest, start scripts and configs; no mod jars (pack/manifest.json
+says where each mod is downloaded from). "assemble" installs a complete server with the loader.
 """
 import json
 import shutil
@@ -109,69 +110,123 @@ def is_excluded(name):
     return any(pat.lower() in low for pat in SERVER_EXCLUDE)
 
 
-def build_server_dir():
-    sv = BUILD / "server-pack"
-    if sv.exists():
-        shutil.rmtree(sv)
-    sv.mkdir(parents=True)
+def load_manifest():
+    return json.loads((ROOT / "pack" / "manifest.json").read_text(encoding="utf-8"))
 
-    kept, skipped = [], []
-    (sv / "mods").mkdir()
-    for p in sorted((MC / "mods").glob("*.jar")):
-        if is_excluded(p.name):
-            skipped.append(p.name)
-        else:
-            shutil.copy2(p, sv / "mods" / p.name)
-            kept.append(p.name)
 
+def write_credits(manifest, path):
+    lines = [f"{manifest['pack']['name']} {manifest['pack']['version']} - mods and where they come from",
+             "=" * 72, "",
+             "The pack doesn't host other people's mods. The server setup downloads each one from the page",
+             "below, where you also find its license and support. Thanks to every author in this list.", ""]
+    mods = sorted((m for m in manifest["mods"] if m["side"] != "client"), key=lambda m: m["name"].lower())
+    for m in mods:
+        src = {"modrinth": "Modrinth", "curseforge": "CurseForge", "github": "GitHub",
+               "manual": "CurseForge (download by hand)"}[m["source"]["type"]]
+        lic = f", license {m['license']}" if m.get("license") and m["license"] != "See repository" else ""
+        lines.append(f"{m['name']} {m['version']}  ({src}{lic})")
+        lines.append(f"    {m['source']['page']}")
+        if m.get("patch"):
+            lines.append(f"    Fixed for the pack on install: {m['patch']['why']}")
+    lines.append("")
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def build_server_files():
+    """The server files players download: the loader, its manifest, start scripts and configs. No mod jars."""
+    out = BUILD / "server-files"
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+    manifest = load_manifest()
+    loader = BUILD / "loader" / "crazycraft-loader.jar"
+    if not loader.is_file():
+        raise SystemExit("build the loader first: python loader/build.py")
+    shutil.copy2(loader, out / "crazycraft-loader.jar")
+    shutil.copy2(ROOT / "pack" / "manifest.json", out / "crazycraft-manifest.json")
     for d in ["config", "defaultconfigs", "mcheli", "moonlight-global-datapacks"]:
         src = MC / d
         if src.is_dir():
-            shutil.copytree(src, sv / d, ignore=shutil.ignore_patterns("*.toml.bak"))
-
+            shutil.copytree(src, out / d, ignore=shutil.ignore_patterns("*.toml.bak"))
+    # files the loader copies out of a mod's own jar on install don't ship with the pack
+    for x in manifest["extract"]:
+        p = out / x["to"]
+        if p.is_file():
+            p.unlink()
     if (MC / "icon.png").is_file():
         # Minecraft only accepts a 64x64 server-icon.png; the instance icon is 192x192.
         try:
             from PIL import Image
-            Image.open(MC / "icon.png").convert("RGBA").resize((64, 64), Image.LANCZOS).save(sv / "server-icon.png")
+            Image.open(MC / "icon.png").convert("RGBA").resize((64, 64), Image.LANCZOS).save(out / "server-icon.png")
         except ImportError:
             print("  (Pillow missing: server-icon.png skipped, it must be 64x64)")
-
     for f in (ROOT / "server").iterdir():
-        shutil.copy2(f, sv / f.name)
-
-    (sv / "REMOVED_CLIENT_MODS.txt").write_text("\n".join(skipped), encoding="utf-8")
-    print(f"server: kept {len(kept)} mods, removed {len(skipped)} client-only:")
-    for s in skipped:
-        print("  -", s)
+        if f.is_file() and f.suffix != ".jar":
+            data = f.read_bytes().replace(b"\r\n", b"\n")
+            if f.suffix == ".bat":
+                data = data.replace(b"\n", b"\r\n")
+            (out / f.name).write_bytes(data)
+    write_credits(manifest, out / "CREDITS.txt")
+    jars = sum(1 for _ in out.rglob("*.jar"))
+    server_mods = sum(1 for m in manifest["mods"] if m["side"] != "client")
+    print(f"server files: {sum(1 for p in out.rglob('*') if p.is_file())} files, {jars} jar (the loader), "
+          f"{server_mods} mods in the manifest -> {out}")
 
 
 def zip_server():
-    sv = BUILD / "server-pack"
+    src = BUILD / "server-files"
     out = BUILD / "CrazyCraft5-Server.zip"
     if out.exists():
         out.unlink()
     n = 0
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as z:
-        for p in sv.rglob("*"):
+        for p in sorted(src.rglob("*")):
             if p.is_file():
-                # runtime artifacts from boot testing must not ship
-                rel = p.relative_to(sv).as_posix()
-                if rel.split("/")[0] in ("libraries", "world", "logs", "crash-reports",
-                                         "cache", "debug", ".cache", ".minecraft",
-                                         ".mixin.out", ".connector", "journeymap",
-                                         "local", "dynamic-data-pack-cache",
-                                         "customnpcs", "patchouli_books"):
-                    continue
-                if rel in ("eula.txt", "usercache.json", "usernamecache.json",
-                           "session.lock", "banned-ips.json", "banned-players.json",
-                           "ops.json", "whitelist.json", "boot-test.log",
-                           "fabricloader.log", "run.bat", "run.sh",
-                           "user_jvm_args.txt", "neoforge-21.1.248-installer.jar.log"):
-                    continue
-                z.write(p, rel)
+                info = zipfile.ZipInfo.from_file(p, p.relative_to(src).as_posix(), strict_timestamps=False)
+                if p.suffix == ".sh":
+                    info.external_attr = 0o100755 << 16
+                info.compress_type = zipfile.ZIP_DEFLATED
+                z.writestr(info, p.read_bytes())
                 n += 1
-    print(f"server zip: {n} files -> {out} ({out.stat().st_size/1048576:.0f} MB)")
+    print(f"server zip: {n} files -> {out} ({out.stat().st_size / 1048576:.1f} MB)")
+
+
+def assemble_server():
+    """A complete server in build/server-pack, installed by the loader itself: for boot tests and the pack's server.
+
+    The by-hand mods are copied in from the instance, as a player would save them into manual/. Our own mods whose
+    GitHub release isn't published yet are placed in mods/ up front (the loader checks them like any other file).
+    """
+    import subprocess
+    import urllib.error
+    import urllib.request
+    manifest = load_manifest()
+    sv = BUILD / "server-pack"
+    if sv.exists():
+        shutil.rmtree(sv)
+    shutil.copytree(BUILD / "server-files", sv)
+    (sv / "manual").mkdir(exist_ok=True)
+    (sv / "mods").mkdir(exist_ok=True)
+    for m in manifest["mods"]:
+        if m["side"] == "client":
+            continue
+        if m["source"]["type"] == "manual":
+            shutil.copy2(MC / "mods" / m["file"], sv / "manual" / m["file"])
+            print(f"  staged by hand: {m['file']}")
+        elif m["source"]["type"] == "github":
+            try:
+                req = urllib.request.Request(m["source"]["url"], method="HEAD",
+                                             headers={"User-Agent": "CoolFreeze23/CrazyCraft-5.0"})
+                urllib.request.urlopen(req, timeout=30).close()
+            except urllib.error.HTTPError:
+                shutil.copy2(MC / "mods" / m["file"], sv / "mods" / m["file"])
+                print(f"  not released yet, placed from the instance: {m['file']}")
+    java = Path(r"C:\Users\alvin\AppData\Roaming\PrismLauncher\java\java-runtime-delta\bin\java.exe")
+    r = subprocess.run([str(java), "-jar", str(sv / "crazycraft-loader.jar"), "--nogui", "--accept-eula",
+                        "--dir", str(sv)], cwd=sv)
+    print("loader exit:", r.returncode)
+    if r.returncode != 0:
+        raise SystemExit(r.returncode)
 
 
 if __name__ == "__main__":
@@ -179,6 +234,9 @@ if __name__ == "__main__":
     if what in ("all", "client"):
         build_client()
     if what in ("all", "server"):
-        build_server_dir()
+        build_server_files()
+        zip_server()
     if what == "zipserver":
         zip_server()
+    if what == "assemble":
+        assemble_server()

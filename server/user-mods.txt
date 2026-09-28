@@ -1,0 +1,7 @@
+# Mods you add to this server yourself go into mods/ as usual. List their file names here,
+# one per line, so setup leaves them alone. Setup moves any other jar that isn't part of
+# CrazyCraft 5.0 to mods-removed/ (it never deletes anything), which keeps old versions from
+# clashing with new ones after an update.
+#
+# example:
+# ftb-backups-2.1.2.jar

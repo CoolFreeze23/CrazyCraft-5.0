@@ -4,18 +4,19 @@ Apart from the five custom mods, several published mods and configs were changed
 
 ## Patched jars
 
-Six published mods ship as locally patched jars, because no fixed upstream release exists. Each patch is the smallest change that works (usually one mixin entry or a few bytes), and the untouched original is what you get if you download the mod again from its official page.
+Seven published mods need a small fix to work in the pack, because no fixed upstream release exists. Each fix is the smallest change that works (usually one mixin entry or a few bytes). The server setup downloads the untouched original from its official page and applies the fix on install; `pack/manifest.json` lists every edit, and the result is checked before it's used. `scripts/gen_manifest.py` works the edits out by comparing the pack's jar with the original.
 
 | Mod | Patch | Why |
 |---|---|---|
 | SecurityCraft 1.10.1 | Removed its camera `ChunkMap` mixin | Immersive Portals (required by the Portal Gun) rewrites `ChunkMap.onChunkReadyToSend`, and SecurityCraft's camera mixin hard-crashes on world load when it can't hook it. The only side effect: camera monitors won't force-load far-away chunks. |
-| Farmer's Respite 3.0.0 (`-menufix`) | Replaced a 7-byte duplicate registration call with NOPs | The only published 1.21.1 port registers its `farmersrespite:kettle` menu type twice, which crashes every time, in any pack. The patch removes the leftover duplicate and the kettle works normally. |
+| Farmer's Respite 3.0.0 (`-menufix`) | Replaced a 7-byte duplicate registration call with NOPs, and `"item"` with `"id"` in its red dye recipe | The only published 1.21.1 port registers its `farmersrespite:kettle` menu type twice, which crashes every time, in any pack. The patch removes the leftover duplicate and the kettle works normally. The red dye recipe used the pre-1.21 result format. |
 | Ars Nouveau 5.13.0 | Stripped the embedded `lambdynamiclights-api` | The bundled API stub conflicted with this pack's mod set. |
 | Randomizer Complete Edition v0.6 | Fixed its `crafting_table` recipe file | The datapack uses newer recipe JSON syntax that 1.21.1 can't parse, so crafting tables could become uncraftable when randomized. |
 | Mob Mutator 1.0.0 | Removed its `TitleScreenMixin` from the mixin config | It forces an "editor" button onto the title screen that the layout can't hide. Removing the mixin only removes the button; all the gameplay mixins are intact. |
 | FancyMenu 3.9.7 | One-byte patch to the `isCopyrightButton()` check | FancyMenu deliberately stops packs from hiding the Mojang copyright line. The patch lets the pack's custom title screen control the whole layout. |
+| Structory: Towers 1.0.17 | Added `modLoader="lowcodefml"` to its `neoforge.mods.toml` | It's a data-only mod without a mod class, and NeoForge 1.21.1 only loads such a jar when it says so. |
 
-> Note for updaters: if you ever update one of these six mods, the same patch has to be applied again (or the fix is lost). Everything else in `mods/` is stock.
+> Note for updaters: if you ever update one of these seven mods, the fix has to be made again and `pack/sources.json` pointed at the new original (the manifest generator then works out the edits). Everything else in `mods/` is stock.
 
 ## Deliberate version pins
 

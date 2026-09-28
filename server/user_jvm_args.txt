@@ -1,0 +1,14 @@
+# Java settings for the server. -Xmx is the most memory the server may use, -Xms what it starts with.
+# 6 GB is the minimum for CrazyCraft 5.0 and 8 GB is better. The setup window can change -Xmx for you.
+-Xms4G
+-Xmx6G
+-XX:+UseG1GC
+-XX:+ParallelRefProcEnabled
+-XX:MaxGCPauseMillis=130
+-XX:+UnlockExperimentalVMOptions
+-XX:+DisableExplicitGC
+-XX:G1NewSizePercent=30
+-XX:G1MaxNewSizePercent=40
+-XX:G1HeapRegionSize=8M
+-XX:G1ReservePercent=20
+-XX:InitiatingHeapOccupancyPercent=15
