@@ -62,11 +62,13 @@ final class Gui implements Installer.Listener {
             "Warming up the Nightmare Rookery", "Oiling the chainsaw", "Hiding the Emperor Scorpion"};
 
     private final Manifest manifest;
+    private final Installer.Mode mode;
+    private final boolean client;
     private Path dir;
     final JPanel root = new JPanel(new BorderLayout());
     private JFrame frame;
 
-    private final Theme.StepList steps = new Theme.StepList();
+    private final Theme.StepList steps;
     private final Theme.GlowBar bar = new Theme.GlowBar();
     private final JLabel headline = label("", Font.BOLD, 21f, Theme.TEXT);
     private final JLabel stats = label(" ", Font.PLAIN, 13f, Theme.MUTED);
@@ -103,6 +105,8 @@ final class Gui implements Installer.Listener {
     private volatile Installer installer;
     private volatile boolean working;
     private boolean ready;
+    private boolean autoExit;
+    private Installer.Result lastResult;
     private List<Manifest.Mod> manualMissing = new ArrayList<>();
     private CountDownLatch manualLatch;
     private Timer manualPoll;
@@ -110,20 +114,51 @@ final class Gui implements Installer.Listener {
     private long lastTime;
     private double speed;
 
-    Gui(Manifest manifest, Path dir) {
+    Gui(Manifest manifest, Path dir, Installer.Mode mode) {
         this.manifest = manifest;
+        this.mode = mode;
+        this.client = mode == Installer.Mode.CLIENT;
         this.dir = dir;
+        this.steps = new Theme.StepList(client
+                ? List.of(Installer.Step.JAVA, Installer.Step.MODS, Installer.Step.FILES, Installer.Step.TIDY)
+                : List.of(Installer.Step.values()));
         build();
         refreshIdle();
     }
 
+    /** The files this window installs: mods and resource packs for the game, mods for a server. */
+    private List<Manifest.Mod> wanted() {
+        return manifest.mods().stream().filter(m -> client ? m.onClient() : m.onServer()).toList();
+    }
+
+    private String countText(List<Manifest.Mod> files) {
+        long packs = files.stream().filter(m -> !"mods".equals(m.dir())).count();
+        long mods = files.size() - packs;
+        return mods + " mods" + (packs > 0 ? " and " + packs + " resource packs" : "");
+    }
+
+    /** What the game launcher is told when the window closes: 0 starts the game, anything else stops it. */
+    private int exitCode() {
+        return ready ? 0 : lastResult == Installer.Result.INCOMPLETE ? 3 : 1;
+    }
+
     // ---- entry points ----
 
-    static void open(Manifest manifest, Path dir) {
+    static void open(Manifest manifest, Path dir, Installer.Mode mode) {
         SwingUtilities.invokeLater(() -> {
-            Gui gui = new Gui(manifest, dir);
-            JFrame f = new JFrame(manifest.packName() + " Server Setup");
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Gui gui = new Gui(manifest, dir, mode);
+            JFrame f = new JFrame(manifest.packName() + (gui.client ? "" : " Server Setup"));
+            if (gui.client) {
+                f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                f.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(gui.exitCode());
+                    }
+                });
+            } else {
+                f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            }
             f.setContentPane(gui.root);
             f.setIconImages(Theme.ICONS.stream().filter(i -> i != null).toList());
             f.setSize(1000, 790);
@@ -133,14 +168,18 @@ final class Gui implements Installer.Listener {
             gui.startAnimation();
             gui.checkForUpdate();
             f.setVisible(true);
+            if (gui.client) {
+                gui.autoExit = true;
+                gui.onPrimary();
+            }
         });
     }
 
     /** Renders the window into a PNG without ever showing it, for the docs and for checking the layout. */
-    static void screenshot(Manifest manifest, Path dir, String demo, Path out) throws Exception {
+    static void screenshot(Manifest manifest, Path dir, Installer.Mode mode, String demo, Path out) throws Exception {
         BufferedImage[] img = new BufferedImage[1];
         SwingUtilities.invokeAndWait(() -> {
-            Gui gui = new Gui(manifest, dir);
+            Gui gui = new Gui(manifest, dir, mode);
             gui.demo(demo);
             img[0] = gui.render(1000, 790);
         });
@@ -181,8 +220,9 @@ final class Gui implements Installer.Listener {
 
     private void build() {
         root.setBackground(Theme.BG);
-        root.add(new Theme.Header(("SERVER SETUP  ·  PACK " + manifest.packVersion() + "  ·  MINECRAFT "
-                + manifest.minecraft()).toUpperCase(Locale.ROOT)), BorderLayout.NORTH);
+        root.add(new Theme.Header(((client ? "GETTING YOUR GAME READY" : "SERVER SETUP") + "  ·  PACK "
+                + manifest.packVersion() + "  ·  MINECRAFT " + manifest.minecraft()).toUpperCase(Locale.ROOT)),
+                BorderLayout.NORTH);
 
         JPanel body = new JPanel(new BorderLayout());
         body.setBackground(Theme.BG);
@@ -212,7 +252,9 @@ final class Gui implements Installer.Listener {
         main.add(Box.createVerticalStrut(12));
         cards.setOpaque(false);
         cards.setAlignmentX(Component.LEFT_ALIGNMENT);
-        cards.add(startCard(), "start");
+        if (!client) {
+            cards.add(startCard(), "start");
+        }
         cards.add(workingCard(), "working");
         cards.add(manualCard(), "manual");
         cards.add(doneCard(), "done");
@@ -337,7 +379,10 @@ final class Gui implements Installer.Listener {
         c.add(label("Hang tight", Font.BOLD, 16f, Theme.TEXT), g);
         g.gridy++;
         g.insets = new Insets(6, 0, 0, 0);
-        c.add(paragraph("Setup retries a download that stalls and checks every file before it goes into mods/. "
+        c.add(paragraph(client
+                ? "The first start downloads every mod and resource pack from its official page, checks each file and "
+                + "then starts the game. Later starts only check the files, which takes a second."
+                : "Setup retries a download that stalls and checks every file before it goes into mods/. "
                 + "Jars that are no longer part of the pack are moved to mods-removed/, never deleted."), g);
         topAlign(c, g);
         return c;
@@ -381,6 +426,11 @@ final class Gui implements Installer.Listener {
         g.insets = new Insets(6, 0, 0, 0);
         c.add(doneText, g);
         g.gridy++;
+        if (client) {
+            c.add(paragraph("The game starts now. Have fun!"), g);
+            topAlign(c, g);
+            return c;
+        }
         c.add(paragraph("Players join with the " + manifest.packName() + " v" + manifest.packVersion()
                 + " client. The server's own window has the console; type stop there to shut it down."), g);
         g.gridy++;
@@ -435,8 +485,20 @@ final class Gui implements Installer.Listener {
     // ---- state ----
 
     private void refreshIdle() {
-        folderLabel.setText("Server folder:  " + Theme.ellipsize(folderLabel.getFontMetrics(folderLabel.getFont()),
-                dir.toString(), 360));
+        folderLabel.setText((client ? "Game folder:  " : "Server folder:  ")
+                + Theme.ellipsize(folderLabel.getFontMetrics(folderLabel.getFont()), dir.toString(), 360));
+        if (client) {
+            changeFolder.setVisible(false);
+            headline.setText("Getting your game ready");
+            stats.setText(countText(wanted()) + ", each from its official page.");
+            primary.setText("Working...");
+            primary.setEnabled(false);
+            current.setText(" ");
+            fun.setText(" ");
+            bar.set(0, false);
+            show("working");
+            return;
+        }
         int mem = Installer.memoryGb(dir);
         long max = Math.max(4, Math.min(32, physicalGb() - 2));
         memory.setMaximum((int) max);
@@ -490,17 +552,25 @@ final class Gui implements Installer.Listener {
             return;
         }
         if (ready) {
-            startServer();
+            if (client) {
+                if (autoExit) {
+                    System.exit(0);
+                }
+            } else {
+                startServer();
+            }
             return;
         }
-        try {
-            Installer.setMemoryGb(dir, memory.getValue());
-            if (eulaStart.isSelected()) {
-                Installer.acceptEula(dir);
+        if (!client) {
+            try {
+                Installer.setMemoryGb(dir, memory.getValue());
+                if (eulaStart.isSelected()) {
+                    Installer.acceptEula(dir);
+                }
+            } catch (IOException e) {
+                appendLog("Can't write to " + dir + ": " + e.getMessage());
+                return;
             }
-        } catch (IOException e) {
-            appendLog("Can't write to " + dir + ": " + e.getMessage());
-            return;
         }
         working = true;
         ready = false;
@@ -508,13 +578,13 @@ final class Gui implements Installer.Listener {
         primary.setText("Working...");
         primary.setEnabled(false);
         changeFolder.setVisible(false);
-        headline.setText("Setting up");
+        headline.setText(client ? "Getting your game ready" : "Setting up");
         show("working");
         speed = 0;
         lastTime = System.currentTimeMillis();
         lastBytes = 0;
         Thread t = new Thread(() -> {
-            Installer ins = new Installer(dir, manifest, this);
+            Installer ins = new Installer(dir, manifest, this, mode);
             installer = ins;
             Installer.Result r = ins.run();
             SwingUtilities.invokeLater(() -> finished(r));
@@ -526,7 +596,8 @@ final class Gui implements Installer.Listener {
     private void finished(Installer.Result r) {
         working = false;
         installer = null;
-        changeFolder.setVisible(true);
+        lastResult = r;
+        changeFolder.setVisible(!client);
         primary.setEnabled(true);
         current.setText(" ");
         fun.setText(" ");
@@ -534,6 +605,22 @@ final class Gui implements Installer.Listener {
             case READY -> {
                 ready = true;
                 bar.set(1, false);
+                if (client) {
+                    headline.setText("Ready to play!");
+                    stats.setText(countText(wanted()) + " in place");
+                    doneTitle.setText("Ready to play!");
+                    doneText.setText(manifest.packName() + " v" + manifest.packVersion() + "  ·  Minecraft "
+                            + manifest.minecraft() + "  ·  " + countText(wanted()));
+                    show("done");
+                    primary.setText("Play");
+                    primary.setEnabled(true);
+                    if (autoExit) {
+                        Timer t = new Timer(1500, e -> System.exit(0));
+                        t.setRepeats(false);
+                        t.start();
+                    }
+                    return;
+                }
                 headline.setText("Your server is ready");
                 stats.setText(manifest.serverMods().size() + " mods in place  ·  NeoForge " + manifest.neoforge().version());
                 doneTitle.setText("Ready to play!");
@@ -554,9 +641,10 @@ final class Gui implements Installer.Listener {
                 headline.setText("Almost there");
                 problemTitle.setText("A mod still has to be downloaded by hand");
                 problemTitle.setForeground(Theme.YELLOW);
-                setParagraph(problemText, "The server can't start without it. Download it (see the log), then press Check files.", 470);
+                setParagraph(problemText, (client ? "The game" : "The server") + " can't start without it. "
+                        + "Download it (see the log), then press " + (client ? "Check again." : "Check files."), 470);
                 show("problem");
-                primary.setText("Check files");
+                primary.setText(client ? "Check again" : "Check files");
             }
             default -> {
                 headline.setText("Setup couldn't finish");
@@ -590,7 +678,7 @@ final class Gui implements Installer.Listener {
                 headline.setText(switch (step) {
                     case JAVA -> "Checking Java";
                     case NEOFORGE -> "Installing NeoForge";
-                    case MODS -> "Getting the mods";
+                    case MODS -> client ? "Getting the mods and resource packs" : "Getting the mods";
                     case FILES -> "Adding extra files";
                     case TIDY -> "Tidying up";
                 });
@@ -612,7 +700,7 @@ final class Gui implements Installer.Listener {
                 lastTime = now;
             }
             bar.set(bytesTotal > 0 ? bytesDone / (double) bytesTotal : 1, true);
-            stats.setText(filesDone + " of " + filesTotal + " mods  ·  " + ConsoleUi.mb(bytesDone) + " of "
+            stats.setText(filesDone + " of " + filesTotal + (client ? " files" : " mods") + "  ·  " + ConsoleUi.mb(bytesDone) + " of "
                     + ConsoleUi.mb(bytesTotal) + (speed > 0 ? String.format(Locale.ROOT, "  ·  %.1f MB/s", speed / 1048576) : ""));
             current.setText(file);
         });
@@ -768,19 +856,20 @@ final class Gui implements Installer.Listener {
     }
 
     private void showCredits() {
-        String[] cols = {"Mod", "Version", "Downloaded from", "Note"};
+        String[] cols = {"Name", "Version", "Type", "Downloaded from", "Note"};
         DefaultTableModel model = new DefaultTableModel(cols, 0) {
             @Override
             public boolean isCellEditable(int r, int c) {
                 return false;
             }
         };
-        List<Manifest.Mod> list = new ArrayList<>(manifest.serverMods());
+        List<Manifest.Mod> list = new ArrayList<>(wanted());
         list.sort((a, b) -> a.name().compareToIgnoreCase(b.name()));
         for (Manifest.Mod m : list) {
             String note = m.patch() != null ? "Fixed for the pack: " + m.patch().why()
                     : m.manual() ? m.source().note() : "";
-            model.addRow(new Object[]{m.name(), m.version(), m.source().label(), note});
+            model.addRow(new Object[]{m.name(), m.version(), "mods".equals(m.dir()) ? "Mod" : "Resource pack",
+                    m.source().label(), note});
         }
         JTable table = new JTable(model);
         table.setBackground(Theme.PANEL);
@@ -794,9 +883,10 @@ final class Gui implements Installer.Listener {
         table.getTableHeader().setForeground(Theme.GOLD_LIGHT);
         table.getTableHeader().setFont(Theme.font(Font.BOLD, 12.5f));
         table.getColumnModel().getColumn(0).setPreferredWidth(230);
-        table.getColumnModel().getColumn(1).setPreferredWidth(120);
-        table.getColumnModel().getColumn(2).setPreferredWidth(140);
-        table.getColumnModel().getColumn(3).setPreferredWidth(420);
+        table.getColumnModel().getColumn(1).setPreferredWidth(110);
+        table.getColumnModel().getColumn(2).setPreferredWidth(100);
+        table.getColumnModel().getColumn(3).setPreferredWidth(140);
+        table.getColumnModel().getColumn(4).setPreferredWidth(360);
         DefaultTableCellRenderer r = new DefaultTableCellRenderer();
         r.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
         table.setDefaultRenderer(Object.class, r);
@@ -816,9 +906,9 @@ final class Gui implements Installer.Listener {
         JLabel intro = paragraph(manifest.packName() + " doesn't host other people's mods. Each one is downloaded "
                 + "from its official page, which is also where its license and support live. Double-click a mod to open "
                 + "its page. Thanks to every author in this list.");
-        setParagraph(intro, manifest.packName() + " doesn't host other people's mods. Each one is downloaded from its "
-                + "official page, which is also where its license and support live. Double-click a mod to open its page. "
-                + "Thanks to every author in this list.", 860);
+        setParagraph(intro, manifest.packName() + " doesn't host other people's mods" + (client ? " or resource packs" : "")
+                + ". Each one is downloaded from its official page, which is also where its license and support live. "
+                + "Double-click a row to open its page. Thanks to every author in this list.", 860);
         intro.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
         p.add(intro, BorderLayout.NORTH);
         JScrollPane sp = new JScrollPane(table);
@@ -839,7 +929,8 @@ final class Gui implements Installer.Listener {
                 String tag = Json.str(Json.obj(Json.parse(body)), "tag_name");
                 if (tag != null && newer(tag.replaceFirst("^v", ""), manifest.packVersion())) {
                     SwingUtilities.invokeLater(() -> {
-                        banner.setText(manifest.packName() + " " + tag + " is out. Click here for the new server files.");
+                        banner.setText(manifest.packName() + " " + tag + " is out. Click here for the new "
+                                + (client ? "pack." : "server files."));
                         banner.setVisible(true);
                     });
                 }
@@ -969,11 +1060,11 @@ final class Gui implements Installer.Listener {
      * Runs a real setup through the window without showing it and saves what it looks like along the way. When the
      * by-hand card comes up, the given file is copied into manual/, as a player would save it there.
      */
-    static int selfTest(Manifest manifest, Path dir, Path out, Path manualFile) throws Exception {
+    static int selfTest(Manifest manifest, Path dir, Installer.Mode mode, Path out, Path manualFile) throws Exception {
         Files.createDirectories(out);
         Gui[] holder = new Gui[1];
         SwingUtilities.invokeAndWait(() -> {
-            holder[0] = new Gui(manifest, dir);
+            holder[0] = new Gui(manifest, dir, mode);
             holder[0].eulaStart.setSelected(true);
             holder[0].onPrimary();
         });
@@ -1025,23 +1116,35 @@ final class Gui implements Installer.Listener {
             case "running" -> {
                 steps.set(Installer.Step.JAVA, Installer.State.DONE, "Java 21.0.7 (Microsoft)");
                 steps.set(Installer.Step.NEOFORGE, Installer.State.DONE, "NeoForge " + manifest.neoforge().version() + " installed");
-                steps.set(Installer.Step.MODS, Installer.State.RUNNING, "Downloaded 86 of 163");
-                headline.setText("Getting the mods");
+                int n = wanted().size();
+                steps.set(Installer.Step.MODS, Installer.State.RUNNING, "Downloaded " + (n * 53 / 100) + " of " + n);
+                headline.setText(client ? "Getting the mods and resource packs" : "Getting the mods");
                 bar.set(0.53, true);
-                stats.setText("86 of 163 mods  ·  412 MB of 782 MB  ·  9.6 MB/s");
+                stats.setText((n * 53 / 100) + " of " + n + (client ? " files" : " mods") + "  ·  "
+                        + ConsoleUi.mb(wanted().stream().mapToLong(Manifest.Mod::size).sum() * 53 / 100) + " of "
+                        + ConsoleUi.mb(wanted().stream().mapToLong(Manifest.Mod::size).sum()) + "  ·  9.6 MB/s");
                 current.setText("twilightforest-1.21.1-4.8.3345-universal.jar");
                 fun.setText("Waking up Mobzilla...");
                 primary.setText("Working...");
                 primary.setEnabled(false);
                 changeFolder.setVisible(false);
                 show("working");
-                for (String l : new String[]{"CrazyCraft " + manifest.packVersion() + " server setup in " + dir,
+                String[] lines = client
+                        ? new String[]{"CrazyCraft " + manifest.packVersion() + " game setup in " + dir,
+                        "0 files already in place, " + (n - 1) + " to download, 1 by hand",
+                        "Got jei-1.21.1-neoforge-19.44.0.399.jar from Modrinth",
+                        "Got [1.21.1] SecurityCraft v1.10.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.1.jar",
+                        "Got FreshAnimations_v1.9.2.zip from Modrinth",
+                        "Got ProjectE-1.21.1-PE1.1.0.jar from CurseForge",
+                        "Got orespawn-1.21.1-2.0.0-beta.12.jar from GitHub"}
+                        : new String[]{"CrazyCraft " + manifest.packVersion() + " server setup in " + dir,
                         "NeoForge " + manifest.neoforge().version() + " installed.",
-                        "0 mods already in place, 162 to download, 1 by hand",
+                        "0 mods already in place, " + (n - 1) + " to download, 1 by hand",
                         "Got jei-1.21.1-neoforge-19.44.0.399.jar from Modrinth",
                         "Got [1.21.1] SecurityCraft v1.10.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.1.jar",
                         "Got ProjectE-1.21.1-PE1.1.0.jar from CurseForge",
-                        "Got orespawn-1.21.1-2.0.0-beta.12.jar from GitHub"}) {
+                        "Got orespawn-1.21.1-2.0.0-beta.12.jar from GitHub"};
+                for (String l : lines) {
                     appendLog(l);
                 }
             }
@@ -1050,7 +1153,9 @@ final class Gui implements Installer.Listener {
                 steps.set(Installer.Step.NEOFORGE, Installer.State.DONE, "NeoForge " + manifest.neoforge().version() + " installed");
                 steps.set(Installer.Step.MODS, Installer.State.WARNING, "1 mod needs a download by hand");
                 bar.set(1, false);
-                stats.setText("162 of 162 mods  ·  706 MB of 706 MB");
+                List<Manifest.Mod> auto = wanted().stream().filter(m -> !m.manual()).toList();
+                String mb = ConsoleUi.mb(auto.stream().mapToLong(Manifest.Mod::size).sum());
+                stats.setText(auto.size() + " of " + auto.size() + (client ? " files" : " mods") + "  ·  " + mb + " of " + mb);
                 primary.setText("Working...");
                 primary.setEnabled(false);
                 changeFolder.setVisible(false);
@@ -1066,15 +1171,14 @@ final class Gui implements Installer.Listener {
                     steps.set(s, Installer.State.DONE, switch (s) {
                         case JAVA -> "Java 21.0.7 (Microsoft)";
                         case NEOFORGE -> "NeoForge " + manifest.neoforge().version() + " installed";
-                        case MODS -> manifest.serverMods().size() + " mods ready (" + manifest.serverMods().size() + " new)";
+                        case MODS -> wanted().size() + (client ? " files" : " mods") + " ready (" + wanted().size() + " new)";
                         case FILES -> "1 of 1 in place";
                         case TIDY -> "Nothing to tidy";
                     });
                 }
-                appendLog("Found MCHeli at " + System.getProperty("user.home") + File.separator + "Downloads"
-                        + File.separator + "MCHeli-1.21.1-1.3.0.jar and copied it into mods/");
+                appendLog("Found MCHeli at C:\\Users\\Player\\Downloads\\MCHeli-1.21.1-1.3.0.jar and copied it into mods/");
                 appendLog("Added mcheli/orespawn_uranium/models/planes/a-10_du.mqo (The uranium A-10 uses MCHeli's own A-10 model)");
-                appendLog("All set: " + manifest.serverMods().size() + " mods ready.");
+                appendLog("All set: " + wanted().size() + (client ? " files" : " mods") + " ready.");
                 eulaStart.setSelected(true);
                 finished(Installer.Result.READY);
             }

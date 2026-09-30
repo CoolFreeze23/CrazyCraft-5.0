@@ -86,6 +86,29 @@
       "why": "The uranium A-10 uses MCHeli's own A-10 model, copied from the MCHeli jar on install."
     }
   ],
+  "resourcepacks": {
+    "bundled": [
+      "CrazyCraft5-ptBR.zip"
+    ],
+    "dropped": {
+      "Actually 3D Stuff.zip": "The build the pack used is no longer published; the author's current versions are for Minecraft 1.21.9 and newer.",
+      "3d-mace.zip": "Not published on Modrinth or CurseForge.",
+      "6actions-and-stuff-pumpkins.zip": "Not published on Modrinth or CurseForge.",
+      "Better illagers FA.zip": "Its author only allows downloads from CurseForge itself.",
+      "Better Trident v2.zip": "Its author only allows downloads from CurseForge itself.",
+      "HMI_Alittle_Axolotl.zip": "Not published on Modrinth or CurseForge."
+    },
+    "substitute": {
+      "FA+Emissive-v1.2.zip": {
+        "modrinthVersion": "cxLMymMb",
+        "why": "Modrinth's file of the same version; only its terms text differs from the CurseForge file."
+      },
+      "FA+Objects-v1.1.zip": {
+        "modrinthVersion": "EoBgwlGI",
+        "why": "Modrinth's file of the same version; only its terms text differs from the CurseForge file."
+      }
+    }
+  },
   "manualNotes": {
     "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."
   }

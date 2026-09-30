@@ -290,8 +290,10 @@ final class Theme {
     static final class StepList extends JComponent {
         private final Map<Installer.Step, Installer.State> states = new EnumMap<>(Installer.Step.class);
         private final Map<Installer.Step, String> details = new EnumMap<>(Installer.Step.class);
+        private final List<Installer.Step> shown;
 
-        StepList() {
+        StepList(List<Installer.Step> shown) {
+            this.shown = shown;
             for (Installer.Step s : Installer.Step.values()) {
                 states.put(s, Installer.State.WAITING);
                 details.put(s, "");
@@ -330,7 +332,7 @@ final class Theme {
             g2.setColor(DIM);
             spaced(g2, "SETUP STEPS", 22, 30, 1.8f);
             int y = 48;
-            for (Installer.Step s : Installer.Step.values()) {
+            for (Installer.Step s : shown) {
                 Installer.State st = states.get(s);
                 icon(g2, st, 22, y + 3);
                 g2.setFont(font(Font.BOLD, 14.5f));

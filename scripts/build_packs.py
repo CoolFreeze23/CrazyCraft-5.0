@@ -51,7 +51,7 @@ CLIENT_DIRS = ["mods", "config", "defaultconfigs", "resourcepacks", "mcheli",
                "moonlight-global-datapacks", "patchouli_books"]
 CLIENT_FILES = ["emi.json", "patchouli_data.json", "icon.png"]
 
-OPTIONS_TXT = "version:3955\nlang:pt_br\nresourcePacks:[\"mod/punchy:resourcepacks/punchy\",\"vanilla\",\"fabric\",\"mod_resources\",\"moonlight:merged_pack\",\"file/Fast Better Grass.zip\",\"file/Better Leaves.zip\",\"file/Low On Fire.zip\",\"file/CrazyCraft5-ptBR.zip\",\"file/Drigo 3D Lanterns x Punchy.zip\",\"file/Traben\\u0027s 3D Armor - 1.0.1.zip\",\"file/Untitled Punchy.zip\",\"file/Sun and Moon Circular.zip\",\"file/trabens-3d-arrows-1.1.zip\",\"file/Hyper Punchy.zip\",\"file/Fresh Food.zip\",\"file/Even Better Enchants.zip\",\"file/Enhanced Boss Bars.zip\",\"file/Dramatic Skys.zip\",\"file/Blockier Goat Horn v1.1 f9-34.zip\",\"file/Actually 3D Stuff.zip\",\"file/FreshAnimations_v1.9.2.zip\",\"file/FA+Emissive-v1.2.zip\",\"file/Alittle_Axolotl.zip\"]\n"
+OPTIONS_TXT = "version:3955\nlang:pt_br\nresourcePacks:[\"mod/punchy:resourcepacks/punchy\",\"vanilla\",\"fabric\",\"mod_resources\",\"moonlight:merged_pack\",\"file/Fast Better Grass.zip\",\"file/Better Leaves.zip\",\"file/Low On Fire.zip\",\"file/CrazyCraft5-ptBR.zip\",\"file/Drigo 3D Lanterns x Punchy.zip\",\"file/Traben\\u0027s 3D Armor - 1.0.1.zip\",\"file/Untitled Punchy.zip\",\"file/Sun and Moon Circular.zip\",\"file/trabens-3d-arrows-1.1.zip\",\"file/Hyper Punchy.zip\",\"file/Fresh Food.zip\",\"file/Even Better Enchants.zip\",\"file/Enhanced Boss Bars.zip\",\"file/Dramatic Skys.zip\",\"file/Blockier Goat Horn v1.1 f9-34.zip\",\"file/FreshAnimations_v1.9.2.zip\",\"file/FA+Emissive-v1.2.zip\",\"file/Alittle_Axolotl.zip\"]\n"
 
 INSTANCE_CFG = """[General]
 ConfigVersion=1.2
@@ -61,12 +61,25 @@ name=CrazyCraft 5.0
 OverrideMemory=true
 MinMemAlloc=2048
 MaxMemAlloc=8192
+OverrideCommands=true
+PreLaunchCommand="\\"$INST_JAVA\\" -jar \\"$INST_MC_DIR/crazycraft-loader.jar\\" --client"
+PostExitCommand=
+WrapperCommand=
 """
 
 
 def iter_client_files():
-    """Yield (source path, archive path inside .minecraft) for the client pack."""
+    """Yield (source path, archive path inside .minecraft) for the client pack.
+
+    No mods and no third-party resource packs: the loader downloads those on the first launch (pack/manifest.json).
+    Only the pack's own resource packs ship, and files the loader copies out of a mod's jar are left out too.
+    """
+    sources = json.loads((ROOT / "pack" / "sources.json").read_text(encoding="utf-8"))
+    bundled = set(sources.get("resourcepacks", {}).get("bundled", []))
+    extracted = {x["to"] for x in load_manifest()["extract"]}
     for d in CLIENT_DIRS:
+        if d == "mods":
+            continue
         base = MC / d
         if not base.is_dir():
             continue
@@ -78,6 +91,10 @@ def iter_client_files():
             if d == "mods" and not p.name.endswith(".jar"):
                 continue
             if rel.startswith("resourcepacks/CrazyCraft-PTBR/"):
+                continue
+            if d == "resourcepacks" and p.name not in bundled:
+                continue
+            if rel in extracted:
                 continue
             # NeoForge's copies of replaced config files (name-N.toml.bak); nothing reads them
             if p.name.endswith(".toml.bak"):
@@ -99,6 +116,12 @@ def build_client():
         z.writestr("instance.cfg", INSTANCE_CFG)
         z.write(INSTANCE / "mmc-pack.json", "mmc-pack.json")
         z.writestr(".minecraft/options.txt", OPTIONS_TXT)
+        z.write(BUILD / "loader" / "crazycraft-loader.jar", ".minecraft/crazycraft-loader.jar")
+        z.write(ROOT / "pack" / "manifest.json", ".minecraft/crazycraft-manifest.json")
+        credits = BUILD / "CREDITS-client.txt"
+        write_credits(load_manifest(), credits, client=True)
+        z.write(credits, "CREDITS.txt")
+        n += 3
         for src, rel in iter_client_files():
             z.write(src, f".minecraft/{rel}")
             n += 1
@@ -114,12 +137,14 @@ def load_manifest():
     return json.loads((ROOT / "pack" / "manifest.json").read_text(encoding="utf-8"))
 
 
-def write_credits(manifest, path):
-    lines = [f"{manifest['pack']['name']} {manifest['pack']['version']} - mods and where they come from",
+def write_credits(manifest, path, client=False):
+    what = "mods and resource packs" if client else "mods"
+    lines = [f"{manifest['pack']['name']} {manifest['pack']['version']}: where the {what} come from",
              "=" * 72, "",
-             "The pack doesn't host other people's mods. The server setup downloads each one from the page",
+             f"The pack doesn't host other people's {what}. The setup downloads each one from the page",
              "below, where you also find its license and support. Thanks to every author in this list.", ""]
-    mods = sorted((m for m in manifest["mods"] if m["side"] != "client"), key=lambda m: m["name"].lower())
+    mods = sorted((m for m in manifest["mods"] if m["side"] != ("server" if client else "client")),
+                  key=lambda m: (m.get("dir", "mods") != "mods", m["name"].lower()))
     for m in mods:
         src = {"modrinth": "Modrinth", "curseforge": "CurseForge", "github": "GitHub",
                "manual": "CurseForge (download by hand)"}[m["source"]["type"]]

@@ -294,6 +294,71 @@ def main():
     if unresolved:
         raise SystemExit(f"No download source for: {unresolved}")
 
+    # resource packs (client only): our own ship in the pack, the rest come from Modrinth or CurseForge
+    rp_spec = sources.get("resourcepacks", {})
+    packs = []
+    for p in sorted((MC / "resourcepacks").glob("*.zip")):
+        if p.name in rp_spec.get("bundled", []) or p.name in rp_spec.get("dropped", {}):
+            continue
+        data = p.read_bytes()
+        packs.append({"file": p.name, "dir": "resourcepacks", "name": p.stem, "version": "", "side": "client",
+                      "size": len(data), "sha512": sha(data, "sha512"), "_path": p})
+    for pk in packs:
+        sub = rp_spec.get("substitute", {}).get(pk["file"])
+        if not sub:
+            continue
+        v = http(f"{MODRINTH}/version/{sub['modrinthVersion']}")
+        f = next((f for f in v["files"] if f["filename"] == pk["file"]), v["files"][0])
+        proj = http(f"{MODRINTH}/project/{v['project_id']}")
+        pk.update({"size": f["size"], "sha512": f["hashes"]["sha512"], "name": proj["title"],
+                   "version": v["version_number"], "license": (proj.get("license") or {}).get("id", "")})
+        pk["source"] = {"type": "modrinth", "url": f["url"], "page": f"https://modrinth.com/{proj['project_type']}/{proj['slug']}"}
+    todo = [pk for pk in packs if "source" not in pk]
+    if todo:
+        found = http(f"{MODRINTH}/version_files", data={"hashes": [pk["sha512"] for pk in todo], "algorithm": "sha512"})
+        ids = sorted({v["project_id"] for v in found.values()})
+        rp_projects = {}
+        for i in range(0, len(ids), 80):
+            q = urllib.parse.quote(json.dumps(ids[i:i + 80]))
+            for proj in http(f"{MODRINTH}/projects?ids={q}"):
+                rp_projects[proj["id"]] = proj
+        for pk in todo:
+            v = found.get(pk["sha512"])
+            if not v:
+                continue
+            f = next(f for f in v["files"] if f["hashes"]["sha512"] == pk["sha512"])
+            proj = rp_projects[v["project_id"]]
+            pk.update({"name": proj["title"], "version": v["version_number"],
+                       "license": (proj.get("license") or {}).get("id", "")})
+            pk["source"] = {"type": "modrinth", "url": f["url"], "page": f"https://modrinth.com/{proj['project_type']}/{proj['slug']}"}
+    todo = [pk for pk in packs if "source" not in pk]
+    missing = [pk for pk in todo if pk["sha512"] not in cf_cache]
+    if missing:
+        fps = {cf_fingerprint(pk["_path"].read_bytes()): pk for pk in missing}
+        res = http(f"{CF_API}/fingerprints/432", data={"fingerprints": list(fps)})["data"]
+        hits = {x["file"]["fileFingerprint"]: x for x in res.get("exactMatches", [])}
+        pids = sorted({x["id"] for x in hits.values()})
+        cf_mods = {p["id"]: p for p in http(f"{CF_API}/mods", data={"modIds": pids})["data"]} if pids else {}
+        for fp, pk in fps.items():
+            x = hits.get(fp)
+            if x:
+                p, f = cf_mods[x["id"]], x["file"]
+                cf_cache[pk["sha512"]] = {"project": x["id"], "file": f["id"], "fileName": f["fileName"], "slug": p["slug"],
+                                          "name": p["name"], "allowModDistribution": p.get("allowModDistribution"),
+                                          "downloadUrl": f.get("downloadUrl")}
+        cf_cache_path.write_text(json.dumps(cf_cache, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    for pk in todo:
+        c = cf_cache.get(pk["sha512"])
+        if c and c["allowModDistribution"] and c["downloadUrl"]:
+            pk["name"] = c["name"]
+            pk["license"] = ""
+            pk["source"] = {"type": "curseforge", "url": c["downloadUrl"],
+                            "page": f"https://www.curseforge.com/minecraft/texture-packs/{c['slug']}"}
+    unresolved = [pk["file"] for pk in packs if "source" not in pk]
+    if unresolved:
+        raise SystemExit(f"No download source for these resource packs (list them as bundled or dropped): {unresolved}")
+    mods.extend(packs)
+
     # extra files copied out of a downloaded jar
     extracts = []
     for x in sources.get("extract", []):

@@ -2944,6 +2944,441 @@
     "page": "https://modrinth.com/mod/yungs-better-witch-huts"
    },
    "license": "LGPL-3.0-only"
+  },
+  {
+   "file": "AL's Creepers Revamped 1.4.zip",
+   "dir": "resourcepacks",
+   "name": "AL's Creepers Revamped",
+   "version": "1.4",
+   "side": "client",
+   "size": 222917,
+   "sha512": "ad67559f655547d9eee6ac9e9375c81bfe38d068b5ee88620bf4f3d933d38880b7c79cdabb313f3c2f4ade3007aaf3315dde59b2152dd9bbbd5ff906eb1eeab9",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/d2srP5t3/versions/TEclJui0/AL%27s%20Creepers%20Revamped%201.4.zip",
+    "page": "https://modrinth.com/resourcepack/als-creepers-revamped"
+   }
+  },
+  {
+   "file": "Alittle_Axolotl.zip",
+   "dir": "resourcepacks",
+   "name": "Alittl Axolotl & Friends- Animated 3D bucket friends! [Java Version]",
+   "version": "",
+   "side": "client",
+   "size": 110844,
+   "sha512": "b8fa767103a59ff934336beacf0cd8dde21c33037479894aaa19af097748b00a3f42c8406f2c875f8592fa5d6ea5b6f0de75e2bee4e953ce89c6a293343463a7",
+   "license": "",
+   "source": {
+    "type": "curseforge",
+    "url": "https://edge.forgecdn.net/files/6153/54/Alittle_Axolotl.zip",
+    "page": "https://www.curseforge.com/minecraft/texture-packs/alittl-axolotl"
+   }
+  },
+  {
+   "file": "armory-conglomery-v2.zip",
+   "dir": "resourcepacks",
+   "name": "Armory Conglomery",
+   "version": "v2",
+   "side": "client",
+   "size": 331664,
+   "sha512": "84db9f5c5affe6b48c38093834eccd1cff1ac9590d8ea1642f00a43bcaf8dab0f2ea38eb170b30a3ed85998730739f24d5beed1d49568e902179bf0b289e1204",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/uJC1fwNH/versions/M3KBO18s/armory-conglomery-v2.zip",
+    "page": "https://modrinth.com/resourcepack/armory-conglomery"
+   }
+  },
+  {
+   "file": "Better Bows.zip",
+   "dir": "resourcepacks",
+   "name": "Better Bows",
+   "version": "1.6.0",
+   "side": "client",
+   "size": 17841,
+   "sha512": "b15adbb2dee1bee41fcd877f94b8a63d369efd7b33aafd83aa70e405c8c7dfa8fcda9210a3be8611a27f8dec7e9b29e22e57ba362a1bc6f62f07c82dbb3b7b6d",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/IPRL7R5J/versions/eTMgM5yw/Better%20Bows.zip",
+    "page": "https://modrinth.com/resourcepack/better-bows"
+   }
+  },
+  {
+   "file": "Better Leaves.zip",
+   "dir": "resourcepacks",
+   "name": "Motschen's Better Leaves",
+   "version": "9.5",
+   "side": "client",
+   "size": 1923769,
+   "sha512": "3f50d72bdc7274aa01a7c68d1e8a8f592eddc5e28ad9c60d796815a9892751bc862c0ee0dbed290dd7c4ad994c68d38b8cde02b21c96ecbaab6fe18808fb8750",
+   "license": "MIT",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/uvpymuxq/versions/XWtayRKd/Better-Leaves-9.5.zip",
+    "page": "https://modrinth.com/resourcepack/better-leaves"
+   }
+  },
+  {
+   "file": "Better+Lanterns+v1.2(mc-1.21).zip",
+   "dir": "resourcepacks",
+   "name": "Better Lanterns",
+   "version": "1.2+1.21",
+   "side": "client",
+   "size": 51529,
+   "sha512": "e2bbb4555928f418ec5953228fe0200ae62baffa7fc3a189cf3595843061ea76f61465d591ebdb07b05d9d2f281f6b64944f55e99343d8700f2c5f475f40f745",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/PGGrfcvL/versions/jRAsb6KQ/Better%2BLanterns%2Bv1.2%28mc-1.21%29.zip",
+    "page": "https://modrinth.com/resourcepack/better-lanterns"
+   }
+  },
+  {
+   "file": "Blockier Goat Horn v1.1 f9-34.zip",
+   "dir": "resourcepacks",
+   "name": "(Bee's) Blockier Goat Horn",
+   "version": "1.1",
+   "side": "client",
+   "size": 8021,
+   "sha512": "58efe7e72b7441aa497b33a7f47941ac96497674b8418bcba4288e72af5707e2b87780fd88bfa8d527d7a2e58b0c855041a2e9ecae6643ab2f1d97b062377175",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/cTm36Ih9/versions/6Rl704zl/Blockier%20Goat%20Horn%20v1.1%20f9-34.zip",
+    "page": "https://modrinth.com/resourcepack/blockier-goat-horn"
+   }
+  },
+  {
+   "file": "Dramatic Skys.zip",
+   "dir": "resourcepacks",
+   "name": "Dramatic Skys",
+   "version": "1.5.3.36.5",
+   "side": "client",
+   "size": 13912171,
+   "sha512": "6fe9ed68c7950a7b8de7e430b73107e0f9b7c8367bdbe3854704ebcb118e9f819e0387593acbf7364d0a857f0db32ad058348bb3125782e4564d27733885ac81",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/2YyNMled/versions/obHItVKX/Dramatic%20Skys%20Demo%201.5.3.36.5.zip",
+    "page": "https://modrinth.com/resourcepack/dramatic-skys"
+   }
+  },
+  {
+   "file": "Drigo 3D Lanterns x Punchy.zip",
+   "dir": "resourcepacks",
+   "name": "Drigo 3D Lantern`s x Punchy",
+   "version": "1.0.0",
+   "side": "client",
+   "size": 5858016,
+   "sha512": "5dd599a167d49e0aeea349ae7aa3234df2cbaa8fadf310275d7f4acf03aad108a8be0a1249c801dabf55cec8aea98f5dfb6b656943a9b44712d70b1db5668d46",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/X4S78Ho4/versions/9Ac9sHNt/Drigo%203D%20Lantern%60s%20x%20Punchy.zip",
+    "page": "https://modrinth.com/resourcepack/drigo-3d-lanterns-x-punchy"
+   }
+  },
+  {
+   "file": "elytracontrails1.3.zip",
+   "dir": "resourcepacks",
+   "name": "Elytra Contrails Resource Pack",
+   "version": "1.3",
+   "side": "client",
+   "size": 28095,
+   "sha512": "b593600a378c8901910b23e44e3a81c67abcaf87acdd97c753720334b29003a5fa6293be260be16da362b3eb394cefafa417f4b9403c543c59b00cda1bad18f6",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/r1QqcaUO/versions/TYlhOZi0/elytracontrails1.3.zip",
+    "page": "https://modrinth.com/resourcepack/elytra-contrails"
+   }
+  },
+  {
+   "file": "Enhanced Boss Bars.zip",
+   "dir": "resourcepacks",
+   "name": "Enhanced Boss Bars",
+   "version": "1.6",
+   "side": "client",
+   "size": 123242,
+   "sha512": "b1ba1ab0235b33eb650931c0e0534c552a6c720962f11972a00f7bbbbfdf3560c56e07e9f700e18f7531a4ce03a2f4266c5e62c6694ee9fd38cebb976fa5d919",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/U5SedJ9S/versions/4dNK8b2b/%5B1.6%5D%20Enhanced%20Boss%20Bars.zip",
+    "page": "https://modrinth.com/resourcepack/enhanced-boss-bars"
+   }
+  },
+  {
+   "file": "Even Better Enchants.zip",
+   "dir": "resourcepacks",
+   "name": "Even Better Enchants",
+   "version": "2-1.21",
+   "side": "client",
+   "size": 242292,
+   "sha512": "ceababf87d3207819cb90a8dd6e9f494976ecd8f70afed4c01b908805bbb43673fa6ebd2deff9f168f627941104545d4cfa15e50fcf0d416c60dc3117c02a1ab",
+   "license": "Apache-2.0",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/6udpuGCH/versions/mXaMyhFE/EvenBetterEnchants_v2_r1.zip",
+    "page": "https://modrinth.com/resourcepack/even-better-enchants"
+   }
+  },
+  {
+   "file": "FA+Emissive-v1.2.zip",
+   "dir": "resourcepacks",
+   "name": "Fresh Animations: Emissive",
+   "version": "1.2.0",
+   "side": "client",
+   "size": 61106,
+   "sha512": "2e3e9228338ec3cfa1b1e0dc608eaa2331e572b6e268fe10d3a15f3777a4a57b910b3302b4fda4d17a68d487866a355069ca1032efdc07cdab59fb68b45901f3",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/VRS2YQn9/versions/cxLMymMb/FA%2BEmissive-v1.2.zip",
+    "page": "https://modrinth.com/resourcepack/fresh-animations-emissive"
+   }
+  },
+  {
+   "file": "FA+Objects-v1.1.zip",
+   "dir": "resourcepacks",
+   "name": "Fresh Animations: Objects",
+   "version": "1.1.0",
+   "side": "client",
+   "size": 85588,
+   "sha512": "4cf4a7a823ddf4e2bb7af1d277e4d6642f41a1b5fc0558833fe9e9431a062c33a460619c859faab701e80075ad2289844f1c501baa2578d71cc0bbb3dfd7efa1",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/23O9JVMV/versions/EoBgwlGI/FA%2BObjects-v1.1.zip",
+    "page": "https://modrinth.com/resourcepack/fresh-animations-objects"
+   }
+  },
+  {
+   "file": "FA+Player-v1.1.zip",
+   "dir": "resourcepacks",
+   "name": "Fresh Animations: Player Extension",
+   "version": "1.1.0",
+   "side": "client",
+   "size": 110203,
+   "sha512": "d2a5c46ae53e4bb6355604a1ade253ab49f1deb205f5ee69085014965241d3c9623204951ab174a5dbdaf24d9b25ecae9a1638cc6a13d780b398a6d70d157a4e",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/TAIMVZCL/versions/Wj7NeGjP/FA%2BPlayer-v1.1.zip",
+    "page": "https://modrinth.com/resourcepack/fa-player-extension"
+   }
+  },
+  {
+   "file": "Fast Better Grass.zip",
+   "dir": "resourcepacks",
+   "name": "Fast Better Grass",
+   "version": "26.2",
+   "side": "client",
+   "size": 10928,
+   "sha512": "cc3641e82595f3e72f3075e7c5647fa4d65188c1d9e498be42e8169a03ccd71907fcb625d5ad51a9e8aabcd41e2ab56ec1e4f3be19dfdadff6c06c7736ae915c",
+   "license": "MIT",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/dspVZXKP/versions/U9zNcnWW/Fast%20Better%20Grass.zip",
+    "page": "https://modrinth.com/resourcepack/fast-better-grass"
+   }
+  },
+  {
+   "file": "Fresh Food.zip",
+   "dir": "resourcepacks",
+   "name": "Fresh Food",
+   "version": "1.0",
+   "side": "client",
+   "size": 743079,
+   "sha512": "439e31456e2127ad43d84c7aabc43bff2e0edd41b865cb7450dcd961191459fa111537cd417e3c42474a7a9f6508063930977869bf6096eca067cab271008281",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/UoLAbzII/versions/KtdT9fuF/Fresh%20Food.zip",
+    "page": "https://modrinth.com/resourcepack/fresh-food"
+   }
+  },
+  {
+   "file": "FreshAnimations_v1.9.2.zip",
+   "dir": "resourcepacks",
+   "name": "Fresh Animations",
+   "version": "1.9.2",
+   "side": "client",
+   "size": 516256,
+   "sha512": "97a387112a5a94b0e7f4d0d2439977a9f28579303ad883ed3d0fcc3277357f8b3ab2418960f698d1a5f435903e0b2f82716fc92f8500cac090f900b2d2135dcf",
+   "license": "LicenseRef-See-Terms-of-Use-in-Description",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/50dA9Sha/versions/8vtPih5h/FreshAnimations_v1.9.2.zip",
+    "page": "https://modrinth.com/resourcepack/fresh-animations"
+   }
+  },
+  {
+   "file": "Hyper Punchy.zip",
+   "dir": "resourcepacks",
+   "name": "Hyper Punchy",
+   "version": "2.5",
+   "side": "client",
+   "size": 1193703,
+   "sha512": "2b1595691787671544dc1a32eba6c6700b7968a49de3441dde445122b078f0e8afd30ad4dbb4f4afbb71f48ca152f2bec9eacceeff7d2a78bb5e98e3b81dbebe",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/NVBMhec4/versions/nJiwz3lJ/HyperPunchy-v2.5%2B.zip",
+    "page": "https://modrinth.com/resourcepack/hyper-punchy"
+   }
+  },
+  {
+   "file": "Low On Fire.zip",
+   "dir": "resourcepacks",
+   "name": "Low On Fire",
+   "version": "26.3",
+   "side": "client",
+   "size": 42760,
+   "sha512": "713a20a8171c8249c30d9eb72342162754c627c7a86dc0971cb555faf43c322c181fd5546e0c770fc9ae922161ee846a7af951267c1d9a8a75af466a17e19d5e",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/RRxvWKNC/versions/yQdcUfnr/LowOnFire%20v26.2%C2%A78.zip",
+    "page": "https://modrinth.com/resourcepack/low-on-fire"
+   }
+  },
+  {
+   "file": "Luminous1.4.zip",
+   "dir": "resourcepacks",
+   "name": "Luminous",
+   "version": "",
+   "side": "client",
+   "size": 61196,
+   "sha512": "29505b492ae4f11efcd80d12052e4b99fce04a2fe18cb6868d2ac64423aa58397a177cb9e1882439d567976327ee8698d50e16f2d81282dc879fec56200a5a5e",
+   "license": "",
+   "source": {
+    "type": "curseforge",
+    "url": "https://edge.forgecdn.net/files/5336/431/Luminous1.4.zip",
+    "page": "https://www.curseforge.com/minecraft/texture-packs/luminous"
+   }
+  },
+  {
+   "file": "MB-3D Items Pack 1.6.0.zip",
+   "dir": "resourcepacks",
+   "name": "MB-3D Items Pack",
+   "version": "1.6.0",
+   "side": "client",
+   "size": 1520712,
+   "sha512": "65c70c5c73b55b014e105c36500e59f15a683dbeb500775dd225f8d82312e06e48192797bd0306635348e30342c03672c8532a588ba26453d000a93d574c056e",
+   "license": "MIT",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/jZM0fp9Q/versions/bpoppoOV/MB-3D%20Items%20Pack%201.6.0.zip",
+    "page": "https://modrinth.com/resourcepack/mb3d-items-pack"
+   }
+  },
+  {
+   "file": "SeriousReanimated_v1.0.zip",
+   "dir": "resourcepacks",
+   "name": "Serious Reanimated",
+   "version": "1.0",
+   "side": "client",
+   "size": 118532,
+   "sha512": "c63a3cb071875e175f5fafde5f93d5de535837f5fa8e668714b9334dfd69ae58c19a9304cad1cc28d164c1cbc22e70a76e5ee0596ff5b08d636c210c234f66ee",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/J6L4wSag/versions/Cr45CrQA/SeriousReanimated_v1.0.zip",
+    "page": "https://modrinth.com/resourcepack/serious-reanimated"
+   }
+  },
+  {
+   "file": "Spectral_v0.6.0.zip",
+   "dir": "resourcepacks",
+   "name": "Spectral",
+   "version": "0.6.0",
+   "side": "client",
+   "size": 686328,
+   "sha512": "5d0abe2dba3d237529e30ae30d1d3d5e348db6858bce7dc7fefa7f8fff3910a4c8e205caab058ed0f5cc2d7db65bc752f7304d193eddb89e680b0f695d7cedff",
+   "license": "CC-BY-NC-SA-4.0",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/vaaOMowT/versions/fmXyxZ1z/Spectral_v0.6.0.zip",
+    "page": "https://modrinth.com/resourcepack/spectral"
+   }
+  },
+  {
+   "file": "Sun and Moon Circular.zip",
+   "dir": "resourcepacks",
+   "name": "Sun and Moon Circular",
+   "version": "1.0",
+   "side": "client",
+   "size": 18223,
+   "sha512": "ee89f27fb815689747b7c950e23285dd536708b37a2a9bd117631e920bfa57026d334c21dc9e24e64871e627dcac0a78b95c2ea77a91c071b3ff734006f3ef21",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/YbwPPde4/versions/qs6NfmgW/Sun%20and%20Moon%20Circular.zip",
+    "page": "https://modrinth.com/resourcepack/sun-and-moon-circular"
+   }
+  },
+  {
+   "file": "Traben's 3D Armor - 1.0.1.zip",
+   "dir": "resourcepacks",
+   "name": "Traben's 3D armor models",
+   "version": "1.0.1",
+   "side": "client",
+   "size": 57862,
+   "sha512": "3518601675b4930fcd445ff50ad1a279ab93996d4ae1e8cfd8610d921a07594b735184367b235fac0b54c6d50fea5c0690b3a93179de9d72ba692f2f36e3b3cf",
+   "license": "LGPL-3.0-only",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/unF1UIT0/versions/jk02WXxI/Traben%27s%203D%20Armor%20-%201.0.1.zip",
+    "page": "https://modrinth.com/resourcepack/trabens-3d-armor-models"
+   }
+  },
+  {
+   "file": "trabens-3d-arrows-1.1.zip",
+   "dir": "resourcepacks",
+   "name": "Traben's 3D Arrow models",
+   "version": "1.1",
+   "side": "client",
+   "size": 458964,
+   "sha512": "01cbbddc85ce577ab63a50608fc2ae35a5fb2c4ea7bdba3d383c493ec3ec70de48a20cd3b73bbb69ac2b2514bbdc3149325eb45972208805c2d59254c3d91df1",
+   "license": "LGPL-3.0-only",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/bwYhZ5Le/versions/o9in2xmh/trabens-3d-arrows-1.1.zip",
+    "page": "https://modrinth.com/resourcepack/trabens-3d-arrow-models"
+   }
+  },
+  {
+   "file": "Untitled Punchy.zip",
+   "dir": "resourcepacks",
+   "name": "Untitled Punchy",
+   "version": "1.1",
+   "side": "client",
+   "size": 771839,
+   "sha512": "bdaa1673b2ad6e421198793c327c1f06679db9592bf6ac39b46d4285b58fc4d4c6a220146bd297f1cd542981e3771fbe453c2d3241e88cfe80dcfc1246a4b5ec",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/NmfLbiMs/versions/hjmQDDlS/%C2%A75Untitled%20%C2%A76Punchies%20%C2%A7fv1.1.zip",
+    "page": "https://modrinth.com/resourcepack/untitled-punchies"
+   }
+  },
+  {
+   "file": "§c1.21.2 Redstone Torch§r.zip",
+   "dir": "resourcepacks",
+   "name": "Redstone Torch Backport",
+   "version": "1.0.0",
+   "side": "client",
+   "size": 29884,
+   "sha512": "6d170a049138de7ecef7aa59c7a180dd04648d30a5c4d5f9afbdd610433cc78b8de9871f7bbb733c0635c9b27fc2e91fcc4ae34b4ecb8db1889616aad1c15467",
+   "license": "LicenseRef-All-Rights-Reserved",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/VuMFO1Oz/versions/xcyaoqev/%C2%A7c1.21.2%20Redstone%20Torch%C2%A7r.zip",
+    "page": "https://modrinth.com/resourcepack/redstone-torch-backport"
+   }
   }
  ],
  "extract": [

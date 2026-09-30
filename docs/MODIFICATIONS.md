@@ -52,6 +52,18 @@ Domestication Innovation and Monster Hunter Villager are the exceptions: both sh
 
 To play in English, just disable the resource pack (Options > Resource Packs).
 
+## Other resource packs
+
+The pack's other 29 resource packs come from Modrinth and CurseForge: the client setup downloads them on the first launch, like the mods. Six packs from earlier versions are no longer in the pack, because none of them has an official download the setup may use:
+
+| Pack | Why it's out |
+|---|---|
+| Actually 3D Stuff | The build the pack used is no longer published; the author's current versions are for Minecraft 1.21.9 and newer. It was on by default |
+| 3D Mace, the Actions & Stuff pumpkins, HMI Alittle Axolotl | Not published on Modrinth or CurseForge |
+| Better Illagers FA, Better Trident | Their authors only allow downloads from CurseForge itself |
+
+FA+ Emissive and FA+ Objects are the same versions as before, now taken from Modrinth; only the terms text inside them differs from the CurseForge files.
+
 ## Instance-level tweaks
 
 - `options.txt` ships minimal: default keybinds and the pt-BR pack turned on. Everything else is generated on first launch.

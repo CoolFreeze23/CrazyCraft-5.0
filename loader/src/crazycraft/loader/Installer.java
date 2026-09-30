@@ -29,11 +29,13 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /**
- * Installs or updates a CrazyCraft server folder: NeoForge, then every mod from its official download, checked and
- * (for the few that need it) fixed, then the extra files. Nothing the owner put in the folder is deleted: jars that
- * are no longer part of the pack are moved to mods-removed/.
+ * Installs or updates a CrazyCraft server folder or game folder: NeoForge (servers only), then every mod and resource
+ * pack from its official download, checked and (for the few that need it) fixed, then the extra files. Nothing the
+ * player or owner put in the folder is deleted: jars that are no longer part of the pack are moved to mods-removed/.
  */
 final class Installer {
+    enum Mode { SERVER, CLIENT }
+
     enum Step {
         JAVA("Java 21"), NEOFORGE("NeoForge server"), MODS("Mods"), FILES("Extra files"), TIDY("Tidy up");
 
@@ -64,6 +66,7 @@ final class Installer {
 
     final Path dir;
     final Manifest manifest;
+    final Mode mode;
     private final Listener ui;
     private final Path mods;
     private final Path work;
@@ -74,14 +77,36 @@ final class Installer {
     private PrintWriter logFile;
     private String previousVersion;
 
-    Installer(Path dir, Manifest manifest, Listener ui) {
+    Installer(Path dir, Manifest manifest, Listener ui, Mode mode) {
         this.dir = dir.toAbsolutePath().normalize();
         this.manifest = manifest;
         this.ui = ui;
+        this.mode = mode;
         this.mods = this.dir.resolve("mods");
         this.work = this.dir.resolve(".crazycraft");
         this.downloads = work.resolve("downloads");
         this.manualDir = this.dir.resolve("manual");
+    }
+
+    /** The mods and resource packs this folder gets: everything but client-only files on a server, and so on. */
+    List<Manifest.Mod> wanted() {
+        return manifest.mods().stream().filter(m -> mode == Mode.SERVER ? m.onServer() : m.onClient()).toList();
+    }
+
+    private List<Manifest.Extract> wantedExtracts() {
+        return manifest.extracts().stream().filter(x -> mode == Mode.SERVER ? x.onServer() : x.onClient()).toList();
+    }
+
+    private String noun() {
+        return mode == Mode.SERVER ? "mods" : "files";
+    }
+
+    private Path target(Manifest.Mod m) {
+        return dir.resolve(m.dir()).resolve(m.file());
+    }
+
+    private static String key(Manifest.Mod m) {
+        return m.dir() + "/" + m.file();
     }
 
     Result run() {
@@ -94,10 +119,10 @@ final class Installer {
             loadState();
         } catch (IOException e) {
             log("Can't write to " + dir + ": " + e.getMessage());
-            ui.step(Step.JAVA, State.FAILED, "The server folder is not writable");
+            ui.step(Step.JAVA, State.FAILED, "This folder is not writable");
             return Result.FAILED;
         }
-        log("CrazyCraft " + manifest.packVersion() + " server setup in " + dir
+        log("CrazyCraft " + manifest.packVersion() + (mode == Mode.SERVER ? " server" : " game") + " setup in " + dir
                 + (previousVersion != null && !previousVersion.equals(manifest.packVersion())
                 ? " (updating from " + previousVersion + ")" : ""));
         Result result = Result.READY;
@@ -105,7 +130,7 @@ final class Installer {
             if (!checkJava()) {
                 return Result.FAILED;
             }
-            if (!installNeoForge()) {
+            if (mode == Mode.SERVER && !installNeoForge()) {
                 return Result.FAILED;
             }
             Result m = installMods();
@@ -130,9 +155,30 @@ final class Installer {
                 // the next run checks every file again
             }
         }
-        log(result == Result.READY ? "All set: " + manifest.serverMods().size() + " mods ready."
+        log(result == Result.READY ? "All set: " + wanted().size() + " " + noun() + " ready."
                 : "Setup finished, but some mods are still missing.");
         return result;
+    }
+
+    /** A quick check, without downloading or writing anything: is any file missing or out of date? */
+    boolean needsWork() {
+        loadState();
+        try {
+            for (Manifest.Mod m : wanted()) {
+                if (!isGood(m, target(m))) {
+                    return true;
+                }
+            }
+            for (Manifest.Extract x : wantedExtracts()) {
+                Path t = dir.resolve(x.to());
+                if (!Files.isRegularFile(t) || !Hashes.sha256(Files.readAllBytes(t)).equals(x.sha256())) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            return true;
+        }
+        return false;
     }
 
     // ---- Java ----
@@ -206,29 +252,29 @@ final class Installer {
         return ProcessHandle.current().info().command().orElse("java");
     }
 
-    // ---- mods ----
+    // ---- mods and resource packs ----
 
     private Result installMods() throws InterruptedException, IOException {
-        List<Manifest.Mod> wanted = manifest.serverMods();
-        ui.step(Step.MODS, State.RUNNING, "Checking " + wanted.size() + " mods");
+        List<Manifest.Mod> wanted = wanted();
+        ui.step(Step.MODS, State.RUNNING, "Checking " + wanted.size() + " " + noun());
         List<Manifest.Mod> need = new ArrayList<>();
         int checked = 0;
         for (Manifest.Mod m : wanted) {
-            if (!isGood(m, mods.resolve(m.file()))) {
+            if (!isGood(m, target(m))) {
                 need.add(m);
             }
             if (++checked % 10 == 0) {
-                ui.step(Step.MODS, State.RUNNING, "Checking mods (" + checked + " of " + wanted.size() + ")");
+                ui.step(Step.MODS, State.RUNNING, "Checking " + noun() + " (" + checked + " of " + wanted.size() + ")");
             }
         }
         List<Manifest.Mod> auto = need.stream().filter(m -> !m.manual()).toList();
         List<Manifest.Mod> byHand = new ArrayList<>(need.stream().filter(Manifest.Mod::manual).toList());
         if (need.isEmpty()) {
-            ui.step(Step.MODS, State.DONE, wanted.size() + " mods, all up to date");
-            log("All " + wanted.size() + " mods are already in place.");
+            ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + ", all up to date");
+            log("All " + wanted.size() + " " + noun() + " are already in place.");
             return Result.READY;
         }
-        log((wanted.size() - need.size()) + " mods already in place, " + auto.size() + " to download"
+        log((wanted.size() - need.size()) + " " + noun() + " already in place, " + auto.size() + " to download"
                 + (byHand.isEmpty() ? "" : ", " + byHand.size() + " by hand"));
 
         long total = auto.stream().mapToLong(Manifest.Mod::size).sum();
@@ -272,7 +318,7 @@ final class Installer {
             pool.shutdownNow();
         }
         if (!failed.isEmpty()) {
-            ui.step(Step.MODS, State.FAILED, (failed.size() == 1 ? "1 mod" : failed.size() + " mods")
+            ui.step(Step.MODS, State.FAILED, (failed.size() == 1 ? "1 file" : failed.size() + " files")
                     + " could not be downloaded; run setup again to retry");
             return Result.FAILED;
         }
@@ -291,12 +337,12 @@ final class Installer {
                 return Result.INCOMPLETE;
             }
         }
-        ui.step(Step.MODS, State.DONE, wanted.size() + " mods ready (" + need.size() + " new)");
+        ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + " ready (" + need.size() + " new)");
         return Result.READY;
     }
 
     private void fetchMod(Manifest.Mod m, Download.Progress progress) throws IOException, InterruptedException {
-        Path target = mods.resolve(m.file());
+        Path target = target(m);
         if (m.patch() == null) {
             Path tmp = downloads.resolve(m.file() + ".part");
             Download.fetch(m.source().url(), tmp, m.size(), m.sha512(), "SHA-512", progress);
@@ -315,8 +361,9 @@ final class Installer {
         log("Got " + m.patch().originalFile() + " from " + m.source().label() + " and applied the pack's fix: " + m.file());
     }
 
-    /** Moves a finished file into mods/, first moving any old file of that name to mods-removed/. */
+    /** Moves a finished file into place, first moving any old file of that name to mods-removed/. */
     private void place(Path from, Path target) throws IOException {
+        Files.createDirectories(target.getParent());
         if (Files.exists(target)) {
             moveAside(target);
         }
@@ -339,7 +386,7 @@ final class Installer {
         }
         long size = Files.size(f);
         long modified = Files.getLastModifiedTime(f).toMillis();
-        Map<String, Object> rec = installed.get(m.file());
+        Map<String, Object> rec = installed.get(key(m));
         if (rec != null && identity(m).equals(rec.get("id")) && Json.num(rec, "size") == size
                 && Json.num(rec, "modified") == modified) {
             return true;
@@ -363,14 +410,14 @@ final class Installer {
         rec.put("id", identity(m));
         rec.put("size", Files.size(f));
         rec.put("modified", Files.getLastModifiedTime(f).toMillis());
-        installed.put(m.file(), rec);
+        installed.put(key(m), rec);
     }
 
     /** Looks for hand-downloaded mods in manual/ and the Downloads folder, and installs the ones it finds. */
     synchronized List<Manifest.Mod> scanManual(List<Manifest.Mod> missing) throws IOException {
         List<Manifest.Mod> still = new ArrayList<>();
         for (Manifest.Mod m : missing) {
-            if (isGood(m, mods.resolve(m.file()))) {
+            if (isGood(m, target(m))) {
                 continue;
             }
             Path found = null;
@@ -404,9 +451,9 @@ final class Installer {
     private void installManual(Manifest.Mod m, Path found) throws IOException {
         Path tmp = downloads.resolve(m.file() + ".part");
         Files.copy(found, tmp, StandardCopyOption.REPLACE_EXISTING);
-        place(tmp, mods.resolve(m.file()));
-        record(m, mods.resolve(m.file()));
-        log("Found " + m.name() + " at " + found + " and copied it into mods/");
+        place(tmp, target(m));
+        record(m, target(m));
+        log("Found " + m.name() + " at " + found + " and copied it into " + m.dir() + "/");
     }
 
     List<Path> manualPlaces() {
@@ -441,12 +488,12 @@ final class Installer {
     // ---- extra files ----
 
     private void extractFiles() {
-        List<Manifest.Extract> list = manifest.extracts().stream().filter(Manifest.Extract::onServer).toList();
+        List<Manifest.Extract> list = wantedExtracts();
         if (list.isEmpty()) {
             ui.step(Step.FILES, State.DONE, "Nothing to add");
             return;
         }
-        ui.step(Step.FILES, State.RUNNING, "Adding " + list.size() + " file(s)");
+        ui.step(Step.FILES, State.RUNNING, "Adding " + list.size() + (list.size() == 1 ? " file" : " files"));
         int ok = 0;
         for (Manifest.Extract x : list) {
             Path target = dir.resolve(x.to());
@@ -486,19 +533,35 @@ final class Installer {
 
     // ---- tidy ----
 
+    /**
+     * Servers: jars in mods/ that aren't part of the pack (and not listed in user-mods.txt) move to mods-removed/, so
+     * old versions can't clash with new ones after an update. Game folders: only jars this setup installed before and
+     * the pack no longer has move; mods a player added are left alone.
+     */
     private void tidy() throws IOException {
         ui.step(Step.TIDY, State.RUNNING, "");
         Set<String> keep = new HashSet<>();
-        manifest.serverMods().forEach(m -> keep.add(m.file()));
-        Set<String> own = userMods();
+        wanted().forEach(m -> keep.add(key(m)));
         List<String> moved = new ArrayList<>();
-        try (DirectoryStream<Path> ds = Files.newDirectoryStream(mods, "*.jar")) {
-            for (Path p : ds) {
-                String name = p.getFileName().toString();
-                if (!keep.contains(name) && !own.contains(name)) {
-                    moveAside(p);
-                    installed.remove(name);
-                    moved.add(name);
+        if (mode == Mode.SERVER) {
+            Set<String> own = userMods();
+            try (DirectoryStream<Path> ds = Files.newDirectoryStream(mods, "*.jar")) {
+                for (Path p : ds) {
+                    String name = p.getFileName().toString();
+                    if (!keep.contains("mods/" + name) && !own.contains(name)) {
+                        moveAside(p);
+                        moved.add(name);
+                    }
+                }
+            }
+        } else {
+            for (String k : new ArrayList<>(installed.keySet())) {
+                if (k.startsWith("mods/") && !keep.contains(k)) {
+                    Path p = dir.resolve(k);
+                    if (Files.isRegularFile(p)) {
+                        moveAside(p);
+                        moved.add(p.getFileName().toString());
+                    }
                 }
             }
         }
@@ -509,9 +572,9 @@ final class Installer {
             ui.step(Step.TIDY, State.DONE, (moved.size() == 1 ? "1 old jar" : moved.size() + " old jars")
                     + " moved to mods-removed/");
             log("Moved " + moved.size() + (moved.size() == 1 ? " jar that is" : " jars that are")
-                    + " not part of CrazyCraft " + manifest.packVersion()
-                    + " to mods-removed/" + stamp + ": " + String.join(", ", moved)
-                    + ". To keep a mod of your own, list its file name in user-mods.txt.");
+                    + " not part of CrazyCraft " + manifest.packVersion() + " to mods-removed/" + stamp + ": "
+                    + String.join(", ", moved)
+                    + (mode == Mode.SERVER ? ". To keep a mod of your own, list its file name in user-mods.txt." : "."));
         }
     }
 
@@ -544,7 +607,7 @@ final class Installer {
                 inst.forEach((k, v) -> installed.put(k, Json.obj(v)));
             }
         } catch (Exception e) {
-            // a damaged state file only means every mod gets checked again
+            // a damaged state file only means every file gets checked again
         }
     }
 
@@ -565,7 +628,7 @@ final class Installer {
         ui.log(line);
     }
 
-    // ---- EULA and memory, used by both front ends ----
+    // ---- EULA and memory, used by the server front ends ----
 
     static boolean eulaAccepted(Path dir) {
         try {

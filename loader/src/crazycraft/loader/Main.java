@@ -9,10 +9,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * CrazyCraft server setup. With a screen it opens the setup window; with --nogui (or on a server without a screen) it
- * runs in the terminal, which is what the start scripts do before every start.
+ * CrazyCraft setup. With a screen it opens the setup window; with --nogui (or on a server without a screen) it runs in
+ * the terminal, which is what the server start scripts do before every start. --client sets up a game folder instead
+ * (mods and resource packs, no NeoForge); the pack's Prism instance runs it before every launch, and it only opens a
+ * window when something has to be downloaded.
  *
- * Options: --nogui, --dir <folder>, --manifest <file>, --accept-eula, --memory <GB>,
+ * Options: --client, --nogui, --dir <folder>, --manifest <file>, --accept-eula, --memory <GB>,
  * --screenshot <png> --demo <start|running|manual|done> (renders the window to an image without showing it).
  */
 public final class Main {
@@ -23,6 +25,7 @@ public final class Main {
 
     public static void main(String[] args) throws Exception {
         boolean nogui = false;
+        boolean client = false;
         boolean acceptEula = "true".equalsIgnoreCase(System.getenv("CRAZYCRAFT_ACCEPT_EULA"));
         Path dir = null;
         Path manifestFile = null;
@@ -34,6 +37,7 @@ public final class Main {
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "--nogui", "nogui" -> nogui = true;
+                case "--client" -> client = true;
                 case "--accept-eula" -> acceptEula = true;
                 case "--dir" -> dir = Path.of(args[++i]);
                 case "--manifest" -> manifestFile = Path.of(args[++i]);
@@ -56,33 +60,43 @@ public final class Main {
             dir = defaultDir();
         }
         Manifest manifest = loadManifest(manifestFile, dir);
+        Installer.Mode mode = client ? Installer.Mode.CLIENT : Installer.Mode.SERVER;
 
         if (screenshot != null) {
             System.setProperty("java.awt.headless", "true");
-            Gui.screenshot(manifest, dir, demo, Path.of(screenshot));
+            Gui.screenshot(manifest, dir, mode, demo, Path.of(screenshot));
             return;
         }
         if (selfTest != null) {
             System.setProperty("java.awt.headless", "true");
-            System.exit(Gui.selfTest(manifest, dir, selfTest, selfTestManual));
+            System.exit(Gui.selfTest(manifest, dir, mode, selfTest, selfTestManual));
+        }
+        if (client && !new Installer(dir, manifest, ConsoleUi.QUIET, mode).needsWork()) {
+            System.out.println("CrazyCraft " + manifest.packVersion() + ": every mod and resource pack is in place.");
+            System.exit(0);
         }
         if (!nogui && !GraphicsEnvironment.isHeadless()) {
-            Gui.open(manifest, dir);
+            Gui.open(manifest, dir, mode);
             return;
         }
 
         ConsoleUi ui = new ConsoleUi();
-        ConsoleUi.banner(manifest);
-        if (memory > 0) {
+        ConsoleUi.banner(manifest, mode);
+        if (memory > 0 && !client) {
             Installer.setMemoryGb(dir, memory);
         }
-        Installer.Result result = new Installer(dir, manifest, ui).run();
+        Installer.Result result = new Installer(dir, manifest, ui, mode).run();
         if (result != Installer.Result.READY) {
             System.out.println();
             System.out.println(result == Installer.Result.INCOMPLETE
                     ? "  Setup is not finished: some mods still have to be downloaded by hand (see above)."
                     : "  Setup did not finish; see the messages above and .crazycraft/loader.log.");
             System.exit(result == Installer.Result.INCOMPLETE ? 3 : 1);
+        }
+        if (client) {
+            System.out.println();
+            System.out.println("  Ready.");
+            System.exit(0);
         }
         boolean eula = ui.eula(dir, acceptEula);
         System.out.println();

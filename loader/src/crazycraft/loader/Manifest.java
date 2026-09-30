@@ -26,10 +26,14 @@ record Manifest(String packName, String packVersion, String repo, String minecra
     record Patch(String originalFile, List<Map<String, Object>> ops, String result, String why) {
     }
 
-    record Mod(String file, String name, String version, String side, long size, String sha512, Source source,
-               String license, Patch patch) {
+    record Mod(String file, String dir, String name, String version, String side, long size, String sha512,
+               Source source, String license, Patch patch) {
         boolean onServer() {
             return !"client".equals(side);
+        }
+
+        boolean onClient() {
+            return !"server".equals(side);
         }
 
         boolean manual() {
@@ -40,6 +44,10 @@ record Manifest(String packName, String packVersion, String repo, String minecra
     record Extract(String from, String entry, String to, String sha256, String side, String why) {
         boolean onServer() {
             return !"client".equals(side);
+        }
+
+        boolean onClient() {
+            return !"server".equals(side);
         }
     }
 
@@ -63,7 +71,9 @@ record Manifest(String packName, String packVersion, String repo, String minecra
                 }
                 patch = new Patch(Json.str(p, "originalFile"), ops, Json.str(p, "result"), Json.str(p, "why"));
             }
-            mods.add(new Mod(Json.str(m, "file"), Json.str(m, "name"), Json.str(m, "version"), Json.str(m, "side"),
+            String dir = Json.str(m, "dir");
+            mods.add(new Mod(Json.str(m, "file"), dir == null ? "mods" : dir, Json.str(m, "name"), Json.str(m, "version"),
+                    Json.str(m, "side"),
                     Json.num(m, "size"), Json.str(m, "sha512"),
                     new Source(Json.str(src, "type"), Json.str(src, "url"), Json.str(src, "page"),
                             Json.str(src, "download"), Json.str(src, "note")),

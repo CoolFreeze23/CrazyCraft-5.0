@@ -14,11 +14,30 @@ final class ConsoleUi implements Installer.Listener {
     private int lastPercent = -1;
     private boolean midLine;
 
-    static void banner(Manifest m) {
+    /** For quick checks that report nothing. */
+    static final Installer.Listener QUIET = new Installer.Listener() {
+        @Override
+        public void log(String line) {
+        }
+
+        @Override
+        public void step(Installer.Step step, Installer.State state, String detail) {
+        }
+
+        @Override
+        public void progress(long bytesDone, long bytesTotal, int filesDone, int filesTotal, String current) {
+        }
+
+        @Override
+        public void manual(List<Manifest.Mod> missing, Installer installer) {
+        }
+    };
+
+    static void banner(Manifest m, Installer.Mode mode) {
         System.out.println();
         System.out.println("  ==============================================================");
-        System.out.println("    " + m.packName() + " server setup  -  pack " + m.packVersion()
-                + "  -  Minecraft " + m.minecraft());
+        System.out.println("    " + m.packName() + (mode == Installer.Mode.CLIENT ? " game" : " server") + " setup  -  pack "
+                + m.packVersion() + "  -  Minecraft " + m.minecraft());
         System.out.println("    Every mod is downloaded from its official page (Modrinth, CurseForge");
         System.out.println("    or the author's GitHub) and checked before it is used.");
         System.out.println("  ==============================================================");
@@ -41,6 +60,9 @@ final class ConsoleUi implements Installer.Listener {
         }
         lastLine = System.currentTimeMillis();
         endLine();
+        if (step == Installer.Step.NEOFORGE && state == Installer.State.WAITING) {
+            return;
+        }
         String tag = switch (state) {
             case DONE -> "[ OK ]";
             case RUNNING -> "[ .. ]";

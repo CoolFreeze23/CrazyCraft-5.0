@@ -10,7 +10,7 @@ Get the latest files from the [Releases](../../releases) page:
 
 | File | What it is |
 |---|---|
-| `CrazyCraft5-Client.zip` | Full client pack, importable into Prism Launcher or MultiMC |
+| `CrazyCraft5-Client.zip` | Client pack for Prism Launcher or MultiMC. The first launch downloads every mod and resource pack from its official page. |
 | `CrazyCraft5-Server.zip` | Dedicated server files. The setup downloads every mod from its official page. |
 
 ### Client (Prism Launcher or MultiMC, recommended)
@@ -19,7 +19,8 @@ Get the latest files from the [Releases](../../releases) page:
 2. Download `CrazyCraft5-Client.zip`. Don't unzip it.
 3. In Prism, go to Add Instance > Import > Browse, pick the zip and click OK.
 4. Edit the instance, open Settings > Java and give it 8 to 12 GB of RAM (8 GB minimum).
-5. Launch. The first start takes a few minutes while all the mods load.
+5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 202 mods and 29 resource packs (about 960 MB) from their official pages and checks every file, then starts the game. Later launches only check the files, in about a second.
+6. One mod, MCHeli, can only be downloaded from CurseForge itself: the setup window shows you the page and picks up the file from your Downloads folder.
 
 Any launcher that imports MultiMC-format instances works the same way. For a manual install, see [docs/INSTALLING.md](docs/INSTALLING.md).
 
@@ -67,4 +68,4 @@ Besides the mod list itself, a lot of custom work went into the pack:
 
 ## Credits & legal
 
-All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. The server files don't include anyone's mods: the setup downloads each one from its official page, and `pack/manifest.json` shows exactly where every file comes from. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668 and Monster Hunter Villager is by Yoshi; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.
+All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. The pack's downloads don't include anyone else's mods or resource packs: the setup downloads each one from its official page, and `pack/manifest.json` shows exactly where every file comes from. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668 and Monster Hunter Villager is by Yoshi; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.

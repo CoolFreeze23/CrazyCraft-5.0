@@ -1,4 +1,13 @@
 {
+ "29505b492ae4f11efcd80d12052e4b99fce04a2fe18cb6868d2ac64423aa58397a177cb9e1882439d567976327ee8698d50e16f2d81282dc879fec56200a5a5e": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/5336/431/Luminous1.4.zip",
+  "file": 5336431,
+  "fileName": "Luminous1.4.zip",
+  "name": "Luminous",
+  "project": 438326,
+  "slug": "luminous"
+ },
  "371dd7079b174091363327df70ed64c84e8e36fcab49b4c33bbcbe39650f6bccc12d3e14818cdfbbaa519a999f64a0a92c03ec981f55a315b044dc7cb5c27ef4": {
   "allowModDistribution": true,
   "downloadUrl": "https://edge.forgecdn.net/files/7797/302/twilightforest-1.21.1-4.8.3345-universal.jar",
@@ -43,6 +52,15 @@
   "name": "MCHeli [MODERN PORT]",
   "project": 1612895,
   "slug": "mcheli-modern-port"
+ },
+ "b8fa767103a59ff934336beacf0cd8dde21c33037479894aaa19af097748b00a3f42c8406f2c875f8592fa5d6ea5b6f0de75e2bee4e953ce89c6a293343463a7": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/6153/54/Alittle_Axolotl.zip",
+  "file": 6153054,
+  "fileName": "Alittle_Axolotl.zip",
+  "name": "Alittl Axolotl & Friends- Animated 3D bucket friends! [Java Version]",
+  "project": 495032,
+  "slug": "alittl-axolotl"
  },
  "bcc662c5588d0bd898f0878913b6d94d13e8fe7d58b54ae4fa15cf584a6ed5a4d202533f71f7ca40affcbd221da3d29d8b3af06329ae84faf75c68da99f27551": {
   "allowModDistribution": true,
