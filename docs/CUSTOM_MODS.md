@@ -1,6 +1,6 @@
 # The custom mods
 
-We maintain these mods ourselves. Two were written for it (OreSpawn Integrations and OreSpawn Delight), and three are ports we keep on NeoForge 1.21.1 (OreSpawn, Domestication Innovation and Monster Hunter Villager). All of them are open source under the same GitHub account, and each one ships as a normal jar in `mods/`.
+We maintain these mods ourselves. Two were written for it (OreSpawn Integrations and OreSpawn Delight), and four are ports we keep on NeoForge 1.21.1 (OreSpawn, Domestication Innovation, Monster Hunter Villager and Brazilian Delight). All of them are open source under the same GitHub account, and each one ships as a normal jar in `mods/`.
 
 ---
 
@@ -57,6 +57,7 @@ It also carries the pack's compatibility mixins:
 
 - Jar: `orespawn_delight-0.1.0.jar`
 - Source: [CoolFreeze23/orespawn-delight](https://github.com/CoolFreeze23/orespawn-delight)
+- Releases: [CoolFreeze23/orespawn-delight/releases](https://github.com/CoolFreeze23/orespawn-delight/releases)
 
 A [Farmer's Delight](https://modrinth.com/mod/farmers-delight) add-on for OreSpawn that turns the pack's creatures into ingredients: meats, cutting board drops, skillet dishes and cooking pot feasts from CrazyCraft mobs, made to look and progress like Farmer's Delight.
 
@@ -93,3 +94,11 @@ What you get in game:
 - Trades in monster loot and hunting gear.
 
 It comes in English and Brazilian Portuguese. Version 1.3.1 added the `monster_hunter_villager:quarry` entity tag, so other mods and datapacks can give the hunters more to hunt. [OreSpawn Integrations](#orespawn-integrations) uses it to add OreSpawn creatures.
+
+## Brazilian Delight port
+
+- Jar: `braziliandelight-neoforge-3.0.1-neoforge.1.jar`
+- Source: [CoolFreeze23/braziliandelight-neoforge](https://github.com/CoolFreeze23/braziliandelight-neoforge)
+- Releases: [CoolFreeze23/braziliandelight-neoforge/releases](https://github.com/CoolFreeze23/braziliandelight-neoforge/releases)
+
+Our NeoForge 1.21.1 port of DannBrown's [Brazilian Delight](https://github.com/danbrown/braziliandelight), the Farmer's Delight add-on with Brazilian crops, dishes, sweets and drinks. The original's 1.21.1 release only exists for Fabric. The port keeps every block, item, recipe, loot table, advancement, texture, model and worldgen file of its 3.0.1 release and re-implements the code on plain NeoForge, so it only needs Farmer's Delight and Kotlin for Forge. It's MIT-licensed, like the original.

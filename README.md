@@ -1,6 +1,6 @@
 # CrazyCraft 5.0
 
-A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.248, with 202 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with two companion mods written for this pack and our NeoForge ports of Domestication Innovation and Monster Hunter Villager.
+A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.248, with 202 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with two companion mods written for this pack and our NeoForge ports of Domestication Innovation, Monster Hunter Villager and Brazilian Delight.
 
 Girlfriends, Mobzilla, the King, ant dimensions, uranium everywhere, helicopters, superheroes and lucky blocks. You can play the whole pack in English or Brazilian Portuguese (a complete pt-BR resource pack is included).
 
@@ -44,6 +44,7 @@ Besides the mod list itself, a lot of custom work went into the pack:
 - [OreSpawn Delight](docs/CUSTOM_MODS.md#orespawn-delight), a Farmer's Delight add-on with meats, dishes and feasts cooked from OreSpawn creatures. [Source repo](https://github.com/CoolFreeze23/orespawn-delight).
 - [Domestication Innovation](docs/CUSTOM_MODS.md#domestication-innovation-port), alex_the_668's pet overhaul, ported from Forge 1.20.1 to NeoForge 1.21.1, with new collar enchantments and datapack taming added. [Source repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1).
 - [Monster Hunter Villager](docs/CUSTOM_MODS.md#monster-hunter-villager-port), our NeoForge 1.21.1 port of Yoshi's Forge 1.20.1 mod. It adds a villager that hunts monsters with thrown traps and a knife. The original ran its hunter and trap code on every mob in the world every tick; the port only runs it for Monster Hunters and placed traps. [Source repo](https://github.com/CoolFreeze23/monster-hunter-villager-neoforge).
+- [Brazilian Delight](docs/CUSTOM_MODS.md#brazilian-delight-port), DannBrown's Farmer's Delight add-on with Brazilian food, ported from Fabric to NeoForge 1.21.1. [Source repo](https://github.com/CoolFreeze23/braziliandelight-neoforge).
 - [Patched jars](docs/MODIFICATIONS.md#patched-jars) for mods with no fixed release. The server setup downloads the published jars and applies the crash fixes and compatibility patches on install (SecurityCraft with Immersive Portals, Farmer's Respite's broken menu registration, and more).
 - [A full pt-BR translation](docs/MODIFICATIONS.md#brazilian-portuguese-resource-pack) of every mod in the pack, shipped as the `CrazyCraft5-ptBR` resource pack and turned on by default.
 - [Config changes](docs/MODIFICATIONS.md#config-changes) to combat, performance and menus so everything works together, plus a custom OreSpawn title screen.
