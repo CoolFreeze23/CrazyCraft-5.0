@@ -74,6 +74,7 @@ def main():
     cf_cache = json.loads((PACK / "cf_cache.json").read_text(encoding="utf-8")) if (PACK / "cf_cache.json").exists() else {}
     sources = json.loads((PACK / "sources.json").read_text(encoding="utf-8"))
     patched = set(sources.get("patched", {}))
+    pins = json.loads((PACK / "pins.json").read_text(encoding="utf-8")) if (PACK / "pins.json").exists() else {}
     rows = []  # dicts: file, name, kind, current, latest, latest_release, date, status, notes
 
     # Modrinth
@@ -107,6 +108,8 @@ def main():
                "page": m["source"].get("page", ""), "notes": []}
         if m["file"] in patched:
             row["notes"].append("patched on install; edit list must be re-derived")
+        if proj.get("slug") in pins:
+            row["notes"].append("held back: " + pins[proj["slug"]])
         if not top or top["id"] == vid or (c and top["date_published"] <= c["date_published"]):
             row.update(status="current", latest=row["current"], latest_date=row["current_date"])
         else:

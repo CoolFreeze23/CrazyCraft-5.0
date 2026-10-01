@@ -8,12 +8,12 @@ Seven published mods need a small fix to work in the pack, because no fixed upst
 
 | Mod | Patch | Why |
 |---|---|---|
-| SecurityCraft 1.10.1 | Removed its camera `ChunkMap` mixin | Immersive Portals (required by the Portal Gun) rewrites `ChunkMap.onChunkReadyToSend`, and SecurityCraft's camera mixin hard-crashes on world load when it can't hook it. The only side effect: camera monitors won't force-load far-away chunks. |
-| Farmer's Respite 3.0.0 (`-menufix`) | Replaced a 7-byte duplicate registration call with NOPs, and `"item"` with `"id"` in its red dye recipe | The only published 1.21.1 port registers its `farmersrespite:kettle` menu type twice, which crashes every time, in any pack. The patch removes the leftover duplicate and the kettle works normally. The red dye recipe used the pre-1.21 result format. |
-| Ars Nouveau 5.13.0 | Stripped the embedded `lambdynamiclights-api` | The bundled API stub conflicted with this pack's mod set. |
+| SecurityCraft 1.10.2.1 | Removed its camera `ChunkMap` mixin | Immersive Portals (required by the Portal Gun) rewrites `ChunkMap.onChunkReadyToSend`, and SecurityCraft's camera mixin hard-crashes on world load when it can't hook it. The only side effect: camera monitors won't force-load far-away chunks. |
+| Farmer's Respite 3.0.1 (`-dyefix`) | Replaced `"item"` with `"id"` in its red dye recipe | 3.0.1 fixed the duplicate kettle registration upstream, so only the recipe fix remains: its red dye recipe still uses the pre-1.21 result syntax, which the game refuses to load. |
+| Ars Nouveau 5.13.2 | Stripped the embedded `lambdynamiclights-api` | The bundled API stub conflicted with this pack's mod set. |
 | Randomizer Complete Edition v0.6 | Fixed its `crafting_table` recipe file | The datapack uses newer recipe JSON syntax that 1.21.1 can't parse, so crafting tables could become uncraftable when randomized. |
 | Mob Mutator 1.0.0 | Removed its `TitleScreenMixin` from the mixin config | It forces an "editor" button onto the title screen that the layout can't hide. Removing the mixin only removes the button; all the gameplay mixins are intact. |
-| FancyMenu 3.9.7 | One-byte patch to the `isCopyrightButton()` check | FancyMenu deliberately stops packs from hiding the Mojang copyright line. The patch lets the pack's custom title screen control the whole layout. |
+| FancyMenu 3.9.14 | One-byte patch to the `isCopyrightButton()` check | FancyMenu deliberately stops packs from hiding the Mojang copyright line. The patch lets the pack's custom title screen control the whole layout. |
 | Structory: Towers 1.0.17 | Added `modLoader="lowcodefml"` to its `neoforge.mods.toml` | It's a data-only mod without a mod class, and NeoForge 1.21.1 only loads such a jar when it says so. |
 
 > Note for updaters: if you ever update one of these seven mods, the fix has to be made again and `pack/sources.json` pointed at the new original (the manifest generator then works out the edits). Everything else in `mods/` is stock.
@@ -69,3 +69,12 @@ FA+ Emissive and FA+ Objects are the same versions as before, now taken from Mod
 - `options.txt` ships minimal: default keybinds and the pt-BR pack turned on. Everything else is generated on first launch.
 - The instance allocates 8 GB by default (raise it to 10 to 12 GB if you have 32 GB of RAM).
 - JourneyMap data, world saves, logs and other personal data are not part of the download.
+
+## Versions held back
+
+The pack tracks the newest 1.21.1 build of every mod (`scripts/check_updates.py` reports what is behind, `scripts/update_mods.py` moves the instance). A few are held on purpose, listed with their reason in `pack/pins.json`:
+
+- **Sodium 0.6.13**: Iris 1.8.x for 1.21.1 pins it; the 0.8 line has no matching Iris.
+- **Cosy Critters & Creepy Crawlies 0.0.1a**: 0.3.x's `ClientLevel` mixin targets a method Connector cannot map on NeoForge, so the client exits on startup.
+- **Subtle Effects 1.9.4**: 1.14.x's End Remastered hook calls a method End Remastered 6.3.0 for 1.21.1 does not have, so the client fails to load.
+- **Fresh Food 1.0**: 1.3.x needs Respackopts, whose NeoForge build asks for LibJF modules the NeoForge LibJF does not provide.

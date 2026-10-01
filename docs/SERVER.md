@@ -25,7 +25,7 @@ After setup, the folder also has `libraries/` (NeoForge), `mods/` and a hidden `
 ## What setup does
 
 1. Checks Java. Minecraft 1.21.1 needs Java 21.
-2. Installs NeoForge 21.1.248 if it isn't there yet. The installer comes from maven.neoforged.net and is checked against its published SHA-1.
+2. Installs NeoForge 21.1.252 if it isn't there yet. The installer comes from maven.neoforged.net and is checked against its published SHA-1.
 3. Checks every mod in `mods/` against the manifest, and downloads whatever is missing or doesn't match, six at a time:
    - 150 mods come from Modrinth's CDN and 6 from CurseForge (only mods whose authors allow downloads outside CurseForge).
    - Our own 6 mods come from their GitHub releases.
@@ -60,7 +60,7 @@ Download the new server files, unzip them over the server folder and start as us
 
 ## Client-only mods
 
-Of the pack's 202 mods, 39 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
+Of the pack's 204 mods, 39 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
 
 ## Shipped server.properties defaults
 

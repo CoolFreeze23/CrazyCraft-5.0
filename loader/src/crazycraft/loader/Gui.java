@@ -1132,16 +1132,16 @@ final class Gui implements Installer.Listener {
                 String[] lines = client
                         ? new String[]{"CrazyCraft " + manifest.packVersion() + " game setup in " + dir,
                         "0 files already in place, " + (n - 1) + " to download, 1 by hand",
-                        "Got jei-1.21.1-neoforge-19.44.0.399.jar from Modrinth",
-                        "Got [1.21.1] SecurityCraft v1.10.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.1.jar",
-                        "Got FreshAnimations_v1.9.2.zip from Modrinth",
+                        "Got jei-1.21.1-neoforge-19.57.0.450.jar from Modrinth",
+                        "Got [1.21.1] SecurityCraft v1.10.2.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.2.1.jar",
+                        "Got FreshAnimations_v1.10.4.zip from Modrinth",
                         "Got ProjectE-1.21.1-PE1.1.0.jar from CurseForge",
                         "Got orespawn-1.21.1-2.0.0-beta.12.jar from GitHub"}
                         : new String[]{"CrazyCraft " + manifest.packVersion() + " server setup in " + dir,
                         "NeoForge " + manifest.neoforge().version() + " installed.",
                         "0 mods already in place, " + (n - 1) + " to download, 1 by hand",
-                        "Got jei-1.21.1-neoforge-19.44.0.399.jar from Modrinth",
-                        "Got [1.21.1] SecurityCraft v1.10.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.1.jar",
+                        "Got jei-1.21.1-neoforge-19.57.0.450.jar from Modrinth",
+                        "Got [1.21.1] SecurityCraft v1.10.2.1.jar from Modrinth and applied the pack's fix: SecurityCraft-1.21.1-v1.10.2.1.jar",
                         "Got ProjectE-1.21.1-PE1.1.0.jar from CurseForge",
                         "Got orespawn-1.21.1-2.0.0-beta.12.jar from GitHub"};
                 for (String l : lines) {

@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 title CrazyCraft 5.0 Server
-set NEOFORGE_VERSION=21.1.248
+set NEOFORGE_VERSION=21.1.252
 :: CRAZYCRAFT_JAVA          full path to java.exe, if "java" is not Java 21
 :: CRAZYCRAFT_RESTART=false  stop instead of restarting when the server stops or crashes
 :: CRAZYCRAFT_INSTALL_ONLY=true  install or update the server, then exit

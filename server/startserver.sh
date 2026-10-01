@@ -6,7 +6,7 @@
 #   CRAZYCRAFT_SKIP_SETUP=true    start without checking the mods first
 #   CRAZYCRAFT_ACCEPT_EULA=true   accept the Minecraft EULA (https://aka.ms/MinecraftEULA) without asking
 set -u
-NEOFORGE_VERSION=21.1.248
+NEOFORGE_VERSION=21.1.252
 JAVA="${CRAZYCRAFT_JAVA:-java}"
 cd "$(dirname "$0")"
 

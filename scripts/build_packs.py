@@ -14,7 +14,7 @@ INSTANCE = Path(r"C:\Users\alvin\AppData\Roaming\PrismLauncher\instances\CrazyCr
 MC = INSTANCE / "minecraft"
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
-NEOFORGE_VERSION = "21.1.248"
+NEOFORGE_VERSION = "21.1.252"
 
 # Client-only mods excluded from the dedicated server (filename match, case-insensitive).
 # Fabric jars that declare "environment": "client", plus NeoForge mods that are
@@ -44,14 +44,15 @@ SERVER_EXCLUDE = [
     "punchy-", "entity_model_features", "entity_texture_features",
     # discord rich presence (client only; CraterLib is only here for Simple RPC)
     "SimpleRPC", "CraterLib",
-    # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.
+    # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.,
+    "cosycritters", "sodiumoptionsapi", "modefite",
 ]
 
 CLIENT_DIRS = ["mods", "config", "defaultconfigs", "resourcepacks", "mcheli",
                "moonlight-global-datapacks", "patchouli_books"]
 CLIENT_FILES = ["emi.json", "patchouli_data.json", "icon.png"]
 
-OPTIONS_TXT = "version:3955\nlang:pt_br\nresourcePacks:[\"mod/punchy:resourcepacks/punchy\",\"vanilla\",\"fabric\",\"mod_resources\",\"moonlight:merged_pack\",\"file/Fast Better Grass.zip\",\"file/Better Leaves.zip\",\"file/Low On Fire.zip\",\"file/CrazyCraft5-ptBR.zip\",\"file/Drigo 3D Lanterns x Punchy.zip\",\"file/Traben\\u0027s 3D Armor - 1.0.1.zip\",\"file/Untitled Punchy.zip\",\"file/Sun and Moon Circular.zip\",\"file/trabens-3d-arrows-1.1.zip\",\"file/Hyper Punchy.zip\",\"file/Fresh Food.zip\",\"file/Even Better Enchants.zip\",\"file/Enhanced Boss Bars.zip\",\"file/Dramatic Skys.zip\",\"file/Blockier Goat Horn v1.1 f9-34.zip\",\"file/FreshAnimations_v1.9.2.zip\",\"file/FA+Emissive-v1.2.zip\",\"file/Alittle_Axolotl.zip\"]\n"
+OPTIONS_TXT = "version:3955\nlang:pt_br\nresourcePacks:[\"mod/punchy:resourcepacks/punchy\",\"vanilla\",\"fabric\",\"mod_resources\",\"moonlight:merged_pack\",\"file/Fast Better Grass.zip\",\"file/Better-Leaves-9.6.zip\",\"file/Low On Fire.zip\",\"file/CrazyCraft5-ptBR.zip\",\"file/Drigo 3D Lanterns x Punchy.zip\",\"file/Traben\\u0027s 3D Armor - 1.0.1.zip\",\"file/Untitled Punchy.zip\",\"file/Sun and Circular Moon.zip\",\"file/trabens-3d-arrows-1.1.zip\",\"file/Hyper Punchy.zip\",\"file/Fresh Food.zip\",\"file/Even Better Enchants.zip\",\"file/Enhanced Boss Bars.zip\",\"file/Dramatic Skys Demo 1.5.3.36.6.zip\",\"file/Blockier Goat Horn v1.2.zip\",\"file/FreshAnimations_v1.10.4.zip\",\"file/FA+Emissive-v1.6.zip\",\"file/Alittle_Axolotl.zip\"]\n"
 
 INSTANCE_CFG = """[General]
 ConfigVersion=1.2

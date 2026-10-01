@@ -35,6 +35,15 @@
   "project": 267193,
   "slug": "chunkpregenerator"
  },
+ "61fbe835be74421c6ab6fd20c6fb5b637dfafae9cef064375aad3d0151ee9f44564be48e402528ba5835f0214a9431095562b7bcfb18bb3f71c76a8feaabb420": {
+  "allowModDistribution": false,
+  "downloadUrl": "https://edge.forgecdn.net/files/8748/58/MCHeli-1.21.1-1.3.1.jar",
+  "file": 8748058,
+  "fileName": "MCHeli-1.21.1-1.3.1.jar",
+  "name": "MCHeli [MODERN PORT]",
+  "project": 1612895,
+  "slug": "mcheli-modern-port"
+ },
  "76599d3abed095bf0aa8b2ce971931f80a2a809ae92e3a58561759a53e80cc8350ce1e6bdfb39563349c08dd5e4a2c4ba5f9cfb78b62582dd543270240f11463": {
   "allowModDistribution": true,
   "downloadUrl": "https://edge.forgecdn.net/files/7099/904/refurbished_furniture-neoforge-1.21.1-1.0.19.jar",
@@ -43,6 +52,15 @@
   "name": "MrCrayfish's Furniture Mod: Refurbished",
   "project": 897116,
   "slug": "refurbished-furniture"
+ },
+ "836c6edf40a9bace9c49c67ba068c0663c11fc26c2d5636da5905ced04238e42cb6afab6f42643d97a05aac0ab252232480d9d9b2acc4e6f874dab197cb0d62d": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/8981/959/GravityGunRevival-1.21.1-1.3.1.jar",
+  "file": 8981959,
+  "fileName": "GravityGunRevival-1.21.1-1.3.1.jar",
+  "name": "iChun Gravity Gun Mod Revival",
+  "project": 1452616,
+  "slug": "ichun-gravity-gun-mod-revival"
  },
  "91ad50bc7a55207c6126933de14b2f9aeb39a85a99f07ec6d80d4bd89380880f0bbf149729af22fd0a3fa45922d2bf0055a315b3fc42e351dea063297343e578": {
   "allowModDistribution": false,
@@ -71,6 +89,15 @@
   "project": 549225,
   "slug": "framework"
  },
+ "ced3e55e783a65ce67ff4d5f376814754109b86c2ee47cb0288a2efaafcb8029c1036457efac5a4b84acb2b59994f1b521bdf4ade05ecd4f5531eebca2137e93": {
+  "allowModDistribution": false,
+  "downloadUrl": "https://edge.forgecdn.net/files/5489/236/FA%2bEmissive-v1.2.zip",
+  "file": 5489236,
+  "fileName": "FA+Emissive-v1.2.zip",
+  "name": "Fresh Animations: Extensions",
+  "project": 813608,
+  "slug": "fresh-animations-extensions"
+ },
  "d8bd0e707c66df4e8dc40fbdd8454b41e78b6354302dcd52a277091e004ef8432fffa9a33f5da40c09ec80d8b4bb3f15ddc594cf891a026d6ba775677864fb58": {
   "allowModDistribution": true,
   "downloadUrl": "https://edge.forgecdn.net/files/6611/984/ProjectE-1.21.1-PE1.1.0.jar",
@@ -79,5 +106,23 @@
   "name": "ProjectE",
   "project": 226410,
   "slug": "projecte"
+ },
+ "db7737f59dca328e297ff52099abf93ce5cdd8c4b74006fb303259893e9adc66c5cc29477b5f1190b9ab1745ba88ad8e5def7814ec965f697dc123abfa839a76": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/8748/909/Chunk-Pregenerator-Neoforge-1.21-4.5.4.jar",
+  "file": 8748909,
+  "fileName": "Chunk-Pregenerator-Neoforge-1.21-4.5.4.jar",
+  "name": "Chunk-Pregenerator",
+  "project": 267193,
+  "slug": "chunkpregenerator"
+ },
+ "fde4f40a3a6439c43df1f522a92a1bd16e4a175966d17efe9dea425d42f7906e7ed7771fd84182b1fd7f3bb86ecd6b969fdca3c4aca4719597e4832e75ae2511": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/7473/565/refurbished_furniture-neoforge-1.21.1-1.0.22.jar",
+  "file": 7473565,
+  "fileName": "refurbished_furniture-neoforge-1.21.1-1.0.22.jar",
+  "name": "MrCrayfish's Furniture Mod: Refurbished",
+  "project": 897116,
+  "slug": "refurbished-furniture"
  }
 }

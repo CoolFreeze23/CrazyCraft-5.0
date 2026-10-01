@@ -44,7 +44,7 @@ for i in inv:
 rows.sort(key=lambda r: r[0].lower())
 
 out = ["# Full mod list", "",
-       f"{len(rows)} mods. Minecraft 1.21.1 / NeoForge 21.1.248. "
+       f"{len(rows)} mods. Minecraft 1.21.1 / NeoForge 21.1.252. "
        "Fabric-loader mods run through Sinytra Connector.", "",
        "| Mod | Version | Loader | Notes |",
        "|---|---|---|---|"]
