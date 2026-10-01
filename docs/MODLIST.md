@@ -1,6 +1,6 @@
 # Full mod list
 
-204 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
+205 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -190,6 +190,7 @@
 | Time Vortex Mod (`vortexmod`) | 1.0.10 | NeoForge |  |
 | Towns and Towers (`t_and_t`) | 1.13.11 | NeoForge |  |
 | Traveler's Backpack (`travelersbackpack`) | 10.1.39 | NeoForge |  |
+| TxFastLoad (`txfastload`) | 1.0.0 | NeoForge |  |
 | TxniLib (`txnilib`) | 1.0.24 | NeoForge |  |
 | Visuality (`visuality`) | 0.7.7+1.21 | Fabric (Connector) |  |
 | Wakes (`wakes`) | 0.4.1+1.21.1 | Fabric (Connector) |  |

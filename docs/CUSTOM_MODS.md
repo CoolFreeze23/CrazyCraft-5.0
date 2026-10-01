@@ -102,3 +102,21 @@ It comes in English and Brazilian Portuguese. Version 1.3.1 added the `monster_h
 - Releases: [CoolFreeze23/braziliandelight-neoforge/releases](https://github.com/CoolFreeze23/braziliandelight-neoforge/releases)
 
 Our NeoForge 1.21.1 port of DannBrown's [Brazilian Delight](https://github.com/danbrown/braziliandelight), the Farmer's Delight add-on with Brazilian crops, dishes, sweets and drinks. The original's 1.21.1 release only exists for Fabric. The port keeps every block, item, recipe, loot table, advancement, texture, model and worldgen file of its 3.0.1 release and re-implements the code on plain NeoForge, so it only needs Farmer's Delight and Kotlin for Forge. It's MIT-licensed, like the original.
+
+## TxFastLoad port
+
+- Jar: `txfastload-neoforge-1.21.1-1.0.0.jar` (client only)
+- Releases: [CoolFreeze23/txfastload-neoforge/releases](https://github.com/CoolFreeze23/txfastload-neoforge/releases)
+
+Our NeoForge 1.21.1 port of txslx's [TxFastLoad](https://modrinth.com/mod/txfastload), which only exists for Fabric on 1.21.11 and 26.1.2. It is published with the author's permission, and all credit for the idea and the original mod goes to txslx.
+
+What you get in game:
+
+- Zip resource packs are indexed once, so a reload no longer rescans every zip. With this pack's 29 resource packs that is where most of the time went.
+- Reloading resource packs (F3+T, changing packs, joining a server with its own pack) keeps the screen or the world visible instead of the red loading screen and its fades.
+- No fade when the game finishes starting, and no 2 second fade-in on the title screen.
+- An unchanged server resource pack is not checked again when you rejoin.
+
+Measured in this pack: a reload on the title screen went from 18.6 to 13.4 seconds, a reload in a world from 25.3 to 19.7 seconds, and the wait between "loading done" and a usable title screen from 2.0 to 0.4 seconds. World joins and dimension changes take the same time as before.
+
+Every feature has its own switch in `config/txfastload-client.toml`.

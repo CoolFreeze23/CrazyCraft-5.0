@@ -1526,6 +1526,14 @@
   "version": "4.8.3345"
  },
  {
+  "file": "txfastload-neoforge-1.21.1-1.0.0.jar",
+  "size_mb": 0.03,
+  "loader": "neoforge",
+  "modid": "txfastload",
+  "name": "TxFastLoad",
+  "version": "1.0.0"
+ },
+ {
   "file": "txnilib-neoforge-1.0.24-1.21.1.jar",
   "size_mb": 5.99,
   "loader": "neoforge",

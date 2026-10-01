@@ -39,6 +39,12 @@
    "url": "https://github.com/CoolFreeze23/braziliandelight-neoforge/releases/download/v{1}/{file}",
    "page": "https://github.com/CoolFreeze23/braziliandelight-neoforge",
    "license": "MIT"
+  },
+  {
+   "pattern": "^txfastload-neoforge-1\\.21\\.1-(.+)\\.jar$",
+   "url": "https://github.com/CoolFreeze23/txfastload-neoforge/releases/download/v{1}/{file}",
+   "page": "https://github.com/CoolFreeze23/txfastload-neoforge",
+   "license": "All rights reserved (port of TxFastLoad by txslx, published with the author's permission)"
   }
  ],
  "patched": {
@@ -103,7 +109,5 @@
  "manualNotes": {
   "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."
  },
- "personal": {
-  "txfastload-neoforge-*.jar": "NeoForge port of TxFastLoad made with the author's permission for personal use; stays out of the public pack until distribution is cleared."
- }
+ "personal": {}
 }

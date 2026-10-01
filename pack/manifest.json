@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -2755,6 +2755,20 @@
     "page": "https://www.curseforge.com/minecraft/mc-mods/the-twilight-forest"
    },
    "license": ""
+  },
+  {
+   "file": "txfastload-neoforge-1.21.1-1.0.0.jar",
+   "name": "TxFastLoad",
+   "version": "1.0.0",
+   "side": "client",
+   "size": 32885,
+   "sha512": "7361a43c63c42111e8fb8c267292b508a4508cac06818a9134c182b2f433fe3cab5afe39f79aeb0af55d72dbd0413a89c714adbc38b35ecc9f88f06a405cfe04",
+   "source": {
+    "type": "github",
+    "url": "https://github.com/CoolFreeze23/txfastload-neoforge/releases/download/v1.0.0/txfastload-neoforge-1.21.1-1.0.0.jar",
+    "page": "https://github.com/CoolFreeze23/txfastload-neoforge"
+   },
+   "license": "All rights reserved (port of TxFastLoad by txslx, published with the author's permission)"
   },
   {
    "file": "txnilib-neoforge-1.0.24-1.21.1.jar",
