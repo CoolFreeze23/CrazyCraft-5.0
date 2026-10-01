@@ -46,6 +46,7 @@ SERVER_EXCLUDE = [
     "SimpleRPC", "CraterLib",
     # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.,
     "cosycritters", "sodiumoptionsapi", "modefite",
+    "txfastload",
 ]
 
 CLIENT_DIRS = ["mods", "config", "defaultconfigs", "resourcepacks", "mcheli",
@@ -127,6 +128,14 @@ def build_client():
             z.write(src, f".minecraft/{rel}")
             n += 1
     print(f"client: {n} files -> {out} ({out.stat().st_size/1048576:.0f} MB)")
+
+
+def is_personal(name):
+    """Jars kept in my own instance only (pack/sources.json "personal"): never in the manifest, the mod list or a build."""
+    import fnmatch
+    import json as _json
+    spec = _json.loads((ROOT / "pack" / "sources.json").read_text(encoding="utf-8")).get("personal", {})
+    return any(fnmatch.fnmatch(name, pat) for pat in spec)
 
 
 def is_excluded(name):

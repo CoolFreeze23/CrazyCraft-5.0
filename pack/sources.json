@@ -102,5 +102,8 @@
  },
  "manualNotes": {
   "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."
+ },
+ "personal": {
+  "txfastload-neoforge-*.jar": "NeoForge port of TxFastLoad made with the author's permission for personal use; stays out of the public pack until distribution is cleared."
  }
 }

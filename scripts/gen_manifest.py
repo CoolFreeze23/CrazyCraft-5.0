@@ -24,7 +24,7 @@ import zipfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_packs import MC, NEOFORGE_VERSION, is_excluded  # noqa: E402
+from build_packs import MC, NEOFORGE_VERSION, is_excluded, is_personal  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PACK = ROOT / "pack"
@@ -195,7 +195,10 @@ def main():
     cf_cache = json.loads(cf_cache_path.read_text(encoding="utf-8")) if cf_cache_path.exists() else {}
     inventory = {r["file"]: r for r in json.loads((ROOT / "docs" / "mod_inventory.json").read_text(encoding="utf-8"))}
 
-    jars = sorted(p for p in (MC / "mods").glob("*.jar"))
+    jars = sorted(p for p in (MC / "mods").glob("*.jar") if not is_personal(p.name))
+    personal = sorted(p.name for p in (MC / "mods").glob("*.jar") if is_personal(p.name))
+    if personal:
+        print(f"kept out of the pack (personal): {personal}")
     mods = []
     for p in jars:
         data = p.read_bytes()

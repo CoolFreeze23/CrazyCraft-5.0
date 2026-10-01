@@ -85,7 +85,9 @@ def scan_jar(path):
 
 
 def main():
-    jars = sorted(MODS_DIR.glob("*.jar"), key=lambda p: p.name.lower())
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from build_packs import is_personal
+    jars = sorted((p for p in MODS_DIR.glob("*.jar") if not is_personal(p.name)), key=lambda p: p.name.lower())
     inv = [scan_jar(p) for p in jars]
     OUT.write_text(json.dumps(inv, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"{len(inv)} jars -> {OUT}")
