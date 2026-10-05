@@ -60,7 +60,7 @@ Download the new server files, unzip them over the server folder and start as us
 
 ## Client-only mods
 
-Of the pack's 205 mods, 40 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
+Of the pack's 206 mods, 41 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
 
 ## Shipped server.properties defaults
 

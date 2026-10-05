@@ -1,6 +1,6 @@
 # Full mod list
 
-205 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
+206 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -92,6 +92,7 @@
 | HatsRenewed (`hats`) | 21.1.1-mc1.21.1 | NeoForge |  |
 | Hbm's Nuclear Tech: Neo Edition (`hbmsntm`) | 198A | NeoForge | Unofficial 1.21.1 build of HBM's Nuclear Tech |
 | iChunUtil (`ichunutil`) | 1.0.3 | NeoForge |  |
+| ImmediatelyFast (`immediatelyfast`) | 1.6.14+1.21.1 | NeoForge |  |
 | Immersive Lanterns (`immersivelanterns`) | 1.0.6 | NeoForge |  |
 | Immersive Portals (`immersive_portals_core`) | 6.0.7 | NeoForge |  |
 | Incendium (`incendium`) | 5.4.3 | NeoForge |  |

@@ -25,7 +25,7 @@ SERVER_EXCLUDE = [
     "explosive-enhancement", "visuality-", "wakes-",
     # rendering / performance client stack
     "sodium-neoforge", "sodiumdynamiclights", "iris-neoforge", "entityculling",
-    "continuity-",
+    "continuity-", "ImmediatelyFast",
     # HUD / UI / menu
     "fancymenu", "melody_neoforge", "draggable_lists", "fancytoasts",
     "autohud", "BetterAdvancements", "Controlling-", "MouseTweaks",

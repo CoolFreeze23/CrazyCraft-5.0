@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -1357,6 +1357,20 @@
     "page": "https://modrinth.com/mod/ichunutil"
    },
    "license": "LGPL-3.0-only"
+  },
+  {
+   "file": "ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar",
+   "name": "ImmediatelyFast",
+   "version": "1.6.14+1.21.1",
+   "side": "client",
+   "size": 365195,
+   "sha512": "7d1c2e6ce306f4bb9aa155f64ba87732dc2443d57fde249467a99e0ed90fec89a706252888b97f882efbc55d6044971519db704125f27ae53cd9ae40424f9b2c",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/5ZwdcRci/versions/OUpXxw4n/ImmediatelyFast-NeoForge-1.6.14%2B1.21.1.jar",
+    "page": "https://modrinth.com/mod/immediatelyfast"
+   },
+   "license": "LGPL-3.0-or-later"
   },
   {
    "file": "immersive_portals-6.0.7-all.jar",

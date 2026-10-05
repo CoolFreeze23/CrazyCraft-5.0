@@ -751,6 +751,14 @@
   "version": "1.0.3"
  },
  {
+  "file": "ImmediatelyFast-NeoForge-1.6.14+1.21.1.jar",
+  "size_mb": 0.35,
+  "loader": "neoforge",
+  "modid": "immediatelyfast",
+  "name": "ImmediatelyFast",
+  "version": "1.6.14+1.21.1"
+ },
+ {
   "file": "immersive_portals-6.0.7-all.jar",
   "size_mb": 1.78,
   "loader": "neoforge",

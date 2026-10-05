@@ -8,7 +8,7 @@ The client download holds the pack's settings, configs and its own resource pack
 2. Download `CrazyCraft5-Client.zip` from [Releases](../../../releases). Keep it zipped.
 3. Click Add Instance > Import > Browse, select the zip and click OK.
 4. Right-click the instance, go to Settings > Java > Memory and set the maximum to 8192 MB or more.
-5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 205 mods and 29 resource packs (about 1 GB) and then starts the game. Later launches only check the files, which takes about a second, and don't show the window.
+5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 206 mods and 29 resource packs (about 1 GB) and then starts the game. Later launches only check the files, which takes about a second, and don't show the window.
 
 The instance runs the setup as its pre-launch command (Edit instance > Settings > Custom commands), so leave that in place.
 
@@ -41,7 +41,7 @@ To update, import the new client zip as a new instance, then copy your `saves/` 
 |---|---|
 | The setup window says a download failed | Usually a flaky connection. Press Try again; files that are already in place are kept |
 | The setup waits for MCHeli | Download it from the page the window opens and save it into your Downloads folder, or drop it on the window |
-| Crash on startup with less than 8 GB | Allocate more RAM. 205 mods really do need it |
+| Crash on startup with less than 8 GB | Allocate more RAM. 206 mods really do need it |
 | "Out of memory" during world gen | Raise the allocation to 10 to 12 GB |
 | Missing textures / English text everywhere | The resource packs got disabled. Re-enable `CrazyCraft5-ptBR` (or leave it off if you want English) |
 | Fabric mod errors mentioning "Connector" | Delete the `.connector` folder inside the instance and relaunch (this clears the remap cache) |
