@@ -438,7 +438,7 @@
   {
    "file": "CarbonConfig-Neoforge-1.21.1-2.0.2.1.jar",
    "name": "Carbon Config Library",
-   "version": "?",
+   "version": "2.0.2.1",
    "side": "both",
    "size": 1273384,
    "sha512": "06d4e5de53dfef36363e4e8cf7d3c5381894d26731757e42861a16c59885288fe543e9350fbe571cc689aa10799e6ad0675b2316bd090349a16546e2b86b5638",
@@ -549,8 +549,8 @@
   },
   {
    "file": "connector-2.0.0-beta.17+1.21.1-full.jar",
-   "name": "connector-2.0.0-beta.17+1.21.1-full",
-   "version": "?",
+   "name": "Sinytra Connector",
+   "version": "2.0.0-beta.17+1.21.1",
    "side": "both",
    "size": 4573244,
    "sha512": "cb92b662047208792e61191d372d1e255766200406c35769007101f8c578c1018938610c3b90352afd93ec42d7963acf3607e35c50e669df50ac85d7c5529560",
@@ -857,8 +857,8 @@
   },
   {
    "file": "dungeons-and-taverns-v4.4.4.jar",
-   "name": "dungeons-and-taverns-v4.4.4",
-   "version": "?",
+   "name": "Dungeons and Taverns",
+   "version": "1-v4.4.4",
    "side": "both",
    "size": 24859622,
    "sha512": "83069dc336bcc212059f753923373d9522aa5953bf4b4fe2a8cfa666b4e28d2d017daa66c4b35e315c3be8d1ad60c2872879dd47cc1f47665ebbfd102da76976",
@@ -1612,8 +1612,8 @@
   },
   {
    "file": "kotlinforforge-5.12.0-all.jar",
-   "name": "kotlinforforge-5.12.0-all",
-   "version": "?",
+   "name": "Kotlin For Forge",
+   "version": "5.12.0",
    "side": "both",
    "size": 7279264,
    "sha512": "b8c3942f4d33179edf3f102f3d870b99dd436f8b8236dbbd31aa51b888162c692cfd88927295f24dc8b4375232f4c6c17360c5d6c4823f93cbcd7cf4bdc8bd14",
@@ -1782,8 +1782,8 @@
   },
   {
    "file": "mezz_config-1.21.1-neoforge-0.6.6-standalone.jar",
-   "name": "mezz_config-1.21.1-neoforge-0.6.6-standalone",
-   "version": "?",
+   "name": "MezzConfig",
+   "version": "0.6.6",
    "side": "both",
    "size": 312220,
    "sha512": "fbe56499a498e685c8c8409b5e326ec28d62f31978357a523b63355eb07826aee07118ef2e02c0e09803e0a0c994c9b2aa7f45de86a26fb6d0a0d8ea87c9a334",
