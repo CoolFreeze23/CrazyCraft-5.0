@@ -22,7 +22,7 @@ Seven published mods need a small fix to work in the pack, because no fixed upst
 
 | Mods | Why pinned |
 |---|---|
-| Sinytra Connector 2.0.0-beta.16 and Forgified Fabric API 0.116.15 | These two are released as a matched pair and have to be upgraded together. This pair is the oldest one that provides `ServerPlayerEvents.JOIN/LEAVE`, which Soul Shards Despawn needs. |
+| Sinytra Connector 2.0.0-beta.17 and Forgified Fabric API 0.116.15+2.3.5 | Both are kept on their newest 1.21.1 builds. What's pinned is a minimum: Forgified Fabric API 0.116.7 or newer, because Soul Shards Despawn needs `ServerPlayerEvents.JOIN` and older builds don't have it. Neither Soul Shards Despawn nor Connector asks for a particular Forgified Fabric API version (Connector's `neoforge.mods.toml` only asks for NeoForge and Minecraft), so nothing catches a too-old one before the game fails to load. TxniLib carries such an old copy (0.115.6) inside its jar, so the pack's own Forgified Fabric API jar has to stay in `mods/`. |
 | YUNG's API 5.1.7 | 5.1.6 had a `NullPointerException` in `EnhancedBeardifierHelper.computeDensity` during chunk generation (it showed up with ModernFix's worldgen allocation optimization). 5.1.7 plus the guard mixin in OreSpawn Integrations covers it from both sides. |
 | GeckoLib 4.9.2, playerAnimator 2.0.4 | The pack once carried two copies of each. The older duplicates are in the `disabled-mods/` history and must not come back. |
 
