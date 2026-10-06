@@ -1,4 +1,13 @@
 {
+ "1027130f7c161d8402829470701400bbc1fe8a4322dad061d32bbcb4832ef17cac67fb8a83d6a8e26515eaa7c3bf277a42159f997e685260a25a5cfc54a2836a": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/6296/628/smoothchunk-1.21-4.1.jar",
+  "file": 6296628,
+  "fileName": "smoothchunk-1.21-4.1.jar",
+  "name": "Server Performance - Smooth Chunk Save",
+  "project": 582327,
+  "slug": "smooth-chunk-save"
+ },
  "29505b492ae4f11efcd80d12052e4b99fce04a2fe18cb6868d2ac64423aa58397a177cb9e1882439d567976327ee8698d50e16f2d81282dc879fec56200a5a5e": {
   "allowModDistribution": true,
   "downloadUrl": "https://edge.forgecdn.net/files/5336/431/Luminous1.4.zip",
@@ -89,6 +98,15 @@
   "project": 549225,
   "slug": "framework"
  },
+ "c8e929b64464529c8d1dbbc90459926ddcd1b23cf65899fa076da2eb2e27c0dcef40b95bd266fc7328abf7bea83ddf5efd81b428459db35f2423453393abb304": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/8889/50/cupboard-1.21.1-4.2.jar",
+  "file": 8889050,
+  "fileName": "cupboard-1.21.1-4.2.jar",
+  "name": "Cupboard",
+  "project": 326652,
+  "slug": "cupboard"
+ },
  "ced3e55e783a65ce67ff4d5f376814754109b86c2ee47cb0288a2efaafcb8029c1036457efac5a4b84acb2b59994f1b521bdf4ade05ecd4f5531eebca2137e93": {
   "allowModDistribution": false,
   "downloadUrl": "https://edge.forgecdn.net/files/5489/236/FA%2bEmissive-v1.2.zip",
@@ -115,6 +133,15 @@
   "name": "Chunk-Pregenerator",
   "project": 267193,
   "slug": "chunkpregenerator"
+ },
+ "eed7ab74a9d3fe847583797d18154062f904d818d80e858c2cb3063d745bbdadb6d1d1e651dc5922b1a0da0d2a86b83daa54d0e8cf82abdc5d76a0e7efba585d": {
+  "allowModDistribution": true,
+  "downloadUrl": "https://edge.forgecdn.net/files/7962/596/structureessentials-1.21.1-5.0.jar",
+  "file": 7962596,
+  "fileName": "structureessentials-1.21.1-5.0.jar",
+  "name": "Structure Essentials",
+  "project": 832882,
+  "slug": "structure-essentials-forge-fabric"
  },
  "fde4f40a3a6439c43df1f522a92a1bd16e4a175966d17efe9dea425d42f7906e7ed7771fd84182b1fd7f3bb86ecd6b969fdca3c4aca4719597e4832e75ae2511": {
   "allowModDistribution": true,

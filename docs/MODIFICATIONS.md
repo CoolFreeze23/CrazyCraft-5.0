@@ -75,7 +75,7 @@ FA+ Emissive and FA+ Objects are the same versions as before, now taken from Mod
 
 The pack tracks the newest 1.21.1 build of every mod (`scripts/check_updates.py` reports what is behind, `scripts/update_mods.py` moves the instance). A few are held on purpose, listed with their reason in `pack/pins.json`:
 
-- **Sodium 0.6.13**: Iris 1.8.x for 1.21.1 pins it; the 0.8 line has no matching Iris.
+- **Sodium 0.6.13**: Sodium 0.8 crashes Immersive Portals 6.0.7 (which the Portal Gun needs) when a world loads, and Sodium Dynamic Lights (which Immersive Lanterns needs) doesn't work with it. Its Iris, 1.8.14, is also still a beta.
 - **Cosy Critters & Creepy Crawlies 0.0.1a**: 0.3.x's `ClientLevel` mixin targets a method Connector cannot map on NeoForge, so the client exits on startup.
 - **Subtle Effects 1.9.4**: 1.14.x's End Remastered hook calls a method End Remastered 6.3.0 for 1.21.1 does not have, so the client fails to load.
 - **Fresh Food 1.0**: 1.3.x needs Respackopts, whose NeoForge build asks for LibJF modules the NeoForge LibJF does not provide.

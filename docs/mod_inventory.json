@@ -413,6 +413,14 @@
   "version": "0.18.1"
  },
  {
+  "file": "cupboard-1.21.1-4.2.jar",
+  "size_mb": 0.03,
+  "loader": "neoforge",
+  "modid": "cupboard",
+  "name": "Cupboard mod",
+  "version": "4.2"
+ },
+ {
   "file": "curios-neoforge-9.5.1+1.21.1.jar",
   "size_mb": 0.39,
   "loader": "neoforge",
@@ -1397,6 +1405,14 @@
   "environment": "*"
  },
  {
+  "file": "smoothchunk-1.21-4.1.jar",
+  "size_mb": 0.01,
+  "loader": "neoforge",
+  "modid": "smoothchunk",
+  "name": "Smoothchunk mod",
+  "version": "4.1"
+ },
+ {
   "file": "sodium-neoforge-0.6.13+mc1.21.1.jar",
   "size_mb": 1.11,
   "loader": "neoforge",
@@ -1460,6 +1476,14 @@
   "modid": "structory_towers",
   "name": "Structory: Towers",
   "version": "1.0.17"
+ },
+ {
+  "file": "structureessentials-1.21.1-5.0.jar",
+  "size_mb": 0.06,
+  "loader": "neoforge",
+  "modid": "structureessentials",
+  "name": "Structure Essentials mod",
+  "version": "5.0"
  },
  {
   "file": "SubtleEffects-neoforge-1.21.1-1.9.4-hotfix.1.jar",

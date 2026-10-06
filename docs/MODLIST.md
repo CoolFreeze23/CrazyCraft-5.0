@@ -1,6 +1,6 @@
 # Full mod list
 
-206 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
+209 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -54,6 +54,7 @@
 | Cristel Lib (`cristellib`) | 3.1.7 | NeoForge |  |
 | Crumbling Hearts (`crumbling_hearts`) | 1.2 | Fabric (Connector) |  |
 | Cultural Delights (`culturaldelights`) | 0.18.1 | NeoForge |  |
+| Cupboard mod (`cupboard`) | 4.2 | NeoForge |  |
 | Curios API (`curios`) | 9.5.1+1.21.1 | NeoForge |  |
 | Custom NPCs (`customnpcs`) | 1.21.1.20241226 | NeoForge |  |
 | Decocraft (`decocraft`) | 3.0.11 | NeoForge |  |
@@ -173,6 +174,7 @@
 | Simple Lucky Block (`simpleluckyblock`) | 1.0.0 | NeoForge |  |
 | Simple RPC (`simplerpc`) | 4.1.3+release.0 | NeoForge |  |
 | sittingplus (`sittingplus`) | 2.0.6 | Fabric (Connector) |  |
+| Smoothchunk mod (`smoothchunk`) | 4.1 | NeoForge |  |
 | Sodium (`sodium`) | 0.6.13+mc1.21.1 | NeoForge |  |
 | Sodium Dynamic Lights (`sodiumdynamiclights`) | 1.0.9 | NeoForge |  |
 | Soul Shards Despawn (`soulshards`) | 1.3.0 | Fabric (Connector) |  |
@@ -181,6 +183,7 @@
 | Storage Drawers (`storagedrawers`) | 13.11.4 | NeoForge |  |
 | Structory (`structory`) | 1.3.17 | NeoForge |  |
 | Structory: Towers (`structory_towers`) | 1.0.17 | NeoForge |  |
+| Structure Essentials mod (`structureessentials`) | 5.0 | NeoForge |  |
 | Subtle Effects (`subtle_effects`) | 1.9.4-hotfix.1 | NeoForge |  |
 | SuperMartijn642's Config Library (`supermartijn642configlib`) | 1.1.8 | NeoForge |  |
 | SuperMartijn642's Core Lib (`supermartijn642corelib`) | 1.1.24+a | NeoForge |  |

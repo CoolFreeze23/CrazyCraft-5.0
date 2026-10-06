@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -742,6 +742,20 @@
     "page": "https://modrinth.com/mod/cultural-delights"
    },
    "license": "LicenseRef-All-Rights-Reserved"
+  },
+  {
+   "file": "cupboard-1.21.1-4.2.jar",
+   "name": "Cupboard mod",
+   "version": "4.2",
+   "side": "both",
+   "size": 30517,
+   "sha512": "c8e929b64464529c8d1dbbc90459926ddcd1b23cf65899fa076da2eb2e27c0dcef40b95bd266fc7328abf7bea83ddf5efd81b428459db35f2423453393abb304",
+   "source": {
+    "type": "curseforge",
+    "url": "https://edge.forgecdn.net/files/8889/50/cupboard-1.21.1-4.2.jar",
+    "page": "https://www.curseforge.com/minecraft/mc-mods/cupboard"
+   },
+   "license": ""
   },
   {
    "file": "curios-neoforge-9.5.1+1.21.1.jar",
@@ -2520,6 +2534,20 @@
    "license": "LicenseRef-All-Rights-Reserved"
   },
   {
+   "file": "smoothchunk-1.21-4.1.jar",
+   "name": "Smoothchunk mod",
+   "version": "4.1",
+   "side": "both",
+   "size": 12852,
+   "sha512": "1027130f7c161d8402829470701400bbc1fe8a4322dad061d32bbcb4832ef17cac67fb8a83d6a8e26515eaa7c3bf277a42159f997e685260a25a5cfc54a2836a",
+   "source": {
+    "type": "curseforge",
+    "url": "https://edge.forgecdn.net/files/6296/628/smoothchunk-1.21-4.1.jar",
+    "page": "https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save"
+   },
+   "license": ""
+  },
+  {
    "file": "sodium-neoforge-0.6.13+mc1.21.1.jar",
    "name": "Sodium",
    "version": "0.6.13+mc1.21.1",
@@ -2643,6 +2671,20 @@
     "result": "0a4aaac3a8baf9e43b692d7ced62efb9056afc990c289a06e62241f1330c485a",
     "why": "Declares it a data-only mod (lowcodefml), which NeoForge 1.21.1 needs to load it."
    }
+  },
+  {
+   "file": "structureessentials-1.21.1-5.0.jar",
+   "name": "Structure Essentials mod",
+   "version": "5.0",
+   "side": "both",
+   "size": 60833,
+   "sha512": "eed7ab74a9d3fe847583797d18154062f904d818d80e858c2cb3063d745bbdadb6d1d1e651dc5922b1a0da0d2a86b83daa54d0e8cf82abdc5d76a0e7efba585d",
+   "source": {
+    "type": "curseforge",
+    "url": "https://edge.forgecdn.net/files/7962/596/structureessentials-1.21.1-5.0.jar",
+    "page": "https://www.curseforge.com/minecraft/mc-mods/structure-essentials-forge-fabric"
+   },
+   "license": ""
   },
   {
    "file": "SubtleEffects-neoforge-1.21.1-1.9.4-hotfix.1.jar",

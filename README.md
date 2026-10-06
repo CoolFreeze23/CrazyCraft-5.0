@@ -1,6 +1,6 @@
 # CrazyCraft 5.0
 
-A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.252, with 206 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with two companion mods written for this pack and our NeoForge ports of Domestication Innovation, Monster Hunter Villager and Brazilian Delight.
+A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.252, with 209 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with two companion mods written for this pack and our NeoForge ports of Domestication Innovation, Monster Hunter Villager and Brazilian Delight.
 
 Girlfriends, Mobzilla, the King, ant dimensions, uranium everywhere, helicopters, superheroes and lucky blocks. You can play the whole pack in English or Brazilian Portuguese (a complete pt-BR resource pack is included).
 
@@ -19,7 +19,7 @@ Get the latest files from the [Releases](../../releases) page:
 2. Download `CrazyCraft5-Client.zip`. Don't unzip it.
 3. In Prism, go to Add Instance > Import > Browse, pick the zip and click OK.
 4. Edit the instance, open Settings > Java and give it 8 to 12 GB of RAM (8 GB minimum).
-5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 206 mods and 29 resource packs (about 1 GB) from their official pages and checks every file, then starts the game. Later launches only check the files, in about a second.
+5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 209 mods and 29 resource packs (about 1 GB) from their official pages and checks every file, then starts the game. Later launches only check the files, in about a second.
 6. One mod, MCHeli, can only be downloaded from CurseForge itself: the setup window shows you the page and picks up the file from your Downloads folder.
 
 Any launcher that imports MultiMC-format instances works the same way. For a manual install, see [docs/INSTALLING.md](docs/INSTALLING.md).
@@ -29,7 +29,7 @@ Any launcher that imports MultiMC-format instances works the same way. For a man
 1. Install Java 21 ([Adoptium Temurin 21](https://adoptium.net/temurin/releases/?version=21)).
 2. Unzip `CrazyCraft5-Server.zip` into an empty folder.
 3. Windows: double-click `CrazyCraft Server Setup.bat`. Linux/macOS or a server without a screen: `./startserver.sh`.
-4. Setup installs NeoForge and downloads all 163 server mods from their official pages (Modrinth, CurseForge and our own GitHub releases), checking every file. It asks how much memory the server gets and about the [Minecraft EULA](https://aka.ms/MinecraftEULA).
+4. Setup installs NeoForge and downloads all 168 server mods from their official pages (Modrinth, CurseForge and our own GitHub releases), checking every file. It asks how much memory the server gets and about the [Minecraft EULA](https://aka.ms/MinecraftEULA).
 5. One mod, MCHeli, can only be downloaded from CurseForge itself. Setup shows you the page and picks up the file from your Downloads folder.
 6. That's it. Start the server with `startserver.bat` / `./startserver.sh`; it checks the mods first and restarts the server if it stops. The server runs on port `25565` with 6 to 8 GB of RAM.
 
