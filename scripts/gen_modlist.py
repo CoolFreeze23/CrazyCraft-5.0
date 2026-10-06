@@ -18,13 +18,13 @@ NOTES = {
     "mob_mutator": "Patched: title screen button mixin removed",
     "fancymenu": "Patched: lets the custom title screen hide the copyright line",
     "yungsapi": "Updated to 5.1.7 for a worldgen NPE fix",
-    "fabric_api": "Forgified Fabric API, pinned as a matched pair with Connector",
+    "fabric_api": "Fabric API for the mods Connector runs; must stay at 0.116.7 or newer for Soul Shards Despawn",
     "hbmsntm": "Unofficial 1.21.1 build of HBM's Nuclear Tech",
     "mcheli": "Unofficial 1.21.1 port of MC Helicopter",
 }
 
 FIXED = {
-    "connector-2.0.0-beta.16+1.21.1-full.jar": ("connector", "Sinytra Connector", "2.0.0-beta.16", "loader tech", "Runs Fabric mods on NeoForge. Pinned as a matched pair with Forgified Fabric API"),
+    "connector-2.0.0-beta.17+1.21.1-full.jar": ("connector", "Sinytra Connector", "2.0.0-beta.17", "loader tech", "Runs Fabric mods on NeoForge"),
     "dungeons-and-taverns-v4.4.4.jar": ("dungeons_and_taverns", "Dungeons and Taverns", "4.4.4", "datapack mod", ""),
     "kotlinforforge-5.8.0-all.jar": ("kotlinforforge", "Kotlin for Forge", "5.8.0", "neoforge", ""),
 }

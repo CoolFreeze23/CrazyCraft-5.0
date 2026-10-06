@@ -41,7 +41,6 @@
 | CodeChicken Lib (`codechickenlib`) | 4.6.1.529 | NeoForge |  |
 | Configuration (`configuration`) | 3.1.1 | NeoForge |  |
 | Connector Extras (`connectorextras`) | 1.12.1+1.21.1 | NeoForge |  |
-| connector-2.0.0-beta.17+1.21.1-full (`?`) | ? | NeoForge |  |
 | Continuity (`continuity`) | 3.0.0+1.21.neoforge | NeoForge |  |
 | Controlling (`controlling`) | 19.0.5 | NeoForge |  |
 | Cooks Collection (`cookscollection`) | 0.6.1 | NeoForge |  |
@@ -79,7 +78,7 @@
 | Ferrite Core (`ferritecore`) | 7.0.3 | NeoForge |  |
 | Fog (`fog`) | 1.11.0-1.21.1 | NeoForge |  |
 | Forge Config API Port (`forgeconfigapiport`) | 21.1.6 | NeoForge |  |
-| Forgified Fabric API (`fabric_api`) | 0.116.15+2.3.5+1.21.1 | NeoForge | Forgified Fabric API, pinned as a matched pair with Connector |
+| Forgified Fabric API (`fabric_api`) | 0.116.15+2.3.5+1.21.1 | NeoForge | Fabric API for the mods Connector runs; must stay at 0.116.7 or newer for Soul Shards Despawn |
 | FramedBlocks (`framedblocks`) | 10.6.1 | NeoForge |  |
 | Framework (`framework`) | 0.13.11 | NeoForge |  |
 | Friends&Foes (`friendsandfoes`) | 4.0.27 | NeoForge |  |
@@ -173,6 +172,7 @@
 | Shoulder Surfing Reloaded (`shouldersurfing`) | 1.21.1-5.2.0 | NeoForge |  |
 | Simple Lucky Block (`simpleluckyblock`) | 1.0.0 | NeoForge |  |
 | Simple RPC (`simplerpc`) | 4.1.3+release.0 | NeoForge |  |
+| Sinytra Connector (`connector`) | 2.0.0-beta.17 | loader tech | Runs Fabric mods on NeoForge |
 | sittingplus (`sittingplus`) | 2.0.6 | Fabric (Connector) |  |
 | Smoothchunk mod (`smoothchunk`) | 4.1 | NeoForge |  |
 | Sodium (`sodium`) | 0.6.13+mc1.21.1 | NeoForge |  |
