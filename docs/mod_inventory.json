@@ -240,7 +240,7 @@
   "loader": "neoforge",
   "modid": "carbonconfig",
   "name": "Carbon Config Library",
-  "version": "?"
+  "version": "2.0.2.1"
  },
  {
   "file": "carryon-neoforge-1.21.1-2.2.6.13.jar",
@@ -301,10 +301,10 @@
  {
   "file": "connector-2.0.0-beta.17+1.21.1-full.jar",
   "size_mb": 4.36,
-  "loader": "?",
-  "modid": "?",
-  "name": "connector-2.0.0-beta.17+1.21.1-full",
-  "version": "?"
+  "loader": "neoforge",
+  "modid": "connector",
+  "name": "Sinytra Connector",
+  "version": "2.0.0-beta.17+1.21.1"
  },
  {
   "file": "ConnectorExtras-1.12.1+1.21.1.jar",
@@ -479,10 +479,10 @@
  {
   "file": "dungeons-and-taverns-v4.4.4.jar",
   "size_mb": 23.71,
-  "loader": "?",
-  "modid": "?",
-  "name": "dungeons-and-taverns-v4.4.4",
-  "version": "?"
+  "loader": "datapack",
+  "modid": "mr_dungeons_andtaverns",
+  "name": "Dungeons and Taverns",
+  "version": "1-v4.4.4"
  },
  {
   "file": "DungeonsArise-1.21.1-2.1.68-release.jar",
@@ -897,10 +897,10 @@
  {
   "file": "kotlinforforge-5.12.0-all.jar",
   "size_mb": 6.94,
-  "loader": "?",
-  "modid": "?",
-  "name": "kotlinforforge-5.12.0-all",
-  "version": "?"
+  "loader": "neoforge",
+  "modid": "kotlinforforge",
+  "name": "Kotlin For Forge",
+  "version": "5.12.0"
  },
  {
   "file": "L_Ender's Cataclysm 1.21.1-3.33.jar",
@@ -953,11 +953,10 @@
  {
   "file": "ly-lucky-blocks-v1.3.3.jar",
   "size_mb": 0.43,
-  "loader": "fabric (via Connector)",
+  "loader": "datapack",
   "modid": "mr_ly_luckyblocks",
   "name": "Lucky Blocks",
-  "version": "1-v1.3.3",
-  "environment": "*"
+  "version": "1-v1.3.3"
  },
  {
   "file": "malisisdoorsreborn-neoforge-1.21.1-1.0.5.jar",
@@ -994,10 +993,10 @@
  {
   "file": "mezz_config-1.21.1-neoforge-0.6.6-standalone.jar",
   "size_mb": 0.3,
-  "loader": "?",
-  "modid": "?",
-  "name": "mezz_config-1.21.1-neoforge-0.6.6-standalone",
-  "version": "?"
+  "loader": "neoforge",
+  "modid": "mezz_config",
+  "name": "MezzConfig",
+  "version": "0.6.6"
  },
  {
   "file": "mob_mutator-1.0.0.jar",
@@ -1308,11 +1307,10 @@
  {
   "file": "randomizer-complete-edition-v0.6.jar",
   "size_mb": 17.05,
-  "loader": "fabric (via Connector)",
+  "loader": "datapack",
   "modid": "mr_randomizer_completeedition",
   "name": "Randomizer: Complete Edition",
-  "version": "1-v0.6",
-  "environment": "*"
+  "version": "1-v0.6"
  },
  {
   "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",

@@ -19,26 +19,26 @@ NOTES = {
     "fancymenu": "Patched: lets the custom title screen hide the copyright line",
     "yungsapi": "Updated to 5.1.7 for a worldgen NPE fix",
     "fabric_api": "Fabric API for the mods Connector runs; must stay at 0.116.7 or newer for Soul Shards Despawn",
+    "connector": "Runs Fabric mods on NeoForge",
     "hbmsntm": "Unofficial 1.21.1 build of HBM's Nuclear Tech",
     "mcheli": "Unofficial 1.21.1 port of MC Helicopter",
 }
 
-FIXED = {
-    "connector-2.0.0-beta.17+1.21.1-full.jar": ("connector", "Sinytra Connector", "2.0.0-beta.17", "loader tech", "Runs Fabric mods on NeoForge"),
-    "dungeons-and-taverns-v4.4.4.jar": ("dungeons_and_taverns", "Dungeons and Taverns", "4.4.4", "datapack mod", ""),
-    "kotlinforforge-5.8.0-all.jar": ("kotlinforforge", "Kotlin for Forge", "5.8.0", "neoforge", ""),
-}
+# keyed by mod id, not file name, so they survive updates
+LOADER_LABELS = {"connector": "loader tech"}
 
 rows = []
 for i in inv:
-    if i["file"] in FIXED:
-        modid, name, version, loader, note = FIXED[i["file"]]
+    modid = i["modid"]
+    name = i.get("name", modid)
+    version = i["version"]
+    if modid in LOADER_LABELS:
+        loader = LOADER_LABELS[modid]
+    elif i["loader"] == "datapack":
+        loader = "datapack mod"
     else:
-        modid = i["modid"]
-        name = i.get("name", modid)
-        version = i["version"]
         loader = "Fabric (Connector)" if i["loader"].startswith("fabric") else "NeoForge"
-        note = NOTES.get(modid, "")
+    note = NOTES.get(modid, "")
     rows.append((name, modid, str(version), loader, note, i["file"]))
 
 rows.sort(key=lambda r: r[0].lower())

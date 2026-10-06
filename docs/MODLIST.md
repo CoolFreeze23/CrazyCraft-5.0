@@ -31,7 +31,7 @@
 | Brazilian Delight (`braziliandelight`) | 3.0.1-neoforge.1 | NeoForge |  |
 | CameraOverhaul (`cameraoverhaul`) | 2.1.2-neoforge+mc.1.21-1.21.1 | NeoForge |  |
 | Capes (`capes`) | 1.5.4+1.21 | Fabric (Connector) |  |
-| Carbon Config Library (`carbonconfig`) | ? | NeoForge |  |
+| Carbon Config Library (`carbonconfig`) | 2.0.2.1 | NeoForge |  |
 | Carry On (`carryon`) | 2.2.6 | NeoForge |  |
 | Cerbons API (`cerbons_api`) | 1.3.0 | NeoForge |  |
 | ChoiceTheorem's Overhauled Village (`ctov`) | 3.6.3 | NeoForge |  |
@@ -61,7 +61,7 @@
 | Doggy Talents Next (`doggytalents`) | 1.19.1 | NeoForge |  |
 | Domestication Innovation (`domesticationinnovation`) | 2.0.0-1.21.1 | NeoForge | Custom: our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
 | Draggable Lists (`draggable_lists`) | 1.0.8 | NeoForge |  |
-| Dungeons and Taverns (`dungeons_and_taverns`) | 4.4.4 | datapack mod |  |
+| Dungeons and Taverns (`mr_dungeons_andtaverns`) | 1-v4.4.4 | datapack mod |  |
 | Enchanted (`enchanted`) | 4.2.7 | NeoForge |  |
 | End Remastered (`endrem`) | 6.3.0 | NeoForge |  |
 | End's Delight (`ends_delight`) | 2.6.1+neoforge.1.21.1 | NeoForge |  |
@@ -109,19 +109,19 @@
 | Just Enough Items (`jei`) | 19.57.0.450 | NeoForge |  |
 | Just Enough Resources (`jeresources`) | 1.6.0.17 | NeoForge |  |
 | Konkrete (`konkrete`) | 1.9.9 | NeoForge |  |
-| kotlinforforge-5.12.0-all (`?`) | ? | NeoForge |  |
+| Kotlin For Forge (`kotlinforforge`) | 5.12.0 | NeoForge |  |
 | L_Ender's Cataclysm 1.21.1 (`cataclysm`) | 3.33 | NeoForge |  |
 | LibX (`libx`) | 1.21.1-6.0.15 | NeoForge |  |
 | lionfishapi (`lionfishapi`) | 3.1 | NeoForge |  |
 | Lithium (`lithium`) | 0.15.4+mc1.21.1 | NeoForge |  |
 | Lithostitched (`lithostitched`) | 1.8.0 | NeoForge |  |
 | Lootr (`lootr`) | 1.21.1-1.11.38.127 | NeoForge |  |
-| Lucky Blocks (`mr_ly_luckyblocks`) | 1-v1.3.3 | Fabric (Connector) |  |
+| Lucky Blocks (`mr_ly_luckyblocks`) | 1-v1.3.3 | datapack mod |  |
 | Malisis Doors (Reborn) (`malisisdoorsreborn`) | 1.0.5 | NeoForge |  |
 | Marvel Superheroes (`marvel`) | 2.1.0-pre6 | NeoForge |  |
 | MCHeli (`mcheli`) | 1.0.0 | NeoForge | Unofficial 1.21.1 port of MC Helicopter |
 | Melody (`melody`) | 1.0.10 | NeoForge |  |
-| mezz_config-1.21.1-neoforge-0.6.6-standalone (`?`) | ? | NeoForge |  |
+| MezzConfig (`mezz_config`) | 0.6.6 | NeoForge |  |
 | Mob Mutator (`mob_mutator`) | 1.0.0 | NeoForge | Patched: title screen button mixin removed |
 | ModernFix (`modernfix`) | 5.27.24+mc1.21.1 | NeoForge |  |
 | Modopedia (`modopedia`) | 1.1.11 | NeoForge |  |
@@ -161,7 +161,7 @@
 | Punchy (`punchy`) | 2.8d | NeoForge |  |
 | Puzzles Lib (`puzzleslib`) | 21.1.62 | NeoForge |  |
 | Railcraft Reborn (`railcraft`) | 1.2.10 | NeoForge |  |
-| Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | Fabric (Connector) | Patched: crafting table recipe syntax fixed |
+| Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | datapack mod | Patched: crafting table recipe syntax fixed |
 | Rechiseled (`rechiseled`) | 1.2.6 | NeoForge |  |
 | Resourceful Lib (`resourcefullib`) | 3.0.12 | NeoForge |  |
 | Searchables (`searchables`) | 1.0.2 | NeoForge |  |
@@ -172,7 +172,7 @@
 | Shoulder Surfing Reloaded (`shouldersurfing`) | 1.21.1-5.2.0 | NeoForge |  |
 | Simple Lucky Block (`simpleluckyblock`) | 1.0.0 | NeoForge |  |
 | Simple RPC (`simplerpc`) | 4.1.3+release.0 | NeoForge |  |
-| Sinytra Connector (`connector`) | 2.0.0-beta.17 | loader tech | Runs Fabric mods on NeoForge |
+| Sinytra Connector (`connector`) | 2.0.0-beta.17+1.21.1 | loader tech | Runs Fabric mods on NeoForge |
 | sittingplus (`sittingplus`) | 2.0.6 | Fabric (Connector) |  |
 | Smoothchunk mod (`smoothchunk`) | 4.1 | NeoForge |  |
 | Sodium (`sodium`) | 0.6.13+mc1.21.1 | NeoForge |  |
