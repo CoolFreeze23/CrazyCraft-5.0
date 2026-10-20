@@ -1,6 +1,6 @@
 # CrazyCraft 5.0
 
-A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.252, with 209 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with two companion mods written for this pack and our NeoForge ports of Domestication Innovation, Monster Hunter Villager and Brazilian Delight.
+A revival of the classic CrazyCraft pack for Minecraft 1.21.1 and NeoForge 21.1.252, with 212 mods. The heart of it is a port of the 1.7.10 OreSpawn mod, done from the original source code, along with companion mods written for this pack and our NeoForge ports of Domestication Innovation, Monster Hunter Villager, Brazilian Delight and Plants & Zombies.
 
 Girlfriends, Mobzilla, the King, ant dimensions, uranium everywhere, helicopters, superheroes and lucky blocks. You can play the whole pack in English or Brazilian Portuguese (a complete pt-BR resource pack is included).
 
@@ -19,7 +19,7 @@ Get the latest files from the [Releases](../../releases) page:
 2. Download `CrazyCraft5-Client.zip`. Don't unzip it.
 3. In Prism, go to Add Instance > Import > Browse, pick the zip and click OK.
 4. Edit the instance, open Settings > Java and give it 8 to 12 GB of RAM (8 GB minimum).
-5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 209 mods and 29 resource packs (about 1 GB) from their official pages and checks every file, then starts the game. Later launches only check the files, in about a second.
+5. Launch. The first launch opens the CrazyCraft setup window, which downloads the 212 mods and 29 resource packs (about 1 GB) from their official pages and checks every file, then starts the game. Later launches only check the files, in about a second.
 6. One mod, MCHeli, can only be downloaded from CurseForge itself: the setup window shows you the page and picks up the file from your Downloads folder.
 
 Any launcher that imports MultiMC-format instances works the same way. For a manual install, see [docs/INSTALLING.md](docs/INSTALLING.md).
@@ -29,7 +29,7 @@ Any launcher that imports MultiMC-format instances works the same way. For a man
 1. Install Java 21 ([Adoptium Temurin 21](https://adoptium.net/temurin/releases/?version=21)).
 2. Unzip `CrazyCraft5-Server.zip` into an empty folder.
 3. Windows: double-click `CrazyCraft Server Setup.bat`. Linux/macOS or a server without a screen: `./startserver.sh`.
-4. Setup installs NeoForge and downloads all 168 server mods from their official pages (Modrinth, CurseForge and our own GitHub releases), checking every file. It asks how much memory the server gets and about the [Minecraft EULA](https://aka.ms/MinecraftEULA).
+4. Setup installs NeoForge and downloads all 169 server mods from their official pages (Modrinth, CurseForge and our own GitHub releases), checking every file. It asks how much memory the server gets and about the [Minecraft EULA](https://aka.ms/MinecraftEULA).
 5. One mod, MCHeli, can only be downloaded from CurseForge itself. Setup shows you the page and picks up the file from your Downloads folder.
 6. That's it. Start the server with `startserver.bat` / `./startserver.sh`; it checks the mods first and restarts the server if it stops. The server runs on port `25565` with 6 to 8 GB of RAM.
 
@@ -45,6 +45,9 @@ Besides the mod list itself, a lot of custom work went into the pack:
 - [Domestication Innovation](docs/CUSTOM_MODS.md#domestication-innovation-port), alex_the_668's pet overhaul, ported from Forge 1.20.1 to NeoForge 1.21.1, with new collar enchantments and datapack taming added. [Source repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1).
 - [Monster Hunter Villager](docs/CUSTOM_MODS.md#monster-hunter-villager-port), our NeoForge 1.21.1 port of Yoshi's Forge 1.20.1 mod. It adds a villager that hunts monsters with thrown traps and a knife. The original ran its hunter and trap code on every mob in the world every tick; the port only runs it for Monster Hunters and placed traps. [Source repo](https://github.com/CoolFreeze23/monster-hunter-villager-neoforge).
 - [Brazilian Delight](docs/CUSTOM_MODS.md#brazilian-delight-port), DannBrown's Farmer's Delight add-on with Brazilian food, ported from Fabric to NeoForge 1.21.1. [Source repo](https://github.com/CoolFreeze23/braziliandelight-neoforge).
+- [Origin Awakening](docs/CUSTOM_MODS.md#origin-awakening), made for this pack: a step-by-step character creation screen for picking your origin and class, and a look for every origin, class and origin-class pair that players wear in the world (ears, wings, tails, hats, capes, glowing eyes and more). The looks are being redrawn one origin at a time; the Vampire is the first one finished. Client side only. [Source repo](https://github.com/CoolFreeze23/originawakening).
+- [Plants & Zombies](docs/CUSTOM_MODS.md#plants--zombies-port), joshxviii's Plants vs. Zombies mod, backported from Fabric 26.1 to NeoForge 1.21.1: plant defenders, zombie raids, graveyards and garden gnomes, with the official Brazilian Portuguese names. [Source repo](https://github.com/CoolFreeze23/plants-and-zombies-neoforge).
+- [VRAM Leak Fixes](docs/CUSTOM_MODS.md#vram-leak-fixes), a small client mod that frees the GPU memory Iris, owo-lib and JourneyMap leak on shader toggles, reloads and window resizes. [Source repo](https://github.com/CoolFreeze23/vramleakfixes).
 - [Patched jars](docs/MODIFICATIONS.md#patched-jars) for mods with no fixed release. The server setup downloads the published jars and applies the crash fixes and compatibility patches on install (SecurityCraft with Immersive Portals, Farmer's Respite's broken menu registration, and more).
 - [A full pt-BR translation](docs/MODIFICATIONS.md#brazilian-portuguese-resource-pack) of every mod in the pack, shipped as the `CrazyCraft5-ptBR` resource pack and turned on by default.
 - [Config changes](docs/MODIFICATIONS.md#config-changes) to combat, performance and menus so everything works together, plus a custom OreSpawn title screen.
@@ -69,4 +72,4 @@ Besides the mod list itself, a lot of custom work went into the pack:
 
 ## Credits & legal
 
-All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. The pack's downloads don't include anyone else's mods or resource packs: the setup downloads each one from its official page, and `pack/manifest.json` shows exactly where every file comes from. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668 and Monster Hunter Villager is by Yoshi; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.
+All third-party mods belong to their authors. [docs/MODLIST.md](docs/MODLIST.md) lists every one of them. The pack's downloads don't include anyone else's mods or resource packs: the setup downloads each one from its official page, and `pack/manifest.json` shows exactly where every file comes from. OreSpawn was originally made by TheyCallMeDanger, and the 2.0 port is an independent fan port. Domestication Innovation is by alex_the_668, Monster Hunter Villager is by Yoshi and Plants & Zombies is by joshxviii; the versions here are our NeoForge 1.21.1 ports. This pack is a non-commercial fan project. If you're a mod author and want your mod taken out of the pack, open an issue and we'll take it out right away.

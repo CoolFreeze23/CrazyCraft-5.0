@@ -45,6 +45,24 @@
    "url": "https://github.com/CoolFreeze23/txfastload-neoforge/releases/download/v{1}/{file}",
    "page": "https://github.com/CoolFreeze23/txfastload-neoforge",
    "license": "All rights reserved (port of TxFastLoad by txslx, published with the author's permission)"
+  },
+  {
+   "pattern": "^originawakening-1\\.21\\.1-(.+)\\.jar$",
+   "url": "https://github.com/CoolFreeze23/originawakening/releases/download/v{1}/{file}",
+   "page": "https://github.com/CoolFreeze23/originawakening",
+   "license": "MIT"
+  },
+  {
+   "pattern": "^plants-and-zombies-neoforge-(.+)\\.jar$",
+   "url": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases/download/v{1}/{file}",
+   "page": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge",
+   "license": "MPL-2.0"
+  },
+  {
+   "pattern": "^vramleakfixes-1\\.21\\.1-(.+)\\.jar$",
+   "url": "https://github.com/CoolFreeze23/vramleakfixes/releases/download/v{1}/{file}",
+   "page": "https://github.com/CoolFreeze23/vramleakfixes",
+   "license": "MIT"
   }
  ],
  "patched": {

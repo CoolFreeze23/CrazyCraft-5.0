@@ -1,6 +1,6 @@
 # Full mod list
 
-209 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
+212 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -59,7 +59,7 @@
 | Decocraft (`decocraft`) | 3.0.11 | NeoForge |  |
 | Distant Lands (`distantlandsmc`) | 1.5 | NeoForge |  |
 | Doggy Talents Next (`doggytalents`) | 1.19.1 | NeoForge |  |
-| Domestication Innovation (`domesticationinnovation`) | 2.0.0-1.21.1 | NeoForge | Custom: our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
+| Domestication Innovation (`domesticationinnovation`) | 2.1.0-1.21.1 | NeoForge | Custom: our NeoForge port of alex_the_668's mod ([repo](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)) |
 | Draggable Lists (`draggable_lists`) | 1.0.8 | NeoForge |  |
 | Dungeons and Taverns (`mr_dungeons_andtaverns`) | 1-v4.4.4 | datapack mod |  |
 | Enchanted (`enchanted`) | 4.2.7 | NeoForge |  |
@@ -142,9 +142,10 @@
 | Ocean's Delight (`oceansdelight`) | 1.0.4 | NeoForge |  |
 | OctoLib (`octolib`) | 0.6.2 | NeoForge |  |
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
-| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.12 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
+| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.15 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
 | OreSpawn Integrations (`orespawn_integrations`) | 0.9.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
+| Origin Awakening (`originawakening`) | 1.0.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/originawakening)) |
 | oωo (`owo`) | 0.12.15.5-beta.1+1.21 | NeoForge |  |
 | Packed Packs (`packed_packs`) | 2.2.4+1.21.1 | NeoForge |  |
 | Pandora's Box (`pandorasbox`) | 2.6.3 | Fabric (Connector) |  |
@@ -154,6 +155,7 @@
 | Perception (`perception`) | 0.2.1 | NeoForge |  |
 | Placebo (`placebo`) | 9.9.2 | NeoForge |  |
 | Placeholder API (`placeholder-api`) | 2.4.2+1.21 | Fabric (Connector) |  |
+| Plants & Zombies (`plantz`) | 1.5-neoforge.1 | NeoForge | Custom: our NeoForge 1.21.1 port of joshxviii's Plants & Zombies ([repo](https://github.com/CoolFreeze23/plants-and-zombies-neoforge)) |
 | Player Animator (`playeranimator`) | 2.0.4+1.21.1 | NeoForge |  |
 | Portal Gun Mod (`portalgun`) | 6.1.3+1.21.1 | NeoForge |  |
 | Pretty Rain (`particlerain`) | 1.1.4 | NeoForge |  |
@@ -197,6 +199,7 @@
 | TxFastLoad (`txfastload`) | 1.0.0 | NeoForge |  |
 | TxniLib (`txnilib`) | 1.0.24 | NeoForge |  |
 | Visuality (`visuality`) | 0.7.7+1.21 | Fabric (Connector) |  |
+| VRAM Leak Fixes (`vramleakfixes`) | 1.0.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/vramleakfixes)) |
 | Wakes (`wakes`) | 0.4.1+1.21.1 | Fabric (Connector) |  |
 | Walkers (`walkers`) | 5.8.13 | NeoForge |  |
 | WaveyCapes (`waveycapes`) | 1.11.2 | NeoForge |  |

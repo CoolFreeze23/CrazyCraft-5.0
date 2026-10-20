@@ -1,6 +1,6 @@
 # Server files and setup
 
-The server download doesn't contain any mods. It has a small setup program (`crazycraft-loader.jar`), a manifest that says where each mod comes from, start scripts and the pack's configs. On the first start, setup downloads NeoForge and all 168 server mods from their official pages and checks every file before it's used. The pack never hands out other people's files: they only ever come from the people who made them.
+The server download doesn't contain any mods. It has a small setup program (`crazycraft-loader.jar`), a manifest that says where each mod comes from, start scripts and the pack's configs. On the first start, setup downloads NeoForge and all 169 server mods from their official pages and checks every file before it's used. The pack never hands out other people's files: they only ever come from the people who made them.
 
 ## Layout
 
@@ -60,14 +60,14 @@ Download the new server files, unzip them over the server folder and start as us
 
 ## Client-only mods
 
-Of the pack's 209 mods, 41 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
+Of the pack's 212 mods, 43 are client-side only (rendering, HUD, menus, audio, cosmetics) and aren't installed on the server. The manifest marks them `"side": "client"`. Players connect with the normal client pack.
 
 ## Shipped server.properties defaults
 
 | Setting | Value | Why |
 |---|---|---|
 | `allow-flight` | `true` | Several mods let players fly; this stops false "kicked for flying" kicks |
-| `view-distance` / `simulation-distance` | `8` | Reasonable for a 168-mod server. Raise it if your hardware allows |
+| `view-distance` / `simulation-distance` | `8` | Reasonable for a 169-mod server. Raise it if your hardware allows |
 | `max-tick-time` | `-1` | Turns off the watchdog. Heavy modded worldgen can go past the vanilla 60 s limit, and the watchdog would then kill the server for no real reason |
 | `spawn-protection` | `0` | Modpack players expect to build at spawn |
 | `enable-command-block` | `true` | Some structures use command blocks |

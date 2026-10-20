@@ -1,6 +1,6 @@
 # The custom mods
 
-We maintain these mods ourselves. Two were written for it (OreSpawn Integrations and OreSpawn Delight), and four are ports we keep on NeoForge 1.21.1 (OreSpawn, Domestication Innovation, Monster Hunter Villager and Brazilian Delight). All of them are open source under the same GitHub account, and each one ships as a normal jar in `mods/`.
+We maintain these mods ourselves. Four were written for it (OreSpawn Integrations, OreSpawn Delight, Origin Awakening and VRAM Leak Fixes), and six are ports we keep on NeoForge 1.21.1 (OreSpawn, Domestication Innovation, Monster Hunter Villager, Brazilian Delight, TxFastLoad and Plants & Zombies). All of them are on the same GitHub account, and each one ships as a normal jar in `mods/`.
 
 ---
 
@@ -63,7 +63,7 @@ A [Farmer's Delight](https://modrinth.com/mod/farmers-delight) add-on for OreSpa
 
 ## Domestication Innovation port
 
-- Jar: `domesticationinnovation-2.0.0-1.21.1.jar`
+- Jar: `domesticationinnovation-2.1.0-1.21.1.jar`
 - Source: [CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1)
 - Releases: [CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases](https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases)
 
@@ -75,6 +75,7 @@ What this pack's build adds on top of the original:
 - Datapacks can make any mob tameable, or convertible into another mob, with a single JSON file. Ocelots are tameable by default, and the pack can extend this to OreSpawn's own creatures without code.
 - Animal Tamers sell the pet enchantment books at every trade tier, and librarians no longer have them in their trades.
 - Jade integration, collars that drop when a pet dies for good, injured pets that back off instead of dying, roaming tied to the pet's bed, and an in-game config screen. All of it is translated to pt-BR.
+- Since 2.1.0, the Pet Compass (compass + lead + bone) lists every pet you own and where it is, with buttons to go to it or recall it, even from another dimension. Right-clicking a pet bed with an empty hand tells you whose bed it is, and beds now bring pets back reliably even when they weren't loaded at dawn.
 - A long list of fixes against the 1.20.1 original, for behavior and for crashes, including one that kept the mod from running on dedicated servers at all. They're all in the repo's `CHANGELOG.md`, and a headless GameTest suite of 19 tests covers them.
 
 ## Monster Hunter Villager port
@@ -120,3 +121,47 @@ What you get in game:
 Measured in this pack: a reload on the title screen went from 18.6 to 13.4 seconds, a reload in a world from 25.3 to 19.7 seconds, and the wait between "loading done" and a usable title screen from 2.0 to 0.4 seconds. World joins and dimension changes take the same time as before.
 
 Every feature has its own switch in `config/txfastload-client.toml`.
+
+## Origin Awakening
+
+- Jar: `originawakening-1.21.1-1.0.0.jar` (client only)
+- Source: [CoolFreeze23/originawakening](https://github.com/CoolFreeze23/originawakening)
+- Releases: [CoolFreeze23/originawakening/releases](https://github.com/CoolFreeze23/originawakening/releases)
+
+Written for this pack, on top of [Neo Origins](https://modrinth.com/mod/neo-origins). It has two parts:
+
+- **The Awakening screen:** a step-by-step character creation screen that replaces Neo Origins' picker. It walks you through the 76 origins in groups, then through the classes, and asks you to confirm each pick. Every choice still goes through Neo Origins, so its rules and the Orb of Origin work the same.
+- **Origin looks:** every origin and class gets a look that players wear in the world: ears, horns, wings, tails, hats and props, capes, glowing eyes, painted skin details and particles. Every origin and class pair (76 x 20) also has its own combined look. Wings open when you fall or glide, tails swing behind your turns, and capes flow when you move.
+
+The looks are a work in progress. They're being redrawn one origin at a time from detailed mockups, with cleaner pixel art and shading. The Vampire is the first one finished: a flowing cape that hangs straight at rest, a wolf-pelt cloak for the Beastmaster, and a reworked look for every class. The other origins will follow in later updates.
+
+The mod is client side only, so servers don't need it. The looks follow your skin (classic or slim), make way for helmets and elytra, and can be turned off in the config.
+
+## Plants & Zombies port
+
+- Jar: `plants-and-zombies-neoforge-1.5-neoforge.1.jar`
+- Source: [CoolFreeze23/plants-and-zombies-neoforge](https://github.com/CoolFreeze23/plants-and-zombies-neoforge)
+- Releases: [CoolFreeze23/plants-and-zombies-neoforge/releases](https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases)
+
+Our backport of joshxviii's [Plants & Zombies](https://github.com/joshxviii/plants-and-zombies) (MPL-2.0), which only exists for Fabric on Minecraft 26.1, to NeoForge 1.21.1. Every upstream file was compared against the port, and 132 automated game tests cover the plants, zombies, raids and machines.
+
+What you get in game:
+
+- Plants from Plants vs. Zombies that you grow from seed packets and that defend your base, and the zombies that come for them, including the special ones.
+- Zombie raids with waves, a HUD and rewards; graveyards with gravestones; garden gnomes, mailboxes, a collection box, a sun battery and a time machine.
+- The official Brazilian Portuguese names from the games.
+
+A few 26.1 extras need things 1.21.1 doesn't have. A handful of 26.1 sounds and the baby armor textures are read from a local 26.1+ Minecraft install if there is one, and never shipped in the jar. Without one, 1.21.1 sounds are used.
+
+## VRAM Leak Fixes
+
+- Jar: `vramleakfixes-1.21.1-1.0.0.jar` (client only)
+- Source: [CoolFreeze23/vramleakfixes](https://github.com/CoolFreeze23/vramleakfixes)
+
+Written for this pack after tracing why GPU memory kept growing during long sessions. Three mods allocate GPU memory and never give it back:
+
+- **Iris:** a window-size texture, a framebuffer and shader programs every time shaders are turned on or reloaded.
+- **owo-lib:** a blur framebuffer on every resource reload.
+- **JourneyMap:** the minimap frame textures on every window resize and reload.
+
+The mod frees them. Each fix only turns on when its mod is installed and its code matches, and the log lists the active fixes. Nothing changes how the game looks or plays. The rest of the growth on a window resize happens inside the graphics driver and can't be fixed from a mod.

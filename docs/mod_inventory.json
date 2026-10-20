@@ -461,12 +461,12 @@
   "version": "1.19.1"
  },
  {
-  "file": "domesticationinnovation-2.0.0-1.21.1.jar",
-  "size_mb": 0.96,
+  "file": "domesticationinnovation-2.1.0-1.21.1.jar",
+  "size_mb": 0.99,
   "loader": "neoforge",
   "modid": "domesticationinnovation",
   "name": "Domestication Innovation",
-  "version": "2.0.0-1.21.1"
+  "version": "2.1.0-1.21.1"
  },
  {
   "file": "draggable_lists-mc1.20.6-1.0.8-build.44.jar",
@@ -1159,12 +1159,12 @@
   "version": "5.3.2"
  },
  {
-  "file": "orespawn-1.21.1-2.0.0-beta.12.jar",
-  "size_mb": 21.33,
+  "file": "orespawn-1.21.1-2.0.0-beta.15.jar",
+  "size_mb": 22.26,
   "loader": "neoforge",
   "modid": "orespawn",
   "name": "OreSpawn",
-  "version": "1.21.1-2.0.0-beta.12"
+  "version": "1.21.1-2.0.0-beta.15"
  },
  {
   "file": "orespawn_delight-0.1.0.jar",
@@ -1181,6 +1181,14 @@
   "modid": "orespawn_integrations",
   "name": "OreSpawn Integrations",
   "version": "0.9.0"
+ },
+ {
+  "file": "originawakening-1.21.1-1.0.0.jar",
+  "size_mb": 3.57,
+  "loader": "neoforge",
+  "modid": "originawakening",
+  "name": "Origin Awakening",
+  "version": "1.0.0"
  },
  {
   "file": "owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar",
@@ -1247,6 +1255,14 @@
   "name": "Placeholder API",
   "version": "2.4.2+1.21",
   "environment": "*"
+ },
+ {
+  "file": "plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+  "size_mb": 9.46,
+  "loader": "neoforge",
+  "modid": "plantz",
+  "name": "Plants & Zombies",
+  "version": "1.5-neoforge.1"
  },
  {
   "file": "player-animation-lib-forge-2.0.4+1.21.1.jar",
@@ -1579,6 +1595,14 @@
   "name": "Visuality",
   "version": "0.7.7+1.21",
   "environment": "client"
+ },
+ {
+  "file": "vramleakfixes-1.21.1-1.0.0.jar",
+  "size_mb": 0.01,
+  "loader": "neoforge",
+  "modid": "vramleakfixes",
+  "name": "VRAM Leak Fixes",
+  "version": "1.0.0"
  },
  {
   "file": "wakes-0.4.1+1.21.1.jar",

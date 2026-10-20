@@ -47,6 +47,8 @@ SERVER_EXCLUDE = [
     # NOTE: atlas-core must stay - Pandora's Box hard-requires it on the server.,
     "cosycritters", "sodiumoptionsapi", "modefite",
     "txfastload",
+    # our client-side mods: Origin Awakening (origin picker and looks) and VRAM Leak Fixes
+    "originawakening", "vramleakfixes",
 ]
 
 CLIENT_DIRS = ["mods", "config", "defaultconfigs", "resourcepacks", "mcheli",

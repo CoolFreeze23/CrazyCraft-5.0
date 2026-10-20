@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -192,7 +192,7 @@
     "url": "https://cdn.modrinth.com/data/TKB6INcv/versions/1VWyxABY/ars_nouveau-1.21.1-5.13.2.jar",
     "page": "https://modrinth.com/mod/ars-nouveau"
    },
-   "license": "GPL-3.0-only",
+   "license": "LicenseRef-All-Rights-Reserved",
    "patch": {
     "originalFile": "ars_nouveau-1.21.1-5.13.2.jar",
     "ops": [
@@ -828,15 +828,15 @@
    "license": "LGPL-3.0-only"
   },
   {
-   "file": "domesticationinnovation-2.0.0-1.21.1.jar",
-   "name": "Domestication Innovation",
-   "version": "2.0.0-1.21.1",
+   "file": "domesticationinnovation-2.1.0-1.21.1.jar",
+   "name": "domesticationinnovation-2.1.0-1.21.1",
+   "version": "",
    "side": "both",
-   "size": 1002418,
-   "sha512": "2d2e168b33cfc8d4c8f784b97111fb4c406356aa5f1728b31181a530e69cfc557d937a2fa2f005b490c28278f20d293089246f92f09d50788c736ec1b8896cb6",
+   "size": 1038906,
+   "sha512": "4c3aa648359d7b511ccb096c7024c5c9faa2bac2747e409cb4c8a6a4fd8d4217cc348ccbf498ea9b8c7664fe28f95730ee1497da4b17c9b0f6534ac1a3b74f08",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases/download/v2.0.0-1.21.1/domesticationinnovation-2.0.0-1.21.1.jar",
+    "url": "https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1/releases/download/v2.1.0-1.21.1/domesticationinnovation-2.1.0-1.21.1.jar",
     "page": "https://github.com/CoolFreeze23/DomesticationInnovation-NeoForge-1.21.1"
    },
    "license": "See repository"
@@ -2088,15 +2088,15 @@
    "license": "LGPL-3.0-only"
   },
   {
-   "file": "orespawn-1.21.1-2.0.0-beta.12.jar",
-   "name": "OreSpawn",
-   "version": "1.21.1-2.0.0-beta.12",
+   "file": "orespawn-1.21.1-2.0.0-beta.15.jar",
+   "name": "orespawn-1.21.1-2.0.0-beta.15",
+   "version": "",
    "side": "both",
-   "size": 22368018,
-   "sha512": "1ef64a67d0c805fcd4a429aafc5074f20e9e00b2f69fb55c357bc71a674f99735574167892637453563956f2af98b01c4ae2e86635dd7ddf5d0f2d49136fefe9",
+   "size": 23339103,
+   "sha512": "c885720bddf9b8423da936b3f77b4634a1eb8dce94055448aff59ed0208207179e6d4a88f159d0c34a35e1c943f38ff768c9e0a43096196710284c4794bac01b",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/Orespawn/releases/download/v1.21.1-2.0.0-beta.12/orespawn-1.21.1-2.0.0-beta.12.jar",
+    "url": "https://github.com/CoolFreeze23/Orespawn/releases/download/v1.21.1-2.0.0-beta.15/orespawn-1.21.1-2.0.0-beta.15.jar",
     "page": "https://github.com/CoolFreeze23/Orespawn"
    },
    "license": "See repository"
@@ -2128,6 +2128,20 @@
     "page": "https://github.com/CoolFreeze23/orespawn-integrations"
    },
    "license": "See repository"
+  },
+  {
+   "file": "originawakening-1.21.1-1.0.0.jar",
+   "name": "originawakening-1.21.1-1.0.0",
+   "version": "",
+   "side": "client",
+   "size": 3742443,
+   "sha512": "256536b80d8e434953cebf2dd0c04e8bd38a114c6f469e886699e1d76e1ab7904b716a74ba95a2d9ef8f5010ddecc828b6450a27cdbda7f43e05aba3f6716512",
+   "source": {
+    "type": "github",
+    "url": "https://github.com/CoolFreeze23/originawakening/releases/download/v1.0.0/originawakening-1.21.1-1.0.0.jar",
+    "page": "https://github.com/CoolFreeze23/originawakening"
+   },
+   "license": "MIT"
   },
   {
    "file": "owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar",
@@ -2240,6 +2254,20 @@
     "page": "https://modrinth.com/mod/placeholder-api"
    },
    "license": "LGPL-3.0-only"
+  },
+  {
+   "file": "plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+   "name": "plants-and-zombies-neoforge-1.5-neoforge.1",
+   "version": "",
+   "side": "both",
+   "size": 9921369,
+   "sha512": "b799d189062f7abe45361cd9019e409eabb7527cfc8f26ed880c4d41bd8f897dbeb850118c3662755beada0b5d1f8e41c89e9c0f31201808c5f6bec72de2940e",
+   "source": {
+    "type": "github",
+    "url": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases/download/v1.5-neoforge.1/plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+    "page": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge"
+   },
+   "license": "MPL-2.0"
   },
   {
    "file": "player-animation-lib-forge-2.0.4+1.21.1.jar",
@@ -2529,7 +2557,7 @@
    "source": {
     "type": "modrinth",
     "url": "https://cdn.modrinth.com/data/RVtIOlYX/versions/eajWZ8cJ/sittingplus-2.0.6-1.21.1-FABRIC.jar",
-    "page": "https://modrinth.com/mod/sitting+"
+    "page": "https://modrinth.com/mod/sitting-plus"
    },
    "license": "LicenseRef-All-Rights-Reserved"
   },
@@ -2851,6 +2879,20 @@
     "type": "modrinth",
     "url": "https://cdn.modrinth.com/data/rI0hvYcd/versions/dhKbgdIb/visuality-0.7.7%2B1.21.jar",
     "page": "https://modrinth.com/mod/visuality"
+   },
+   "license": "MIT"
+  },
+  {
+   "file": "vramleakfixes-1.21.1-1.0.0.jar",
+   "name": "vramleakfixes-1.21.1-1.0.0",
+   "version": "",
+   "side": "client",
+   "size": 9163,
+   "sha512": "b93e03cb976eeed64601068809d030bc0ef08a23bbc4e0c3e2a550b799c598bdad514c67a9596c17c08f15f2fd82fb9ff1d47d74c45099c7f3967ad0ecec39d1",
+   "source": {
+    "type": "github",
+    "url": "https://github.com/CoolFreeze23/vramleakfixes/releases/download/v1.0.0/vramleakfixes-1.21.1-1.0.0.jar",
+    "page": "https://github.com/CoolFreeze23/vramleakfixes"
    },
    "license": "MIT"
   },
