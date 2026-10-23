@@ -14,6 +14,12 @@ Updates preserve saves, server lists, player options, personal mods and existing
 
 After setup, open your launcher and select your installation. Run this setup again whenever you want to move to the latest release; the ordinary Prism pre-launch check repairs the installed version and does not silently upgrade it.
 
+### Idioma / Language
+
+O instalador está disponível em **português brasileiro**. Selecione **Português (Brasil)** no menu de idioma ou execute `Instalar CrazyCraft (PT-BR).bat`. A escolha fica salva; sistemas em português usam esse idioma por padrão. A tradução inclui instalação do cliente e do servidor, progresso, erros, downloads manuais e créditos. Nomes de mods, caminhos e comandos permanecem inalterados.
+
+For terminal use, add `--lang pt_br` or `--lang en_us`, or set `CRAZYCRAFT_LANG`. Explicit command-line language overrides the environment, saved preference and system language. Language selection does not change Minecraft's own language setting.
+
 ## Prism Launcher / MultiMC import
 
 1. Install [Prism Launcher](https://prismlauncher.org/) and sign in with your Microsoft account.

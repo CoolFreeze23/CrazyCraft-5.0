@@ -243,6 +243,11 @@ def build_setup(server_zip=None):
                     z.write(p, p.relative_to(BUILD / "server-files").as_posix())
         bat = (ROOT / "server" / "CrazyCraft Server Setup.bat").read_text(encoding="utf-8")
         z.writestr("CrazyCraft Setup.bat", bat.replace("--server-setup", "--setup").replace("\n", "\r\n"))
+        portuguese = bat.replace("--server-setup", "--setup --lang pt_br")
+        portuguese = portuguese.replace("@echo off", "@echo off\nchcp 65001 >nul")
+        portuguese = portuguese.replace("CrazyCraft 5.0 needs Java 21, and Java was not found.", "O CrazyCraft 5.0 precisa do Java 21, mas o Java não foi encontrado.")
+        portuguese = portuguese.replace("Get it from", "Baixe em")
+        z.writestr("Instalar CrazyCraft (PT-BR).bat", portuguese.replace("\n", "\r\n").encode("utf-8"))
         info = zipfile.ZipInfo("setup.sh")
         info.external_attr = 0o100755 << 16
         z.writestr(info, '#!/bin/sh\ncd "$(dirname "$0")" || exit 1\nexec "${CRAZYCRAFT_JAVA:-java}" -jar crazycraft-loader.jar --setup\n')
@@ -255,6 +260,16 @@ def build_setup(server_zip=None):
                    ".crazycraft/backups in the game folder; obsolete pack mods move to mods-removed.\n"
                    "Close Minecraft and its launcher throughout setup. Rerun setup to resume an interrupted install.\n"
                    "For a dedicated server, choose Set up a server instead (see README.txt).\n")
+        z.writestr("LEIA-ME.txt", "Instalação do CrazyCraft\n\nRequer Java 21. Abra seu launcher e entre na conta uma vez, depois feche-o.\n"
+                   "No Windows, execute Instalar CrazyCraft (PT-BR).bat. No Linux/macOS, use:\n"
+                   "java -jar crazycraft-loader.jar --setup --lang pt_br\n\n"
+                   "Escolha Prism Launcher ou Minecraft Launcher e crie uma instalação ou atualize uma existente.\n"
+                   "O idioma pode ser alterado no menu English / Português (Brasil) e a escolha fica salva.\n"
+                   "Em sistemas em português, o instalador usa português automaticamente.\n"
+                   "Mantenha o jogo e o launcher fechados até terminar. Ao concluir, abra o launcher e selecione a instalação.\n"
+                   "Mundos e preferências são preservados. Os arquivos substituídos têm backup em .crazycraft/backups.\n"
+                   "Mods antigos do pacote são movidos para mods-removed. Se houver interrupção, execute o instalador novamente.\n"
+                   "O MCHeli exige download manual pelo CurseForge; o instalador orienta você.\n")
     print(f"combined setup: {out} ({out.stat().st_size / 1048576:.1f} MB)")
 
 

@@ -99,22 +99,22 @@ final class ClientSetup {
     }
 
     static Release latest(Consumer<String> status) throws Exception {
-        status.accept("Checking the latest CrazyCraft release…");
+        status.accept(I18n.t("Checking the latest CrazyCraft release…"));
         Map<String, Object> release = Json.obj(Json.parse(Download.text("https://api.github.com/repos/" + REPO + "/releases/latest")));
         Map<String, Object> asset = Json.arr(release.get("assets")).stream().map(Json::obj)
                 .filter(a -> "CrazyCraft5-Client.zip".equals(a.get("name"))).findFirst()
-                .orElseThrow(() -> new IOException("The latest release has no client installer files."));
+                .orElseThrow(() -> new IOException(I18n.t("The latest release has no client installer files.")));
         Path stage = Files.createTempDirectory("crazycraft-client-");
         Path zip = stage.resolve("client.zip");
         String digest = Json.str(asset, "digest");
-        status.accept("Downloading " + release.get("tag_name") + " setup files…");
+        status.accept(I18n.t("Downloading ") + release.get("tag_name") + I18n.t(" setup files…"));
         Download.fetch(Json.str(asset, "browser_download_url"), zip, Json.num(asset, "size"),
                 digest != null && digest.startsWith("sha256:") ? digest.substring(7) : null, "SHA-256", n -> {});
         Path contents = stage.resolve("contents");
         unzip(zip, contents);
         Manifest manifest = Manifest.parse(Files.readString(contents.resolve(".minecraft/crazycraft-manifest.json")));
         if (!REPO.equals(manifest.repo()) || !Json.str(release, "tag_name").equals("v" + manifest.packVersion()))
-            throw new IOException("Release and client manifest do not match.");
+            throw new IOException(I18n.t("Release and client manifest do not match."));
         return new Release(Json.str(release, "tag_name"), contents, manifest);
     }
 
@@ -127,7 +127,7 @@ final class ClientSetup {
                 Path out = safe(dest, entry.getName());
                 if (entry.isDirectory()) { Files.createDirectories(out); continue; }
                 if (entry.getSize() < 0 || (bytes += entry.getSize()) > 256L * 1024 * 1024)
-                    throw new IOException("Client setup archive is too large.");
+                    throw new IOException(I18n.t("Client setup archive is too large."));
                 Files.createDirectories(out.getParent());
                 try (var in = z.getInputStream(entry)) { Files.copy(in, out); }
             }
@@ -137,9 +137,9 @@ final class ClientSetup {
     static Path safe(Path root, String relative) throws IOException {
         Path base = root.toAbsolutePath().normalize();
         Path result = base.resolve(relative).normalize();
-        if (!result.startsWith(base)) throw new IOException("File escapes installation folder: " + relative);
+        if (!result.startsWith(base)) throw new IOException(I18n.t("File escapes installation folder: ") + relative);
         for (Path p = result; p != null; p = p.getParent())
-            if (Files.isSymbolicLink(p)) throw new IOException("Linked installation paths are not supported: " + p);
+            if (Files.isSymbolicLink(p)) throw new IOException(I18n.t("Linked installation paths are not supported: ") + p);
         return result;
     }
 
@@ -160,16 +160,16 @@ final class ClientSetup {
 
     static Instance newInstance(Launcher launcher, Path root, String name) throws IOException {
         if (!name.matches("[\\p{L}\\p{N} _-]{1,64}") || name.isBlank())
-            throw new IOException("Use 1–64 letters, numbers, spaces, underscores or hyphens for the name.");
+            throw new IOException(I18n.t("Use 1–64 letters, numbers, spaces, underscores or hyphens for the name."));
         Path folder = safe(launcher == Launcher.PRISM ? instancesDir(root) : root.resolve("crazycraft-instances"), name.strip());
-        if (Files.exists(folder)) throw new IOException("That folder already exists. Choose an existing instance or another name.");
+        if (Files.exists(folder)) throw new IOException(I18n.t("That folder already exists. Choose an existing instance or another name."));
         return launcher == Launcher.PRISM ? new Instance(name, folder, folder.resolve(".minecraft"), null)
                 : new Instance(name, root, folder, "crazycraft-" + UUID.randomUUID());
     }
 
     static Path apply(Release release, Launcher launcher, Instance instance, boolean update) throws IOException {
         Path game = safe(instance.game(), "");
-        if (update && !isPack(game)) throw new IOException("This is not a recognized CrazyCraft installation.");
+        if (update && !isPack(game)) throw new IOException(I18n.t("This is not a recognized CrazyCraft installation."));
         Path history = safe(game, ".crazycraft/backups/" + Instant.now().toEpochMilli());
         Files.createDirectories(history);
         // Import ownership from older Prism imports so obsolete pack jars can be retired without touching user mods.
@@ -197,7 +197,7 @@ final class ClientSetup {
         try (var files = Files.walk(payload)) {
             for (Path src : files.filter(Files::isRegularFile).toList()) {
                 Path rel = payload.relativize(src);
-                if (!allowed.contains(rel.getName(0).toString())) throw new IOException("Unexpected client file: " + rel);
+                if (!allowed.contains(rel.getName(0).toString())) throw new IOException(I18n.t("Unexpected client file: ") + rel);
                 Path target = safe(game, rel.toString());
                 if (update && Set.of("options.txt", "emi.json", "patchouli_data.json").contains(rel.toString()) && Files.exists(target)) continue;
                 backup(target, history.resolve("game").resolve(rel));
@@ -231,12 +231,12 @@ final class ClientSetup {
 
     static void installNative(Release release, Path root, Instance instance, Consumer<String> status) throws Exception {
         Path profiles = profilesFile(root);
-        if (!Files.isRegularFile(profiles)) throw new IOException("Open the Minecraft Launcher and sign in once, then close it and retry.");
+        if (!Files.isRegularFile(profiles)) throw new IOException(I18n.t("Open the Minecraft Launcher and sign in once, then close it and retry."));
         Path history = instance.game().resolve(".crazycraft/launcher-backups/" + Instant.now().toEpochMilli());
         backup(profiles, history.resolve(profiles.getFileName()));
         Manifest.NeoForge neo = release.manifest().neoforge();
         Path installer = release.contents().getParent().resolve("neoforge-installer.jar");
-        status.accept("Installing NeoForge " + neo.version() + " for the Minecraft Launcher…");
+        status.accept(I18n.t("Installing NeoForge ") + neo.version() + I18n.t(" for the Minecraft Launcher…"));
         Download.fetch(neo.installer(), installer, 0, neo.sha1(), "SHA-1", n -> {});
         Path log = history.resolve("neoforge.log");
         // The NeoForge installer also edits its generic launcher profile. Restore that file before adding ours.
@@ -248,7 +248,7 @@ final class ClientSetup {
         try {
             Process process = new ProcessBuilder(Installer.javaExe(), "-jar", installer.toString(), "--installClient", root.toString())
                     .directory(root.toFile()).redirectErrorStream(true).redirectOutput(log.toFile()).start();
-            if (process.waitFor() != 0) throw new IOException("NeoForge installation failed. Details: " + log);
+            if (process.waitFor() != 0) throw new IOException(I18n.t("NeoForge installation failed. Details: ") + log);
         } finally {
             for (var entry : original.entrySet()) {
                 if (entry.getValue() == null) Files.deleteIfExists(entry.getKey());
@@ -257,7 +257,7 @@ final class ClientSetup {
         }
         String version = "neoforge-" + neo.version();
         if (!Files.isRegularFile(root.resolve("versions").resolve(version).resolve(version + ".json")))
-            throw new IOException("NeoForge did not create its launcher version. See " + log);
+            throw new IOException(I18n.t("NeoForge did not create its launcher version. See ") + log);
         registerNative(root, instance, version);
     }
 
@@ -283,7 +283,7 @@ final class ClientSetup {
             String args = String.join(" ", process.info().arguments().orElse(new String[0]));
             if (cmd.endsWith("prismlauncher.exe") || cmd.endsWith("/prismlauncher") || cmd.endsWith("minecraftlauncher.exe")
                     || args.contains("net.minecraft.client.main.Main") || args.contains("org.prismlauncher.EntryPoint") || args.contains("forgeclient"))
-                throw new IOException("Close Minecraft and its launcher before installing or updating, then retry.");
+                throw new IOException(I18n.t("Close Minecraft and its launcher before installing or updating, then retry."));
         }
     }
 
@@ -293,7 +293,7 @@ final class ClientSetup {
 
     static void open(Path screenshot) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("CrazyCraft Setup");
+            JFrame frame = new JFrame(I18n.t("CrazyCraft Setup"));
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setIconImages(Theme.ICONS.stream().filter(Objects::nonNull).toList());
             JPanel form = new JPanel(new GridLayout(0, 1, 6, 8));
@@ -302,17 +302,17 @@ final class ClientSetup {
             JTextField root = new JTextField(defaultRoot(Launcher.PRISM).toString());
             JComboBox<Object> target = new JComboBox<>();
             JTextField name = new JTextField("CrazyCraft 5.0");
-            JLabel status = new JLabel("Close Minecraft and its launcher before continuing.");
-            JButton scan = new Theme.TextureButton("Find existing installations", false);
-            JButton browse = new Theme.TextureButton("Browse…", false);
-            JButton go = new Theme.TextureButton("Install / update to latest release", true);
-            JButton server = new Theme.TextureButton("Set up a server instead", false);
+            JLabel status = new JLabel(I18n.t("Close Minecraft and its launcher before continuing."));
+            JButton scan = new Theme.TextureButton(I18n.t("Find existing installations"), false);
+            JButton browse = new Theme.TextureButton(I18n.t("Browse…"), false);
+            JButton go = new Theme.TextureButton(I18n.t("Install / update to latest release"), true);
+            JButton server = new Theme.TextureButton(I18n.t("Set up a server instead"), false);
             Runnable refresh = () -> {
-                target.removeAllItems(); target.addItem("Create a new installation");
+                target.removeAllItems(); target.addItem(I18n.t("Create a new installation"));
                 try {
                     for (Instance i : discover(Launcher.values()[launcher.getSelectedIndex()], Path.of(root.getText()))) target.addItem(i);
-                    status.setText((target.getItemCount() - 1) + " CrazyCraft installation(s) found.");
-                } catch (Exception e) { status.setText("Could not read folder: " + e.getMessage()); }
+                    status.setText((target.getItemCount() - 1) + I18n.t(target.getItemCount() == 2 ? " CrazyCraft installation found." : " CrazyCraft installations found."));
+                } catch (Exception e) { status.setText(I18n.t("Could not read folder: ") + e.getMessage()); }
             };
             scan.addActionListener(e -> refresh.run());
             launcher.addActionListener(e -> { root.setText(defaultRoot(Launcher.values()[launcher.getSelectedIndex()]).toString()); refresh.run(); });
@@ -330,11 +330,11 @@ final class ClientSetup {
                     requireClosed();
                     base = Path.of(root.getText()).toAbsolutePath().normalize();
                     if (chosen == Launcher.PRISM && !Files.isRegularFile(base.resolve("prismlauncher.cfg")))
-                        throw new IOException("Choose the Prism data folder containing prismlauncher.cfg. Open Prism once first.");
+                        throw new IOException(I18n.t("Choose the Prism data folder containing prismlauncher.cfg. Open Prism once first."));
                     if (chosen == Launcher.MINECRAFT && !Files.isRegularFile(profilesFile(base)))
-                        throw new IOException("Choose your Minecraft folder after signing into the launcher once.");
+                        throw new IOException(I18n.t("Choose your Minecraft folder after signing into the launcher once."));
                     instance = update ? (Instance) target.getSelectedItem() : newInstance(chosen, base, name.getText());
-                } catch (Exception ex) { JOptionPane.showMessageDialog(frame, ex.getMessage(), "Setup", JOptionPane.ERROR_MESSAGE); return; }
+                } catch (Exception ex) { JOptionPane.showMessageDialog(frame, ex.getMessage(), I18n.t("Setup"), JOptionPane.ERROR_MESSAGE); return; }
                 for (var component : form.getComponents()) component.setEnabled(false);
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 Consumer<String> progress = text -> SwingUtilities.invokeLater(() -> status.setText(text));
@@ -342,7 +342,7 @@ final class ClientSetup {
                     protected Release doInBackground() throws Exception {
                         Release release = latest(progress);
                         requireClosed();
-                        progress.accept("Preparing " + instance.name() + " for " + release.tag() + "…");
+                        progress.accept(I18n.t("Preparing ") + instance.name() + I18n.t(" for ") + release.tag() + "…");
                         apply(release, chosen, instance, update);
                         if (chosen == Launcher.MINECRAFT) installNative(release, base, instance, progress);
                         return release;
@@ -350,11 +350,11 @@ final class ClientSetup {
                     protected void done() {
                         try {
                             Release release = get();
-                            Gui.openClientSetup(release.manifest(), instance.game(), "Open " + (chosen == Launcher.PRISM ? "Prism" : "Minecraft Launcher") + " and select “" + instance.name() + "”.");
+                            Gui.openClientSetup(release.manifest(), instance.game(), I18n.t("Open ") + (chosen == Launcher.PRISM ? "Prism" : "Minecraft Launcher") + I18n.t(" and select “") + instance.name() + "”.");
                             frame.dispose();
                         } catch (Exception ex) {
                             Throwable cause = ex.getCause() == null ? ex : ex.getCause();
-                            JOptionPane.showMessageDialog(frame, cause.getMessage(), "Setup could not finish", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(frame, cause.getMessage(), I18n.t("Setup could not finish"), JOptionPane.ERROR_MESSAGE);
                             for (var component : form.getComponents()) component.setEnabled(true);
                             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             refresh.run();
@@ -366,10 +366,11 @@ final class ClientSetup {
                 try { Gui.open(Main.loadManifest(null, Main.defaultDir()), Main.defaultDir(), Installer.Mode.SERVER); frame.dispose(); }
                 catch (Exception ex) { JOptionPane.showMessageDialog(frame, ex.getMessage()); }
             });
-            form.add(new JLabel("CrazyCraft — install or update your game"));
-            form.add(launcher); form.add(new JLabel("Launcher data folder (portable installs: Browse)")); form.add(root); form.add(browse);
-            form.add(scan); form.add(target); form.add(new JLabel("New installation name")); form.add(name);
-            form.add(new JLabel("Updates keep saves and player settings; replaced files are backed up."));
+            form.add(new JLabel(I18n.t("CrazyCraft — install or update your game")));
+            form.add(I18n.chooser(() -> { frame.dispose(); open(); }));
+            form.add(launcher); form.add(new JLabel(I18n.t("Launcher data folder (portable installs: Browse)"))); form.add(root); form.add(browse);
+            form.add(scan); form.add(target); form.add(new JLabel(I18n.t("New installation name"))); form.add(name);
+            form.add(new JLabel(I18n.t("Updates keep saves and player settings; replaced files are backed up.")));
             form.add(status); form.add(go); form.add(server);
             form.setBackground(Theme.BG);
             for (var component : form.getComponents()) {

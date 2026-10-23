@@ -330,19 +330,19 @@ final class Theme {
             g2.drawLine(getWidth() - 1, 0, getWidth() - 1, getHeight());
             g2.setFont(font(Font.BOLD, 11f));
             g2.setColor(DIM);
-            spaced(g2, "SETUP STEPS", 22, 30, 1.8f);
+            spaced(g2, I18n.t("SETUP STEPS"), 22, 30, 1.8f);
             int y = 48;
             for (Installer.Step s : shown) {
                 Installer.State st = states.get(s);
                 icon(g2, st, 22, y + 3);
                 g2.setFont(font(Font.BOLD, 14.5f));
                 g2.setColor(st == Installer.State.WAITING ? DIM : TEXT);
-                g2.drawString(s.title, 56, y + 16);
+                g2.drawString(I18n.t(s.title), 56, y + 16);
                 g2.setFont(font(Font.PLAIN, 12f));
                 g2.setColor(st == Installer.State.FAILED ? FAIL_RED : st == Installer.State.WARNING ? YELLOW : MUTED);
                 String d = details.get(s);
                 if (d.isEmpty() && st == Installer.State.WAITING) {
-                    d = "Waiting";
+                    d = I18n.t("Waiting");
                 }
                 g2.drawString(ellipsize(g2.getFontMetrics(), d, getWidth() - 70), 56, y + 34);
                 y += 56;

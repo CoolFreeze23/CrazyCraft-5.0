@@ -76,7 +76,7 @@ final class Download {
         HttpResponse<InputStream> res = HTTP.send(req, HttpResponse.BodyHandlers.ofInputStream());
         if (res.statusCode() != 200) {
             res.body().close();
-            throw new IOException("HTTP " + res.statusCode() + " from " + URI.create(url).getHost());
+            throw new IOException("HTTP " + res.statusCode() + I18n.t(" from ") + URI.create(url).getHost());
         }
         MessageDigest md = Hashes.digest(algo);
         AtomicLong lastRead = new AtomicLong(System.currentTimeMillis());
@@ -106,11 +106,11 @@ final class Download {
             }
         }
         if (size > 0 && total != size) {
-            throw new IOException("got " + total + " bytes, expected " + size);
+            throw new IOException(I18n.t("got ") + total + I18n.t(" bytes, expected ") + size);
         }
         String got = Hashes.hex(md.digest());
         if (hash != null && !hash.equalsIgnoreCase(got)) {
-            throw new IOException("the file's checksum does not match (it may have been changed on the server)");
+            throw new IOException(I18n.t("the file's checksum does not match (it may have been changed on the server)"));
         }
     }
 

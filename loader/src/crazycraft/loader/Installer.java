@@ -98,7 +98,7 @@ final class Installer {
     }
 
     private String noun() {
-        return mode == Mode.SERVER ? "mods" : "files";
+        return mode == Mode.SERVER ? "mods" : I18n.t("files");
     }
 
     private Path target(Manifest.Mod m) {
@@ -118,13 +118,13 @@ final class Installer {
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND), true);
             loadState();
         } catch (IOException e) {
-            log("Can't write to " + dir + ": " + e.getMessage());
-            ui.step(Step.JAVA, State.FAILED, "This folder is not writable");
+            log(I18n.t("Can't write to ") + dir + ": " + e.getMessage());
+            ui.step(Step.JAVA, State.FAILED, I18n.t("This folder is not writable"));
             return Result.FAILED;
         }
-        log("CrazyCraft " + manifest.packVersion() + (mode == Mode.SERVER ? " server" : " game") + " setup in " + dir
+        log("CrazyCraft " + manifest.packVersion() + (mode == Mode.SERVER ? I18n.t(" server") : I18n.t(" game")) + I18n.t(" setup in ") + dir
                 + (previousVersion != null && !previousVersion.equals(manifest.packVersion())
-                ? " (updating from " + previousVersion + ")" : ""));
+                ? I18n.t(" (updating from ") + previousVersion + ")" : ""));
         Result result = Result.READY;
         try {
             if (!checkJava()) {
@@ -143,10 +143,10 @@ final class Installer {
             saveState();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            log("Stopped.");
+            log(I18n.t("Stopped."));
             return Result.FAILED;
         } catch (Exception e) {
-            log("Something went wrong: " + e);
+            log(I18n.t("Something went wrong: ") + e);
             return Result.FAILED;
         } finally {
             try {
@@ -155,8 +155,8 @@ final class Installer {
                 // the next run checks every file again
             }
         }
-        log(result == Result.READY ? "All set: " + wanted().size() + " " + noun() + " ready."
-                : "Setup finished, but some mods are still missing.");
+        log(result == Result.READY ? I18n.t("All set: ") + wanted().size() + " " + noun() + I18n.t(" ready.")
+                : I18n.t("Setup finished, but some mods are still missing."));
         return result;
     }
 
@@ -188,7 +188,7 @@ final class Installer {
         Runtime.Version v = Runtime.version();
         String vendor = System.getProperty("java.vendor", "");
         if (v.feature() < 21) {
-            ui.step(Step.JAVA, State.FAILED, "Java " + v.feature() + " is too old; Minecraft 1.21.1 needs 21");
+            ui.step(Step.JAVA, State.FAILED, "Java " + v.feature() + I18n.t(" is too old; Minecraft 1.21.1 needs 21"));
             return false;
         }
         ui.step(Step.JAVA, State.DONE, "Java " + v.feature() + "." + v.interim() + "." + v.update()
@@ -202,17 +202,17 @@ final class Installer {
         Manifest.NeoForge neo = manifest.neoforge();
         Path lib = dir.resolve("libraries/net/neoforged/neoforge/" + neo.version());
         if (Files.isRegularFile(lib.resolve("win_args.txt")) && Files.isRegularFile(lib.resolve("unix_args.txt"))) {
-            ui.step(Step.NEOFORGE, State.DONE, "NeoForge " + neo.version() + " is installed");
+            ui.step(Step.NEOFORGE, State.DONE, "NeoForge " + neo.version() + I18n.t(" is installed"));
             return true;
         }
-        ui.step(Step.NEOFORGE, State.RUNNING, "Downloading NeoForge " + neo.version());
+        ui.step(Step.NEOFORGE, State.RUNNING, I18n.t("Downloading NeoForge ") + neo.version());
         Path installer = work.resolve("neoforge-" + neo.version() + "-installer.jar");
         try {
             boolean have = Files.isRegularFile(installer) && Hashes.of(installer, "SHA-1").equalsIgnoreCase(neo.sha1());
             if (!have) {
                 Download.fetch(neo.installer(), installer, 0, neo.sha1(), "SHA-1", d -> { });
             }
-            ui.step(Step.NEOFORGE, State.RUNNING, "Installing NeoForge " + neo.version() + " (takes a minute)");
+            ui.step(Step.NEOFORGE, State.RUNNING, I18n.t("Installing NeoForge ") + neo.version() + I18n.t(" (takes a minute)"));
             ProcessBuilder pb = new ProcessBuilder(javaExe(), "-jar", installer.toString(), "--install-server")
                     .directory(dir.toFile()).redirectErrorStream(true);
             Process p = pb.start();
@@ -224,7 +224,7 @@ final class Installer {
                     if (line.startsWith("Downloading library") || line.contains("Downloading")) {
                         libs++;
                         if (libs % 10 == 0) {
-                            ui.step(Step.NEOFORGE, State.RUNNING, "Installing NeoForge (" + libs + " libraries)");
+                            ui.step(Step.NEOFORGE, State.RUNNING, I18n.t("Installing NeoForge (") + libs + I18n.t(" libraries)"));
                         }
                     }
                 }
@@ -235,16 +235,16 @@ final class Installer {
                 Files.move(installerLog, work.resolve(installerLog.getFileName()), StandardCopyOption.REPLACE_EXISTING);
             }
             if (code != 0 || !Files.isRegularFile(lib.resolve("unix_args.txt"))) {
-                ui.step(Step.NEOFORGE, State.FAILED, "The NeoForge installer stopped (code " + code + "); see .crazycraft/loader.log");
+                ui.step(Step.NEOFORGE, State.FAILED, I18n.t("The NeoForge installer stopped (code ") + code + I18n.t("); see .crazycraft/loader.log"));
                 return false;
             }
         } catch (IOException e) {
-            ui.step(Step.NEOFORGE, State.FAILED, "Could not install NeoForge: " + e.getMessage());
+            ui.step(Step.NEOFORGE, State.FAILED, I18n.t("Could not install NeoForge: ") + e.getMessage());
             log("NeoForge: " + e);
             return false;
         }
-        ui.step(Step.NEOFORGE, State.DONE, "NeoForge " + neo.version() + " installed");
-        log("NeoForge " + neo.version() + " installed.");
+        ui.step(Step.NEOFORGE, State.DONE, "NeoForge " + neo.version() + I18n.t(" installed"));
+        log("NeoForge " + neo.version() + I18n.t(" installed."));
         return true;
     }
 
@@ -256,7 +256,7 @@ final class Installer {
 
     private Result installMods() throws InterruptedException, IOException {
         List<Manifest.Mod> wanted = wanted();
-        ui.step(Step.MODS, State.RUNNING, "Checking " + wanted.size() + " " + noun());
+        ui.step(Step.MODS, State.RUNNING, I18n.t("Checking ") + wanted.size() + " " + noun());
         List<Manifest.Mod> need = new ArrayList<>();
         int checked = 0;
         for (Manifest.Mod m : wanted) {
@@ -264,18 +264,18 @@ final class Installer {
                 need.add(m);
             }
             if (++checked % 10 == 0) {
-                ui.step(Step.MODS, State.RUNNING, "Checking " + noun() + " (" + checked + " of " + wanted.size() + ")");
+                ui.step(Step.MODS, State.RUNNING, I18n.t("Checking ") + noun() + " (" + checked + I18n.t(" of ") + wanted.size() + ")");
             }
         }
         List<Manifest.Mod> auto = need.stream().filter(m -> !m.manual()).toList();
         List<Manifest.Mod> byHand = new ArrayList<>(need.stream().filter(Manifest.Mod::manual).toList());
         if (need.isEmpty()) {
-            ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + ", all up to date");
-            log("All " + wanted.size() + " " + noun() + " are already in place.");
+            ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + I18n.t(", all up to date"));
+            log(I18n.t("All ") + wanted.size() + " " + noun() + I18n.t(" are already in place."));
             return Result.READY;
         }
-        log((wanted.size() - need.size()) + " " + noun() + " already in place, " + auto.size() + " to download"
-                + (byHand.isEmpty() ? "" : ", " + byHand.size() + " by hand"));
+        log((wanted.size() - need.size()) + " " + noun() + I18n.t(" already in place, ") + auto.size() + I18n.t(" to download")
+                + (byHand.isEmpty() ? "" : ", " + byHand.size() + I18n.t(" by hand")));
 
         long total = auto.stream().mapToLong(Manifest.Mod::size).sum();
         AtomicLong done = new AtomicLong();
@@ -295,14 +295,14 @@ final class Installer {
                         fetchMod(m, d -> ui.progress(done.addAndGet(d), total, files.get(), auto.size(), m.file()));
                         int n = files.incrementAndGet();
                         ui.progress(done.get(), total, n, auto.size(), m.file());
-                        ui.step(Step.MODS, State.RUNNING, "Downloaded " + n + " of " + auto.size());
+                        ui.step(Step.MODS, State.RUNNING, I18n.t("Downloaded ") + n + I18n.t(" of ") + auto.size());
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     } catch (Exception e) {
                         synchronized (failed) {
                             failed.add(m.file());
                         }
-                        log("Could not get " + m.file() + " from " + m.source().label() + ": " + e.getMessage());
+                        log(I18n.t("Could not get ") + m.file() + I18n.t(" from ") + m.source().label() + ": " + e.getMessage());
                     }
                     return null;
                 }));
@@ -311,33 +311,33 @@ final class Installer {
                 try {
                     f.get();
                 } catch (java.util.concurrent.ExecutionException e) {
-                    log("Download job failed: " + e.getCause());
+                    log(I18n.t("Download job failed: ") + e.getCause());
                 }
             }
         } finally {
             pool.shutdownNow();
         }
         if (!failed.isEmpty()) {
-            ui.step(Step.MODS, State.FAILED, (failed.size() == 1 ? "1 file" : failed.size() + " files")
-                    + " could not be downloaded; run setup again to retry");
+            ui.step(Step.MODS, State.FAILED, (failed.size() == 1 ? I18n.t("1 file") : failed.size() + I18n.t(" files"))
+                    + I18n.t(" could not be downloaded; run setup again to retry"));
             return Result.FAILED;
         }
 
         if (!byHand.isEmpty()) {
             byHand = scanManual(byHand);
             if (!byHand.isEmpty()) {
-                ui.step(Step.MODS, State.WARNING, byHand.size() == 1 ? "1 mod needs a download by hand"
-                        : byHand.size() + " mods need a download by hand");
+                ui.step(Step.MODS, State.WARNING, byHand.size() == 1 ? I18n.t("1 mod needs a download by hand")
+                        : byHand.size() + I18n.t(" mods need a download by hand"));
                 ui.manual(byHand, this);
                 byHand = scanManual(byHand);
             }
             if (!byHand.isEmpty()) {
-                ui.step(Step.MODS, State.WARNING, "Missing: " + String.join(", ",
+                ui.step(Step.MODS, State.WARNING, I18n.t("Missing: ") + String.join(", ",
                         byHand.stream().map(Manifest.Mod::name).toList()));
                 return Result.INCOMPLETE;
             }
         }
-        ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + " ready (" + need.size() + " new)");
+        ui.step(Step.MODS, State.DONE, wanted.size() + " " + noun() + I18n.t(" ready (") + need.size() + I18n.t(" new)"));
         return Result.READY;
     }
 
@@ -348,7 +348,7 @@ final class Installer {
             Download.fetch(m.source().url(), tmp, m.size(), m.sha512(), "SHA-512", progress);
             place(tmp, target);
             record(m, target);
-            log("Got " + m.file() + " from " + m.source().label());
+            log(I18n.t("Got ") + m.file() + I18n.t(" from ") + m.source().label());
             return;
         }
         Path orig = downloads.resolve(m.patch().originalFile().replaceAll("[\\\\/:*?\"<>|\\[\\] ]", "_") + ".orig");
@@ -358,7 +358,7 @@ final class Installer {
         Files.deleteIfExists(orig);
         place(fixed, target);
         record(m, target);
-        log("Got " + m.patch().originalFile() + " from " + m.source().label() + " and applied the pack's fix: " + m.file());
+        log(I18n.t("Got ") + m.patch().originalFile() + I18n.t(" from ") + m.source().label() + I18n.t(" and applied the pack's fix: ") + m.file());
     }
 
     /** Moves a finished file into place, first moving any old file of that name to mods-removed/. */
@@ -453,7 +453,7 @@ final class Installer {
         Files.copy(found, tmp, StandardCopyOption.REPLACE_EXISTING);
         place(tmp, target(m));
         record(m, target(m));
-        log("Found " + m.name() + " at " + found + " and copied it into " + m.dir() + "/");
+        log(I18n.t("Found ") + m.name() + I18n.t(" at ") + found + I18n.t(" and copied it into ") + m.dir() + "/");
     }
 
     List<Path> manualPlaces() {
@@ -490,10 +490,10 @@ final class Installer {
     private void extractFiles() {
         List<Manifest.Extract> list = wantedExtracts();
         if (list.isEmpty()) {
-            ui.step(Step.FILES, State.DONE, "Nothing to add");
+            ui.step(Step.FILES, State.DONE, I18n.t("Nothing to add"));
             return;
         }
-        ui.step(Step.FILES, State.RUNNING, "Adding " + list.size() + (list.size() == 1 ? " file" : " files"));
+        ui.step(Step.FILES, State.RUNNING, I18n.t("Adding ") + list.size() + (list.size() == 1 ? I18n.t(" file") : I18n.t(" files")));
         int ok = 0;
         for (Manifest.Extract x : list) {
             Path target = dir.resolve(x.to());
@@ -504,31 +504,31 @@ final class Installer {
                 }
                 Path jar = mods.resolve(x.from());
                 if (!Files.isRegularFile(jar)) {
-                    log("Skipped " + x.to() + ": " + x.from() + " is missing");
+                    log(I18n.t("Skipped ") + x.to() + ": " + x.from() + I18n.t(" is missing"));
                     continue;
                 }
                 byte[] data;
                 try (ZipFile z = new ZipFile(jar.toFile())) {
                     ZipEntry e = z.getEntry(x.entry());
                     if (e == null) {
-                        throw new IOException(x.entry() + " is not in " + x.from());
+                        throw new IOException(x.entry() + I18n.t(" is not in ") + x.from());
                     }
                     try (InputStream in = z.getInputStream(e)) {
                         data = in.readAllBytes();
                     }
                 }
                 if (!Hashes.sha256(data).equals(x.sha256())) {
-                    throw new IOException(x.entry() + " in " + x.from() + " is not the expected file");
+                    throw new IOException(x.entry() + I18n.t(" in ") + x.from() + I18n.t(" is not the expected file"));
                 }
                 Files.createDirectories(target.getParent());
                 Files.write(target, data);
-                log("Added " + x.to() + " (" + x.why() + ")");
+                log(I18n.t("Added ") + x.to() + " (" + I18n.t(x.why()) + ")");
                 ok++;
             } catch (IOException e) {
-                log("Could not add " + x.to() + ": " + e.getMessage());
+                log(I18n.t("Could not add ") + x.to() + ": " + e.getMessage());
             }
         }
-        ui.step(Step.FILES, ok == list.size() ? State.DONE : State.WARNING, ok + " of " + list.size() + " in place");
+        ui.step(Step.FILES, ok == list.size() ? State.DONE : State.WARNING, ok + I18n.t(" of ") + list.size() + I18n.t(" in place"));
     }
 
     // ---- tidy ----
@@ -582,14 +582,14 @@ final class Installer {
         }
         installed.keySet().removeIf(k -> !keep.contains(k));
         if (moved.isEmpty()) {
-            ui.step(Step.TIDY, State.DONE, "Nothing to tidy");
+            ui.step(Step.TIDY, State.DONE, I18n.t("Nothing to tidy"));
         } else {
-            ui.step(Step.TIDY, State.DONE, (moved.size() == 1 ? "1 old jar" : moved.size() + " old jars")
-                    + " moved to mods-removed/");
-            log("Moved " + moved.size() + (moved.size() == 1 ? " jar that is" : " jars that are")
-                    + " not part of CrazyCraft " + manifest.packVersion() + " to mods-removed/" + stamp + ": "
+            ui.step(Step.TIDY, State.DONE, (moved.size() == 1 ? I18n.t("1 old jar") : moved.size() + I18n.t(" old jars"))
+                    + I18n.t(" moved to mods-removed/"));
+            log(I18n.t("Moved ") + moved.size() + (moved.size() == 1 ? I18n.t(" jar that is") : I18n.t(" jars that are"))
+                    + I18n.t(" not part of CrazyCraft ") + manifest.packVersion() + I18n.t(" to mods-removed/") + stamp + ": "
                     + String.join(", ", moved)
-                    + (mode == Mode.SERVER ? ". To keep a mod of your own, list its file name in user-mods.txt." : "."));
+                    + (mode == Mode.SERVER ? I18n.t(". To keep a mod of your own, list its file name in user-mods.txt.") : "."));
         }
     }
 

@@ -36,10 +36,10 @@ final class ConsoleUi implements Installer.Listener {
     static void banner(Manifest m, Installer.Mode mode) {
         System.out.println();
         System.out.println("  ==============================================================");
-        System.out.println("    " + m.packName() + (mode == Installer.Mode.CLIENT ? " game" : " server") + " setup  -  pack "
+        System.out.println("    " + m.packName() + (mode == Installer.Mode.CLIENT ? I18n.t(" game") : I18n.t(" server")) + I18n.t(" setup  -  pack ")
                 + m.packVersion() + "  -  Minecraft " + m.minecraft());
-        System.out.println("    Every mod is downloaded from its official page (Modrinth, CurseForge");
-        System.out.println("    or the author's GitHub) and checked before it is used.");
+        System.out.println(I18n.t("    Every mod is downloaded from its official page (Modrinth, CurseForge"));
+        System.out.println(I18n.t("    or the author's GitHub) and checked before it is used."));
         System.out.println("  ==============================================================");
         System.out.println();
     }
@@ -70,7 +70,7 @@ final class ConsoleUi implements Installer.Listener {
             case FAILED -> "[FAIL]";
             case WAITING -> "[    ]";
         };
-        System.out.println("  " + tag + " " + pad(step.title, 16) + detail);
+        System.out.println("  " + tag + " " + pad(I18n.t(step.title), 16) + detail);
     }
 
     @Override
@@ -96,34 +96,34 @@ final class ConsoleUi implements Installer.Listener {
             synchronized (this) {
                 endLine();
                 System.out.println();
-                System.out.println("  These mods have to be downloaded by hand, because their authors only allow");
-                System.out.println("  downloads from CurseForge itself:");
+                System.out.println(I18n.t("  These mods have to be downloaded by hand, because their authors only allow"));
+                System.out.println(I18n.t("  downloads from CurseForge itself:"));
                 for (Manifest.Mod m : left) {
                     System.out.println();
                     System.out.println("    " + m.name() + " (" + m.file() + ")");
                     System.out.println("    " + (m.source().download() != null ? m.source().download() : m.source().page()));
                 }
                 System.out.println();
-                System.out.println("  Save the file into " + installer.manualDir + " (or your Downloads folder).");
+                System.out.println(I18n.t("  Save the file into ") + installer.manualDir + I18n.t(" (or your Downloads folder)."));
             }
             if (!interactive) {
-                System.out.println("  Then run the setup again.");
+                System.out.println(I18n.t("  Then run the setup again."));
                 return;
             }
-            System.out.print("  Press Enter to look again, or type skip to go on without it: ");
+            System.out.print(I18n.t("  Press Enter to look again, or type skip to go on without it: "));
             String answer;
             try {
                 answer = in.readLine();
             } catch (IOException e) {
                 return;
             }
-            if (answer == null || answer.strip().equalsIgnoreCase("skip")) {
+            if (answer == null || (answer.strip().equalsIgnoreCase("skip") || answer.strip().equalsIgnoreCase("pular"))) {
                 return;
             }
             try {
                 left = installer.scanManual(left);
             } catch (IOException e) {
-                System.out.println("  Could not read the folder: " + e.getMessage());
+                System.out.println(I18n.t("  Could not read the folder: ") + e.getMessage());
             }
         }
     }
@@ -135,22 +135,22 @@ final class ConsoleUi implements Installer.Listener {
         }
         if (preAccepted) {
             Installer.acceptEula(dir);
-            System.out.println("  EULA accepted (https://aka.ms/MinecraftEULA).");
+            System.out.println(I18n.t("  EULA accepted (https://aka.ms/MinecraftEULA)."));
             return true;
         }
         if (!interactive) {
-            System.out.println("  Before the server starts, accept the Minecraft EULA (https://aka.ms/MinecraftEULA):");
-            System.out.println("  set eula=true in eula.txt, or run the setup with --accept-eula.");
+            System.out.println(I18n.t("  Before the server starts, accept the Minecraft EULA (https://aka.ms/MinecraftEULA):"));
+            System.out.println(I18n.t("  set eula=true in eula.txt, or run the setup with --accept-eula."));
             return false;
         }
         System.out.println();
-        System.out.print("  Do you accept the Minecraft EULA (https://aka.ms/MinecraftEULA)? [y/N]: ");
+        System.out.print(I18n.t("  Do you accept the Minecraft EULA (https://aka.ms/MinecraftEULA)? [y/N]: "));
         String a = in.readLine();
-        if (a != null && a.strip().toLowerCase(Locale.ROOT).startsWith("y")) {
+        if (a != null && (a.strip().equalsIgnoreCase("y") || a.strip().equalsIgnoreCase("yes") || (I18n.portuguese() && (a.strip().equalsIgnoreCase("s") || a.strip().equalsIgnoreCase("sim"))))) {
             Installer.acceptEula(dir);
             return true;
         }
-        System.out.println("  Not accepted; the server won't start until eula=true is set in eula.txt.");
+        System.out.println(I18n.t("  Not accepted; the server won't start until eula=true is set in eula.txt."));
         return false;
     }
 

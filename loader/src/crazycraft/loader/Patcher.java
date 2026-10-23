@@ -52,7 +52,7 @@ final class Patcher {
             switch (Json.str(op, "op")) {
                 case "remove" -> {
                     if (files.remove(entry) == null) {
-                        throw new IOException(entry + " is not in " + original.getFileName());
+                        throw new IOException(entry + I18n.t(" is not in ") + original.getFileName());
                     }
                 }
                 case "add" -> files.put(entry, Json.str(op, "text").getBytes(StandardCharsets.UTF_8));
@@ -63,7 +63,7 @@ final class Patcher {
                     byte[] repl = HexFormat.of().parseHex(Json.str(op, "replace"));
                     if (off + expect.length > data.length
                             || !Arrays.equals(Arrays.copyOfRange(data, off, off + expect.length), expect)) {
-                        throw new IOException(entry + ": the bytes to change are not what the fix expects");
+                        throw new IOException(entry + I18n.t(": the bytes to change are not what the fix expects"));
                     }
                     data = data.clone();
                     System.arraycopy(repl, 0, data, off, repl.length);
@@ -75,7 +75,7 @@ final class Patcher {
                     byte[] with = Json.str(op, "with").getBytes(StandardCharsets.UTF_8);
                     int at = indexOf(data, find, 0);
                     if (at < 0 || indexOf(data, find, at + 1) >= 0) {
-                        throw new IOException(entry + ": the text to change is not there exactly once");
+                        throw new IOException(entry + I18n.t(": the text to change is not there exactly once"));
                     }
                     byte[] res = new byte[data.length - find.length + with.length];
                     System.arraycopy(data, 0, res, 0, at);
@@ -83,7 +83,7 @@ final class Patcher {
                     System.arraycopy(data, at + find.length, res, at + with.length, data.length - at - find.length);
                     files.put(entry, res);
                 }
-                default -> throw new IOException("Unknown edit '" + Json.str(op, "op") + "' (this loader is too old)");
+                default -> throw new IOException(I18n.t("Unknown edit '") + Json.str(op, "op") + I18n.t("' (this loader is too old)"));
             }
         }
         Map<String, byte[]> onlyFiles = new LinkedHashMap<>();
@@ -94,7 +94,7 @@ final class Patcher {
         });
         String got = Hashes.contentHash(onlyFiles);
         if (!got.equals(patch.result())) {
-            throw new IOException("The fixed jar does not match what the pack expects (" + got.substring(0, 12) + ")");
+            throw new IOException(I18n.t("The fixed jar does not match what the pack expects (") + got.substring(0, 12) + ")");
         }
         try (OutputStream os = Files.newOutputStream(out); ZipOutputStream zo = new ZipOutputStream(os)) {
             for (Map.Entry<String, byte[]> e : files.entrySet()) {
@@ -131,7 +131,7 @@ final class Patcher {
     private static byte[] need(Map<String, byte[]> files, String entry, Path jar) throws IOException {
         byte[] data = files.get(entry);
         if (data == null) {
-            throw new IOException(entry + " is not in " + jar.getFileName());
+            throw new IOException(entry + I18n.t(" is not in ") + jar.getFileName());
         }
         return data;
     }

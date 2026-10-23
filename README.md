@@ -24,6 +24,8 @@ Get the latest files from the [Releases](../../releases) page:
 
 Updates keep worlds, server lists, player options and personal mods. Replaced configs are backed up under `.crazycraft/backups` in the game folder; obsolete pack mods move to `mods-removed`. Native launcher installs use their own game folder and an 8 GB memory allocation. Existing launcher profiles and Prism memory settings are preserved.
 
+The installer supports **English and Português (Brasil)**. Choose a language in setup; it remembers your choice and defaults to Portuguese on Portuguese-language systems. Windows users can also open `Instalar CrazyCraft (PT-BR).bat` directly.
+
 ### Client ZIP import (Prism Launcher or MultiMC)
 
 1. Install [Prism Launcher](https://prismlauncher.org/) (free) and log in with your Microsoft account.

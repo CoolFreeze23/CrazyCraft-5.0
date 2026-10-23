@@ -17,7 +17,7 @@ record Manifest(String packName, String packVersion, String repo, String minecra
                 case "modrinth" -> "Modrinth";
                 case "curseforge" -> "CurseForge";
                 case "github" -> "GitHub";
-                case "manual" -> "CurseForge (by hand)";
+                case "manual" -> I18n.t("CurseForge (by hand)");
                 default -> type;
             };
         }
@@ -54,7 +54,7 @@ record Manifest(String packName, String packVersion, String repo, String minecra
     static Manifest parse(String text) {
         Map<String, Object> root = Json.obj(Json.parse(text));
         if (Json.num(root, "format") != 1) {
-            throw new IllegalArgumentException("This manifest needs a newer loader (format " + root.get("format") + ")");
+            throw new IllegalArgumentException(I18n.t("This manifest needs a newer loader (format ") + root.get("format") + ")");
         }
         Map<String, Object> pack = Json.obj(root.get("pack"));
         Map<String, Object> neo = Json.obj(root.get("neoforge"));

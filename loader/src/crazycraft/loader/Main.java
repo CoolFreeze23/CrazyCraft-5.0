@@ -18,14 +18,16 @@ import java.nio.file.Path;
  * --screenshot <png> --demo <start|running|manual|done> (renders the window to an image without showing it).
  */
 public final class Main {
-    static final String VERSION = "1.1.0";
+    static final String VERSION = "1.1.1";
 
     private Main() {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length == 2 && args[0].equals("--setup-screenshot")) {
-            ClientSetup.open(Path.of(args[1]));
+        I18n.initialize(args);
+        int screenshotIndex = java.util.Arrays.asList(args).indexOf("--setup-screenshot");
+        if (screenshotIndex >= 0) {
+            ClientSetup.open(Path.of(args[screenshotIndex + 1]));
             return;
         }
         if ((args.length == 0 || java.util.Arrays.asList(args).contains("--setup")) && !GraphicsEnvironment.isHeadless()) {
@@ -47,6 +49,7 @@ public final class Main {
                 case "--nogui", "nogui" -> nogui = true;
                 case "--client" -> client = true;
                 case "--server-setup" -> { }
+                case "--lang" -> i++;
                 case "--accept-eula" -> acceptEula = true;
                 case "--dir" -> dir = Path.of(args[++i]);
                 case "--manifest" -> manifestFile = Path.of(args[++i]);
@@ -60,7 +63,7 @@ public final class Main {
                     return;
                 }
                 default -> {
-                    System.err.println("Unknown option " + args[i]);
+                    System.err.println(I18n.t("Unknown option ") + args[i]);
                     System.exit(64);
                 }
             }
@@ -81,7 +84,7 @@ public final class Main {
             System.exit(Gui.selfTest(manifest, dir, mode, selfTest, selfTestManual));
         }
         if (client && !new Installer(dir, manifest, ConsoleUi.QUIET, mode).needsWork()) {
-            System.out.println("CrazyCraft " + manifest.packVersion() + ": every mod and resource pack is in place.");
+            System.out.println("CrazyCraft " + manifest.packVersion() + I18n.t(": every mod and resource pack is in place."));
             System.exit(0);
         }
         if (!nogui && !GraphicsEnvironment.isHeadless()) {
@@ -98,18 +101,18 @@ public final class Main {
         if (result != Installer.Result.READY) {
             System.out.println();
             System.out.println(result == Installer.Result.INCOMPLETE
-                    ? "  Setup is not finished: some mods still have to be downloaded by hand (see above)."
-                    : "  Setup did not finish; see the messages above and .crazycraft/loader.log.");
+                    ? I18n.t("  Setup is not finished: some mods still have to be downloaded by hand (see above).")
+                    : I18n.t("  Setup did not finish; see the messages above and .crazycraft/loader.log."));
             System.exit(result == Installer.Result.INCOMPLETE ? 3 : 1);
         }
         if (client) {
             System.out.println();
-            System.out.println("  Ready.");
+            System.out.println(I18n.t("  Ready."));
             System.exit(0);
         }
         boolean eula = ui.eula(dir, acceptEula);
         System.out.println();
-        System.out.println(eula ? "  Ready." : "  Ready, once the EULA is accepted.");
+        System.out.println(eula ? I18n.t("  Ready.") : I18n.t("  Ready, once the EULA is accepted."));
         System.exit(eula ? 0 : 2);
     }
 
@@ -135,7 +138,7 @@ public final class Main {
         }
         try (InputStream in = Main.class.getResourceAsStream("/crazycraft/loader/manifest.json")) {
             if (in == null) {
-                throw new IOException("No crazycraft-manifest.json next to the loader");
+                throw new IOException(I18n.t("No crazycraft-manifest.json next to the loader"));
             }
             return Manifest.parse(new String(in.readAllBytes(), StandardCharsets.UTF_8));
         }
