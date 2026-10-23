@@ -10,10 +10,21 @@ Get the latest files from the [Releases](../../releases) page:
 
 | File | What it is |
 |---|---|
+| `CrazyCraft5-Setup.zip` | Install or update a client in Prism or Minecraft Launcher, or set up a server. |
 | `CrazyCraft5-Client.zip` | Client pack for Prism Launcher or MultiMC. The first launch downloads every mod and resource pack from its official page. |
 | `CrazyCraft5-Server.zip` | Dedicated server files. The setup downloads every mod from its official page. |
 
-### Client (Prism Launcher or MultiMC, recommended)
+### Client setup: Prism or Minecraft Launcher
+
+1. Install Java 21 and sign into your chosen launcher once, then close the launcher and game.
+2. Extract `CrazyCraft5-Setup.zip` and open `CrazyCraft Setup.bat` (Windows) or `setup.sh` (Linux/macOS).
+3. Choose **Prism Launcher** or **Minecraft Launcher**. Use **Browse** for a portable or nonstandard launcher data folder.
+4. Choose **Create a new installation**, or select a detected CrazyCraft installation to update it to the latest published release.
+5. Let setup finish downloading the pack, then open your launcher and select the installation. MCHeli still requires its author-approved manual download; setup guides you through it.
+
+Updates keep worlds, server lists, player options and personal mods. Replaced configs are backed up under `.crazycraft/backups` in the game folder; obsolete pack mods move to `mods-removed`. Native launcher installs use their own game folder and an 8 GB memory allocation. Existing launcher profiles and Prism memory settings are preserved.
+
+### Client ZIP import (Prism Launcher or MultiMC)
 
 1. Install [Prism Launcher](https://prismlauncher.org/) (free) and log in with your Microsoft account.
 2. Download `CrazyCraft5-Client.zip`. Don't unzip it.

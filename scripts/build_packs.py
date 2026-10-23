@@ -5,6 +5,7 @@ Server files = the loader, its manifest, start scripts and configs; no mod jars 
 says where each mod is downloaded from). "assemble" installs a complete server with the loader.
 """
 import json
+import copy
 import shutil
 import sys
 import zipfile
@@ -228,6 +229,67 @@ def zip_server():
     print(f"server zip: {n} files -> {out} ({out.stat().st_size / 1048576:.1f} MB)")
 
 
+def build_setup(server_zip=None):
+    """Combined launcher/client and server setup; client files come from the latest public release."""
+    out = BUILD / "CrazyCraft5-Setup.zip"
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as z:
+        if server_zip:
+            with zipfile.ZipFile(server_zip) as server:
+                for entry in server.infolist():
+                    z.writestr(copy.copy(entry), server.read(entry))
+        else:
+            for p in sorted((BUILD / "server-files").rglob("*")):
+                if p.is_file():
+                    z.write(p, p.relative_to(BUILD / "server-files").as_posix())
+        bat = (ROOT / "server" / "CrazyCraft Server Setup.bat").read_text(encoding="utf-8")
+        z.writestr("CrazyCraft Setup.bat", bat.replace("--server-setup", "--setup").replace("\n", "\r\n"))
+        info = zipfile.ZipInfo("setup.sh")
+        info.external_attr = 0o100755 << 16
+        z.writestr(info, '#!/bin/sh\ncd "$(dirname "$0")" || exit 1\nexec "${CRAZYCRAFT_JAVA:-java}" -jar crazycraft-loader.jar --setup\n')
+        z.writestr("START HERE.txt", "CrazyCraft Setup\n\nRequires Java 21. Open your launcher and sign in once, then close it.\n"
+                   "Windows: double-click CrazyCraft Setup.bat. Linux/macOS: run ./setup.sh.\n"
+                   "Choose Prism Launcher or Minecraft Launcher. Select an existing CrazyCraft installation to update,\n"
+                   "or create a new one. Setup downloads the latest published release and its mods.\n"
+                   "Portable launchers: choose their data folder using Browse.\n"
+                   "Updates preserve saves, server lists and player options. Replaced files are backed up under\n"
+                   ".crazycraft/backups in the game folder; obsolete pack mods move to mods-removed.\n"
+                   "Close Minecraft and its launcher throughout setup. Rerun setup to resume an interrupted install.\n"
+                   "For a dedicated server, choose Set up a server instead (see README.txt).\n")
+    print(f"combined setup: {out} ({out.stat().st_size / 1048576:.1f} MB)")
+
+
+def build_installer_update(baseline):
+    """Release only installer changes, preserving the previous release's game files byte for byte."""
+    manifest = load_manifest()
+    for name, prefix in (("CrazyCraft5-Client.zip", ".minecraft/"), ("CrazyCraft5-Server.zip", "")):
+        source = baseline / name
+        target = BUILD / name
+        if source.resolve() == target.resolve():
+            raise ValueError("Baseline must be separate from the build output")
+        with zipfile.ZipFile(source) as old:
+            previous = json.loads(old.read(prefix + "crazycraft-manifest.json"))
+            previous_version = previous["pack"]["version"]
+            previous["pack"]["version"] = manifest["pack"]["version"]
+            if previous != manifest:
+                raise ValueError("Installer-only releases cannot change the mod manifest")
+            replacements = {
+                prefix + "crazycraft-loader.jar": (BUILD / "loader/crazycraft-loader.jar").read_bytes(),
+                prefix + "crazycraft-manifest.json": (ROOT / "pack/manifest.json").read_bytes(),
+            }
+            if not prefix:
+                replacements["CrazyCraft Server Setup.bat"] = (ROOT / "server/CrazyCraft Server Setup.bat").read_bytes()
+            with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED) as new:
+                for entry in old.infolist():
+                    data = replacements.get(entry.filename, old.read(entry))
+                    if entry.filename == "CREDITS.txt":
+                        data = data.replace(
+                            f"CrazyCraft 5.0 {previous_version}".encode(),
+                            f"CrazyCraft 5.0 {manifest['pack']['version']}".encode(), 1)
+                    new.writestr(copy.copy(entry), data)
+        print(f"installer update: {target}")
+    build_setup(BUILD / "CrazyCraft5-Server.zip")
+
+
 def assemble_server():
     """A complete server in build/server-pack, installed by the loader itself: for boot tests and the pack's server.
 
@@ -268,11 +330,15 @@ def assemble_server():
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
+    if what == "installer-update":
+        build_installer_update(Path(sys.argv[2]))
     if what in ("all", "client"):
         build_client()
-    if what in ("all", "server"):
+    if what in ("all", "server", "setup"):
         build_server_files()
         zip_server()
+    if what in ("all", "setup"):
+        build_setup()
     if what == "zipserver":
         zip_server()
     if what == "assemble":

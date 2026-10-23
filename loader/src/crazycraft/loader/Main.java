@@ -18,12 +18,20 @@ import java.nio.file.Path;
  * --screenshot <png> --demo <start|running|manual|done> (renders the window to an image without showing it).
  */
 public final class Main {
-    static final String VERSION = "1.0.0";
+    static final String VERSION = "1.1.0";
 
     private Main() {
     }
 
     public static void main(String[] args) throws Exception {
+        if (args.length == 2 && args[0].equals("--setup-screenshot")) {
+            ClientSetup.open(Path.of(args[1]));
+            return;
+        }
+        if ((args.length == 0 || java.util.Arrays.asList(args).contains("--setup")) && !GraphicsEnvironment.isHeadless()) {
+            ClientSetup.open();
+            return;
+        }
         boolean nogui = false;
         boolean client = false;
         boolean acceptEula = "true".equalsIgnoreCase(System.getenv("CRAZYCRAFT_ACCEPT_EULA"));
@@ -38,6 +46,7 @@ public final class Main {
             switch (args[i]) {
                 case "--nogui", "nogui" -> nogui = true;
                 case "--client" -> client = true;
+                case "--server-setup" -> { }
                 case "--accept-eula" -> acceptEula = true;
                 case "--dir" -> dir = Path.of(args[++i]);
                 case "--manifest" -> manifestFile = Path.of(args[++i]);

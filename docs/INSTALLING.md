@@ -2,7 +2,19 @@
 
 The client download holds the pack's settings, configs and its own resource pack, plus a small setup program (`crazycraft-loader.jar`). It doesn't include anyone else's mods or resource packs: the setup downloads each one from its official page (Modrinth, CurseForge or the author's GitHub) the first time you play, and checks every file before it's used.
 
-## Method 1: Prism Launcher / MultiMC import (recommended)
+## Guided setup: Prism or Minecraft Launcher
+
+Extract `CrazyCraft5-Setup.zip` and run `CrazyCraft Setup.bat` on Windows or `./setup.sh` on Linux/macOS with Java 21. Sign into the launcher once first, then close it and Minecraft while setup runs.
+
+Choose a launcher and either create a named installation or select an existing CrazyCraft installation. Setup looks up the latest published release every time, downloads its client files, and installs the required mods. For the Minecraft Launcher, it also installs the matching NeoForge version and creates a profile with a separate game directory. Prism gets the release's Minecraft and NeoForge component versions.
+
+The folder picker expects the launcher's data folder: the one containing `prismlauncher.cfg` for Prism, or `launcher_profiles.json` / `launcher_profiles_microsoft_store.json` for Minecraft. Use Browse for portable installations, a custom location, or Flatpak's Prism data folder. Prism's configured `InstanceDir` is respected. Setup recognizes CrazyCraft manifests and older installations containing both OreSpawn Integrations and the CrazyCraft Portuguese pack. For older installs without a manifest, superseded mod versions are identified by their declared mod IDs; unmatched mods are kept.
+
+Updates preserve saves, server lists, player options, personal mods and existing launcher memory settings. Pack configs are refreshed, with replaced files backed up under `.crazycraft/backups` in the game directory. Old pack mods move to `mods-removed`. Launcher profile backups and NeoForge install logs are under `.crazycraft/launcher-backups`. If setup is interrupted, rerun it and select the detected installation; it checks downloads again and resumes. Finish setup before playing.
+
+After setup, open your launcher and select your installation. Run this setup again whenever you want to move to the latest release; the ordinary Prism pre-launch check repairs the installed version and does not silently upgrade it.
+
+## Prism Launcher / MultiMC import
 
 1. Install [Prism Launcher](https://prismlauncher.org/) and sign in with your Microsoft account.
 2. Download `CrazyCraft5-Client.zip` from [Releases](../../../releases). Keep it zipped.
@@ -33,7 +45,7 @@ Works with the vanilla launcher with NeoForge installed by hand, ATLauncher and 
 
 ## Updating
 
-To update, import the new client zip as a new instance, then copy your `saves/` folder over from the old instance. Your worlds are never inside the pack zip.
+Run the guided setup and select the existing installation to update it in place. Alternatively, import the new client zip as a new instance, then copy your `saves/` folder over from the old instance. Your worlds are never inside the pack zip.
 
 ## Troubleshooting
 

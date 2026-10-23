@@ -106,6 +106,7 @@ final class Gui implements Installer.Listener {
     private volatile boolean working;
     private boolean ready;
     private boolean autoExit;
+    private String launcherInstructions;
     private Installer.Result lastResult;
     private List<Manifest.Mod> manualMissing = new ArrayList<>();
     private CountDownLatch manualLatch;
@@ -145,8 +146,17 @@ final class Gui implements Installer.Listener {
     // ---- entry points ----
 
     static void open(Manifest manifest, Path dir, Installer.Mode mode) {
+        open(manifest, dir, mode, null);
+    }
+
+    static void openClientSetup(Manifest manifest, Path dir, String instructions) {
+        open(manifest, dir, Installer.Mode.CLIENT, instructions);
+    }
+
+    private static void open(Manifest manifest, Path dir, Installer.Mode mode, String instructions) {
         SwingUtilities.invokeLater(() -> {
             Gui gui = new Gui(manifest, dir, mode);
+            gui.launcherInstructions = instructions;
             JFrame f = new JFrame(manifest.packName() + (gui.client ? "" : " Server Setup"));
             if (gui.client) {
                 f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -169,7 +179,7 @@ final class Gui implements Installer.Listener {
             gui.checkForUpdate();
             f.setVisible(true);
             if (gui.client) {
-                gui.autoExit = true;
+                gui.autoExit = instructions == null;
                 gui.onPrimary();
             }
         });
@@ -553,7 +563,7 @@ final class Gui implements Installer.Listener {
         }
         if (ready) {
             if (client) {
-                if (autoExit) {
+                if (autoExit || launcherInstructions != null) {
                     System.exit(0);
                 }
             } else {
@@ -612,7 +622,8 @@ final class Gui implements Installer.Listener {
                     doneText.setText(manifest.packName() + " v" + manifest.packVersion() + "  ·  Minecraft "
                             + manifest.minecraft() + "  ·  " + countText(wanted()));
                     show("done");
-                    primary.setText("Play");
+                    primary.setText(launcherInstructions == null ? "Play" : "Close setup");
+                    if (launcherInstructions != null) doneText.setText(launcherInstructions);
                     primary.setEnabled(true);
                     if (autoExit) {
                         Timer t = new Timer(1500, e -> System.exit(0));

@@ -139,7 +139,7 @@ final class Installer {
             }
             result = m;
             extractFiles();
-            tidy();
+            tidy(result == Result.READY);
             saveState();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -538,7 +538,7 @@ final class Installer {
      * old versions can't clash with new ones after an update. Game folders: only jars this setup installed before and
      * the pack no longer has move; mods a player added are left alone.
      */
-    private void tidy() throws IOException {
+    private void tidy(boolean complete) throws IOException {
         ui.step(Step.TIDY, State.RUNNING, "");
         Set<String> keep = new HashSet<>();
         wanted().forEach(m -> keep.add(key(m)));
@@ -555,6 +555,21 @@ final class Installer {
                 }
             }
         } else {
+            Path legacy = work.resolve("legacy-mods.json");
+            if (Files.isRegularFile(legacy)) {
+                Set<String> currentIds = new HashSet<>();
+                for (Manifest.Mod mod : wanted()) if (mod.dir().equals("mods")) currentIds.addAll(modIds(target(mod)));
+                for (Object entry : Json.arr(Json.parse(Files.readString(legacy)))) {
+                    String name = entry.toString();
+                    Path old = ClientSetup.safe(mods, name);
+                    if (!keep.contains("mods/" + name) && Files.isRegularFile(old)
+                            && modIds(old).stream().anyMatch(currentIds::contains)) {
+                        moveAside(old);
+                        moved.add(name);
+                    }
+                }
+                if (complete) Files.delete(legacy);
+            }
             for (String k : new ArrayList<>(installed.keySet())) {
                 if (k.startsWith("mods/") && !keep.contains(k)) {
                     Path p = dir.resolve(k);
@@ -576,6 +591,35 @@ final class Installer {
                     + String.join(", ", moved)
                     + (mode == Mode.SERVER ? ". To keep a mod of your own, list its file name in user-mods.txt." : "."));
         }
+    }
+
+    /** Loader-declared ids identify superseded jars in an older installation with no ownership record. */
+    static Set<String> modIds(Path jar) {
+        Set<String> ids = new HashSet<>();
+        try (ZipFile zip = new ZipFile(jar.toFile())) {
+            for (String name : List.of("META-INF/neoforge.mods.toml", "META-INF/mods.toml")) {
+                ZipEntry entry = zip.getEntry(name);
+                if (entry == null) continue;
+                String text;
+                try (InputStream in = zip.getInputStream(entry)) { text = new String(in.readAllBytes(), StandardCharsets.UTF_8); }
+                // Read only [[mods]] sections, never dependency modId fields.
+                boolean mod = false;
+                for (String line : text.split("\\R")) {
+                    String s = line.strip();
+                    if (s.startsWith("[")) mod = s.startsWith("[[mods]]");
+                    if (mod) {
+                        var match = java.util.regex.Pattern.compile("^modId\\s*=\\s*[\"']([^\"']+)[\"']").matcher(s);
+                        if (match.find()) ids.add(match.group(1));
+                    }
+                }
+            }
+            ZipEntry fabric = zip.getEntry("fabric.mod.json");
+            if (fabric != null) try (InputStream in = zip.getInputStream(fabric)) {
+                String id = Json.str(Json.obj(Json.parse(new String(in.readAllBytes(), StandardCharsets.UTF_8))), "id");
+                if (id != null) ids.add(id);
+            }
+        } catch (Exception ignored) { /* Unrecognized personal jars stay in place. */ }
+        return ids;
     }
 
     private Set<String> userMods() throws IOException {
