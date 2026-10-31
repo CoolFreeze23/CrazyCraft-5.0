@@ -37,6 +37,25 @@ All of these ship in `config/`. The notable ones:
 | `punchy/punchy_config.json` | OreSpawn's eight custom-rendered weapons added to `itemBlacklist` | Punchy re-renders held items on a visible-hands rig, which mangles the giant weapons that draw themselves (Big Bertha, the Royal Guardian Sword, the chainsaw and the rest). Blacklisting them keeps their own rendering. |
 | `immediatelyfast.json` | `hud_batching` set to `false` | With HUD batching on, ImmediatelyFast holds the HUD's drawing back while Auto HUD draws the crosshair and its fading parts into a framebuffer of its own. The crosshair then came out plain white or not at all, and the hotbar items and XP number stopped fading. With it off, both work as before, and frame rates were the same in our tests. Everything else in ImmediatelyFast stays at its defaults. |
 | `fancymenu/` | Full custom title screen | OreSpawn-themed key art, a custom logo and a trimmed button stack. This is the pack's title screen, and it relies on the FancyMenu one-byte patch above. |
+| `soulshards/server.json` | Every boss in the pack set `false` in `entityList.entities` | A Soul Cage spawned bosses from a bound shard (Mobzilla, the Kraken, the Queen, two every 20 s). Bosses can no longer be caged by hand or by hopper. |
+| `hbmsntm-common.toml` | `[hazards] disableCoaldust = true` | Breaking coal ore released HBM's coal-dust gas all over the overworld. Every other HBM hazard stays on. |
+| `mowziesmobs-common.toml` | `[mobs.umvuthi]` fee 8 `cataclysm:koboleton_bone`; `[mobs.sculptor]` fee 3 `orespawn:moth_scale` | The shipped fees (7 gold blocks, one Bluff Rod that almost never drops) priced players out. Nothing else in the file changes. |
+| `jade/hide-entities.json` | `artifacts:mimic` added | A Jade label over a "chest" gave the Mimic away. |
+| `ars_nouveau-common.toml` | `spawnBook = false` | Every join put an Ars book in the inventory. |
+| `orespawn-common.toml` | `duplicatorTreeEnable = false`, `islandSpeedFactor = 1` | The Duplicator Tree copied any block on its base (boss eggs, storage blocks) on random tick; drifting islands erased builds. The log stays as decorative wood, and new islands drift at half speed. |
+| `waystones-common.toml` | `transportPets = "ENABLED"` | Pets stayed behind at every waystone. |
+| `walkers.json5` | `hostilesIgnoreHostileShapedPlayer = false` | A hostile shape made every hostile mob leave the player alone, which emptied the nights. |
+| `guardvillagers-common.toml` | OreSpawn's robots and Plants & Zombies' zombies added to the guards' `Mob Whitelist` | Guards stood by while robots and lawn zombies raided their village. |
+
+## Pack data
+
+`moonlight-global-datapacks/crazycraft5-pk/` is a data pack the game loads into every world, above the mods' own data. `/datapack disable "file/crazycraft5-pk"` turns it off. It holds the pack's changes to files that belong to other mods:
+
+| File | Change | Why |
+|---|---|---|
+| Pandora's Box `army` and `boss` | The Wither taken out of the spawn list | A box opened on day one could spawn a Wither. Every other mob stays. |
+| Pandora's Box `void` | Range 6-10 blocks (was 20-50) | The void ate whole bases. |
+| Bumblezone `the_queens_desire/the_great_dragon_slayer` | The dragon kill counts only in the End | An Ender Dragon hatched from an egg in the overworld counted toward Journey's End. |
 
 ## Brazilian Portuguese resource pack
 
