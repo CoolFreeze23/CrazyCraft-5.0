@@ -6,12 +6,14 @@ says where each mod is downloaded from). "assemble" installs a complete server w
 """
 import json
 import copy
+import os
 import shutil
 import sys
 import zipfile
 from pathlib import Path
 
-INSTANCE = Path(r"C:\Users\alvin\AppData\Roaming\PrismLauncher\instances\CrazyCraft 5.0")
+# CRAZYCRAFT_INSTANCE builds from another Prism instance, such as a test copy of this one
+INSTANCE = Path(os.environ.get("CRAZYCRAFT_INSTANCE", r"C:\Users\alvin\AppData\Roaming\PrismLauncher\instances\CrazyCraft 5.0"))
 MC = INSTANCE / "minecraft"
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
