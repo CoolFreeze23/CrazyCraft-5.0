@@ -66,11 +66,6 @@
   }
  ],
  "patched": {
-  "randomizer-complete-edition-v0.6.jar": {
-   "modrinthVersion": "bnw3kV8i",
-   "originalFile": "randomizer-complete-edition-v0.6.jar",
-   "why": "Fixes its crafting table recipe, which uses recipe syntax 1.21.1 can't read."
-  },
   "mob_mutator-1.0.0.jar": {
    "modrinthVersion": "D9nnCi3h",
    "originalFile": "mob_mutator-1.0.0.jar",

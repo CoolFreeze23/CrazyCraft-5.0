@@ -17,7 +17,6 @@ NOTES = {
     "securitycraft": "Patched: camera ChunkMap mixin removed (Immersive Portals conflict)",
     "ars_nouveau": "Patched: embedded lambdynamiclights-api stripped",
     "farmersrespite": "Patched: duplicate kettle menu registration removed (the published jar crashes without this)",
-    "mr_randomizer_completeedition": "Patched: crafting table recipe syntax fixed",
     "mob_mutator": "Patched: title screen button mixin removed",
     "fancymenu": "Patched: lets the custom title screen hide the copyright line",
     "yungsapi": "Updated to 5.1.7 for a worldgen NPE fix",

@@ -1,6 +1,6 @@
 # Full mod list
 
-212 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
+211 mods. Minecraft 1.21.1 / NeoForge 21.1.252. Fabric-loader mods run through Sinytra Connector.
 
 | Mod | Version | Loader | Notes |
 |---|---|---|---|
@@ -163,7 +163,6 @@
 | Punchy (`punchy`) | 2.8d | NeoForge |  |
 | Puzzles Lib (`puzzleslib`) | 21.1.62 | NeoForge |  |
 | Railcraft Reborn (`railcraft`) | 1.2.10 | NeoForge |  |
-| Randomizer: Complete Edition (`mr_randomizer_completeedition`) | 1-v0.6 | datapack mod | Patched: crafting table recipe syntax fixed |
 | Rechiseled (`rechiseled`) | 1.2.6 | NeoForge |  |
 | Resourceful Lib (`resourcefullib`) | 3.0.12 | NeoForge |  |
 | Searchables (`searchables`) | 1.0.2 | NeoForge |  |

@@ -829,8 +829,8 @@
   },
   {
    "file": "domesticationinnovation-2.1.0-1.21.1.jar",
-   "name": "domesticationinnovation-2.1.0-1.21.1",
-   "version": "",
+   "name": "Domestication Innovation",
+   "version": "2.1.0-1.21.1",
    "side": "both",
    "size": 1038906,
    "sha512": "4c3aa648359d7b511ccb096c7024c5c9faa2bac2747e409cb4c8a6a4fd8d4217cc348ccbf498ea9b8c7664fe28f95730ee1497da4b17c9b0f6534ac1a3b74f08",
@@ -2089,8 +2089,8 @@
   },
   {
    "file": "orespawn-1.21.1-2.0.0-beta.15.jar",
-   "name": "orespawn-1.21.1-2.0.0-beta.15",
-   "version": "",
+   "name": "OreSpawn",
+   "version": "1.21.1-2.0.0-beta.15",
    "side": "both",
    "size": 23339103,
    "sha512": "c885720bddf9b8423da936b3f77b4634a1eb8dce94055448aff59ed0208207179e6d4a88f159d0c34a35e1c943f38ff768c9e0a43096196710284c4794bac01b",
@@ -2131,8 +2131,8 @@
   },
   {
    "file": "originawakening-1.21.1-1.0.0.jar",
-   "name": "originawakening-1.21.1-1.0.0",
-   "version": "",
+   "name": "Origin Awakening",
+   "version": "1.0.0",
    "side": "client",
    "size": 3742443,
    "sha512": "256536b80d8e434953cebf2dd0c04e8bd38a114c6f469e886699e1d76e1ab7904b716a74ba95a2d9ef8f5010ddecc828b6450a27cdbda7f43e05aba3f6716512",
@@ -2257,8 +2257,8 @@
   },
   {
    "file": "plants-and-zombies-neoforge-1.5-neoforge.1.jar",
-   "name": "plants-and-zombies-neoforge-1.5-neoforge.1",
-   "version": "",
+   "name": "Plants & Zombies",
+   "version": "1.5-neoforge.1",
    "side": "both",
    "size": 9921369,
    "sha512": "b799d189062f7abe45361cd9019e409eabb7527cfc8f26ed880c4d41bd8f897dbeb850118c3662755beada0b5d1f8e41c89e9c0f31201808c5f6bec72de2940e",
@@ -2366,33 +2366,6 @@
     "page": "https://modrinth.com/mod/railcraft-reborn"
    },
    "license": "LicenseRef-Railcraft-Reborn-License"
-  },
-  {
-   "file": "randomizer-complete-edition-v0.6.jar",
-   "name": "Randomizer: Complete Edition",
-   "version": "1-v0.6",
-   "side": "both",
-   "size": 17880783,
-   "sha512": "1dd2b44093801a84347a788253a689b5c5158497055b5df51b46b73f50126d9c7533df71426f000396a0afe0d90e961c0adcd0de740ab1abe8a811b888aaca53",
-   "source": {
-    "type": "modrinth",
-    "url": "https://cdn.modrinth.com/data/ZtICh1u8/versions/bnw3kV8i/randomizer-complete-edition-v0.6.jar",
-    "page": "https://modrinth.com/mod/randomizer-complete-edition"
-   },
-   "license": "AGPL-3.0-only",
-   "patch": {
-    "originalFile": "randomizer-complete-edition-v0.6.jar",
-    "ops": [
-     {
-      "op": "replace",
-      "entry": "data/minecraft/recipe/crafting_table.json",
-      "find": "\r\n    \"type\": \"minecraft:crafting_shaped\",\r\n    \"category\": \"misc\",\r\n    \"key\": {\r\n        \"#\": \"#minecraft:planks\"\r\n    },\r\n    \"pattern\": [\r\n        \"##\",\r\n        \"##\"\r\n    ],\r\n    \"result\": {\r\n        \"count\": 1,\r\n        \"id\": \"minecraft:crafting_table\"\r\n    },\r\n    \"show_notification\": false\r",
-      "with": "\n  \"type\": \"minecraft:crafting_shaped\",\n  \"category\": \"misc\",\n  \"key\": {\n    \"#\": {\n      \"tag\": \"minecraft:planks\"\n    }\n  },\n  \"pattern\": [\n    \"##\",\n    \"##\"\n  ],\n  \"result\": {\n    \"count\": 1,\n    \"id\": \"minecraft:crafting_table\"\n  },\n  \"show_notification\": false"
-     }
-    ],
-    "result": "aba035a7d50c6286462a254e73f885dab263eba8f6cfad5df6715c3ae6f0d3b5",
-    "why": "Fixes its crafting table recipe, which uses recipe syntax 1.21.1 can't read."
-   }
   },
   {
    "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",
@@ -2884,8 +2857,8 @@
   },
   {
    "file": "vramleakfixes-1.21.1-1.0.0.jar",
-   "name": "vramleakfixes-1.21.1-1.0.0",
-   "version": "",
+   "name": "VRAM Leak Fixes",
+   "version": "1.0.0",
    "side": "client",
    "size": 9163,
    "sha512": "b93e03cb976eeed64601068809d030bc0ef08a23bbc4e0c3e2a550b799c598bdad514c67a9596c17c08f15f2fd82fb9ff1d47d74c45099c7f3967ad0ecec39d1",

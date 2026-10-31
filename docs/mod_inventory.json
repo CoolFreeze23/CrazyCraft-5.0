@@ -1321,14 +1321,6 @@
   "version": "1.2.10"
  },
  {
-  "file": "randomizer-complete-edition-v0.6.jar",
-  "size_mb": 17.05,
-  "loader": "datapack",
-  "modid": "mr_randomizer_completeedition",
-  "name": "Randomizer: Complete Edition",
-  "version": "1-v0.6"
- },
- {
   "file": "rechiseled-1.2.6-neoforge-mc1.21.jar",
   "size_mb": 10.99,
   "loader": "neoforge",
