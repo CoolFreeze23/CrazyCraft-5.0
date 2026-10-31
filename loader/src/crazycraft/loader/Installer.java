@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -153,6 +155,9 @@ final class Installer {
             result = m;
             extractFiles();
             tidy(result == Result.READY);
+            if (mode == Mode.CLIENT) {
+                renamePacksInOptions();
+            }
             saveState();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -618,6 +623,66 @@ final class Installer {
                     + String.join(", ", moved)
                     + (mode == Mode.SERVER ? I18n.t(". To keep a mod of your own, list its file name in user-mods.txt.") : "."));
         }
+    }
+
+    /**
+     * A resource pack the pack now installs under a new name keeps its place in the player's pack list: in options.txt,
+     * an entry "file/<old name>" (or the plain name a C-locale launch saved it under) in resourcePacks or
+     * incompatibleResourcePacks becomes "file/<new name>". Only those list entries change; every other byte of the file
+     * stays as it is. The setup runs before the game starts, and Minecraft only rewrites options.txt when it closes.
+     */
+    private void renamePacksInOptions() {
+        Map<String, String> renames = new LinkedHashMap<>();
+        for (Manifest.Mod m : wanted()) {
+            if (m.dir().equals("resourcepacks")) {
+                for (String old : m.formerly()) {
+                    renames.put("file/" + old, "file/" + m.file());
+                    renames.put("file/" + FileNames.plain(old), "file/" + m.file());
+                }
+            }
+        }
+        Path options = dir.resolve("options.txt");
+        if (renames.isEmpty() || !Files.isRegularFile(options)) {
+            return;
+        }
+        try {
+            String text = Files.readString(options, StandardCharsets.UTF_8);
+            String updated = renamePackEntries(text, renames);
+            if (!updated.equals(text)) {
+                Path tmp = options.resolveSibling("options.txt.crazycraft-tmp");
+                Files.writeString(tmp, updated, StandardCharsets.UTF_8);
+                Files.move(tmp, options, StandardCopyOption.REPLACE_EXISTING);
+                log(I18n.t("Your resource pack list now uses the packs' new file names, in the same order"));
+            }
+        } catch (IOException | RuntimeException e) {
+            log(I18n.t("Could not update the resource pack list in options.txt: ") + e.getMessage());
+        }
+    }
+
+    /** {@link #renamePacksInOptions}'s text work: rewrites matching string entries of the two pack lists only. */
+    static String renamePackEntries(String text, Map<String, String> renames) {
+        StringBuilder out = new StringBuilder(text.length());
+        Matcher line = Pattern.compile("(?m)^(resourcePacks|incompatibleResourcePacks):(.*)$").matcher(text);
+        int at = 0;
+        while (line.find()) {
+            out.append(text, at, line.start(2));
+            String list = line.group(2);
+            Matcher entry = Pattern.compile("\"(?:[^\"\\\\]|\\\\.)*\"").matcher(list);
+            StringBuilder rebuilt = new StringBuilder();
+            int from = 0;
+            while (entry.find()) {
+                rebuilt.append(list, from, entry.start());
+                String token = entry.group();
+                String renamed = renames.get(String.valueOf(Json.parse(token)));
+                rebuilt.append(renamed == null ? token : Json.write(renamed).strip());
+                from = entry.end();
+            }
+            rebuilt.append(list.substring(from));
+            out.append(rebuilt);
+            at = line.end(2);
+        }
+        out.append(text.substring(at));
+        return out.toString();
     }
 
     /** Loader-declared ids identify superseded jars in an older installation with no ownership record. */

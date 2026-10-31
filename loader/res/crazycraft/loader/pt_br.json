@@ -302,5 +302,7 @@
   "1 old file": "1 arquivo antigo",
   " old files": " arquivos antigos",
   " file that is": " arquivo que",
-  " files that are": " arquivos que"
+  " files that are": " arquivos que",
+  "Your resource pack list now uses the packs' new file names, in the same order": "Sua lista de pacotes de recursos agora usa os nomes novos dos arquivos, na mesma ordem",
+  "Could not update the resource pack list in options.txt: ": "Não deu para atualizar a lista de pacotes de recursos no options.txt: "
 }

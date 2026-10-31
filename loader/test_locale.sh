@@ -29,6 +29,9 @@ EOF
 }
 manifest old "§c1.21.2 Redstone Torch§r.zip"
 manifest new "Redstone Torch Backport 1.21.2.zip"
+sed -i 's/"license": "MIT"}\]/"license": "MIT", "formerly": ["§c1.21.2 Redstone Torch§r.zip"]}]/' "$T/manifest-new.json"
+# The player switched the old pack on (as Minecraft writes it, § escaped), with their own pack after it.
+printf 'version:3955\nlang:pt_br\nresourcePacks:["vanilla","file/\\u00a7c1.21.2 Redstone Torch\\u00a7r.zip","file/\\u00a7eMeu Pacote S\\u00e3o Jo\\u00e3o.zip"]\nincompatibleResourcePacks:["file/1.21.2 Redstone Torch.zip"]\nlastServer:\n' > "$G/options.txt"
 fail() { echo "FAIL: $1"; ls -la "$G/resourcepacks"; exit 1; }
 run() {  # $1 = locale, $2 = manifest version
     set +e
@@ -50,6 +53,12 @@ echo "2. old manifest, UTF-8"; run C.UTF-8 old
 echo "3a. new manifest, C locale"; run C new
 [ "$(torches)" -eq 1 ] || fail "expected one copy after the update under C, found $(torches)"
 [ -f "$G/resourcepacks/Redstone Torch Backport 1.21.2.zip" ] || fail "the new plain-named pack is missing"
+grep -qx 'resourcePacks:\["vanilla","file/Redstone Torch Backport 1.21.2.zip","file/\\u00a7eMeu Pacote S\\u00e3o Jo\\u00e3o.zip"\]' "$G/options.txt" \
+    || { cat "$G/options.txt"; fail "options.txt: the pack list was not moved to the new name in place"; }
+grep -qx 'incompatibleResourcePacks:\["file/Redstone Torch Backport 1.21.2.zip"\]' "$G/options.txt" \
+    || fail "options.txt: the plain-name entry was not moved to the new name"
+grep -qx 'lastServer:' "$G/options.txt" || fail "options.txt: another line changed"
+grep -q "new file names" "$T/out.txt" || fail "the pack-list update was not reported"
 echo "3b. new manifest, UTF-8"; run C.UTF-8 new
 [ "$(torches)" -eq 1 ] || fail "expected one copy after a UTF-8 launch, found $(torches)"
 [ -f "$G/resourcepacks/§eMeu Pacote São João.zip" ] || fail "the player's own pack was touched"

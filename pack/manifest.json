@@ -3511,7 +3511,10 @@
     "type": "modrinth",
     "url": "https://cdn.modrinth.com/data/VuMFO1Oz/versions/xcyaoqev/%C2%A7c1.21.2%20Redstone%20Torch%C2%A7r.zip",
     "page": "https://modrinth.com/resourcepack/redstone-torch-backport"
-   }
+   },
+   "formerly": [
+    "§c1.21.2 Redstone Torch§r.zip"
+   ]
   }
  ],
  "extract": [

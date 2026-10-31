@@ -11,6 +11,19 @@ public final class FileNamesTest {
         check(FileNames.plain("a:b?c.zip"), "a_b_c.zip");
         check(FileNames.plain("§§"), "file");
         check(FileNames.plain(".hidden"), "file.hidden");
+        // options.txt: only the matching entries of the two pack lists change; order, escapes and every other line stay.
+        java.util.Map<String, String> renames = java.util.Map.of(
+                "file/§c1.21.2 Redstone Torch§r.zip", "file/Redstone Torch Backport 1.21.2.zip",
+                "file/1.21.2 Redstone Torch.zip", "file/Redstone Torch Backport 1.21.2.zip");
+        String options = "version:3955\r\nlang:pt_br\r\n"
+                + "resourcePacks:[\"vanilla\",\"file/\\u00a7c1.21.2 Redstone Torch\\u00a7r.zip\",\"file/Traben\\u0027s 3D Armor.zip\"]\r\n"
+                + "incompatibleResourcePacks:[\"file/1.21.2 Redstone Torch.zip\"]\r\n"
+                + "lastServer:file/§c1.21.2 Redstone Torch§r.zip\r\n";
+        check(Installer.renamePackEntries(options, renames), "version:3955\r\nlang:pt_br\r\n"
+                + "resourcePacks:[\"vanilla\",\"file/Redstone Torch Backport 1.21.2.zip\",\"file/Traben\\u0027s 3D Armor.zip\"]\r\n"
+                + "incompatibleResourcePacks:[\"file/Redstone Torch Backport 1.21.2.zip\"]\r\n"
+                + "lastServer:file/§c1.21.2 Redstone Torch§r.zip\r\n");
+        check(Installer.renamePackEntries("resourcePacks:[\"vanilla\"]\n", renames), "resourcePacks:[\"vanilla\"]\n");
         Path dir = Files.createTempDirectory("crazycraft-names-");
         // Windows refuses '?' in a name the same way a C-locale Linux refuses '§': both must fall back.
         if (!System.getProperty("os.name").toLowerCase().contains("win")) {

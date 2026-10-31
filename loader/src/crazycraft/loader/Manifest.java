@@ -26,8 +26,9 @@ record Manifest(String packName, String packVersion, String repo, String minecra
     record Patch(String originalFile, List<Map<String, Object>> ops, String result, String why) {
     }
 
+    /** {@code formerly}: names this file was installed under by earlier pack versions (an options.txt may still list them). */
     record Mod(String file, String dir, String name, String version, String side, long size, String sha512,
-               Source source, String license, Patch patch) {
+               Source source, String license, Patch patch, List<String> formerly) {
         boolean onServer() {
             return !"client".equals(side);
         }
@@ -77,7 +78,7 @@ record Manifest(String packName, String packVersion, String repo, String minecra
                     Json.num(m, "size"), Json.str(m, "sha512"),
                     new Source(Json.str(src, "type"), Json.str(src, "url"), Json.str(src, "page"),
                             Json.str(src, "download"), Json.str(src, "note")),
-                    Json.str(m, "license"), patch));
+                    Json.str(m, "license"), patch, Json.arr(m.get("formerly")).stream().map(Object::toString).toList()));
         }
         List<Extract> extracts = new ArrayList<>();
         for (Object o : Json.arr(root.get("extract"))) {

@@ -364,7 +364,10 @@ def main():
     # accents in a file name. fileNames gives such a pack the name it installs under; the download URL keeps its own.
     renames = rp_spec.get("fileNames", {})
     for pk in packs:
-        pk["file"] = renames.get(pk["file"], pk["file"])
+        if pk["file"] in renames:
+            # the old name stays listed, so the loader can move a player's pack list over to the new one
+            pk["formerly"] = [pk["file"]]
+            pk["file"] = renames[pk["file"]]
     mods.extend(packs)
     not_ascii = [m["file"] for m in mods if not m["file"].isascii()]
     if not_ascii:
