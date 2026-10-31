@@ -298,5 +298,9 @@
   "This system can't use the file name ": "Este sistema não aceita o nome de arquivo ",
   ", so it is saved as ": ", então ele foi salvo como ",
   " (a UTF-8 locale keeps the original name)": " (com o sistema em UTF-8, o nome original é mantido)",
-  ": this system can't use that file name": ": este sistema não aceita esse nome de arquivo"
+  ": this system can't use that file name": ": este sistema não aceita esse nome de arquivo",
+  "1 old file": "1 arquivo antigo",
+  " old files": " arquivos antigos",
+  " file that is": " arquivo que",
+  " files that are": " arquivos que"
 }

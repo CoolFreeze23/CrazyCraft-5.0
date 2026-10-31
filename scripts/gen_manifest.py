@@ -360,7 +360,16 @@ def main():
     unresolved = [pk["file"] for pk in packs if "source" not in pk]
     if unresolved:
         raise SystemExit(f"No download source for these resource packs (list them as bundled or dropped): {unresolved}")
+    # Installed names must be plain ASCII: a launcher started in a plain C locale (Steam's Gaming Mode) can't use § or
+    # accents in a file name. fileNames gives such a pack the name it installs under; the download URL keeps its own.
+    renames = rp_spec.get("fileNames", {})
+    for pk in packs:
+        pk["file"] = renames.get(pk["file"], pk["file"])
     mods.extend(packs)
+    not_ascii = [m["file"] for m in mods if not m["file"].isascii()]
+    if not_ascii:
+        raise SystemExit(f"File names a C-locale launcher can't use; give each a plain name in sources.json "
+                         f"resourcepacks.fileNames (packs) or rename the jar: {not_ascii}")
 
     # extra files copied out of a downloaded jar
     extracts = []

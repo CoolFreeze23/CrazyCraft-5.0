@@ -122,7 +122,11 @@
    "Better Trident v2.zip": "Its author only allows downloads from CurseForge itself.",
    "HMI_Alittle_Axolotl.zip": "Not published on Modrinth or CurseForge."
   },
-  "substitute": {}
+  "substitute": {},
+  "fileNames": {
+   "§c1.21.2 Redstone Torch§r.zip": "Redstone Torch Backport 1.21.2.zip"
+  },
+  "fileNamesWhy": "Installed under a plain ASCII name: a launcher started in a plain C locale (Steam's Gaming Mode) can't use § or accents in a file name."
  },
  "manualNotes": {
   "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."

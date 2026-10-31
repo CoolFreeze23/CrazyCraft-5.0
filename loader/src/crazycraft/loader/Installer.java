@@ -590,11 +590,17 @@ final class Installer {
                 if (complete) Files.delete(legacy);
             }
             for (String k : new ArrayList<>(installed.keySet())) {
-                if (k.startsWith("mods/") && !keep.contains(k)) {
-                    Path p = dir.resolve(k);
-                    if (Files.isRegularFile(p)) {
-                        moveAside(p);
-                        moved.add(p.getFileName().toString());
+                if ((k.startsWith("mods/") || k.startsWith("resourcepacks/")) && !keep.contains(k)) {
+                    // A file this setup placed that the pack no longer has (or now ships under another name). On a
+                    // system that couldn't use its name it was saved under the plain name, so both are checked.
+                    int slash = k.indexOf('/');
+                    Path folder = dir.resolve(k.substring(0, slash));
+                    String name = k.substring(slash + 1);
+                    for (Path p : FileNames.existing(folder, name)) {
+                        if (wanted().stream().noneMatch(m -> target(m).equals(p))) {
+                            moveAside(p);
+                            moved.add(p.getFileName().toString());
+                        }
                     }
                 }
             }
@@ -603,9 +609,11 @@ final class Installer {
         if (moved.isEmpty()) {
             ui.step(Step.TIDY, State.DONE, I18n.t("Nothing to tidy"));
         } else {
-            ui.step(Step.TIDY, State.DONE, (moved.size() == 1 ? I18n.t("1 old jar") : moved.size() + I18n.t(" old jars"))
-                    + I18n.t(" moved to mods-removed/"));
-            log(I18n.t("Moved ") + moved.size() + (moved.size() == 1 ? I18n.t(" jar that is") : I18n.t(" jars that are"))
+            boolean jars = moved.stream().allMatch(n -> n.endsWith(".jar"));
+            ui.step(Step.TIDY, State.DONE, (moved.size() == 1 ? I18n.t(jars ? "1 old jar" : "1 old file")
+                    : moved.size() + I18n.t(jars ? " old jars" : " old files")) + I18n.t(" moved to mods-removed/"));
+            log(I18n.t("Moved ") + moved.size() + (moved.size() == 1 ? I18n.t(jars ? " jar that is" : " file that is")
+                    : I18n.t(jars ? " jars that are" : " files that are"))
                     + I18n.t(" not part of CrazyCraft ") + manifest.packVersion() + I18n.t(" to mods-removed/") + stamp + ": "
                     + String.join(", ", moved)
                     + (mode == Mode.SERVER ? I18n.t(". To keep a mod of your own, list its file name in user-mods.txt.") : "."));
