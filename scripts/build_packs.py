@@ -388,6 +388,10 @@ def assemble_server():
     print("loader exit:", r.returncode)
     if r.returncode != 0:
         raise SystemExit(r.returncode)
+    # the hub's server is deployed from this folder, so it gets the same refusal as the zips
+    refuse_test_only("build/server-pack", [p.name for p in (sv / "mods").iterdir()],
+                     {"user_jvm_args.txt": (sv / "user_jvm_args.txt").read_text(encoding="utf-8", errors="replace")}
+                     if (sv / "user_jvm_args.txt").is_file() else {})
 
 
 if __name__ == "__main__":
