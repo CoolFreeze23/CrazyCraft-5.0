@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
@@ -73,6 +74,8 @@ final class Installer {
     private final Path downloads;
     final Path manualDir;
     private final Map<String, Map<String, Object>> installed = new ConcurrentHashMap<>();
+    /** Files saved under a plainer name on this system, each reported once. */
+    private final Set<String> renamed = ConcurrentHashMap.newKeySet();
     private final String stamp = LocalDateTime.now().format(STAMP);
     private PrintWriter logFile;
     private String previousVersion;
@@ -102,7 +105,17 @@ final class Installer {
     }
 
     private Path target(Manifest.Mod m) {
-        return dir.resolve(m.dir()).resolve(m.file());
+        Path folder = dir.resolve(m.dir());
+        if (!FileNames.representable(folder, m.file()) && renamed.add(key(m))) {
+            log(I18n.t("This system can't use the file name ") + m.file() + I18n.t(", so it is saved as ")
+                    + FileNames.plain(m.file()) + I18n.t(" (a UTF-8 locale keeps the original name)"));
+        }
+        return FileNames.resolve(folder, m.file());
+    }
+
+    /** The name a downloaded or patched file is staged under: the target's own (possibly plainer) name. */
+    private String stagedName(Manifest.Mod m) {
+        return target(m).getFileName().toString();
     }
 
     private static String key(Manifest.Mod m) {
@@ -344,16 +357,16 @@ final class Installer {
     private void fetchMod(Manifest.Mod m, Download.Progress progress) throws IOException, InterruptedException {
         Path target = target(m);
         if (m.patch() == null) {
-            Path tmp = downloads.resolve(m.file() + ".part");
+            Path tmp = downloads.resolve(stagedName(m) + ".part");
             Download.fetch(m.source().url(), tmp, m.size(), m.sha512(), "SHA-512", progress);
             place(tmp, target);
             record(m, target);
             log(I18n.t("Got ") + m.file() + I18n.t(" from ") + m.source().label());
             return;
         }
-        Path orig = downloads.resolve(m.patch().originalFile().replaceAll("[\\\\/:*?\"<>|\\[\\] ]", "_") + ".orig");
+        Path orig = downloads.resolve(FileNames.plain(m.patch().originalFile()).replaceAll("[\\[\\] ]", "_") + ".orig");
         Download.fetch(m.source().url(), orig, m.size(), m.sha512(), "SHA-512", progress);
-        Path fixed = downloads.resolve(m.file() + ".fixed");
+        Path fixed = downloads.resolve(stagedName(m) + ".fixed");
         Patcher.apply(orig, m.patch(), fixed);
         Files.deleteIfExists(orig);
         place(fixed, target);
@@ -449,7 +462,7 @@ final class Installer {
     }
 
     private void installManual(Manifest.Mod m, Path found) throws IOException {
-        Path tmp = downloads.resolve(m.file() + ".part");
+        Path tmp = downloads.resolve(stagedName(m) + ".part");
         Files.copy(found, tmp, StandardCopyOption.REPLACE_EXISTING);
         place(tmp, target(m));
         record(m, target(m));
@@ -561,7 +574,13 @@ final class Installer {
                 for (Manifest.Mod mod : wanted()) if (mod.dir().equals("mods")) currentIds.addAll(modIds(target(mod)));
                 for (Object entry : Json.arr(Json.parse(Files.readString(legacy)))) {
                     String name = entry.toString();
-                    Path old = ClientSetup.safe(mods, name);
+                    Path old;
+                    try {
+                        old = ClientSetup.safe(mods, name);
+                    } catch (InvalidPathException e) {
+                        log(I18n.t("Skipped ") + name + I18n.t(": this system can't use that file name"));
+                        continue;
+                    }
                     if (!keep.contains("mods/" + name) && Files.isRegularFile(old)
                             && modIds(old).stream().anyMatch(currentIds::contains)) {
                         moveAside(old);

@@ -294,5 +294,9 @@
   "Added mcheli/orespawn_uranium/models/planes/a-10_du.mqo (The uranium A-10 uses MCHeli's own A-10 model)": "Adicionado: mcheli/orespawn_uranium/models/planes/a-10_du.mqo (O A-10 de urânio usa o modelo A-10 do próprio MCHeli)",
   " CrazyCraft installation found.": " instalação do CrazyCraft encontrada.",
   " CrazyCraft installations found.": " instalações do CrazyCraft encontradas.",
-  "Setup downloads and checks the mods and resource packs. When it finishes, open your launcher to play.": "O instalador baixa e verifica os mods e pacotes de recursos. Quando terminar, abra o launcher para jogar."
+  "Setup downloads and checks the mods and resource packs. When it finishes, open your launcher to play.": "O instalador baixa e verifica os mods e pacotes de recursos. Quando terminar, abra o launcher para jogar.",
+  "This system can't use the file name ": "Este sistema não aceita o nome de arquivo ",
+  ", so it is saved as ": ", então ele foi salvo como ",
+  " (a UTF-8 locale keeps the original name)": " (com o sistema em UTF-8, o nome original é mantido)",
+  ": this system can't use that file name": ": este sistema não aceita esse nome de arquivo"
 }
