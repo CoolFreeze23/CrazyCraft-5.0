@@ -970,17 +970,33 @@ final class Gui implements Installer.Listener {
         });
     }
 
+    /** Whether version a is newer than b. A full release is newer than its own pre-releases: 2.0.0 after 2.0.0-alpha.1. */
     static boolean newer(String a, String b) {
+        String[] x = a.split("-", 2);
+        String[] y = b.split("-", 2);
+        int core = compare(x[0], y[0]);
+        if (core != 0) {
+            return core > 0;
+        }
+        if (x.length == 1 || y.length == 1) {
+            return x.length < y.length;
+        }
+        return compare(x[1], y[1]) > 0;
+    }
+
+    /** Dot-separated parts in order: numbers by value, words (alpha, beta) by spelling, a missing part as 0. */
+    private static int compare(String a, String b) {
         String[] x = a.split("\\.");
         String[] y = b.split("\\.");
         for (int i = 0; i < Math.max(x.length, y.length); i++) {
-            int p = i < x.length ? num(x[i]) : 0;
-            int q = i < y.length ? num(y[i]) : 0;
-            if (p != q) {
-                return p > q;
+            String p = i < x.length ? x[i] : "0";
+            String q = i < y.length ? y[i] : "0";
+            int c = p.matches("\\d+") && q.matches("\\d+") ? Integer.compare(num(p), num(q)) : p.compareTo(q);
+            if (c != 0) {
+                return c;
             }
         }
-        return false;
+        return 0;
     }
 
     private static int num(String s) {

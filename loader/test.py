@@ -22,6 +22,8 @@ subprocess.run([str(JDK / "bin/java"), "-Djava.awt.headless=true", "-cp", classp
 subprocess.run([str(JDK / "bin/java"), "-Djava.awt.headless=true", "-cp", classpath,
                 "crazycraft.loader.FileNamesTest"], check=True)
 subprocess.run([str(JDK / "bin/java"), "-Djava.awt.headless=true", "-cp", classpath,
+                "crazycraft.loader.UpdateBannerTest"], check=True)
+subprocess.run([str(JDK / "bin/java"), "-Djava.awt.headless=true", "-cp", classpath,
                 "crazycraft.loader.RetireTest"], check=True, env={**os.environ, "CRAZYCRAFT_LANG": "en_us"})
 subprocess.run([str(JDK / "bin/java"), "-Djava.awt.headless=true", "-cp", os.pathsep.join(map(str, [OUT / "classes", classes])),
                 "crazycraft.loader.ClientSetupTest", *sys.argv[1:]], check=True, env={**os.environ, "CRAZYCRAFT_LANG": "en_us"})
