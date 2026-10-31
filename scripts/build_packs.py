@@ -75,6 +75,49 @@ WrapperCommand=
 """
 
 
+# ---- never ship test-only pieces ----
+# OreSpawn Integrations' GameTest mod (orespawn_integrations_tests) adds vanilla's /test command when a server starts
+# with -Doi.gametests=true. It exists for scratch test servers only, so no build may carry it, any other GameTest jar,
+# or that switch in a shipped JVM argument file.
+TEST_JAR_MARKERS = ("orespawn_integrations_tests", "-gametests", "_gametests")
+TEST_SWITCH = "oi.gametests"
+
+
+def test_only_problems(file_names, jvm_texts):
+    """What would ship that must not: test jars among file_names, the test switch in any of jvm_texts {name: text}."""
+    problems = [f"test-only jar: {n}" for n in file_names
+                if n.lower().endswith(".jar") and any(m in n.lower() for m in TEST_JAR_MARKERS)]
+    problems += [f"test switch -D{TEST_SWITCH} in {name}" for name, text in jvm_texts.items() if TEST_SWITCH in text]
+    return problems
+
+
+def refuse_test_only(where, file_names, jvm_texts):
+    problems = test_only_problems(file_names, jvm_texts)
+    if problems:
+        raise SystemExit(f"refusing to build {where}: " + "; ".join(problems))
+
+
+def check_sources_for_test_only():
+    """Before any build: the manifest, the instance's mods/ and every JVM argument file a build copies."""
+    names = [m["file"] for m in load_manifest()["mods"]]
+    if (MC / "mods").is_dir():
+        names += [p.name for p in (MC / "mods").iterdir()]
+    texts = {}
+    for f in [ROOT / "server" / "user_jvm_args.txt", INSTANCE / "instance.cfg"]:
+        if f.is_file():
+            texts[str(f)] = f.read_text(encoding="utf-8", errors="replace")
+    refuse_test_only("the pack", names, texts)
+
+
+def check_zip_for_test_only(path):
+    """After a build: nothing in the finished zip may be a test jar or carry the test switch in a JVM args file."""
+    with zipfile.ZipFile(path) as z:
+        names = [Path(n).name for n in z.namelist()]
+        texts = {n: z.read(n).decode("utf-8", "replace") for n in z.namelist()
+                 if n.endswith(("user_jvm_args.txt", "instance.cfg", ".bat", ".sh"))}
+    refuse_test_only(path.name, names, texts)
+
+
 def iter_client_files():
     """Yield (source path, archive path inside .minecraft) for the client pack.
 
@@ -132,6 +175,7 @@ def build_client():
         for src, rel in iter_client_files():
             z.write(src, f".minecraft/{rel}")
             n += 1
+    check_zip_for_test_only(out)
     print(f"client: {n} files -> {out} ({out.stat().st_size/1048576:.0f} MB)")
 
 
@@ -228,6 +272,7 @@ def zip_server():
                 info.compress_type = zipfile.ZIP_DEFLATED
                 z.writestr(info, p.read_bytes())
                 n += 1
+    check_zip_for_test_only(out)
     print(f"server zip: {n} files -> {out} ({out.stat().st_size / 1048576:.1f} MB)")
 
 
@@ -347,6 +392,7 @@ def assemble_server():
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
+    check_sources_for_test_only()
     if what == "installer-update":
         build_installer_update(Path(sys.argv[2]))
     if what in ("all", "client"):
