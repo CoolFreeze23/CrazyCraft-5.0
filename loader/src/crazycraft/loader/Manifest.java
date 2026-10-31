@@ -5,8 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 /** The pack's crazycraft-manifest.json: the NeoForge version, and every mod with its official download. */
+/**
+ * {@code retire}: file-name patterns (globs) of jars the pack replaces, such as a prototype that now ships inside one
+ * of the pack's mods; a game folder's matching jar moves to mods-removed/.
+ */
 record Manifest(String packName, String packVersion, String repo, String minecraft, NeoForge neoforge, List<Mod> mods,
-                List<Extract> extracts) {
+                List<Extract> extracts, List<String> retire) {
 
     record NeoForge(String version, String installer, String sha1) {
     }
@@ -89,7 +93,7 @@ record Manifest(String packName, String packVersion, String repo, String minecra
         return new Manifest(Json.str(pack, "name"), Json.str(pack, "version"), Json.str(pack, "repo"),
                 Json.str(pack, "minecraft"),
                 new NeoForge(Json.str(neo, "version"), Json.str(neo, "installer"), Json.str(neo, "sha1")),
-                mods, extracts);
+                mods, extracts, Json.arr(root.get("retire")).stream().map(Object::toString).toList());
     }
 
     List<Mod> serverMods() {

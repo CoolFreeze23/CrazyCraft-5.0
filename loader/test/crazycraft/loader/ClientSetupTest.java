@@ -72,7 +72,7 @@ public final class ClientSetupTest {
         jar(newJar, "[[mods]]\nmodId='example'\n");
         Manifest legacyManifest = new Manifest("Test", "1", ClientSetup.REPO, "1.21.1", release.manifest().neoforge(),
                 List.of(new Manifest.Mod("example-new.jar", "mods", "Example", "2", "both", Files.size(newJar), Hashes.of(newJar, "SHA-512"),
-                        new Manifest.Source("manual", null, null, null, null), "MIT", null, List.of())), List.of());
+                        new Manifest.Source("manual", null, null, null, null), "MIT", null, List.of())), List.of(), List.of());
         check(new Installer(fresh.game(), legacyManifest, ConsoleUi.QUIET, Installer.Mode.CLIENT).run() == Installer.Result.READY, "legacy update completes");
         check(!Files.exists(fresh.game().resolve("mods/example-old.jar")), "legacy old version retired");
         check(Files.exists(fresh.game().resolve("mods/unrelated.jar")), "dependency IDs do not remove personal mods");

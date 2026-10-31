@@ -126,5 +126,11 @@
  "manualNotes": {
   "mcheli-modern-port": "Its author only allows downloads from CurseForge itself, so this one has to be downloaded by hand."
  },
- "personal": {}
+ "personal": {},
+ "retire": {
+  "patterns": [
+   "cccontrols-*-proto.jar"
+  ],
+  "why": "CrazyCraft Controls ships inside OreSpawn Integrations (client/controls) from v2.0.0; the prototype jar some players added by hand would run beside it."
+ }
 }

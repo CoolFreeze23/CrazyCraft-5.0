@@ -413,6 +413,8 @@ def main():
         "neoforge": {"version": NEOFORGE_VERSION, "installer": neo_url, "sha1": neo_sha1},
         "mods": [{k: v for k, v in m.items() if not k.startswith("_")} for m in mods],
         "extract": extracts,
+        # jars a game folder moves to mods-removed/ because the pack now ships them inside its own mods
+        "retire": sources.get("retire", {}).get("patterns", []),
     }
     (PACK / "manifest.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     counts = {}

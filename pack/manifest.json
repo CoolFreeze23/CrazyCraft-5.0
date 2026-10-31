@@ -3499,5 +3499,8 @@
    "side": "both",
    "why": "The uranium A-10 uses MCHeli's own A-10 model, copied from the MCHeli jar on install."
   }
+ ],
+ "retire": [
+  "cccontrols-*-proto.jar"
  ]
 }

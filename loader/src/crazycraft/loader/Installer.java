@@ -7,9 +7,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.DirectoryStream;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
@@ -594,6 +596,7 @@ final class Installer {
                 }
                 if (complete) Files.delete(legacy);
             }
+            retireReplacedJars(keep, moved);
             for (String k : new ArrayList<>(installed.keySet())) {
                 if ((k.startsWith("mods/") || k.startsWith("resourcepacks/")) && !keep.contains(k)) {
                     // A file this setup placed that the pack no longer has (or now ships under another name). On a
@@ -683,6 +686,43 @@ final class Installer {
         }
         out.append(text.substring(at));
         return out.toString();
+    }
+
+    /**
+     * Game folders only. Two things a player may have added by hand would clash with the pack: a jar the manifest
+     * retires by name pattern (a prototype the pack now ships inside one of its own mods), and a second copy of a pack
+     * mod under another file name (the same mod id twice stops the game from starting). Both move to mods-removed/;
+     * a player's other mods are left alone, and a pack mod saved under the pack's own name is the pack's copy.
+     */
+    private void retireReplacedJars(Set<String> keep, List<String> moved) throws IOException {
+        if (!Files.isDirectory(mods)) {
+            return;
+        }
+        List<PathMatcher> retired = new ArrayList<>();
+        for (String glob : manifest.retire()) {
+            retired.add(FileSystems.getDefault().getPathMatcher("glob:" + glob));
+        }
+        Set<String> packIds = new HashSet<>();
+        for (Manifest.Mod mod : wanted()) {
+            if (mod.dir().equals("mods") && Files.isRegularFile(target(mod))) {
+                packIds.addAll(modIds(target(mod)));
+            }
+        }
+        List<Path> jars = new ArrayList<>();
+        try (DirectoryStream<Path> ds = Files.newDirectoryStream(mods, "*.jar")) {
+            ds.forEach(jars::add);
+        }
+        for (Path p : jars) {
+            String name = p.getFileName().toString();
+            if (keep.contains("mods/" + name) || !Files.isRegularFile(p)) {
+                continue;
+            }
+            boolean retire = retired.stream().anyMatch(m -> m.matches(p.getFileName()));
+            if (retire || modIds(p).stream().anyMatch(packIds::contains)) {
+                moveAside(p);
+                moved.add(name);
+            }
+        }
     }
 
     /** Loader-declared ids identify superseded jars in an older installation with no ownership record. */
