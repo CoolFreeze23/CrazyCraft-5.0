@@ -1175,12 +1175,12 @@
   "version": "0.1.0"
  },
  {
-  "file": "orespawn_integrations-0.9.0.jar",
-  "size_mb": 0.97,
+  "file": "orespawn_integrations-0.10.0.jar",
+  "size_mb": 1.52,
   "loader": "neoforge",
   "modid": "orespawn_integrations",
   "name": "OreSpawn Integrations",
-  "version": "0.9.0"
+  "version": "0.10.0"
  },
  {
   "file": "originawakening-1.21.1-1.0.0.jar",

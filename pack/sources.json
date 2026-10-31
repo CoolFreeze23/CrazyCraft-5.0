@@ -128,9 +128,7 @@
  },
  "personal": {},
  "retire": {
-  "patterns": [
-   "cccontrols-*-proto.jar"
-  ],
-  "why": "CrazyCraft Controls ships inside OreSpawn Integrations (client/controls) from v2.0.0; the prototype jar some players added by hand would run beside it."
+  "patterns": [],
+  "why": "Nothing is retired in this version. The hand-installed CrazyCraft Controls prototype stays until the controller layer ships inside OreSpawn Integrations."
  }
 }
