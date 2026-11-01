@@ -1257,12 +1257,12 @@
   "environment": "*"
  },
  {
-  "file": "plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+  "file": "plants-and-zombies-neoforge-1.5.2-neoforge.1.jar",
   "size_mb": 9.46,
   "loader": "neoforge",
   "modid": "plantz",
   "name": "Plants & Zombies",
-  "version": "1.5-neoforge.1"
+  "version": "1.5.2-neoforge.1"
  },
  {
   "file": "player-animation-lib-forge-2.0.4+1.21.1.jar",

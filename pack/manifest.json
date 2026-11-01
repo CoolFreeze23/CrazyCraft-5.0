@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -2256,15 +2256,15 @@
    "license": "LGPL-3.0-only"
   },
   {
-   "file": "plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+   "file": "plants-and-zombies-neoforge-1.5.2-neoforge.1.jar",
    "name": "Plants & Zombies",
-   "version": "1.5-neoforge.1",
+   "version": "1.5.2-neoforge.1",
    "side": "both",
-   "size": 9921369,
-   "sha512": "b799d189062f7abe45361cd9019e409eabb7527cfc8f26ed880c4d41bd8f897dbeb850118c3662755beada0b5d1f8e41c89e9c0f31201808c5f6bec72de2940e",
+   "size": 12857865,
+   "sha512": "418a5ee0f095d9bc9c948f615b118bcb3275cb2c13696f53fb0e62dbdd43d1d8c4a01a29f586535af3893cc6eef55f9728f892676fb07afe6f0a83abcceca40f",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases/download/v1.5-neoforge.1/plants-and-zombies-neoforge-1.5-neoforge.1.jar",
+    "url": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases/download/v1.5.2-neoforge.1/plants-and-zombies-neoforge-1.5.2-neoforge.1.jar",
     "page": "https://github.com/CoolFreeze23/plants-and-zombies-neoforge"
    },
    "license": "MPL-2.0"
