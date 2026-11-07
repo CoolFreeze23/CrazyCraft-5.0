@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -2116,15 +2116,15 @@
    "license": "See repository"
   },
   {
-   "file": "orespawn_integrations-0.10.1.jar",
+   "file": "orespawn_integrations-0.10.2.jar",
    "name": "OreSpawn Integrations",
-   "version": "0.10.1",
+   "version": "0.10.2",
    "side": "both",
-   "size": 2096256,
-   "sha512": "3e2a0765af760d9d7ab1624671fb1f668af8f2f8963a889c5b26e29cde05e88a5d19cfbb485848d5b9a8b31c37f160079d06f6c0c28496349ee7a7eeee73f569",
+   "size": 2509206,
+   "sha512": "8cd67866fe511bdf67f4dc6bdacb6c7da685e2c1cb328038847a3ac589e40948a4f6c39d8d46087e789cf26bf732fb3b30fb35f6289a92fffcd94a1c1b3125c7",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.1/orespawn_integrations-0.10.1.jar",
+    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.2/orespawn_integrations-0.10.2.jar",
     "page": "https://github.com/CoolFreeze23/orespawn-integrations"
    },
    "license": "See repository"
