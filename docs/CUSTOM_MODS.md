@@ -139,11 +139,11 @@ The mod is client side only, so servers don't need it. The looks follow your ski
 
 ## Plants & Zombies port
 
-- Jar: `plants-and-zombies-neoforge-1.5.2-neoforge.1.jar`
+- Jar: `plants-and-zombies-neoforge-1.5.2-neoforge.2.jar`
 - Source: [CoolFreeze23/plants-and-zombies-neoforge](https://github.com/CoolFreeze23/plants-and-zombies-neoforge)
 - Releases: [CoolFreeze23/plants-and-zombies-neoforge/releases](https://github.com/CoolFreeze23/plants-and-zombies-neoforge/releases)
 
-Our backport of joshxviii's [Plants & Zombies](https://github.com/joshxviii/plants-and-zombies) (MPL-2.0), which only exists for Fabric on Minecraft 26.1, to NeoForge 1.21.1. Every upstream file was compared against the port, and 142 automated game tests cover the plants, zombies, raids and machines.
+Our backport of joshxviii's [Plants & Zombies](https://github.com/joshxviii/plants-and-zombies) (MPL-2.0), which only exists for Fabric on Minecraft 26.1, to NeoForge 1.21.1. Every upstream file was compared against the port, and 149 automated game tests cover the plants, zombies, raids and machines.
 
 What you get in game:
 

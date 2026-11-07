@@ -155,7 +155,7 @@
 | Perception (`perception`) | 0.2.1 | NeoForge |  |
 | Placebo (`placebo`) | 9.9.2 | NeoForge |  |
 | Placeholder API (`placeholder-api`) | 2.4.2+1.21 | Fabric (Connector) |  |
-| Plants & Zombies (`plantz`) | 1.5.2-neoforge.1 | NeoForge | Custom: our NeoForge 1.21.1 port of joshxviii's Plants & Zombies ([repo](https://github.com/CoolFreeze23/plants-and-zombies-neoforge)) |
+| Plants & Zombies (`plantz`) | 1.5.2-neoforge.2 | NeoForge | Custom: our NeoForge 1.21.1 port of joshxviii's Plants & Zombies ([repo](https://github.com/CoolFreeze23/plants-and-zombies-neoforge)) |
 | Player Animator (`playeranimator`) | 2.0.4+1.21.1 | NeoForge |  |
 | Portal Gun Mod (`portalgun`) | 6.1.3+1.21.1 | NeoForge |  |
 | Pretty Rain (`particlerain`) | 1.1.4 | NeoForge |  |
