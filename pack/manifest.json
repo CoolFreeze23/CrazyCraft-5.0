@@ -2120,8 +2120,8 @@
    "name": "OreSpawn Integrations",
    "version": "0.10.2",
    "side": "both",
-   "size": 2509206,
-   "sha512": "8cd67866fe511bdf67f4dc6bdacb6c7da685e2c1cb328038847a3ac589e40948a4f6c39d8d46087e789cf26bf732fb3b30fb35f6289a92fffcd94a1c1b3125c7",
+   "size": 2509589,
+   "sha512": "b4891d748fededbd13c1074457f6000990141cbcdfb95936e22597dd5ea1fb4f4af787ef25c94579ab8469d24ebcacb7c784a3af0542095dd762ebcb61ea7b2e",
    "source": {
     "type": "github",
     "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.2/orespawn_integrations-0.10.2.jar",
