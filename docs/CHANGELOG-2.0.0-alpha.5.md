@@ -53,7 +53,7 @@
 - **Vistos e a Chapelaria.** Os portões das Minas, da Vila, das Ilhas e do Cristal pedem papéis, e o balcão emite os vistos.
 - **O Expediente.** Os balcões do Registro têm horário; fora dele existe o Plantão Preferencial.
 - **As Folhas Perdidas.** 25 folhas do antigo reino aparecem em baús, cada uma com algo a revelar, e uma pasta para a coleção.
-- **Plantão da cratera.** Relate uma Queda do Tesouro que você viu cair e a Odete de Campo paga pelo relato.
+- **Plantão de cratera.** Relate uma Queda do Tesouro que você viu cair e a Odete de Campo paga pelo relato.
 - **A Sesta.** O Mobzilla da arena e os Krakens do covil fazem a sesta nos seus postos. Pise na arena para acordá-los, ou passe agachado.
 - **As Feras da Corte e a dificuldade por lugar.** As feras da corte valem o título de cavaleiro, e as Minas, as Ilhas e o Caos deixam seus monstros mais fortes.
 - **Contrastes.** Ferramentas, armas e armaduras mostram seu lugar na escada da Terra, de Gambiarra a Fora do Livro.
