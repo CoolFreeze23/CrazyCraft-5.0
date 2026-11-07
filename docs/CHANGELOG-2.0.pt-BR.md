@@ -6,11 +6,11 @@ A v2.0 traz uma história para o CrazyCraft 5.0. Em *O Tesouro Derramado*, a Ter
 própria: você choca na Prateleira 9, o Príncipe te escreve, cai ouro do céu de noite, uma capitã prega recompensas toda
 segunda-feira, o dono do bar reconta os seus feitos maiores a cada sábado, e os velhos chefes da corte cochilam no posto
 até você pisar na arena. Junto com a história vêm duas atualizações do Plants & Zombies, uma leva de ajustes e
-correções no pack inteiro e uma prévia da próxima atualização do OreSpawn.
+correções no pack inteiro, suporte a controle e portáteis e uma prévia da próxima atualização do OreSpawn.
 
-Esta página reúne tudo o que mudou da versão estável **v1.4.2** até a **v2.0.0-alpha.5**, as cinco versões alfa da
+Esta página reúne tudo o que mudou da versão estável **v1.4.2** até a **v2.0.0-alpha.6**, as seis versões alfa da
 [página de lançamentos](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases). Todas as imagens e animações daqui
-foram capturadas no jogo: o pack do jeito que a v2.0.0-alpha.5 o distribui e, nas armaduras do OreSpawn, a próxima
+foram capturadas no jogo: o pack do jeito que a v2.0.0-alpha.6 o distribui e, nas armaduras do OreSpawn, a próxima
 atualização do OreSpawn sozinha.
 
 ![A Prateleira 9, o Ninho, numa mata de jacarandás](media/releases/v2.0.0/shelf9-orbit.gif)
@@ -22,17 +22,37 @@ atualização do OreSpawn sozinha.
 | [v2.0.0-alpha.3](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.3) | 07/11/2026 | Plants & Zombies 1.5.2-neoforge.2 |
 | [v2.0.0-alpha.4](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.4) | 07/11/2026 | Parte 2: a Primeira Noite e a Semana |
 | [v2.0.0-alpha.5](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.5) | 07/11/2026 | Parte 3: as Províncias e a Corte Vazia |
+| [v2.0.0-alpha.6](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.6) | 08/11/2026 | Suporte a controle, o OreSpawn mais novo |
 
 **São versões alfa.** A versão estável continua sendo a v1.4.2, e é ela que o instalador e a verificação de
 atualização do jogo oferecem. Faça backup dos seus mundos antes de testar uma alfa (veja [Seus mundos](#seus-mundos)).
 
 ---
 
+## O que há de novo, num relance
+
+- **Uma história para o pack.** *O Tesouro Derramado* começa no instante em que você choca na Prateleira 9 e segue pela
+  primeira hora, pela primeira noite e por uma semana inteira no calendário da própria Terra.
+  [Saiba mais](#o-tesouro-derramado-parte-1-a-primeira-hora)
+- **Ouro que cai de noite.** As Quedas do Tesouro chegam com aviso, três Alienígenas e um cofre que cresce com o seu
+  posto. [Saiba mais](#a-queda-do-tesouro)
+- **Lugares e gente nova.** O Pavilhão de Caça da Capitã Iracema, com recompensas toda segunda, o boteco do Seu Zé, com
+  causo todo sábado, e os Balcões do Registro, com o seu Processo. [Saiba mais](#o-pavilhão-de-caça-e-o-mural-dos-procurados)
+- **Chefes cochilando.** O Mobzilla e os Krakens fazem a sesta no posto até você pisar na arena. [Saiba mais](#a-sesta)
+- **Jogue com controle.** Rodas de ações, os poderes da origem num botão e uma ajuda que diz o que dá para fazer.
+  [Saiba mais](#suporte-a-controle)
+- **Mais Plants & Zombies.** Plantas novas, o Zumbi Morcego, a Cabra Zumbi, o Barão Von Morcego e invasões com chefe.
+  [Saiba mais](#plants--zombies)
+- **O OreSpawn mais novo.** Armaduras novas em 3D para os 14 conjuntos. [Saiba mais](#vem-aí-no-orespawn)
+- **Ajustes e correções** no pack inteiro, e os seus mundos continuam. [Saiba mais](#mudanças-no-pack)
+
 ## Conteúdo
 
+- [O que há de novo, num relance](#o-que-há-de-novo-num-relance)
 - [O Tesouro Derramado, parte 1: a Primeira Hora](#o-tesouro-derramado-parte-1-a-primeira-hora)
 - [Parte 2: a Primeira Noite e a Semana](#parte-2-a-primeira-noite-e-a-semana)
 - [Parte 3: as Províncias e a Corte Vazia](#parte-3-as-províncias-e-a-corte-vazia)
+- [Suporte a controle](#suporte-a-controle)
 - [Plants & Zombies](#plants--zombies)
 - [Vem aí no OreSpawn](#vem-aí-no-orespawn)
 - [Mudanças no pack](#mudanças-no-pack)
@@ -180,6 +200,27 @@ As notas completas de cada parte: OreSpawn Integrations
 [0.10.1](https://github.com/CoolFreeze23/orespawn-integrations/releases/tag/v0.10.1) e
 [0.10.2](https://github.com/CoolFreeze23/orespawn-integrations/releases/tag/v0.10.2).
 
+## Suporte a controle
+
+*v2.0.0-alpha.6, OreSpawn Integrations 0.10.3 e Controlify 3.0.1+lts*
+
+Jogue o pack inteiro com controle ou num portátil. O Controlify comanda o jogo, e a camada de controle do próprio pack
+deixa tudo o que um jogo com mods precisa ao alcance do polegar.
+
+![A roda de ações no controle](media/releases/v2.0.0/controller-wheel-pt.jpg)
+
+- **A roda de ações.** Segure o direcional para a esquerda e abre uma roda com o mapa, a mochila, as missões e mais.
+  Incline o analógico para escolher e solte para usar.
+- **Poder.** Toque no X para usar o poder da sua origem; segure para escolher outro numa roda.
+- **O que posso fazer aqui?** Um toque curto no View abre uma ajuda com o que dá para fazer onde você está, a pé, num
+  veículo ou montado.
+- **Dicas na primeira vez.** Cada comando se explica uma vez, na primeira vez que importa, na sua língua.
+- **Comandos de mods que funcionam no controle:** as armas do MCHeli disparam, e a tecla de uso do Iron's Spells
+  funciona.
+- Segurar View e Menu juntos continua livre para o Prism Console.
+- Jogou com a versão de teste do controle? Suas teclas de Poder e de ajuda, os seus comandos do Controlify e as dicas
+  que você já viu continuam com você.
+
 ## Plants & Zombies
 
 *v2.0.0-alpha.2 e alpha.3: Plants & Zombies da 1.5 para a 1.5.2-neoforge.2, no cliente e no servidor*
@@ -235,6 +276,8 @@ inglês).
 - Virar uma criatura hostil no Walkers não faz mais todo monstro te deixar em paz.
 
 **Correções**
+- Colocar o boteco do Seu Zé não diz mais que não tem ninguém no balcão quando o Seu Zé, ou o Lobisomem dele
+  na lua cheia, está lá.
 - A armadilha de uma Arca Real não queima nem quebra mais o telhado; as explosões dela só ferem os jogadores por perto.
 - O jogo não fecha mais no inventário criativo com o Refurbished Furniture.
 - Nomes e subtítulos longos de região não saem mais da tela em escalas pequenas de interface.
@@ -251,14 +294,23 @@ inglês).
 - O Godzilla agora é Mobzilla, e o Simple Lucky Block é a Arca Lacrada.
 - Muitos nomes em português foram corrigidos.
 
+**Teclado e controle**
+- O Controlify 3.0.1+lts entra no pack, no cliente.
+- Instalações novas ganham um teclado sem conflitos: 106 teclas mudaram de lugar e 29 teclas de depuração e de
+  configuração ficaram sem atalho, com o Poder no R e a roda de feitiços do Iron's Spells no Alt+G. As atualizações
+  mantêm as teclas que você mesmo definiu.
+- O agachar do HBM está desligado; o aviso "Aperte O" dele pedia uma tecla que nenhum controle tem.
+- O JourneyMap não mostra mais a tela Sobre na primeira vez que você abre o mapa.
+
 **Instalação e atualização**
 - Uma instalação alfa é avisada quando a 2.0.0 completa sair, e não mostra aviso da v1.4.2.
-- As atualizações movem para `mods-removed/` o que o pack substituiu, e deixam os mods extras que você colocou onde estão.
+- As atualizações movem para `mods-removed/` o que o pack substituiu, incluindo a versão de teste do controle, e
+  deixam os mods extras que você colocou onde estão.
 - Um pacote de recursos renomeado continua no mesmo lugar da sua lista.
 
 **Sem mudança desde a v1.4.2:** OreSpawn 2.0.0-beta.15, Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM
-Leak Fixes 1.0.0, OreSpawn Delight 0.1.0 e NeoForge 21.1.252. O suporte a controle ainda não está nestas alfas. O pack
-tem 211 mods (168 no servidor) e 29 pacotes de recursos.
+Leak Fixes 1.0.0, OreSpawn Delight 0.1.0 e NeoForge 21.1.252. O pack tem 212
+mods (168 no servidor) e 29 pacotes de recursos.
 
 ## Seus mundos
 
@@ -295,8 +347,7 @@ cliente alfa não entra num servidor v1.4.x, nem o contrário. O servidor hub co
 
 - Criar o primeiro mundo pode levar até cerca de um minuto num portátil, enquanto a Prateleira 9 e o Pavilhão de Caça
   procuram onde ficar.
-- Um mundo sem terra adequada a até 192 blocos fica sem a Prateleira 9. Nenhum dos nossos 24 mundos de teste passou por
-  isso, mas pode acontecer.
+- Um mundo sem terra adequada a até 192 blocos fica sem a Prateleira 9. Isso é raro.
 - Um mundo sem terra adequada a 300–600 blocos fica sem o Pavilhão de Caça; o quadro de segunda fica nas tendas e nos
   balcões.
 - Os Reais de recompensa ainda não têm limite; o teto semanal chega numa versão futura.
@@ -304,20 +355,13 @@ cliente alfa não entra num servidor v1.4.x, nem o contrário. O servidor hub co
 - Os bolsões de petróleo do HBM podem terminar retos na borda de um chunk em terreno novo (um aviso no log, nada mais).
 - Se um operador define as origens de um jogador por comando em vez da tela de origem, esse jogador não toma dano até
   entrar de novo (comportamento do próprio Neo Origins).
-- Ainda não conferido na alpha.5: o glifo Place Block do Ars Nouveau nos pisos da corte e o aviso do Jade no gerador da
-  copa de uma árvore real.
 
 ## Downloads
 
-Baixe na [versão v2.0.0-alpha.5](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.5).
+Baixe na [versão v2.0.0-alpha.6](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.6).
 
 - `CrazyCraft5-Client.zip`: o pack do cliente. Importe no Prism Launcher ou no MultiMC (Adicionar Instância, depois
   Importar) e reserve de 8 a 12 GB de RAM. A primeira abertura baixa os mods das páginas oficiais. O MCHeli ainda
   precisa ser baixado à mão.
 - `CrazyCraft5-Server.zip`: os arquivos do servidor dedicado. Descompacte e dê dois cliques em
   `CrazyCraft Server Setup.bat` (Windows) ou rode `./startserver.sh` (Linux e macOS).
-
-Testado antes do lançamento: 190 testes de jogo num servidor de teste e no pack completo, servidores abrindo um mundo
-novo e mundos da v1.4.x, da alpha.1 e da alpha.4, e um cliente de verdade em português num portátil passando pelo
-Processo, pelos vistos, pela Chapelaria, pelas Folhas Perdidas, pelo expediente, pelos contrastes, pela carta da
-Anexação e pela Sesta.

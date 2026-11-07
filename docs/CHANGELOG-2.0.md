@@ -6,11 +6,11 @@ CrazyCraft 5.0 v2.0 brings a story to the pack. *The Spilled Hoard* gives the La
 and its own people: you hatch on Shelf 9, the Prince writes to you, gold falls from the sky at night, a captain posts
 bounties every Monday, a bar owner tells your deeds back to you bigger every Saturday, and the court's old bosses doze at
 their posts until you walk in. Alongside the story come two Plants & Zombies updates, a round of balance and bug fixes
-across the pack, and a look at the next OreSpawn update.
+across the pack, controller support for gamepads and handhelds, and a look at the next OreSpawn update.
 
-This page covers everything from the stable **v1.4.2** to **v2.0.0-alpha.5**, the five alpha releases on the
+This page covers everything from the stable **v1.4.2** to **v2.0.0-alpha.6**, the six alpha releases on the
 [releases page](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases). Every picture and animation below is taken
-in the game: the pack as v2.0.0-alpha.5 ships it, and for the OreSpawn armour, the next OreSpawn update on its own.
+in the game: the pack as v2.0.0-alpha.6 ships it, and for the OreSpawn armour, the next OreSpawn update on its own.
 
 ![Shelf 9, the Hatching Ground, in a jacaranda forest](media/releases/v2.0.0/shelf9-orbit.gif)
 
@@ -21,17 +21,36 @@ in the game: the pack as v2.0.0-alpha.5 ships it, and for the OreSpawn armour, t
 | [v2.0.0-alpha.3](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.3) | 7 Nov 2026 | Plants & Zombies 1.5.2-neoforge.2 |
 | [v2.0.0-alpha.4](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.4) | 7 Nov 2026 | Part 2: the First Night and Week |
 | [v2.0.0-alpha.5](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.5) | 7 Nov 2026 | Part 3: the Provinces and the Empty Court |
+| [v2.0.0-alpha.6](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.6) | 8 Nov 2026 | Controller support, the newest OreSpawn |
 
 **These are alpha releases.** The stable release is still v1.4.2, and the setup program and the in-game update check
 keep offering it. Back up your worlds before you try an alpha (see [Your worlds](#your-worlds)).
 
 ---
 
+## What's new at a glance
+
+- **A story for the pack.** *The Spilled Hoard* starts the moment you hatch on Shelf 9 and runs through your first hour,
+  your first night and a whole week of the Land's own calendar. [Read more](#the-spilled-hoard-part-1-the-first-hour)
+- **Gold that falls at night.** Hoard Falls come down with a warning, three Aliens and a vault that grows with your rank.
+  [Read more](#the-hoard-fall)
+- **New places and people.** Captain Iracema's Hunt Lodge with bounties every Monday, Seu Zé's boteco with tall tales
+  every Saturday, and the Registry desks with your own File. [Read more](#the-hunt-lodge-and-the-wall-of-the-wanted)
+- **Sleeping bosses.** Mobzilla and the Krakens doze at their posts until you walk in. [Read more](#the-nap)
+- **Play with a controller.** Action wheels, origin powers on a button and a helper that tells you what you can do.
+  [Read more](#controller-support)
+- **More Plants & Zombies.** New plants, the Zombat, the Zombie Goat, Baron von Bats and boss raids.
+  [Read more](#plants--zombies)
+- **The newest OreSpawn.** New 3D armour for all 14 sets. [Read more](#coming-next-in-orespawn)
+- **Balance and fixes** across the pack, and your worlds carry over. [Read more](#pack-changes)
+
 ## Contents
 
+- [What's new at a glance](#whats-new-at-a-glance)
 - [The Spilled Hoard, part 1: the First Hour](#the-spilled-hoard-part-1-the-first-hour)
 - [Part 2: the First Night and Week](#part-2-the-first-night-and-week)
 - [Part 3: the Provinces and the Empty Court](#part-3-the-provinces-and-the-empty-court)
+- [Controller support](#controller-support)
 - [Plants & Zombies](#plants--zombies)
 - [Coming next in OreSpawn](#coming-next-in-orespawn)
 - [Pack changes](#pack-changes)
@@ -172,6 +191,26 @@ Full notes for each part: OreSpawn Integrations
 [0.10.1](https://github.com/CoolFreeze23/orespawn-integrations/releases/tag/v0.10.1) and
 [0.10.2](https://github.com/CoolFreeze23/orespawn-integrations/releases/tag/v0.10.2).
 
+## Controller support
+
+*v2.0.0-alpha.6, OreSpawn Integrations 0.10.3 and Controlify 3.0.1+lts*
+
+Play the whole pack with a gamepad or on a handheld. Controlify drives the game, and the pack's own controller layer
+puts everything a modded game needs within reach of a thumb.
+
+![The action wheel on a controller](media/releases/v2.0.0/controller-wheel-en.jpg)
+
+- **The action wheel.** Hold left on the D-pad for a wheel with your map, backpack, quests and more. Tilt the stick to
+  pick, let go to use it.
+- **Power.** Tap X to use your origin power; hold it to pick another one from a wheel.
+- **What can I do here?** A short press of View opens a helper that lists what you can do where you stand, on foot, in
+  a vehicle or riding.
+- **Hints the first time.** Each control explains itself once, the first time it matters, in your language.
+- **Mod controls that work on a pad:** MCHeli's guns fire, and Iron's Spells' use key works.
+- Holding View and Menu together stays free for Prism Console.
+- Played with the early controller test build? Your Power and helper keys, your Controlify bindings and the hints you
+  have already seen carry over.
+
 ## Plants & Zombies
 
 *v2.0.0-alpha.2 and alpha.3: Plants & Zombies 1.5 to 1.5.2-neoforge.2, on client and server*
@@ -224,6 +263,8 @@ Full notes: the [OreSpawn changelog](https://github.com/CoolFreeze23/Orespawn/bl
 - A hostile shape from Walkers no longer makes every hostile mob leave you alone.
 
 **Fixes**
+- Placing Seu Zé's boteco no longer says nobody stands at the counter while Seu Zé, or his full-moon
+  Lobisomem, is there.
 - A Royal Casket's trap no longer burns or breaks a roof; its blasts hurt only the players nearby.
 - The game no longer crashes in the creative inventory with Refurbished Furniture.
 - Long region names and subtitles no longer run off the screen at small GUI scales.
@@ -240,14 +281,22 @@ Full notes: the [OreSpawn changelog](https://github.com/CoolFreeze23/Orespawn/bl
 - Godzilla is now Mobzilla, and the Simple Lucky Block is the Sealed Casket.
 - Many Brazilian Portuguese names are corrected.
 
+**Keyboard and controller**
+- Controlify 3.0.1+lts joins the pack, on the client.
+- New installs get a keyboard layout with no clashes: 106 keys moved and 29 debug and config keys unbound, with Power
+  on R and Iron's Spells' spell wheel on Alt+G. Updates keep the keys you set yourself.
+- HBM's ducking is off; its "Press O" prompt named a key no controller can press.
+- JourneyMap no longer shows its About screen the first time you open the map.
+
 **Installing and updating**
 - An alpha install is told when the full 2.0.0 is out, and sees no banner for v1.4.2.
-- Updates move what the pack replaces to `mods-removed/`, and leave your own extra mods where they are.
+- Updates move what the pack replaces to `mods-removed/`, the early controller test build included, and leave your
+  own extra mods where they are.
 - A renamed resource pack keeps its place in your pack list.
 
 **Unchanged since v1.4.2:** OreSpawn 2.0.0-beta.15, Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM Leak
-Fixes 1.0.0, OreSpawn Delight 0.1.0 and NeoForge 21.1.252. Controller support isn't in these alphas yet. The pack has 211
-mods (168 on the server) and 29 resource packs.
+Fixes 1.0.0, OreSpawn Delight 0.1.0 and NeoForge 21.1.252. The pack has 212 mods (168 on the server) and 29 resource
+packs.
 
 ## Your worlds
 
@@ -284,27 +333,20 @@ can't join a v1.4.x server, and the other way round. The hub server still runs v
 
 - Creating a first world can take up to about a minute on a handheld, while Shelf 9 and the Hunt Lodge look for a
   place to stand.
-- A world with no fitting land within 192 blocks plays without Shelf 9. None of our 24 test worlds hit this, but it can
-  happen.
+- A world with no fitting land within 192 blocks plays without Shelf 9. This is rare.
 - A world with no fitting land 300 to 600 blocks out has no Hunt Lodge; its Monday board is at the tents and desks.
 - Bounty Reais aren't capped yet; the weekly limit comes in a later version.
 - In this pack a Curupira can't break Distant Lands planks, and a Beaver can eat them.
 - HBM's oil pockets can end flat at a chunk edge in new land (a logged warning, nothing else).
 - If an operator sets a player's origins by command instead of the origin screen, that player can't be hurt until they
   log in again (Neo Origins' own behaviour).
-- Not yet checked in alpha.5: the Ars Nouveau Place Block glyph against the court's floors, and Jade's warning on a
-  royal tree's crown spawner.
 
 ## Downloads
 
-Get them from the [v2.0.0-alpha.5 release](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.5).
+Get them from the [v2.0.0-alpha.6 release](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases/tag/v2.0.0-alpha.6).
 
 - `CrazyCraft5-Client.zip`: the client pack. Import it into Prism Launcher or MultiMC (Add Instance, then Import) and
   give it 8 to 12 GB of RAM. The first launch downloads the mods from their official pages. MCHeli still has to be
   downloaded by hand.
 - `CrazyCraft5-Server.zip`: the dedicated server files. Unzip them, then double-click `CrazyCraft Server Setup.bat`
   (Windows) or run `./startserver.sh` (Linux and macOS).
-
-Tested before release: 190 GameTests on a test server and in the full pack, server boots of a new world and of worlds
-from v1.4.x, alpha.1 and alpha.4, and a real client in Brazilian Portuguese on a handheld through the File, the visas,
-the Cloakroom, the Lost Pages, office hours, hallmarks, the Annexation letter and the Nap.
