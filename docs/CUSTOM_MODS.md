@@ -29,7 +29,7 @@ Some of the fixes that went in while this pack was being built (see the repo's `
 
 ## OreSpawn Integrations
 
-- Jar: `orespawn_integrations-0.9.x.jar`
+- Jar: `orespawn_integrations-0.10.1.jar`
 - Source: [CoolFreeze23/orespawn-integrations](https://github.com/CoolFreeze23/orespawn-integrations)
 
 A companion mod written for this pack so OreSpawn fits in with the rest of the mods instead of feeling bolted on. Apart from OreSpawn itself, it has no hard dependencies. Every integration checks whether the other mod is loaded, so removing any of them breaks nothing, and each thread can be turned off in the config.

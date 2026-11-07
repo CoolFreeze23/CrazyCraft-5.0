@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "2.0.0-alpha.3",
+  "version": "2.0.0-alpha.4",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -2116,15 +2116,15 @@
    "license": "See repository"
   },
   {
-   "file": "orespawn_integrations-0.10.0.jar",
+   "file": "orespawn_integrations-0.10.1.jar",
    "name": "OreSpawn Integrations",
-   "version": "0.10.0",
+   "version": "0.10.1",
    "side": "both",
-   "size": 1595613,
-   "sha512": "1dffdb11f420859866b1106828ff882973d252a800a5aedd614ce0bf3babcfc47444db5fd730743225dbfaf770437d87337fe714420933905b5d84538fe6bb76",
+   "size": 2095815,
+   "sha512": "874952290cd139a764f812014db906e1521e4bdd0f4dfeaef9b1fe4ac4df618dbe180a4f4b7fab958d0896e7a17d30e6f0c97f33500fca800ceccf3bd61a3164",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.0/orespawn_integrations-0.10.0.jar",
+    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.1/orespawn_integrations-0.10.1.jar",
     "page": "https://github.com/CoolFreeze23/orespawn-integrations"
    },
    "license": "See repository"
@@ -3500,5 +3500,7 @@
    "why": "The uranium A-10 uses MCHeli's own A-10 model, copied from the MCHeli jar on install."
   }
  ],
- "retire": []
+ "retire": [
+  "cc_hotfix_refurbished-*.jar"
+ ]
 }
