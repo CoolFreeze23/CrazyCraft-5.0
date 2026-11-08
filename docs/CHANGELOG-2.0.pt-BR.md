@@ -6,12 +6,12 @@ A v2.0 traz uma história para o CrazyCraft 5.0. Em *O Tesouro Derramado*, a Ter
 própria: você choca na Prateleira 9, o Príncipe te escreve, cai ouro do céu de noite, uma capitã prega recompensas toda
 segunda-feira, o dono do bar reconta os seus feitos maiores a cada sábado, e os velhos chefes da corte cochilam no posto
 até você pisar na arena. Junto com a história vêm duas atualizações do Plants & Zombies, uma leva de ajustes e
-correções no pack inteiro, suporte a controle e portáteis e uma prévia da próxima atualização do OreSpawn.
+correções no pack inteiro, suporte a controle e portáteis e o OreSpawn mais novo.
 
 Esta página reúne tudo o que mudou da versão estável **v1.4.2** até a **v2.0.0-alpha.6**, as seis versões alfa da
 [página de lançamentos](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases). Todas as imagens e animações daqui
-foram capturadas no jogo: o pack do jeito que a v2.0.0-alpha.6 o distribui e, nas armaduras do OreSpawn, a próxima
-atualização do OreSpawn sozinha.
+foram capturadas no jogo: o pack do jeito que a v2.0.0-alpha.6 o distribui e, nas armaduras do OreSpawn, o OreSpawn
+sozinho.
 
 ![A Prateleira 9, o Ninho, numa mata de jacarandás](media/releases/v2.0.0/shelf9-orbit.gif)
 
@@ -43,7 +43,7 @@ atualização do jogo oferecem. Faça backup dos seus mundos antes de testar uma
   [Saiba mais](#suporte-a-controle)
 - **Mais Plants & Zombies.** Plantas novas, o Zumbi Morcego, a Cabra Zumbi, o Barão Von Morcego e invasões com chefe.
   [Saiba mais](#plants--zombies)
-- **O OreSpawn mais novo.** Armaduras novas em 3D para os 14 conjuntos. [Saiba mais](#vem-aí-no-orespawn)
+- **O OreSpawn mais novo.** Armaduras novas em 3D para os 14 conjuntos. [Saiba mais](#o-orespawn-mais-novo)
 - **Ajustes e correções** no pack inteiro, e os seus mundos continuam. [Saiba mais](#mudanças-no-pack)
 
 ## Conteúdo
@@ -54,7 +54,7 @@ atualização do jogo oferecem. Faça backup dos seus mundos antes de testar uma
 - [Parte 3: as Províncias e a Corte Vazia](#parte-3-as-províncias-e-a-corte-vazia)
 - [Suporte a controle](#suporte-a-controle)
 - [Plants & Zombies](#plants--zombies)
-- [Vem aí no OreSpawn](#vem-aí-no-orespawn)
+- [O OreSpawn mais novo](#o-orespawn-mais-novo)
 - [Mudanças no pack](#mudanças-no-pack)
 - [Seus mundos](#seus-mundos)
 - [Problemas conhecidos](#problemas-conhecidos)
@@ -244,10 +244,11 @@ deixa tudo o que um jogo com mods precisa ao alcance do polegar.
 - Os guardas das vilas enfrentam o Zumbi Morcego, a Cabra Zumbi e o Barão Von Morcego, e o Barão Von Morcego não pode
   ser preso numa Soul Cage.
 
-## Vem aí no OreSpawn
+## O OreSpawn mais novo
 
-O pack roda o OreSpawn 2.0.0-beta.15, o mesmo da v1.4.2. A próxima atualização do OreSpawn, a **beta.16**, já está
-pronta e chega ao pack numa versão futura:
+*v2.0.0-alpha.6: OreSpawn 2.0.0-beta.15 para beta.16, no cliente e no servidor*
+
+![Os 14 conjuntos de armadura do OreSpawn no novo estilo Moderno](media/releases/v2.0.0/orespawn-modern-armour-pt.jpg)
 
 - **Armadura Moderna nova para os 14 conjuntos.** Peças em 3D com os detalhes de cada conjunto: a tiara e o manto de
   escamas da Rainha, a coroa, a gola e a capa do Guardião Real, as placas dorsais e as garras do Mobzilla, as asas e a
@@ -256,8 +257,10 @@ pronta e chega ao pack numa versão futura:
   do Pavão. Texturas novas, ícones novos no inventário e armaduras de cavalo, lobo e cachorro combinando. Escolha
   Moderna ou Clássica na tela de Visual do OreSpawn (tecla O por padrão); a Clássica continua igual.
 - **A carapaça do Metroide Gama** não tem mais um buraco no lado direito.
-
-![Os 14 conjuntos de armadura do OreSpawn no novo estilo Moderno](media/releases/v2.0.0/orespawn-modern-armour-pt.jpg)
+- **Os Fantasmas e os Esqueletos Fantasmas** voltam a contar no limite de criaturas ambientes. Eles vinham enchendo as
+  Minas Reais às dezenas, até no Pacífico, e tomando o lugar dos monstros de verdade em outros lugares. Os que já estão
+  no mundo ficam, e uma área lotada vai esvaziando conforme eles vão embora.
+- Os servidores dedicados abrem sem duas linhas de erro inofensivas no log.
 
 ![Cada conjunto de perto](media/releases/v2.0.0/orespawn-armour-closeups-pt.jpg)
 
@@ -313,7 +316,7 @@ inglês).
   deixam os mods extras que você colocou onde estão.
 - Um pacote de recursos renomeado continua no mesmo lugar da sua lista.
 
-**Sem mudança desde a v1.4.2:** OreSpawn 2.0.0-beta.15, Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM
+**Sem mudança desde a v1.4.2:** Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM
 Leak Fixes 1.0.0, OreSpawn Delight 0.1.0 e NeoForge 21.1.252. O pack tem 212
 mods (168 no servidor) e 29 pacotes de recursos.
 
@@ -322,7 +325,7 @@ mods (168 no servidor) e 29 pacotes de recursos.
 **Faça backup primeiro.** Copie a pasta `saves/` (ou a pasta do mundo do servidor) para um lugar seguro antes de abrir
 um mundo numa alfa.
 
-**Servidor e jogadores atualizam juntos.** O OreSpawn Integrations e o Plants & Zombies rodam dos dois lados, então um
+**Servidor e jogadores atualizam juntos.** O OreSpawn, o OreSpawn Integrations e o Plants & Zombies rodam dos dois lados, então um
 cliente alfa não entra num servidor v1.4.x, nem o contrário. O servidor hub continua na v1.4.x.
 
 **Só em terreno que você ainda não explorou:**

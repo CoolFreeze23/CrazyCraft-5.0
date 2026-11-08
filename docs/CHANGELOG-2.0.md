@@ -6,11 +6,11 @@ CrazyCraft 5.0 v2.0 brings a story to the pack. *The Spilled Hoard* gives the La
 and its own people: you hatch on Shelf 9, the Prince writes to you, gold falls from the sky at night, a captain posts
 bounties every Monday, a bar owner tells your deeds back to you bigger every Saturday, and the court's old bosses doze at
 their posts until you walk in. Alongside the story come two Plants & Zombies updates, a round of balance and bug fixes
-across the pack, controller support for gamepads and handhelds, and a look at the next OreSpawn update.
+across the pack, controller support for gamepads and handhelds, and the newest OreSpawn.
 
 This page covers everything from the stable **v1.4.2** to **v2.0.0-alpha.6**, the six alpha releases on the
 [releases page](https://github.com/CoolFreeze23/CrazyCraft-5.0/releases). Every picture and animation below is taken
-in the game: the pack as v2.0.0-alpha.6 ships it, and for the OreSpawn armour, the next OreSpawn update on its own.
+in the game: the pack as v2.0.0-alpha.6 ships it, and for the OreSpawn armour, OreSpawn on its own.
 
 ![Shelf 9, the Hatching Ground, in a jacaranda forest](media/releases/v2.0.0/shelf9-orbit.gif)
 
@@ -41,7 +41,7 @@ keep offering it. Back up your worlds before you try an alpha (see [Your worlds]
   [Read more](#controller-support)
 - **More Plants & Zombies.** New plants, the Zombat, the Zombie Goat, Baron von Bats and boss raids.
   [Read more](#plants--zombies)
-- **The newest OreSpawn.** New 3D armour for all 14 sets. [Read more](#coming-next-in-orespawn)
+- **The newest OreSpawn.** New 3D armour for all 14 sets. [Read more](#the-newest-orespawn)
 - **Balance and fixes** across the pack, and your worlds carry over. [Read more](#pack-changes)
 
 ## Contents
@@ -52,7 +52,7 @@ keep offering it. Back up your worlds before you try an alpha (see [Your worlds]
 - [Part 3: the Provinces and the Empty Court](#part-3-the-provinces-and-the-empty-court)
 - [Controller support](#controller-support)
 - [Plants & Zombies](#plants--zombies)
-- [Coming next in OreSpawn](#coming-next-in-orespawn)
+- [The newest OreSpawn](#the-newest-orespawn)
 - [Pack changes](#pack-changes)
 - [Your worlds](#your-worlds)
 - [Known issues](#known-issues)
@@ -233,10 +233,11 @@ puts everything a modded game needs within reach of a thumb.
 - The Plants vs. Zombies characters have their official Brazilian Portuguese names.
 - Village guards fight the Zombat, the Zombie Goat and Baron von Bats, and Baron von Bats can't be caged in a Soul Cage.
 
-## Coming next in OreSpawn
+## The newest OreSpawn
 
-The pack runs OreSpawn 2.0.0-beta.15, the same as v1.4.2. The next OreSpawn update, **beta.16**, is finished and
-comes to the pack in a later version:
+*v2.0.0-alpha.6: OreSpawn 2.0.0-beta.15 to beta.16, on client and server*
+
+![All 14 OreSpawn armour sets in the new Modern style](media/releases/v2.0.0/orespawn-modern-armour.jpg)
 
 - **New Modern armour for all 14 sets.** 3D pieces with each set's own details: the Queen's tiara and scaled mantle,
   the Royal Guardian's crown, collar and cape, Mobzilla's dorsal plates and claws, Ultimate's swept wings and core gem,
@@ -244,8 +245,10 @@ comes to the pack in a later version:
   glowing seams, the Peacock's crest and feather fan. New textures, new inventory icons, and matching horse, wolf and dog
   armour. Choose Modern or Classic in the OreSpawn Visuals screen (O by default); Classic is unchanged.
 - **The Gamma Metroid's shell** no longer has a hole on its right side.
-
-![All 14 OreSpawn armour sets in the new Modern style](media/releases/v2.0.0/orespawn-modern-armour.jpg)
+- **Ghosts and Ghost Skeletons** count toward the ambient creature limit again. They had been filling the Royal Mines by
+  the dozen, even on Peaceful, and taking the place of real monsters elsewhere. The ones already in a world stay, and a
+  crowded area thins out as they leave.
+- Dedicated servers start without two harmless error lines in their log.
 
 ![Each set up close](media/releases/v2.0.0/orespawn-armour-closeups.jpg)
 
@@ -299,7 +302,7 @@ Full notes: the [OreSpawn changelog](https://github.com/CoolFreeze23/Orespawn/bl
   own extra mods where they are.
 - A renamed resource pack keeps its place in your pack list.
 
-**Unchanged since v1.4.2:** OreSpawn 2.0.0-beta.15, Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM Leak
+**Unchanged since v1.4.2:** Domestication Innovation 2.1.0, Origin Awakening 1.0.0, VRAM Leak
 Fixes 1.0.0, OreSpawn Delight 0.1.0 and NeoForge 21.1.252. The pack has 212 mods (168 on the server) and 29 resource
 packs.
 
@@ -308,7 +311,7 @@ packs.
 **Back up first.** Copy your `saves/` folder (or the server's world folder) somewhere safe before you open a world in an
 alpha.
 
-**Servers and players update together.** OreSpawn Integrations and Plants & Zombies run on both sides, so an alpha client
+**Servers and players update together.** OreSpawn, OreSpawn Integrations and Plants & Zombies run on both sides, so an alpha client
 can't join a v1.4.x server, and the other way round. The hub server still runs v1.4.x.
 
 **Only in land you haven't explored yet:**
