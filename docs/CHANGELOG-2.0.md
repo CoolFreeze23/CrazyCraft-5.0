@@ -107,7 +107,9 @@ holes in your base.
 
 ![The warning, 30 seconds ahead](media/releases/v2.0.0/hoard-fall-warning-en.jpg)
 
-![The crater by day, with its vault](media/releases/v2.0.0/hoard-fall-crater.jpg)
+![A Hoard Fall coming down at dusk: the gold streak, the landing and the three Aliens](media/releases/v2.0.0/hoard-fall.gif)
+
+![The crater by day, with its vault, its ore and its three Aliens](media/releases/v2.0.0/hoard-fall-crater.jpg)
 
 ### The Hunt Lodge and the Wall of the Wanted
 

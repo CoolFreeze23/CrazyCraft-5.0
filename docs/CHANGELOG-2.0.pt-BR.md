@@ -111,7 +111,9 @@ posto. Ela não abre buraco na sua base.
 
 ![O aviso, 30 segundos antes](media/releases/v2.0.0/hoard-fall-warning-pt.jpg)
 
-![A cratera de dia, com o cofre](media/releases/v2.0.0/hoard-fall-crater.jpg)
+![Uma Queda do Tesouro caindo ao anoitecer: o rastro dourado, o pouso e os três Alienígenas](media/releases/v2.0.0/hoard-fall.gif)
+
+![A cratera de dia, com o cofre, o minério e os três Alienígenas](media/releases/v2.0.0/hoard-fall-crater.jpg)
 
 ### O Pavilhão de Caça e o Mural dos Procurados
 
