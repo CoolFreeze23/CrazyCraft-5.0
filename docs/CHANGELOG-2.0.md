@@ -200,10 +200,13 @@ Full notes for each part: OreSpawn Integrations
 Play the whole pack with a gamepad or on a handheld. Controlify drives the game, and the pack's own controller layer
 puts everything a modded game needs within reach of a thumb.
 
-![The action wheel on a controller](media/releases/v2.0.0/controller-wheel-en.jpg)
+![The action wheel opening on a controller, the stick moving over Map, Backpack and Quests](media/releases/v2.0.0/controller-wheel-en.gif)
 
-- **The action wheel.** Hold left on the D-pad for a wheel with your map, backpack, quests and more. Tilt the stick to
-  pick, let go to use it.
+- **The action wheel.** Hold left on the D-pad for a wheel with your map, backpack, quests and more. Tilt the right
+  stick to pick and let go to use it; A uses it too, and B closes the wheel.
+
+  ![The action wheel with Map picked](media/releases/v2.0.0/controller-wheel-en.jpg)
+
 - **Power.** Tap X to use your origin power; hold it to pick another one from a wheel.
 - **What can I do here?** A short press of View opens a helper that lists what you can do where you stand, on foot, in
   a vehicle or riding.

@@ -209,10 +209,13 @@ As notas completas de cada parte: OreSpawn Integrations
 Jogue o pack inteiro com controle ou num portátil. O Controlify comanda o jogo, e a camada de controle do próprio pack
 deixa tudo o que um jogo com mods precisa ao alcance do polegar.
 
-![A roda de ações no controle](media/releases/v2.0.0/controller-wheel-pt.jpg)
+![A roda de ações abrindo no controle, com o analógico passando por Mapa, Mochila e Missões](media/releases/v2.0.0/controller-wheel-pt.gif)
 
 - **A roda de ações.** Segure o direcional para a esquerda e abre uma roda com o mapa, a mochila, as missões e mais.
-  Incline o analógico para escolher e solte para usar.
+  Incline o analógico direito para escolher e solte para usar; o A também usa, e o B fecha a roda.
+
+  ![A roda de ações com o Mapa escolhido](media/releases/v2.0.0/controller-wheel-pt.jpg)
+
 - **Poder.** Toque no X para usar o poder da sua origem; segure para escolher outro numa roda.
 - **O que posso fazer aqui?** Um toque curto no View abre uma ajuda com o que dá para fazer onde você está, a pé, num
   veículo ou montado.
