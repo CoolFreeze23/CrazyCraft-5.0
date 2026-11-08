@@ -42,6 +42,7 @@
 | Configuration (`configuration`) | 3.1.1 | NeoForge |  |
 | Connector Extras (`connectorextras`) | 1.12.1+1.21.1 | NeoForge |  |
 | Continuity (`continuity`) | 3.0.0+1.21.neoforge | NeoForge |  |
+| Controlify (`controlify`) | 3.0.1+lts | NeoForge | Client only: controller support (CrazyCraft Controls in OreSpawn Integrations builds on it) |
 | Controlling (`controlling`) | 19.0.5 | NeoForge |  |
 | Cooks Collection (`cookscollection`) | 0.6.1 | NeoForge |  |
 | Corn Delight (`corn_delight`) | 1.2.10-1.21.1 | NeoForge |  |
@@ -144,7 +145,7 @@
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
 | OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.15 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
-| OreSpawn Integrations (`orespawn_integrations`) | 0.10.2 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
+| OreSpawn Integrations (`orespawn_integrations`) | 0.10.3 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | Origin Awakening (`originawakening`) | 1.0.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/originawakening)) |
 | oωo (`owo`) | 0.12.15.5-beta.1+1.21 | NeoForge |  |
 | Packed Packs (`packed_packs`) | 2.2.4+1.21.1 | NeoForge |  |
