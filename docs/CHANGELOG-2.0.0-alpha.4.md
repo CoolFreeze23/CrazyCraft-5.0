@@ -4,7 +4,7 @@
 
 ## Before you play
 - **Back up your worlds first.** Copy your `saves/` folder (or the server's world folder) somewhere safe.
-- **Import the client zip as a new instance, or let an alpha instance update itself.** The setup program and the in-game update check only offer full releases, so v1.4.x installs stay on v1.4.x.
+- **Import the client zip as a new instance.** Download `CrazyCraft5-Client.zip` below and, in Prism Launcher or MultiMC, choose Add Instance, then Import. Then copy your `saves/` folder over from your old instance, and its `options.txt` for your keys and settings. No install updates itself to an alpha: the setup program and the in-game update check only offer full releases, so v1.4.x installs and earlier alphas stay where they are.
 - **Not for the v1.4.x hub.** A v2.0.0-alpha.4 client can't join a v1.4.x server, or the other way round.
 - **The first world can take a while.** Creating a first world can take up to about a minute on a handheld, while Shelf 9 and the Hunt Lodge look for a place to stand.
 
@@ -52,7 +52,7 @@
 
 ## Antes de jogar
 - **Faça backup dos seus mundos primeiro.** Copie a pasta `saves/` (ou a pasta do mundo do servidor) para um lugar seguro.
-- **Importe o zip do cliente como uma nova instância, ou deixe uma instância alfa se atualizar.** O instalador e a verificação de atualização do jogo só oferecem versões completas, então as instalações v1.4.x continuam na v1.4.x.
+- **Importe o zip do cliente como uma nova instância.** Baixe o `CrazyCraft5-Client.zip` abaixo e, no Prism Launcher ou no MultiMC, escolha Adicionar Instância, depois Importar. Depois copie a pasta `saves/` da instância antiga, e o `options.txt` dela para as suas teclas e configurações. Nenhuma instalação vira alfa sozinha: o instalador e a verificação de atualização do jogo só oferecem versões completas, então as instalações v1.4.x e as alfas anteriores ficam como estão.
 - **Não é para o hub v1.4.x.** Um cliente v2.0.0-alpha.4 não entra num servidor v1.4.x, nem o contrário.
 - **O primeiro mundo pode demorar.** Criar o primeiro mundo pode levar até cerca de um minuto num portátil, enquanto a Prateleira 9 e o Pavilhão de Caça procuram onde ficar.
 

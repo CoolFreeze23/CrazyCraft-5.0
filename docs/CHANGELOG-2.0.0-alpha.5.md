@@ -4,7 +4,7 @@
 
 ## Before you play
 - **Back up your worlds first.** Copy your `saves/` folder (or the server's world folder) somewhere safe.
-- **Import the client zip as a new instance, or let an alpha instance update itself.** The setup program and the in-game update check only offer full releases, so v1.4.x installs stay on v1.4.x.
+- **Import the client zip as a new instance.** Download `CrazyCraft5-Client.zip` below and, in Prism Launcher or MultiMC, choose Add Instance, then Import. Then copy your `saves/` folder over from your old instance, and its `options.txt` for your keys and settings. No install updates itself to an alpha: the setup program and the in-game update check only offer full releases, so v1.4.x installs and earlier alphas stay where they are.
 - **Not for the v1.4.x hub.** A v2.0.0-alpha.5 client can't join a v1.4.x server, or the other way round.
 - **Alpha.4 worlds carry on.** Your File opens at your next Registry visit, Lost Pages start turning up in chests you haven't opened yet, and the arena and lair bosses start dozing the next time they load.
 
@@ -38,7 +38,7 @@
 
 ## Antes de jogar
 - **Faça backup dos seus mundos primeiro.** Copie a pasta `saves/` (ou a pasta do mundo do servidor) para um lugar seguro.
-- **Importe o zip do cliente como uma nova instância, ou deixe uma instância alfa se atualizar.** O instalador e a verificação de atualização do jogo só oferecem versões completas, então as instalações v1.4.x continuam na v1.4.x.
+- **Importe o zip do cliente como uma nova instância.** Baixe o `CrazyCraft5-Client.zip` abaixo e, no Prism Launcher ou no MultiMC, escolha Adicionar Instância, depois Importar. Depois copie a pasta `saves/` da instância antiga, e o `options.txt` dela para as suas teclas e configurações. Nenhuma instalação vira alfa sozinha: o instalador e a verificação de atualização do jogo só oferecem versões completas, então as instalações v1.4.x e as alfas anteriores ficam como estão.
 - **Não é para o hub v1.4.x.** Um cliente v2.0.0-alpha.5 não entra num servidor v1.4.x, nem o contrário.
 - **Os mundos da alpha.4 continuam.** Seu Processo abre na próxima visita ao Registro, as Folhas Perdidas começam a aparecer nos baús que você ainda não abriu, e os chefes da arena e do covil começam a fazer a sesta na próxima vez que carregarem.
 
