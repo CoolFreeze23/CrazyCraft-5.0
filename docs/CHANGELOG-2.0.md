@@ -318,10 +318,11 @@ can't join a v1.4.x server, and the other way round.
 v1.4.2 until you choose the alpha.
 
 1. Download `CrazyCraft5-Client.zip` from the [downloads](#downloads) below.
-2. In Prism Launcher, choose Add Instance, then Import, and pick the zip. Copy your `saves/` folder over if you want
-   your singleplayer worlds there too.
+2. In Prism Launcher or MultiMC, choose Add Instance, then Import, and pick the zip.
+3. Copy your `saves/` folder over from your old instance to bring your worlds along, and its `options.txt` if you
+   want your keys and settings too.
 
-Already playing an earlier alpha? It updates itself the next time you launch it.
+An earlier alpha doesn't update to alpha.6 on its own either, so import the new zip the same way.
 
 **Only in land you haven't explored yet:**
 - Shelf 9 is placed when a new world is created. On an older world an operator can place it with

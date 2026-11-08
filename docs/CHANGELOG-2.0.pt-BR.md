@@ -332,10 +332,11 @@ cliente alfa não entra num servidor v1.4.x, nem o contrário.
 instalações v1.4.x na v1.4.2 até você escolher a alfa.
 
 1. Baixe o `CrazyCraft5-Client.zip` nos [downloads](#downloads) logo abaixo.
-2. No Prism Launcher, escolha Adicionar Instância, depois Importar, e selecione o zip. Copie a sua pasta `saves/` se
-   quiser levar os seus mundos de um jogador junto.
+2. No Prism Launcher ou no MultiMC, escolha Adicionar Instância, depois Importar, e selecione o zip.
+3. Copie a pasta `saves/` da sua instância antiga para levar os seus mundos, e o `options.txt` dela se quiser as suas
+   teclas e configurações também.
 
-Já joga uma alfa anterior? Ela se atualiza sozinha na próxima vez que você abrir o jogo.
+Uma alfa anterior também não vira alpha.6 sozinha, então importe o zip novo do mesmo jeito.
 
 **Só em terreno que você ainda não explorou:**
 - A Prateleira 9 é colocada quando o mundo é criado. Num mundo mais antigo, um operador pode colocá-la com
