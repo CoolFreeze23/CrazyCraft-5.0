@@ -143,7 +143,7 @@
 | Ocean's Delight (`oceansdelight`) | 1.0.4 | NeoForge |  |
 | OctoLib (`octolib`) | 0.6.2 | NeoForge |  |
 | Oh The Trees You'll Grow (`ohthetreesyoullgrow`) | 5.3.2 | NeoForge |  |
-| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.15 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
+| OreSpawn (`orespawn`) | 1.21.1-2.0.0-beta.16 | NeoForge | Custom: our NeoForge port of the 1.7.10 original ([repo](https://github.com/CoolFreeze23/Orespawn)) |
 | OreSpawn Delight (`orespawn_delight`) | 0.1.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-delight)) |
 | OreSpawn Integrations (`orespawn_integrations`) | 0.10.3 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/orespawn-integrations)) |
 | Origin Awakening (`originawakening`) | 1.0.0 | NeoForge | Custom: made for this pack ([repo](https://github.com/CoolFreeze23/originawakening)) |

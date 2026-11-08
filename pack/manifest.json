@@ -2,7 +2,7 @@
  "format": 1,
  "pack": {
   "name": "CrazyCraft 5.0",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-alpha.6",
   "repo": "CoolFreeze23/CrazyCraft-5.0",
   "minecraft": "1.21.1"
  },
@@ -588,6 +588,20 @@
     "page": "https://modrinth.com/mod/continuity"
    },
    "license": "LGPL-3.0-only"
+  },
+  {
+   "file": "controlify-3.0.1+lts+1.21.1-neoforge.jar",
+   "name": "Controlify",
+   "version": "3.0.1+lts",
+   "side": "client",
+   "size": 7981721,
+   "sha512": "cfffb25b9e62ca39cd6f54ab0b83902feda23a763ae9e345a11609f0138de1b6c3ab7a78c8fd5b7b309795e5c6d4911fd37cd7f8722a72cca6ad18e32cec461e",
+   "source": {
+    "type": "modrinth",
+    "url": "https://cdn.modrinth.com/data/DOUdJVEm/versions/RqsNKKLK/controlify-3.0.1%2Blts%2B1.21.1-neoforge.jar",
+    "page": "https://modrinth.com/mod/controlify"
+   },
+   "license": "LGPL-3.0-or-later"
   },
   {
    "file": "Controlling-neoforge-1.21.1-19.0.5.jar",
@@ -2088,15 +2102,15 @@
    "license": "LGPL-3.0-only"
   },
   {
-   "file": "orespawn-1.21.1-2.0.0-beta.15.jar",
+   "file": "orespawn-1.21.1-2.0.0-beta.16.jar",
    "name": "OreSpawn",
-   "version": "1.21.1-2.0.0-beta.15",
+   "version": "1.21.1-2.0.0-beta.16",
    "side": "both",
-   "size": 23339103,
-   "sha512": "c885720bddf9b8423da936b3f77b4634a1eb8dce94055448aff59ed0208207179e6d4a88f159d0c34a35e1c943f38ff768c9e0a43096196710284c4794bac01b",
+   "size": 23470936,
+   "sha512": "8cce7ae61dc448011ee56c80bfb7fd3dfe3e88d9e6d17911c4572ad83943bcb7496ee7f7ccca87c876829e83a9df795bcef2ba72f8fec87551217999e02e62d5",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/Orespawn/releases/download/v1.21.1-2.0.0-beta.15/orespawn-1.21.1-2.0.0-beta.15.jar",
+    "url": "https://github.com/CoolFreeze23/Orespawn/releases/download/v1.21.1-2.0.0-beta.16/orespawn-1.21.1-2.0.0-beta.16.jar",
     "page": "https://github.com/CoolFreeze23/Orespawn"
    },
    "license": "See repository"
@@ -2116,15 +2130,15 @@
    "license": "See repository"
   },
   {
-   "file": "orespawn_integrations-0.10.2.jar",
+   "file": "orespawn_integrations-0.10.3.jar",
    "name": "OreSpawn Integrations",
-   "version": "0.10.2",
+   "version": "0.10.3",
    "side": "both",
-   "size": 2509589,
-   "sha512": "b4891d748fededbd13c1074457f6000990141cbcdfb95936e22597dd5ea1fb4f4af787ef25c94579ab8469d24ebcacb7c784a3af0542095dd762ebcb61ea7b2e",
+   "size": 2585689,
+   "sha512": "bc8fc73981d77b983e168a657c4a3dfb4f041a4092386531337b68f2393caa63cdc2690a9a2b6b2296fe7648c3a7ae6030a5764c09c61d16216b0fcb479a0cfb",
    "source": {
     "type": "github",
-    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.2/orespawn_integrations-0.10.2.jar",
+    "url": "https://github.com/CoolFreeze23/orespawn-integrations/releases/download/v0.10.3/orespawn_integrations-0.10.3.jar",
     "page": "https://github.com/CoolFreeze23/orespawn-integrations"
    },
    "license": "See repository"
@@ -3501,6 +3515,7 @@
   }
  ],
  "retire": [
-  "cc_hotfix_refurbished-*.jar"
+  "cc_hotfix_refurbished-*.jar",
+  "cccontrols-*.jar"
  ]
 }
