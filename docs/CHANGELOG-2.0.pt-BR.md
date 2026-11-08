@@ -326,7 +326,16 @@ mods (168 no servidor) e 29 pacotes de recursos.
 um mundo numa alfa.
 
 **Servidor e jogadores atualizam juntos.** O OreSpawn, o OreSpawn Integrations e o Plants & Zombies rodam dos dois lados, então um
-cliente alfa não entra num servidor v1.4.x, nem o contrário. O servidor hub continua na v1.4.x.
+cliente alfa não entra num servidor v1.4.x, nem o contrário.
+
+**O servidor do CrazyCraft agora roda a alpha.6.** Para jogar nele, instale a alpha.6: o launcher mantém as
+instalações v1.4.x na v1.4.2 até você escolher a alfa.
+
+1. Baixe o `CrazyCraft5-Client.zip` nos [downloads](#downloads) logo abaixo.
+2. No Prism Launcher, escolha Adicionar Instância, depois Importar, e selecione o zip. Copie a sua pasta `saves/` se
+   quiser levar os seus mundos de um jogador junto.
+
+Já joga uma alfa anterior? Ela se atualiza sozinha na próxima vez que você abrir o jogo.
 
 **Só em terreno que você ainda não explorou:**
 - A Prateleira 9 é colocada quando o mundo é criado. Num mundo mais antigo, um operador pode colocá-la com

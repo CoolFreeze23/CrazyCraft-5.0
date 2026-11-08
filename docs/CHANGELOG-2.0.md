@@ -312,7 +312,16 @@ packs.
 alpha.
 
 **Servers and players update together.** OreSpawn, OreSpawn Integrations and Plants & Zombies run on both sides, so an alpha client
-can't join a v1.4.x server, and the other way round. The hub server still runs v1.4.x.
+can't join a v1.4.x server, and the other way round.
+
+**The CrazyCraft server now runs alpha.6.** To play on it, install alpha.6: the launcher keeps v1.4.x installs on
+v1.4.2 until you choose the alpha.
+
+1. Download `CrazyCraft5-Client.zip` from the [downloads](#downloads) below.
+2. In Prism Launcher, choose Add Instance, then Import, and pick the zip. Copy your `saves/` folder over if you want
+   your singleplayer worlds there too.
+
+Already playing an earlier alpha? It updates itself the next time you launch it.
 
 **Only in land you haven't explored yet:**
 - Shelf 9 is placed when a new world is created. On an older world an operator can place it with
