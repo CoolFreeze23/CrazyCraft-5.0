@@ -257,15 +257,15 @@ deixa tudo o que um jogo com mods precisa ao alcance do polegar.
   do Pavão. Texturas novas, ícones novos no inventário e armaduras de cavalo, lobo e cachorro combinando. Escolha
   Moderna ou Clássica na tela de Visual do OreSpawn (tecla O por padrão); a Clássica continua igual.
 - **A carapaça do Metroide Gama** não tem mais um buraco no lado direito.
-- **Os Fantasmas e os Esqueletos Fantasmas** voltam a contar no limite de criaturas ambientes. Eles vinham enchendo as
-  Minas Reais às dezenas, até no Pacífico, e tomando o lugar dos monstros de verdade em outros lugares. Os que já estão
+- **Os Fantasmas e os Esqueletos Fantasmas** voltam a contar no limite de criaturas ambientes. No dia 31 de outubro eles
+  vinham enchendo as Minas Reais às dezenas, até no Pacífico, e tomando o lugar dos monstros de verdade em outros lugares. Os que já estão
   no mundo ficam, e uma área lotada vai esvaziando conforme eles vão embora.
 - Os servidores dedicados abrem sem duas linhas de erro inofensivas no log.
 
 ![Cada conjunto de perto](media/releases/v2.0.0/orespawn-armour-closeups-pt.jpg)
 
-Notas completas: o [changelog do OreSpawn](https://github.com/CoolFreeze23/Orespawn/blob/master/CHANGELOG.md) (em
-inglês).
+Notas completas: a [versão 2.0.0-beta.16 do OreSpawn](https://github.com/CoolFreeze23/Orespawn/releases/tag/v1.21.1-2.0.0-beta.16)
+(em inglês).
 
 ## Mudanças no pack
 

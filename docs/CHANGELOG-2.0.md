@@ -245,14 +245,14 @@ puts everything a modded game needs within reach of a thumb.
   glowing seams, the Peacock's crest and feather fan. New textures, new inventory icons, and matching horse, wolf and dog
   armour. Choose Modern or Classic in the OreSpawn Visuals screen (O by default); Classic is unchanged.
 - **The Gamma Metroid's shell** no longer has a hole on its right side.
-- **Ghosts and Ghost Skeletons** count toward the ambient creature limit again. They had been filling the Royal Mines by
-  the dozen, even on Peaceful, and taking the place of real monsters elsewhere. The ones already in a world stay, and a
+- **Ghosts and Ghost Skeletons** count toward the ambient creature limit again. On 31 October they had been filling the
+  Royal Mines by the dozen, even on Peaceful, and taking the place of real monsters elsewhere. The ones already in a world stay, and a
   crowded area thins out as they leave.
 - Dedicated servers start without two harmless error lines in their log.
 
 ![Each set up close](media/releases/v2.0.0/orespawn-armour-closeups.jpg)
 
-Full notes: the [OreSpawn changelog](https://github.com/CoolFreeze23/Orespawn/blob/master/CHANGELOG.md).
+Full notes: the [OreSpawn 2.0.0-beta.16 release](https://github.com/CoolFreeze23/Orespawn/releases/tag/v1.21.1-2.0.0-beta.16).
 
 ## Pack changes
 
